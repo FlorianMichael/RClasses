@@ -16,10 +16,9 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package de.florianmichael.rclasses.functionalinterface;
+package de.florianmichael.rclasses.functionalinterface.consumers;
 
 @FunctionalInterface
-public interface TRunnable {
-
-    void run() throws Throwable;
+public interface NovendecConsumer<T, U, V, W, X, Y, Z, A, B, C, D, E, F, G, H, I, J, K, L> {
+    void accept(T t, U u, V v, W w, X x, Y y, Z z, A a, B b, C c, D d, E e, F f, G g, H h, I i, J j, K k, L l);
 }

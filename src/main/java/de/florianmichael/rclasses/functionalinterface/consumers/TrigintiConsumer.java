@@ -15,17 +15,10 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package de.florianmichael.rclasses.functionalinterface;
 
-import java.util.Objects;
+package de.florianmichael.rclasses.functionalinterface.consumers;
 
 @FunctionalInterface
-public interface TBiFunction<T, U, R> {
-
-    R apply(T t, U u) throws Throwable;
-
-    default <V> TBiFunction<T, U, V> andThen(TFunction<? super R, ? extends V> after) throws Throwable {
-        Objects.requireNonNull(after);
-        return (T t, U u) -> after.apply(apply(t, u));
-    }
+public interface TrigintiConsumer<T, U, V, W, X, Y, Z, A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q> {
+    void accept(T t, U u, V v, W w, X x, Y y, Z z, A a, B b, C c, D d, E e, F f, G g, H h, I i, J j, K k, L l, M m, N n, O o, P p, Q q);
 }

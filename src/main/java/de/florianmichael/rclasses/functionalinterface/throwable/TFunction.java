@@ -15,21 +15,26 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-
-package de.florianmichael.rclasses.functionalinterface;
+package de.florianmichael.rclasses.functionalinterface.throwable;
 
 import java.util.Objects;
 
 @FunctionalInterface
-public interface TBiConsumer<T, U> {
-    void accept(T t, U u) throws Throwable;
+public interface TFunction<T, R> {
 
-    default TBiConsumer<T, U> andThen(TBiConsumer<? super T, ? super U> after) {
+    R apply(T t) throws Throwable;
+
+    default <V> TFunction<V, R> compose(TFunction<? super V, ? extends T> before) {
+        Objects.requireNonNull(before);
+        return (V v) -> apply(before.apply(v));
+    }
+
+    default <V> TFunction<T, V> andThen(TFunction<? super R, ? extends V> after) {
         Objects.requireNonNull(after);
+        return (T t) -> after.apply(apply(t));
+    }
 
-        return (l, r) -> {
-            accept(l, r);
-            after.accept(l, r);
-        };
+    static <T> TFunction<T, T> identity() {
+        return t -> t;
     }
 }

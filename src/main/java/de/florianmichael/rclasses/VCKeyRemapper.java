@@ -135,7 +135,7 @@ public class VCKeyRemapper {
         };
     }
 
-    public static int vk_to_glfw(int vk_code) {
+    public static int vk_to_glfw(final int vk_code) {
         if (vk_code == 127) {
             // 127 -> delete
             return 261;

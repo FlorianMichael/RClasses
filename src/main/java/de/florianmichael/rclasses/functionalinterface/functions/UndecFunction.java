@@ -15,26 +15,10 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package de.florianmichael.rclasses.functionalinterface;
 
-import java.util.Objects;
+package de.florianmichael.rclasses.functionalinterface.functions;
 
 @FunctionalInterface
-public interface TFunction<T, R> {
-
-    R apply(T t) throws Throwable;
-
-    default <V> TFunction<V, R> compose(TFunction<? super V, ? extends T> before) {
-        Objects.requireNonNull(before);
-        return (V v) -> apply(before.apply(v));
-    }
-
-    default <V> TFunction<T, V> andThen(TFunction<? super R, ? extends V> after) {
-        Objects.requireNonNull(after);
-        return (T t) -> after.apply(apply(t));
-    }
-
-    static <T> TFunction<T, T> identity() {
-        return t -> t;
-    }
+public interface UndecFunction<T, U, V, W, X, Y, Z, A, B, C, D, E> {
+    E accept(T t, U u, V v, W w, X x, Y y, Z z, A a, B b, C c, D d);
 }
