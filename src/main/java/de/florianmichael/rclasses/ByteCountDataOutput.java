@@ -19,7 +19,6 @@
 package de.florianmichael.rclasses;
 
 import java.io.DataOutput;
-import java.io.IOException;
 
 public class ByteCountDataOutput implements DataOutput {
     public static final ByteCountDataOutput INSTANCE = new ByteCountDataOutput();
@@ -35,72 +34,72 @@ public class ByteCountDataOutput implements DataOutput {
     }
 
     @Override
-    public void write(int b) throws IOException {
+    public void write(int b) {
         count++;
     }
 
     @Override
-    public void write(byte[] b) throws IOException {
+    public void write(byte[] b) {
         count += b.length;
     }
 
     @Override
-    public void write(byte[] b, int off, int len) throws IOException {
+    public void write(byte[] b, int off, int len) {
         count += len;
     }
 
     @Override
-    public void writeBoolean(boolean v) throws IOException {
+    public void writeBoolean(boolean v) {
         count++;
     }
 
     @Override
-    public void writeByte(int v) throws IOException {
+    public void writeByte(int v) {
         count++;
     }
 
     @Override
-    public void writeShort(int v) throws IOException {
+    public void writeShort(int v) {
         count += 2;
     }
 
     @Override
-    public void writeChar(int v) throws IOException {
+    public void writeChar(int v) {
         count += 2;
     }
 
     @Override
-    public void writeInt(int v) throws IOException {
+    public void writeInt(int v) {
         count += 4;
     }
 
     @Override
-    public void writeLong(long v) throws IOException {
+    public void writeLong(long v) {
         count += 8;
     }
 
     @Override
-    public void writeFloat(float v) throws IOException {
+    public void writeFloat(float v) {
         count += 4;
     }
 
     @Override
-    public void writeDouble(double v) throws IOException {
+    public void writeDouble(double v) {
         count += 8;
     }
 
     @Override
-    public void writeBytes(String s) throws IOException {
+    public void writeBytes(String s) {
         count += s.length();
     }
 
     @Override
-    public void writeChars(String s) throws IOException {
+    public void writeChars(String s) {
         count += s.length() * 2;
     }
 
     @Override
-    public void writeUTF(String s) throws IOException {
+    public void writeUTF(String s) {
         count += (2 + this.utfLength(s));
     }
 

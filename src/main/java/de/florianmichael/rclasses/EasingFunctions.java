@@ -24,7 +24,8 @@ import java.util.Locale;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-public enum EzEasing {
+// https://github.com/FlorianMichael/RMath
+public enum EasingFunctions {
 
     LINEAR("Linear", x -> x),
 
@@ -105,13 +106,13 @@ public enum EzEasing {
             return n1 * (x -= 2.625F / d1) * x + 0.984375F;
         }
     }),
-    IN_BOUNCE("In bounce", x -> 1F - EzEasing.OUT_BOUNCE.ease(1F - x)),
-    IN_OUT_BOUNCE("In out bounce", x -> x < 0.5F ? (1F - EzEasing.OUT_BOUNCE.ease(1F - 2F * x)) / 2F : (1F + EzEasing.OUT_BOUNCE.ease(2F * x - 1F)) / 2F);
+    IN_BOUNCE("In bounce", x -> 1F - EasingFunctions.OUT_BOUNCE.ease(1F - x)),
+    IN_OUT_BOUNCE("In out bounce", x -> x < 0.5F ? (1F - EasingFunctions.OUT_BOUNCE.ease(1F - 2F * x)) / 2F : (1F + EasingFunctions.OUT_BOUNCE.ease(2F * x - 1F)) / 2F);
 
     public final String name;
     public final Function<Float, Float> function;
 
-    EzEasing(final String name, final Function<Float, Float> function) {
+    EasingFunctions(final String name, final Function<Float, Float> function) {
         this.name = name;
         this.function = function;
     }
@@ -124,8 +125,8 @@ public enum EzEasing {
         return byName(functionName).ease(x);
     }
 
-    public static EzEasing byName(final String functionName) {
-        for (EzEasing value : values()) {
+    public static EasingFunctions byName(final String functionName) {
+        for (EasingFunctions value : values()) {
             if (value.name.equals(functionName)) {
                 return value;
             }

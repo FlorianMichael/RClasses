@@ -19,6 +19,7 @@
 package de.florianmichael.rclasses;
 
 public class MathUtils {
+
     public static double interpolate(final double start, final double end, final double progress) {
         return start + (end - start) * progress;
     }
@@ -38,6 +39,14 @@ public class MathUtils {
         return isInBounds(x, y, left, right, up - left, down - right);
     }
 
+    public static float variance(final float[] data) {
+        float average = average(data);
+        float temp = 0.0F;
+        for (double datum : data) temp += (datum - average) * (datum - average);
+
+        return temp / data.length;
+    }
+
     public static double variance(final double[] data) {
         double average = average(data);
         double temp = 0.0;
@@ -46,9 +55,31 @@ public class MathUtils {
         return temp / data.length;
     }
 
+    public static int variance(final int[] data) {
+        int average = average(data);
+        int temp = 0;
+        for (int datum : data) temp += (datum - average) * (datum - average);
+
+        return temp / data.length;
+    }
+
+    public static float average(final float[] data) {
+        float sum = 0.0F;
+        for (float datum : data) sum += datum;
+
+        return sum / data.length;
+    }
+
     public static double average(final double[] data) {
         double sum = 0.0;
         for (double datum : data) sum += datum;
+
+        return sum / data.length;
+    }
+
+    public static int average(final int[] data) {
+        int sum = 0;
+        for (int datum : data) sum += datum;
 
         return sum / data.length;
     }
