@@ -16,8 +16,9 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package de.florianmichael.rclasses.trigonometry;
+package de.florianmichael.rclasses.math.trigonometry;
 
+import de.florianmichael.rclasses.math.trigonometry.impl.*;
 import de.florianmichael.rclasses.trigonometry.impl.*;
 
 public enum TrigonometryFunctions {

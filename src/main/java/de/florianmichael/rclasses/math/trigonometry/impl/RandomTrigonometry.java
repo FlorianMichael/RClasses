@@ -16,30 +16,19 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package de.florianmichael.rclasses;
+package de.florianmichael.rclasses.math.trigonometry.impl;
 
-public class Pair<K, V> {
-    private K key;
-    private V value;
+import de.florianmichael.rclasses.math.trigonometry.Trigonometry;
 
-    public Pair(final K key, final V value) {
-        this.key = key;
-        this.value = value;
+public class RandomTrigonometry implements Trigonometry {
+
+    @Override
+    public float sin(float x) {
+        return (float) Math.random() * x;
     }
 
-    public K getKey() {
-        return key;
-    }
-
-    public void setKey(K key) {
-        this.key = key;
-    }
-
-    public V getValue() {
-        return value;
-    }
-
-    public void setValue(V value) {
-        this.value = value;
+    @Override
+    public float cos(float x) {
+        return (float) Math.random() * x;
     }
 }

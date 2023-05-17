@@ -15,23 +15,17 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+package de.florianmichael.rclasses.functionalinterface;
 
-package de.florianmichael.rclasses;
+import java.util.Objects;
 
-import java.util.LinkedHashMap;
-import java.util.Map;
+@FunctionalInterface
+public interface TBiFunction<T, U, R> {
 
-public class ReverseHashMap<K, V> extends LinkedHashMap<K, V> {
+    R apply(T t, U u) throws Throwable;
 
-    private final Map<V, K> reversedMap = new LinkedHashMap<>();
-
-    @Override
-    public V put(K key, V value) {
-        this.reversedMap.put(value, key);
-        return super.put(key, value);
-    }
-
-    public K getKey(final V value) {
-        return this.reversedMap.get(value);
+    default <V> TBiFunction<T, U, V> andThen(TFunction<? super R, ? extends V> after) throws Throwable {
+        Objects.requireNonNull(after);
+        return (T t, U u) -> after.apply(apply(t, u));
     }
 }

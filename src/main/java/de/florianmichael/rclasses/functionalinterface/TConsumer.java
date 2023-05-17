@@ -15,21 +15,17 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+package de.florianmichael.rclasses.functionalinterface;
 
-package de.florianmichael.rclasses;
+import java.util.Objects;
 
-public class MSTimer {
-    private long time = System.currentTimeMillis();
+@FunctionalInterface
+public interface TConsumer<T> {
 
-    public void reset() {
-        time = System.currentTimeMillis();
-    }
+    void accept(T t) throws Throwable;
 
-    public boolean hasReached(final long delay) {
-        return this.getDelta() >= delay;
-    }
-
-    public long getDelta() {
-        return System.currentTimeMillis() - time;
+    default TConsumer<T> andThen(TConsumer<? super T> after) {
+        Objects.requireNonNull(after);
+        return (T t) -> { accept(t); after.accept(t); };
     }
 }

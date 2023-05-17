@@ -16,27 +16,20 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package de.florianmichael.rclasses;
+package de.florianmichael.rclasses.functionalinterface;
 
-public class Percentage {
+import java.util.Objects;
 
-    public static Number value(final float percentageDecimal, final float base) {
-        return percentageDecimal * base / 100;
-    }
+@FunctionalInterface
+public interface TBiConsumer<T, U> {
+    void accept(T t, U u) throws Throwable;
 
-    public static Number base(final float percentageDecimal, final float value) {
-        return (value / percentageDecimal) * 100;
-    }
+    default TBiConsumer<T, U> andThen(TBiConsumer<? super T, ? super U> after) {
+        Objects.requireNonNull(after);
 
-    public static Number percentage(final float value, final float base) {
-        return (value / base) * 100;
-    }
-
-    public static Number toDecimal(final float percentage) {
-        return percentage / 100;
-    }
-
-    public static Number toPercentage(final float decimal) {
-        return decimal * 100;
+        return (l, r) -> {
+            accept(l, r);
+            after.accept(l, r);
+        };
     }
 }

@@ -16,10 +16,15 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package de.florianmichael.rclasses.trigonometry;
+package de.florianmichael.rclasses.stream;
 
-public interface Trigonometry {
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.function.Function;
+import java.util.function.Predicate;
 
-    float sin(final float x);
-    float cos(final float x);
+public class StreamUtils {
+
+    public static <T> Predicate<T> distinctByKey(final Function<? super T, ?> keyExtractor) {
+        return t -> ConcurrentHashMap.newKeySet().add(keyExtractor.apply(t));
+    }
 }

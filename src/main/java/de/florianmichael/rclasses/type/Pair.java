@@ -16,15 +16,30 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package de.florianmichael.rclasses;
+package de.florianmichael.rclasses.type;
 
-import java.awt.*;
+public class Pair<K, V> {
+    private K key;
+    private V value;
 
-public class ColorUtils {
-    public final static Color MIN_INT = new Color(Integer.MIN_VALUE, true);
-    public final static Color MAX_INT = new Color(Integer.MAX_VALUE, true);
+    public Pair(final K key, final V value) {
+        this.key = key;
+        this.value = value;
+    }
 
-    public static Color withAlpha(final Color color, final int alpha) {
-        return new Color(color.getRed(), color.getGreen(), color.getBlue(), alpha);
+    public K getKey() {
+        return key;
+    }
+
+    public void setKey(K key) {
+        this.key = key;
+    }
+
+    public V getValue() {
+        return value;
+    }
+
+    public void setValue(V value) {
+        this.value = value;
     }
 }

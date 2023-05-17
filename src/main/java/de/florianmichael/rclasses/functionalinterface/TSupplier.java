@@ -15,16 +15,10 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+package de.florianmichael.rclasses.functionalinterface;
 
-package de.florianmichael.rclasses;
+@FunctionalInterface
+public interface TSupplier<T> {
 
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.function.Function;
-import java.util.function.Predicate;
-
-public class StreamUtils {
-
-    public static <T> Predicate<T> distinctByKey(final Function<? super T, ?> keyExtractor) {
-        return t -> ConcurrentHashMap.newKeySet().add(keyExtractor.apply(t));
-    }
+    T get() throws Throwable;
 }

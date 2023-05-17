@@ -16,9 +16,9 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package de.florianmichael.rclasses.trigonometry.impl;
+package de.florianmichael.rclasses.math.trigonometry.impl;
 
-import de.florianmichael.rclasses.trigonometry.Trigonometry;
+import de.florianmichael.rclasses.math.trigonometry.Trigonometry;
 
 public class RivensHalfTrigonometry implements Trigonometry {
 

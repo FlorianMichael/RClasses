@@ -16,31 +16,19 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package de.florianmichael.rclasses.trigonometry.impl;
+package de.florianmichael.rclasses.math.trigonometry.impl;
 
-import de.florianmichael.rclasses.trigonometry.Trigonometry;
+import de.florianmichael.rclasses.math.trigonometry.Trigonometry;
 
-public class OptifineD5Trigonometry implements Trigonometry {
-
-    private static final float[] SIN_TABLE_FAST = new float[4096];
-
-    static {
-        int i;
-        for (i = 0; i < 4096; ++i) {
-            SIN_TABLE_FAST[i] = (float) Math.sin((double) (((float) i + 0.5F) / 4096.0F * ((float) Math.PI * 2F)));
-        }
-        for (i = 0; i < 360; i += 90) {
-            SIN_TABLE_FAST[(int) ((float) i * 11.377778F) & 4095] = (float) Math.sin((double) ((float) i * 0.017453292F));
-        }
-    }
+public class JavaTrigonometry implements Trigonometry {
 
     @Override
     public float sin(float x) {
-        return SIN_TABLE_FAST[(int) (x * 651.8986F) & 4095];
+        return (float) Math.sin(x);
     }
 
     @Override
     public float cos(float x) {
-        return SIN_TABLE_FAST[(int) ((x + ((float) Math.PI / 2F)) * 651.8986F) & 4095];
+        return (float) Math.cos(x);
     }
 }

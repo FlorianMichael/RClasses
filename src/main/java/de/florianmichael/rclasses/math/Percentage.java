@@ -16,19 +16,27 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package de.florianmichael.rclasses;
+package de.florianmichael.rclasses.math;
 
-import java.util.Iterator;
+public class Percentage {
 
-public class EmptyIterator<T> implements Iterator<T> {
-
-    @Override
-    public boolean hasNext() {
-        return false;
+    public static Number value(final float percentageDecimal, final float base) {
+        return percentageDecimal * base / 100;
     }
 
-    @Override
-    public T next() {
-        return null;
+    public static Number base(final float percentageDecimal, final float value) {
+        return (value / percentageDecimal) * 100;
+    }
+
+    public static Number percentage(final float value, final float base) {
+        return (value / base) * 100;
+    }
+
+    public static Number toDecimal(final float percentage) {
+        return percentage / 100;
+    }
+
+    public static Number toPercentage(final float decimal) {
+        return decimal * 100;
     }
 }
