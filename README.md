@@ -21,4 +21,3 @@ dependencies {
     implementation "com.github.FlorianMichael:RClasses:1.0.0"
 }
 ```
-## Example usage
