@@ -127,11 +127,9 @@ public class VCKeyRemapper {
             case 57421 -> '\'';
             case 57424 -> '(';
             case 65397 -> 156;
-            case 65398 -> 'ￊ';
             case 65400 -> '\uffc8';
             case 65401 -> '\uffc9';
             case 65403 -> '\uffd1';
-            case 65404 -> 'ￍ';
             case 65406 -> '\uffd0';
             default -> 0;
         };
