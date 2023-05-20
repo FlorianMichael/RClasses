@@ -18,6 +18,7 @@
 
 package de.florianmichael.rclasses;
 
+import java.text.DecimalFormat;
 import java.util.Arrays;
 import java.util.List;
 
@@ -28,24 +29,19 @@ public final class StringUtils {
     public final static String NUMBER_CHARS = "0123456789";
     public final static List<String> ESCAPED_CHARACTERS = Arrays.asList("\t", "\b", "\n", "\r");
     public final static String NEW_LINE = ESCAPED_CHARACTERS.get(2);
+    private final static String[] BYTES_UNIT = { "B", "KiB", "MiB", "GiB", "TiB" }; // IEC 60027-2
+    private final static DecimalFormat OPTIONAL_FORMAT = new DecimalFormat("#.##");
 
     public static String format(final double places) {
         return String.format("%.2f", places);
     }
 
     public static String formatBytes(final long value) {
-        if (value < 1024L)
-            return value + " B";
-        else if (value < 1024L * 1024L)
-            return format(((double) value / 1024.0)) + " Kb";
-        else if (value < 1024L * 1024L * 1024L)
-            return format(((double) value / 1024.0 / 1024.0)) + " Mb";
-        else if (value < 1024L * 1024L * 1024L * 1024L)
-            return format(((double) value / 1024.0 / 1024.0 / 1024.0)) + " Gb";
-        else
-            return format(((double) value / 1024.0 / 1024.0 / 1024.0 / 1024.0)) + " Tb";
-    }
+        int index = (int) (Math.log(value) / Math.log(1024.0));
+        double data = value / Math.pow(1024.0, index);
 
+        return OPTIONAL_FORMAT.format(data) + " " + BYTES_UNIT[index];
+    }
 
     public static String longestOf(final List<String> strings) {
         return longestOf(strings.toArray(new String[0]));
