@@ -67,19 +67,19 @@ public class HSBColor {
         this.alpha = alpha;
     }
 
-    public double getHue() {
+    public float getHue() {
         return hue;
     }
 
-    public double getSaturation() {
+    public float getSaturation() {
         return saturation;
     }
 
-    public double getBrightness() {
+    public float getBrightness() {
         return brightness;
     }
 
-    public double getAlpha() {
+    public float getAlpha() {
         return alpha;
     }
 }

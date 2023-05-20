@@ -43,8 +43,14 @@ public class ColorUtils {
 
     public static int toDecimal(final float r, final float g, final float b, final float a) {
         return (((int) (a * 255) & 0xFF) << 24) |
-                        (((int) (r * 255) & 0xFF) << 16) |
-                        (((int) (g * 255) & 0xFF) << 8)  |
-                        (((int) (b * 255) & 0xFF));
+                (((int) (r * 255) & 0xFF) << 16) |
+                (((int) (g * 255) & 0xFF) << 8)  |
+                (((int) (b * 255) & 0xFF));
+    }
+
+    public static Color getRainbow(long delay, double time) {
+        double rainbowState = Math.ceil((System.currentTimeMillis() * time + delay) / 20.0);
+        rainbowState %= 360.0;
+        return Color.getHSBColor((float) (rainbowState / 360.0F), 1F, 1F);
     }
 }

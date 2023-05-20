@@ -18,6 +18,12 @@
 
 package de.florianmichael.rclasses.stream;
 
+import java.io.IOException;
+import java.net.URI;
+import java.nio.file.FileSystem;
+import java.nio.file.FileSystemNotFoundException;
+import java.nio.file.FileSystems;
+import java.util.Collections;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.function.Function;
 import java.util.function.Predicate;
@@ -26,5 +32,15 @@ public class StreamUtils {
 
     public static <T> Predicate<T> distinctByKey(final Function<? super T, ?> keyExtractor) {
         return t -> ConcurrentHashMap.newKeySet().add(keyExtractor.apply(t));
+    }
+
+    private FileSystem getFileSystem(final URI uri) throws IOException {
+        FileSystem fileSystem;
+        try {
+            fileSystem = FileSystems.getFileSystem(uri);
+        } catch (FileSystemNotFoundException e) {
+            fileSystem = FileSystems.newFileSystem(uri, Collections.emptyMap());
+        }
+        return fileSystem;
     }
 }

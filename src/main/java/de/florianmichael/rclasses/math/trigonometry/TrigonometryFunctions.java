@@ -19,7 +19,6 @@
 package de.florianmichael.rclasses.math.trigonometry;
 
 import de.florianmichael.rclasses.math.trigonometry.impl.*;
-import de.florianmichael.rclasses.trigonometry.impl.*;
 
 public enum TrigonometryFunctions {
 
