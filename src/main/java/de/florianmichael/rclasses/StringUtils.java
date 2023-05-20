@@ -29,6 +29,24 @@ public final class StringUtils {
     public final static List<String> ESCAPED_CHARACTERS = Arrays.asList("\t", "\b", "\n", "\r");
     public final static String NEW_LINE = ESCAPED_CHARACTERS.get(2);
 
+    public static String format(final double places) {
+        return String.format("%.2f", places);
+    }
+
+    public static String formatBytes(final long value) {
+        if (value < 1024L)
+            return value + " B";
+        else if (value < 1024L * 1024L)
+            return format(((double) value / 1024.0)) + " Kb";
+        else if (value < 1024L * 1024L * 1024L)
+            return format(((double) value / 1024.0 / 1024.0)) + " Mb";
+        else if (value < 1024L * 1024L * 1024L * 1024L)
+            return format(((double) value / 1024.0 / 1024.0 / 1024.0)) + " Gb";
+        else
+            return format(((double) value / 1024.0 / 1024.0 / 1024.0 / 1024.0)) + " Tb";
+    }
+
+
     public static String longestOf(final List<String> strings) {
         return longestOf(strings.toArray(new String[0]));
     }
