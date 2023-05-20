@@ -18,6 +18,7 @@
 
 package de.florianmichael.rclasses;
 
+import java.util.Arrays;
 import java.util.List;
 
 public final class StringUtils {
@@ -25,6 +26,8 @@ public final class StringUtils {
     public final static String LOWER_CHARS = "abdcefghijklmnopqrstuvwxyz";
     public final static String SPECIAL_CHARS = "!@#$%&*()_+-=[]|,./?><";
     public final static String NUMBER_CHARS = "0123456789";
+    public final static List<String> ESCAPED_CHARACTERS = Arrays.asList("\t", "\b", "\n", "\r");
+    public final static String NEW_LINE = ESCAPED_CHARACTERS.get(2);
 
     public static String longestOf(final List<String> strings) {
         return longestOf(strings.toArray(new String[0]));
