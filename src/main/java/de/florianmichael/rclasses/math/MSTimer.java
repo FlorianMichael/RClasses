@@ -32,4 +32,8 @@ public class MSTimer {
     public long getDelta() {
         return System.currentTimeMillis() - time;
     }
+
+    public void setTime(final long time) {
+        this.time = time;
+    }
 }
