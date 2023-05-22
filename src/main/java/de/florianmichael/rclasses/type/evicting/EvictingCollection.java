@@ -1,0 +1,41 @@
+package de.florianmichael.rclasses.type.evicting;
+
+import java.util.Collection;
+import java.util.Collections;
+
+public final class EvictingCollection<V> {
+    private final Collection<V> collection;
+
+    private final int maxSize;
+
+    EvictingCollection() {
+        this(Collections.emptyList(), 0);
+    }
+
+    public EvictingCollection(final Collection<V> collection, final int maxSize) {
+        this.collection = collection;
+        this.maxSize = maxSize;
+    }
+
+    public @SuppressWarnings("all") boolean add(final V value) {
+        final boolean removedFirstEntry;
+        if (this.isFull()) {
+            this.collection.remove(this.collection.iterator().next());
+            removedFirstEntry = true;
+        } else removedFirstEntry = false;
+        this.collection.add(value);
+        return removedFirstEntry;
+    }
+
+    public boolean isFull() {
+        return this.collection.size() >= this.maxSize;
+    }
+
+    public Collection<V> getNormalCollection() {
+        return this.collection;
+    }
+
+    public int getMaxSize() {
+        return this.maxSize;
+    }
+}
