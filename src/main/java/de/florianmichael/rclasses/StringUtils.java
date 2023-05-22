@@ -39,12 +39,11 @@ public final class StringUtils {
     public static String formatBytes(final long value) {
         int index = (int) (Math.log(value) / Math.log(1024.0));
         double data = value / Math.pow(1024.0, index);
-
         return OPTIONAL_FORMAT.format(data) + " " + BYTES_UNIT[index];
     }
 
     public static String space(final int count) {
-        return "    ".repeat(count);
+        return "\u0009".repeat(count);
     }
 
     public static String longestOf(final List<String> strings) {
