@@ -20,6 +20,5 @@ package de.florianmichael.rclasses;
 
 public enum Alignment {
     LEFT, MIDDLE, RIGHT,
-
     TOP, BOTTOM
 }

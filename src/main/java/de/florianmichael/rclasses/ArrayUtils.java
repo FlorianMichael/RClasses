@@ -22,7 +22,6 @@ import java.util.Objects;
 import java.util.function.IntFunction;
 
 public final class ArrayUtils {
-
     public static boolean[] remove(final boolean[] array, final int index) {
         final int length = array.length - 1;
         final boolean[] objs = new boolean[length];
@@ -87,7 +86,10 @@ public final class ArrayUtils {
         return objs;
     }
 
-    public static <T> T[] remove(final T[] array, final int index, final IntFunction<T[]> factory) {
+    /**
+     * @apiNote example: Arrays.remove(array, index, String[]::new);
+     */
+    public static <T>  T  [] remove(final  T  [] array, final int index, final IntFunction<T[]> factory) {
         final int length = array.length - 1;
         final T[] objs = factory.apply(length);
         if (index > 0) System.arraycopy(array, 0, objs, 0, index);
@@ -231,7 +233,10 @@ public final class ArrayUtils {
         return objs;
     }
 
-    public static <T> T[] add(final T[] array, final T adding, final IntFunction<T[]> factory) {
+    /**
+     * @apiNote example: Arrays.add(array, adding, String[]::new);
+     */
+    public static <T>  T  [] add(final  T  [] array, final  T adding, final IntFunction<T[]> factory) {
         final int length = array.length + 1;
         final T[] objs = factory.apply(length);
         System.arraycopy(array, 0, objs, 0, array.length);
@@ -239,7 +244,10 @@ public final class ArrayUtils {
         return objs;
     }
 
-    public static <T> T[] add(final T[] array, int index, final T adding, final IntFunction<T[]> factory) {
+    /**
+     * @apiNote example: Arrays.add(array, index, adding, String[]::new);
+     */
+    public static <T>  T  [] add(final  T  [] array, int index, final  T adding, final IntFunction<T[]> factory) {
         index = Math.max(0, Math.min(array.length - 1, index));
         final T[] objs = factory.apply(array.length + 1);
         objs[index] = adding;
@@ -320,7 +328,10 @@ public final class ArrayUtils {
         return objs;
     }
 
-    public static <T> T[] sub(final T[] array, final int start, final int end, final IntFunction<T[]> factory) {
+    /**
+     * @apiNote example: Arrays.sub(array, start, end, String[]::new);
+     */
+    public static <T>  T  [] sub(final  T  [] array, final int start, final int end, final IntFunction<T[]> factory) {
         final int min = Math.min(start, end), max = Math.max(start, end);
         if (min == array.length || array.length <= 1) return array.clone();
         final int length = (max - min) + 1;
@@ -385,7 +396,10 @@ public final class ArrayUtils {
         return objs;
     }
 
-    public static <T> T[] merge(final T[] array1, final T[] array2, final IntFunction<T[]> factory) {
+    /**
+     * @apiNote example: Arrays.merge(array1, array2, String[]::new);
+     */
+    public static <T>  T  [] merge(final  T  [] array1, final  T  [] array2, final IntFunction<T[]> factory) {
         final T[] objs = factory.apply(array1.length + array2.length);
         System.arraycopy(array1, 0, objs, 0, array1.length);
         System.arraycopy(array2, 0, objs, array1.length, array2.length);
@@ -434,7 +448,6 @@ public final class ArrayUtils {
         return -1;
     }
 
-
     public static int indexOf(final long[] array, final long find) {
         return indexOf(array, find, 0);
     }
@@ -479,6 +492,7 @@ public final class ArrayUtils {
         return -1;
     }
 
+
     public static int indexOf(final byte[] array, final byte find) {
         return indexOf(array, find, 0);
     }
@@ -492,6 +506,7 @@ public final class ArrayUtils {
         }
         return -1;
     }
+
 
     public static int indexOf(final char[] array, final char find) {
         return indexOf(array, find, 0);
@@ -507,11 +522,12 @@ public final class ArrayUtils {
         return -1;
     }
 
-    public static <T> int indexOf(final T[] array, final T find) {
+
+    public static <T> int indexOf(final  T  [] array, final  T find) {
         return indexOf(array, find, 0);
     }
 
-    public static <T> int indexOf(final T[] array, final T find, int startIndex) {
+    public static <T> int indexOf(final  T  [] array, final  T find, int startIndex) {
         if (array.length == 0) return -1;
         if (startIndex < 0) startIndex = 0;
         for (int i = startIndex; i < array.length; i++) {

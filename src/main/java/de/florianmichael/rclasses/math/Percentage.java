@@ -21,7 +21,7 @@ package de.florianmichael.rclasses.math;
 public class Percentage {
 
     public static Number value(final float percentageDecimal, final float base) {
-        return percentageDecimal * base / 100;
+        return percentageDecimal * base * 0.01;
     }
 
     public static Number base(final float percentageDecimal, final float value) {
@@ -33,7 +33,7 @@ public class Percentage {
     }
 
     public static Number toDecimal(final float percentage) {
-        return percentage / 100;
+        return percentage * 0.01;
     }
 
     public static Number toPercentage(final float decimal) {

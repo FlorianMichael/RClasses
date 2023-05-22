@@ -43,7 +43,6 @@ public class MathUtils {
     public static boolean isInBoundsAbsolute(final double x, final double y, final double left, final double up, final double right, final double down) {
         return isInBounds(x, y, left, right, up - left, down - right);
     }
-
     public static short sum(final short... values) {
         short value = 0;
         for (final short i : values) value += i;
@@ -74,24 +73,44 @@ public class MathUtils {
         return value;
     }
 
+    public static short avgS(final short... data) {
+        return (short) clamp(Math.round((float) sum(data) / data.length), Short.MIN_VALUE, Short.MAX_VALUE);
+    }
+
+    public static short avgS(final int... data) {
+        return (short) clamp(Math.round((float) sum(data) / data.length), Short.MIN_VALUE, Short.MAX_VALUE);
+    }
+
+    public static short avgS(final long... data) {
+        return (short) clamp(Math.round((float) sum(data) / data.length), Short.MIN_VALUE, Short.MAX_VALUE);
+    }
+
+    public static short avgS(final float... data) {
+        return (short) clamp(Math.round(sum(data) / data.length), Short.MIN_VALUE, Short.MAX_VALUE);
+    }
+
+    public static short avgS(final double... data) {
+        return (short) clamp(Math.round(clamp(sum(data), Integer.MIN_VALUE, Integer.MAX_VALUE) / data.length), Short.MIN_VALUE, Short.MAX_VALUE);
+    }
+
     public static int avgI(final short... data) {
-        return Math.round(sum(data)) / data.length;
+        return Math.round((float) sum(data) / data.length);
     }
 
     public static int avgI(final int... data) {
-        return Math.round(sum(data)) / data.length;
+        return Math.round((float) sum(data) / data.length);
     }
 
     public static int avgI(final long... data) {
-        return Math.round(sum(data)) / data.length;
+        return Math.round((float) sum(data) / data.length);
     }
 
     public static int avgI(final float... data) {
-        return Math.round(sum(data)) / data.length;
+        return Math.round(sum(data) / data.length);
     }
 
     public static int avgI(final double... data) {
-        return (int) clamp(Math.round(sum(data)), Integer.MIN_VALUE, Integer.MAX_VALUE) / data.length;
+        return (int) Math.round(clamp(sum(data), Integer.MIN_VALUE, Integer.MAX_VALUE) / data.length);
     }
 
     public static float avgF(final short... data) {
@@ -153,7 +172,6 @@ public class MathUtils {
     public static double clamp(final double value, final double minimum, final double maximum) {
         return Math.max(minimum, Math.min(maximum, value));
     }
-
     public static float median(final float... data) {
         return ((data.length % 2) == 0 ?
                 ((data[(int) (data.length * 0.5F)] + data[(int) (data.length * 0.5F) - 1]) * 0.5F) :

@@ -19,9 +19,10 @@
 package de.florianmichael.rclasses;
 
 public class ObjectArrayWrapper {
+	private static final ObjectArrayWrapper EMPTY = new ObjectArrayWrapper(new Object[0]);
 	
 	public static ObjectArrayWrapper empty() {
-		return new ObjectArrayWrapper(new Object[] {});
+		return EMPTY;
 	}
 
 	private Object[] array;
@@ -339,24 +340,24 @@ public class ObjectArrayWrapper {
 			return "";
 		}
 		
-		String out = "";
+		StringBuilder out = new StringBuilder();
 		for(int i = start; i <= end; i++) {
-			if(out.isEmpty()) {
-				out = this.getString(i);
+			if(out.length() == 0) {
+				out = new StringBuilder(this.getString(i));
 			} else {
-				out += combiner + this.getString(i);
+				out.append(combiner).append(this.getString(i));
 			}
 		}
-		return out;
+		return out.toString();
 	}
 
 
 	@Override
     public String toString() {
-	    String complete = "";
-	    for(int i = 0; i < this.array.length; i++) {
-	        complete += (complete.isEmpty()?"":", ") + this.array[i];
-        }
+	    StringBuilder complete = new StringBuilder();
+		for (Object o : this.array) {
+			complete.append((complete.length() == 0) ? "" : ", ").append(o);
+		}
         return "[" + complete + "]";
     }
 	
