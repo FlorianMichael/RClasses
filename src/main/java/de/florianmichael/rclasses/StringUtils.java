@@ -42,8 +42,12 @@ public final class StringUtils {
         return OPTIONAL_FORMAT.format(data) + " " + BYTES_UNIT[index];
     }
 
-    public static String space(final int count) {
+    public static String whitespace(final int count) {
         return "\u0009".repeat(count);
+    }
+
+    public static String space(final int count) {
+        return "\u0020".repeat(count);
     }
 
     public static String longestOf(final List<String> strings) {
