@@ -18,121 +18,139 @@
 
 package de.florianmichael.rclasses;
 
+import de.florianmichael.rclasses.type.ReverseHashMap;
+
 // https://github.com/kwhat/jnativehook/blob/master/src/java/org/jnativehook/keyboard/SwingKeyAdapter.java
 // https://gist.github.com/lilgallon/eb0cc2fc38920fb5081aba2c542eda55
-public class VCKeyRemapper {
+public class KeyboardStandards {
+    private final static ReverseHashMap<Integer, Integer> vcToVkMappings = new ReverseHashMap<>();
 
+    static {
+        registerVcToVkMapping(1, 27);
+        registerVcToVkMapping(2, '1');
+        registerVcToVkMapping(3, '2');
+        registerVcToVkMapping(4, '3');
+        registerVcToVkMapping(5, '4');
+        registerVcToVkMapping(6, '5');
+        registerVcToVkMapping(7, '6');
+        registerVcToVkMapping(8, '7');
+        registerVcToVkMapping(9, '8');
+        registerVcToVkMapping(10, '9');
+        registerVcToVkMapping(11, '0');
+        registerVcToVkMapping(12, '-');
+        registerVcToVkMapping(13, '=');
+        registerVcToVkMapping(14, '\b');
+        registerVcToVkMapping(15, '\t');
+        registerVcToVkMapping(16, 'Q');
+        registerVcToVkMapping(17, 'W');
+        registerVcToVkMapping(18, 'E');
+        registerVcToVkMapping(19, 'R');
+        registerVcToVkMapping(20, 'T');
+        registerVcToVkMapping(21, 'Y');
+        registerVcToVkMapping(22, 'U');
+        registerVcToVkMapping(23, 'I');
+        registerVcToVkMapping(24, 'O');
+        registerVcToVkMapping(25, 'P');
+        registerVcToVkMapping(26, '[');
+        registerVcToVkMapping(27, ']');
+        registerVcToVkMapping(28, '\n');
+        registerVcToVkMapping(29, 17);
+        registerVcToVkMapping(30, 'A');
+        registerVcToVkMapping(31, 'S');
+        registerVcToVkMapping(32, 'D');
+        registerVcToVkMapping(33, 'F');
+        registerVcToVkMapping(34, 'G');
+        registerVcToVkMapping(35, 'H');
+        registerVcToVkMapping(36, 'J');
+        registerVcToVkMapping(37, 'K');
+        registerVcToVkMapping(38, 'L');
+        registerVcToVkMapping(39, ';');
+        registerVcToVkMapping(40, 222);
+        registerVcToVkMapping(41, 192);
+        registerVcToVkMapping(42, 16);
+        registerVcToVkMapping(43, '\\');
+        registerVcToVkMapping(44, 'Z');
+        registerVcToVkMapping(45, 'X');
+        registerVcToVkMapping(46, 'C');
+        registerVcToVkMapping(47, 'V');
+        registerVcToVkMapping(48, 'B');
+        registerVcToVkMapping(49, 'N');
+        registerVcToVkMapping(50, 'M');
+        registerVcToVkMapping(51, ',');
+        registerVcToVkMapping(52, '.');
+        registerVcToVkMapping(53, '/');
+        registerVcToVkMapping(56, 18);
+        registerVcToVkMapping(57, ' ');
+        registerVcToVkMapping(58, 20);
+        registerVcToVkMapping(59, 'p');
+        registerVcToVkMapping(60, 'q');
+        registerVcToVkMapping(61, 'r');
+        registerVcToVkMapping(62, 's');
+        registerVcToVkMapping(63, 't');
+        registerVcToVkMapping(64, 'u');
+        registerVcToVkMapping(65, 'v');
+        registerVcToVkMapping(66, 'w');
+        registerVcToVkMapping(67, 'x');
+        registerVcToVkMapping(68, 'y');
+        registerVcToVkMapping(69, 144);
+        registerVcToVkMapping(70, 145);
+        registerVcToVkMapping(83, 'l');
+        registerVcToVkMapping(87, 'z');
+        registerVcToVkMapping(88, '{');
+        registerVcToVkMapping(91, '\uf000');
+        registerVcToVkMapping(92, '\uf001');
+        registerVcToVkMapping(93, '\uf002');
+        registerVcToVkMapping(99, '\uf003');
+        registerVcToVkMapping(100, '\uf004');
+        registerVcToVkMapping(101, '\uf005');
+        registerVcToVkMapping(102, '\uf006');
+        registerVcToVkMapping(103, '\uf007');
+        registerVcToVkMapping(104, '\uf008');
+        registerVcToVkMapping(105, '\uf009');
+        registerVcToVkMapping(106, '\uf00a');
+        registerVcToVkMapping(107, '\uf00b');
+        registerVcToVkMapping(112, 241);
+        registerVcToVkMapping(115, 523);
+        registerVcToVkMapping(121, 25);
+        registerVcToVkMapping(123, 242);
+        registerVcToVkMapping(3639, 154);
+        registerVcToVkMapping(3653, 19);
+        registerVcToVkMapping(3655, '$');
+        registerVcToVkMapping(3657, '!');
+        registerVcToVkMapping(3663, '#');
+        registerVcToVkMapping(3665, '"');
+        registerVcToVkMapping(3666, 155);
+        registerVcToVkMapping(3667, 127);
+        registerVcToVkMapping(3675, 157);
+        registerVcToVkMapping(3677, 525);
+        registerVcToVkMapping(57416, '&');
+        registerVcToVkMapping(57419, '%');
+        registerVcToVkMapping(57420, '\f');
+        registerVcToVkMapping(57421, '\'');
+        registerVcToVkMapping(57424, '(');
+        registerVcToVkMapping(65397, 156);
+        registerVcToVkMapping(65400, '\uffc8');
+        registerVcToVkMapping(65401, '\uffc9');
+        registerVcToVkMapping(65403, '\uffd1');
+        registerVcToVkMapping(65406, '\uffd0');
+    }
+
+    private static void registerVcToVkMapping(final int vcKey, final int vkKey) {
+        vcToVkMappings.put(vcKey, vkKey);
+    }
+    
     public static int vc_to_vk(final int vcKey) {
-        return switch (vcKey) {
-            case 1 -> 27;
-            case 2 -> '1';
-            case 3 -> '2';
-            case 4 -> '3';
-            case 5 -> '4';
-            case 6 -> '5';
-            case 7 -> '6';
-            case 8 -> '7';
-            case 9 -> '8';
-            case 10 -> '9';
-            case 11 -> '0';
-            case 12 -> '-';
-            case 13 -> '=';
-            case 14 -> '\b';
-            case 15 -> '\t';
-            case 16 -> 'Q';
-            case 17 -> 'W';
-            case 18 -> 'E';
-            case 19 -> 'R';
-            case 20 -> 'T';
-            case 21 -> 'Y';
-            case 22 -> 'U';
-            case 23 -> 'I';
-            case 24 -> 'O';
-            case 25 -> 'P';
-            case 26 -> '[';
-            case 27 -> ']';
-            case 28 -> '\n';
-            case 29 -> 17;
-            case 30 -> 'A';
-            case 31 -> 'S';
-            case 32 -> 'D';
-            case 33 -> 'F';
-            case 34 -> 'G';
-            case 35 -> 'H';
-            case 36 -> 'J';
-            case 37 -> 'K';
-            case 38 -> 'L';
-            case 39 -> ';';
-            case 40 -> 222;
-            case 41 -> 192;
-            case 42 -> 16;
-            case 43 -> '\\';
-            case 44 -> 'Z';
-            case 45 -> 'X';
-            case 46 -> 'C';
-            case 47 -> 'V';
-            case 48 -> 'B';
-            case 49 -> 'N';
-            case 50 -> 'M';
-            case 51 -> ',';
-            case 52 -> '.';
-            case 53 -> '/';
-            case 56 -> 18;
-            case 57 -> ' ';
-            case 58 -> 20;
-            case 59 -> 'p';
-            case 60 -> 'q';
-            case 61 -> 'r';
-            case 62 -> 's';
-            case 63 -> 't';
-            case 64 -> 'u';
-            case 65 -> 'v';
-            case 66 -> 'w';
-            case 67 -> 'x';
-            case 68 -> 'y';
-            case 69 -> 144;
-            case 70 -> 145;
-            case 83 -> 'l';
-            case 87 -> 'z';
-            case 88 -> '{';
-            case 91 -> '\uf000';
-            case 92 -> '\uf001';
-            case 93 -> '\uf002';
-            case 99 -> '\uf003';
-            case 100 -> '\uf004';
-            case 101 -> '\uf005';
-            case 102 -> '\uf006';
-            case 103 -> '\uf007';
-            case 104 -> '\uf008';
-            case 105 -> '\uf009';
-            case 106 -> '\uf00a';
-            case 107 -> '\uf00b';
-            case 112 -> 241;
-            case 115 -> 523;
-            case 121 -> 25;
-            case 123 -> 242;
-            case 3639 -> 154;
-            case 3653 -> 19;
-            case 3655 -> '$';
-            case 3657 -> '!';
-            case 3663 -> '#';
-            case 3665 -> '"';
-            case 3666 -> 155;
-            case 3667 -> 127;
-            case 3675 -> 157;
-            case 3677 -> 525;
-            case 57416 -> '&';
-            case 57419 -> '%';
-            case 57420 -> '\f';
-            case 57421 -> '\'';
-            case 57424 -> '(';
-            case 65397 -> 156;
-            case 65400 -> '\uffc8';
-            case 65401 -> '\uffc9';
-            case 65403 -> '\uffd1';
-            case 65406 -> '\uffd0';
-            default -> 0;
-        };
+        if (vcToVkMappings.containsKey(vcKey)) {
+            return vcToVkMappings.get(vcKey);
+        }
+        return 0;
+    }
+
+    public static int vk_to_vc(final int vkKey) {
+        if (vcToVkMappings.containsValue(vkKey)) {
+            return vcToVkMappings.getKey(vkKey);
+        }
+        return 0;
     }
 
     public static int vk_to_glfw(final int vk_code) {

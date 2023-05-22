@@ -45,8 +45,14 @@ public class ColorUtils {
         };
     }
 
-    public static int toDecimal(final float [] rgba) {
+    public static int toDecimal(final float[] rgba) {
         return toDecimal(rgba[0], rgba[1], rgba[2], rgba[3]);
+    }
+
+    public static int toDecimal(final float r, final float g, final float b) {
+        return (((int) (r * 255) & 0xFF) << 16) |
+                (((int) (g * 255) & 0xFF) << 8)  |
+                (((int) (b * 255) & 0xFF));
     }
 
     public static int toDecimal(final float r, final float g, final float b, final float a) {
@@ -56,9 +62,14 @@ public class ColorUtils {
                 (((int) (b * 255) & 0xFF));
     }
 
-    public static Color getRainbow(long delay, double time) {
+    public static Color getRainbow() {
+        return getRainbow(200, 0.5);
+    }
+
+    public static Color getRainbow(final long delay, final double time) {
         double rainbowState = Math.ceil((System.currentTimeMillis() * time + delay) / 20.0);
         rainbowState %= 360.0;
+
         return Color.getHSBColor((float) (rainbowState / 360.0F), 1F, 1F);
     }
 }
