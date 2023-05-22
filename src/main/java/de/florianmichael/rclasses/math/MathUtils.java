@@ -24,25 +24,84 @@ import java.util.List;
 import java.util.function.IntFunction;
 
 public class MathUtils {
+    public static float interpolate(final float start, final float end, final float progress) {
+        return (1 - progress) * start + progress * end;
+    }
 
     public static double interpolate(final double start, final double end, final double progress) {
-        return start + (end - start) * progress;
+        return (1 - progress) * start + progress * end;
+    }
+
+    public static short conjugate(short value) {
+        if (value == Short.MIN_VALUE) return Short.MAX_VALUE;
+        if (value == Short.MAX_VALUE) return Short.MIN_VALUE;
+        return (short) -value;
     }
 
     public static int conjugate(int value) {
         if (value == Integer.MIN_VALUE) return Integer.MAX_VALUE;
         if (value == Integer.MAX_VALUE) return Integer.MIN_VALUE;
-
         return -value;
+    }
+
+    public static long conjugate(long value) {
+        if (value == Long.MIN_VALUE) return Long.MAX_VALUE;
+        if (value == Long.MAX_VALUE) return Long.MIN_VALUE;
+        return -value;
+    }
+
+    public static float conjugate(float value) {
+        if (value == Float.MIN_VALUE) return Float.MAX_VALUE;
+        if (value == Float.MAX_VALUE) return Float.MIN_VALUE;
+        return -value;
+    }
+
+    public static double conjugate(double value) {
+        if (value == Double.MIN_VALUE) return Double.MAX_VALUE;
+        if (value == Double.MAX_VALUE) return Double.MIN_VALUE;
+        return -value;
+    }
+
+    public static boolean isInBounds(final short x, final short y, final short left, final short up, final short right, final short down) {
+        return x >= left && x <= left + right && y >= up && y <= up + down;
+    }
+
+    public static boolean isInBounds(final int x, final int y, final int left, final int up, final int right, final int down) {
+        return x >= left && x <= left + right && y >= up && y <= up + down;
+    }
+
+    public static boolean isInBounds(final long x, final long y, final long left, final long up, final long right, final long down) {
+        return x >= left && x <= left + right && y >= up && y <= up + down;
+    }
+    
+    public static boolean isInBounds(final float x, final float y, final float left, final float up, final float right, final float down) {
+        return x >= left && x <= left + right && y >= up && y <= up + down;
     }
 
     public static boolean isInBounds(final double x, final double y, final double left, final double up, final double right, final double down) {
         return x >= left && x <= left + right && y >= up && y <= up + down;
     }
 
+    public static boolean isInBoundsAbsolute(final short x, final short y, final short left, final short up, final short right, final short down) {
+        return isInBounds(x, y, left, right, up - left, down - right);
+    }
+
+    public static boolean isInBoundsAbsolute(final int x, final int y, final int left, final int up, final int right, final int down) {
+        return isInBounds(x, y, left, right, up - left, down - right);
+    }
+
+    public static boolean isInBoundsAbsolute(final long x, final long y, final long left, final long up, final long right, final long down) {
+        return isInBounds(x, y, left, right, up - left, down - right);
+    }
+
+    public static boolean isInBoundsAbsolute(final float x, final float y, final float left, final float up, final float right, final float down) {
+        return isInBounds(x, y, left, right, up - left, down - right);
+    }
+    
     public static boolean isInBoundsAbsolute(final double x, final double y, final double left, final double up, final double right, final double down) {
         return isInBounds(x, y, left, right, up - left, down - right);
     }
+
     public static short sum(final short... values) {
         short value = 0;
         for (final short i : values) value += i;
@@ -172,6 +231,7 @@ public class MathUtils {
     public static double clamp(final double value, final double minimum, final double maximum) {
         return Math.max(minimum, Math.min(maximum, value));
     }
+
     public static float median(final float... data) {
         return ((data.length % 2) == 0 ?
                 ((data[(int) (data.length * 0.5F)] + data[(int) (data.length * 0.5F) - 1]) * 0.5F) :

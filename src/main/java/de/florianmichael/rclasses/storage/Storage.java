@@ -18,51 +18,71 @@
 
 package de.florianmichael.rclasses.storage;
 
+import de.florianmichael.rclasses.math.MathUtils;
+
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.function.Consumer;
+import java.util.function.Supplier;
 
 public abstract class Storage<T> {
-    private final List<T> list = new CopyOnWriteArrayList<>();
+    private final List<T> list;
+    private Consumer<T> addConsumer, removeConsumer;
 
-    private Consumer<T> additionConsumer;
-    private Consumer<T> removeConsumer;
+    public Storage() {
+        this(CopyOnWriteArrayList::new);
+    }
+
+    public Storage(final Supplier<List<T>> list) {
+        this.list = list.get();
+    }
 
     public abstract void init();
 
     @SafeVarargs
-    public final void add(T... t) {
-        for (T t1 : t) insert(t1, list.size());
-    }
-
-    public void insert(T t, int index) {
-        if (!list.contains(t)) {
-            list.add(index, t);
-            if (this.additionConsumer != null) this.additionConsumer.accept(t);
-        }
+    public final void add(final T... t) {
+        for (T t1 : t) addBy(t1, list.size());
     }
 
     @SafeVarargs
     public final void remove(T... t) {
         for (T t1 : t) {
-            list.remove(t1);
+            this.list.remove(t1);
             if (this.removeConsumer != null) this.removeConsumer.accept(t1);
         }
     }
 
-    public T get(final Class<T> clazz) {
-        return list.stream().filter(clazz::equals).findFirst().orElse(null);
+    public void addBy(final T t, final int index) {
+        if (list.contains(t)) return;
+        this.list.add(MathUtils.clamp(index, 0, this.list.size()), t);
+        if (this.addConsumer != null) this.addConsumer.accept(t);
+    }
+
+    public void insert(final T t, int index) {
+        index = MathUtils.clamp(index, 0, this.list.size());
+        this.removeConsumer.accept(this.list.get(index));
+        this.list.set(index, t);
+        this.addConsumer.accept(this.list.get(index));
+    }
+
+    public void removeBy(final int index) {
+        this.list.remove(MathUtils.clamp(index, 0, this.list.size()));
+    }
+
+    @SuppressWarnings("unchecked")
+    public <V extends T> V getByClass(final Class<V> clazz) {
+        return (V) this.list.stream().filter(clazz::equals).findFirst().orElse(null);
     }
 
     public List<T> getList() {
-        return list;
+        return this.list;
     }
 
-    public void setAdditionConsumer(Consumer<T> additionConsumer) {
-        this.additionConsumer = additionConsumer;
+    public void setAddConsumer(final Consumer<T> addConsumer) {
+        this.addConsumer = addConsumer;
     }
 
-    public void setRemoveConsumer(Consumer<T> removeConsumer) {
+    public void setRemoveConsumer(final Consumer<T> removeConsumer) {
         this.removeConsumer = removeConsumer;
     }
 }

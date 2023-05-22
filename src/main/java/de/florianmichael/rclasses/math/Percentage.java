@@ -19,24 +19,43 @@
 package de.florianmichael.rclasses.math;
 
 public class Percentage {
+    public static float value(final float percentageDecimal, final float base) {
+        return percentageDecimal * base * 0.01F; // * 0.01 = : 100
+    }
 
-    public static Number value(final float percentageDecimal, final float base) {
+    public static float base(final float percentageDecimal, final float value) {
+        return (value / percentageDecimal) * 100F;
+    }
+
+    public static float percentage(final float value, final float base) {
+        return (value / base) * 100F;
+    }
+
+    public static float toDecimal(final float percentage) {
+        return percentage * 0.01F; // * 0.01 = : 100
+    }
+
+    public static float toPercentage(final float decimal) {
+        return decimal * 100F;
+    }
+
+    public static double value(final double percentageDecimal, final double base) {
         return percentageDecimal * base * 0.01; // * 0.01 = : 100
     }
 
-    public static Number base(final float percentageDecimal, final float value) {
-        return (value / percentageDecimal) * 100;
+    public static double base(final double percentageDecimal, final double value) {
+        return (value / percentageDecimal) * 100D;
     }
 
-    public static Number percentage(final float value, final float base) {
-        return (value / base) * 100;
+    public static double percentage(final double value, final double base) {
+        return (value / base) * 100D;
     }
 
-    public static Number toDecimal(final float percentage) {
-        return percentage * 0.01; // * 0.01 = : 100
+    public static double toDecimal(final double percentage) {
+        return percentage * 0.01D; // * 0.01 = : 100
     }
 
-    public static Number toPercentage(final float decimal) {
-        return decimal * 100;
+    public static double toPercentage(final double decimal) {
+        return decimal * 100D;
     }
 }
