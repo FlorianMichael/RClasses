@@ -23,12 +23,9 @@ import de.florianmichael.rclasses.type.vec.b.LongVec;
 public final class ImmutableLongVec extends LongVec {
     private final long x, y, z;
 
-
-    @SuppressWarnings("all")
     ImmutableLongVec() {
         this(0, 0, 0);
     }
-
 
     public ImmutableLongVec(final long x, final long y, final long z) {
         this.x = x;
@@ -36,30 +33,35 @@ public final class ImmutableLongVec extends LongVec {
         this.z = z;
     }
 
-
-    public @Override long getX() {
+    @Override
+    public long getX() {
         return this.x;
     }
 
-    public @Override long getY() {
+    @Override
+    public long getY() {
         return this.y;
     }
 
-    public @Override long getZ() {
+    @Override
+    public long getZ() {
         return this.z;
     }
 
-    public @Override void setX(final long x) {
+    @Override
+    public void setX(final long x) {
     }
 
-    public @Override void setY(final long y) {
+    @Override
+    public void setY(final long y) {
     }
 
-    public @Override void setZ(final long z) {
+    @Override
+    public void setZ(final long z) {
     }
 
-
-    public @Override String toString() {
+    @Override
+    public String toString() {
         return String.format(
                 "ImmutableLongVec{x=%d, y=%d, z=%d}",
                 this.getX(),

@@ -22,37 +22,37 @@ public final class MutablePair<A, B> extends Pair<A, B> {
     private A first;
     private B second;
 
-
-    @SuppressWarnings("all")
     MutablePair() {
         this(null, null);
     }
-
 
     public MutablePair(final A first, final B second) {
         this.first = first;
         this.second = second;
     }
 
-
-    public @Override A getFirst() {
+    @Override
+    public A getFirst() {
         return this.first;
     }
 
-    public @Override B getSecond() {
+    @Override
+    public B getSecond() {
         return this.second;
     }
 
-    public @Override void setFirst(final A first) {
+    @Override
+    public void setFirst(final A first) {
         this.first = first;
     }
 
-    public @Override void setSecond(final B second) {
+    @Override
+    public void setSecond(final B second) {
         this.second = second;
     }
 
-
-    public @Override String toString() {
+    @Override
+    public String toString() {
         return String.format(
                 "MutablePair{first=%s, second=%s}",
                 this.getFirst(),

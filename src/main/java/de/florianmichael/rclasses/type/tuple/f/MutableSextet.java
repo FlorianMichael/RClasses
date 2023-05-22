@@ -18,7 +18,6 @@
 
 package de.florianmichael.rclasses.type.tuple.f;
 
-
 public final class MutableSextet<A, B, C, D, E, F> extends Sextet<A, B, C, D, E, F> {
     private A first;
     private B second;
@@ -27,12 +26,9 @@ public final class MutableSextet<A, B, C, D, E, F> extends Sextet<A, B, C, D, E,
     private E fifth;
     private F sixth;
 
-
-    @SuppressWarnings("all")
     MutableSextet() {
         this(null, null, null, null, null, null);
     }
-
 
     public MutableSextet(final A first, final B second,
                          final C third, final D fourth,
@@ -45,57 +41,68 @@ public final class MutableSextet<A, B, C, D, E, F> extends Sextet<A, B, C, D, E,
         this.sixth = sixth;
     }
 
-
-    public @Override A getFirst() {
+    @Override
+    public A getFirst() {
         return this.first;
     }
 
-    public @Override B getSecond() {
+    @Override
+    public B getSecond() {
         return this.second;
     }
 
-    public @Override C getThird() {
+    @Override
+    public C getThird() {
         return this.third;
     }
 
-    public @Override D getFourth() {
+    @Override
+    public D getFourth() {
         return this.fourth;
     }
 
-    public @Override E getFifth() {
+    @Override
+    public E getFifth() {
         return this.fifth;
     }
 
-    public @Override F getSixth() {
+    @Override
+    public F getSixth() {
         return this.sixth;
     }
 
-    public @Override void setFirst(final A first) {
+    @Override
+    public void setFirst(final A first) {
         this.first = first;
     }
 
-    public @Override void setSecond(final B second) {
+    @Override
+    public void setSecond(final B second) {
         this.second = second;
     }
 
-    public @Override void setThird(final C third) {
+    @Override
+    public void setThird(final C third) {
         this.third = third;
     }
 
-    public @Override void setFourth(final D fourth) {
+    @Override
+    public void setFourth(final D fourth) {
         this.fourth = fourth;
     }
 
-    public @Override void setFifth(final E fifth) {
+    @Override
+    public void setFifth(final E fifth) {
         this.fifth = fifth;
     }
 
-    public @Override void setSixth(final F sixth) {
+    @Override
+    public void setSixth(final F sixth) {
         this.sixth = sixth;
     }
 
-
-    public @Override String toString() {
+    @Override
+    public String toString() {
         return String.format(
                 "MutableSextet{first=%s, second=%s, third=%s, fourth=%s, fifth=%s, sixth=%s}",
                 this.getFirst(),

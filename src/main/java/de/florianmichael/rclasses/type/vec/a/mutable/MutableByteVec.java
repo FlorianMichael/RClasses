@@ -23,37 +23,37 @@ import de.florianmichael.rclasses.type.vec.a.ByteVec;
 public final class MutableByteVec extends ByteVec {
     private byte x, y;
 
-
-    @SuppressWarnings("all")
     MutableByteVec() {
         this((byte) 0, (byte) 0);
     }
-
 
     public MutableByteVec(final byte x, final byte y) {
         this.x = x;
         this.y = y;
     }
 
-
-    public @Override byte getX() {
+    @Override
+    public byte getX() {
         return this.x;
     }
 
-    public @Override byte getY() {
+    @Override
+    public byte getY() {
         return this.y;
     }
 
-    public @Override void setX(final byte x) {
+    @Override
+    public void setX(final byte x) {
         this.x = x;
     }
 
-    public @Override void setY(final byte y) {
+    @Override
+    public void setY(final byte y) {
         this.y = y;
     }
 
-
-    public @Override String toString() {
+    @Override
+    public String toString() {
         return String.format(
                 "MutableByteVec{x=%d, y=%d}",
                 this.getX(),

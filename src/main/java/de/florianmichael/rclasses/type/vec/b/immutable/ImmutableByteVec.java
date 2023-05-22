@@ -23,12 +23,9 @@ import de.florianmichael.rclasses.type.vec.b.ByteVec;
 public final class ImmutableByteVec extends ByteVec {
     private final byte x, y, z;
 
-
-    @SuppressWarnings("all")
     ImmutableByteVec() {
         this((byte) 0, (byte) 0, (byte) 0);
     }
-
 
     public ImmutableByteVec(final byte x, final byte y, final byte z) {
         this.x = x;
@@ -36,30 +33,35 @@ public final class ImmutableByteVec extends ByteVec {
         this.z = z;
     }
 
-
-    public @Override byte getX() {
+    @Override
+    public byte getX() {
         return this.x;
     }
 
-    public @Override byte getY() {
+    @Override
+    public byte getY() {
         return this.y;
     }
 
-    public @Override byte getZ() {
+    @Override
+    public byte getZ() {
         return this.z;
     }
 
-    public @Override void setX(final byte x) {
+    @Override
+    public void setX(final byte x) {
     }
 
-    public @Override void setY(final byte y) {
+    @Override
+    public void setY(final byte y) {
     }
 
-    public @Override void setZ(final byte z) {
+    @Override
+    public void setZ(final byte z) {
     }
 
-
-    public @Override String toString() {
+    @Override
+    public String toString() {
         return String.format(
                 "ImmutableByteVec{x=%d, y=%d, z=%d}",
                 this.getX(),

@@ -18,7 +18,6 @@
 
 package de.florianmichael.rclasses.type.tuple.d;
 
-
 public final class ImmutableQuartet<A, B, C, D> extends Quartet<A, B, C, D> {
     private static final UnsupportedOperationException COULD_NOT_SET = new UnsupportedOperationException("immutable pair-values aren't re-assignable!");
     private final A first;
@@ -26,12 +25,9 @@ public final class ImmutableQuartet<A, B, C, D> extends Quartet<A, B, C, D> {
     private final C third;
     private final D fourth;
 
-
-    @SuppressWarnings("all")
     ImmutableQuartet() {
         this(null, null, null, null);
     }
-
 
     public ImmutableQuartet(final A first, final B second,
                             final C third, final D fourth) {
@@ -41,41 +37,48 @@ public final class ImmutableQuartet<A, B, C, D> extends Quartet<A, B, C, D> {
         this.fourth = fourth;
     }
 
-
-    public @Override A getFirst() {
+    @Override
+    public A getFirst() {
         return this.first;
     }
 
-    public @Override B getSecond() {
+    @Override
+    public B getSecond() {
         return this.second;
     }
 
-    public @Override C getThird() {
+    @Override
+    public C getThird() {
         return this.third;
     }
 
-    public @Override D getFourth() {
+    @Override
+    public D getFourth() {
         return this.fourth;
     }
 
-    public @Override void setFirst(final A first) throws UnsupportedOperationException {
+    @Override
+    public void setFirst(final A first) throws UnsupportedOperationException {
         throw COULD_NOT_SET;
     }
 
-    public @Override void setSecond(final B second) throws UnsupportedOperationException {
+    @Override
+    public void setSecond(final B second) throws UnsupportedOperationException {
         throw COULD_NOT_SET;
     }
 
-    public @Override void setThird(final C third) throws UnsupportedOperationException {
+    @Override
+    public void setThird(final C third) throws UnsupportedOperationException {
         throw COULD_NOT_SET;
     }
 
-    public @Override void setFourth(final D fourth) throws UnsupportedOperationException {
+    @Override
+    public void setFourth(final D fourth) throws UnsupportedOperationException {
         throw COULD_NOT_SET;
     }
 
-
-    public @Override String toString() {
+    @Override
+    public String toString() {
         return String.format(
                 "ImmutableQuartet{first=%s, second=%s, third=%s, fourth=%s}",
                 this.getFirst(),

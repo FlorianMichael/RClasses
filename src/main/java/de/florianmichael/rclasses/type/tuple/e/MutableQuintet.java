@@ -18,7 +18,6 @@
 
 package de.florianmichael.rclasses.type.tuple.e;
 
-
 public final class MutableQuintet<A, B, C, D, E> extends Quintet<A, B, C, D, E> {
     private A first;
     private B second;
@@ -26,12 +25,9 @@ public final class MutableQuintet<A, B, C, D, E> extends Quintet<A, B, C, D, E> 
     private D fourth;
     private E fifth;
 
-
-    @SuppressWarnings("all")
     MutableQuintet() {
         this(null, null, null, null, null);
     }
-
 
     public MutableQuintet(final A first, final B second,
                           final C third, final D fourth, final E fifth) {
@@ -42,49 +38,58 @@ public final class MutableQuintet<A, B, C, D, E> extends Quintet<A, B, C, D, E> 
         this.fifth = fifth;
     }
 
-
-    public @Override A getFirst() {
+    @Override
+    public A getFirst() {
         return this.first;
     }
 
-    public @Override B getSecond() {
+    @Override
+    public B getSecond() {
         return this.second;
     }
 
-    public @Override C getThird() {
+    @Override
+    public C getThird() {
         return this.third;
     }
 
-    public @Override D getFourth() {
+    @Override
+    public D getFourth() {
         return this.fourth;
     }
 
-    public @Override E getFifth() {
+    @Override
+    public E getFifth() {
         return this.fifth;
     }
 
-    public @Override void setFirst(final A first) {
+    @Override
+    public void setFirst(final A first) {
         this.first = first;
     }
 
-    public @Override void setSecond(final B second) {
+    @Override
+    public void setSecond(final B second) {
         this.second = second;
     }
 
-    public @Override void setThird(final C third) {
+    @Override
+    public void setThird(final C third) {
         this.third = third;
     }
 
-    public @Override void setFourth(final D fourth) {
+    @Override
+    public void setFourth(final D fourth) {
         this.fourth = fourth;
     }
 
-    public @Override void setFifth(final E fifth) {
+    @Override
+    public void setFifth(final E fifth) {
         this.fifth = fifth;
     }
 
-
-    public @Override String toString() {
+    @Override
+    public String toString() {
         return String.format(
                 "MutableQuintet{first=%s, second=%s, third=%s, fourth=%s, fifth=%s}",
                 this.getFirst(),

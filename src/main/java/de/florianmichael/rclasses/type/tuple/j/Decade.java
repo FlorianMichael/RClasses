@@ -17,8 +17,6 @@
  */
 
 package de.florianmichael.rclasses.type.tuple.j;
-
-
 public abstract class Decade<A, B, C, D, E, F, G, H, I, J> {
 
     public abstract A getFirst();
@@ -60,9 +58,8 @@ public abstract class Decade<A, B, C, D, E, F, G, H, I, J> {
     public abstract void setNinth(final I ninth);
 
     public abstract void setTenth(final J tenth);
-
-
-    public @Override String toString() {
+    @Override
+    public String toString() {
         return String.format(
                 "Decade{first=%s, second=%s, third=%s, fourth=%s, fifth=%s, sixth=%s, seventh=%s, eight=%s, ninth=%s, tenth=%s}",
                 this.getFirst(),

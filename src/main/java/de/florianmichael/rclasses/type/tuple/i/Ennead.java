@@ -17,8 +17,6 @@
  */
 
 package de.florianmichael.rclasses.type.tuple.i;
-
-
 public abstract class Ennead<A, B, C, D, E, F, G, H, I> {
 
     public abstract A getFirst();
@@ -56,9 +54,8 @@ public abstract class Ennead<A, B, C, D, E, F, G, H, I> {
     public abstract void setEight(final H eight);
 
     public abstract void setNinth(final I ninth);
-
-
-    public @Override String toString() {
+    @Override
+    public String toString() {
         return String.format(
                 "Ennead{first=%s, second=%s, third=%s, fourth=%s, fifth=%s, sixth=%s, seventh=%s, eight=%s, ninth=%s}",
                 this.getFirst(),

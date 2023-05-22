@@ -24,36 +24,37 @@ public final class ImmutablePair<A, B> extends Pair<A, B> {
     private final A first;
     private final B second;
 
-
-    @SuppressWarnings("all")
     ImmutablePair() {
         this(null, null);
     }
-
 
     public ImmutablePair(final A first, final B second) {
         this.first = first;
         this.second = second;
     }
 
-    public @Override A getFirst() {
+    @Override
+    public A getFirst() {
         return this.first;
     }
 
-    public @Override void setFirst(final A first) throws UnsupportedOperationException {
+    @Override
+    public void setFirst(final A first) throws UnsupportedOperationException {
         throw COULD_NOT_SET;
     }
 
-    public @Override B getSecond() {
+    @Override
+    public B getSecond() {
         return this.second;
     }
 
-    public @Override void setSecond(final B second) throws UnsupportedOperationException {
+    @Override
+    public void setSecond(final B second) throws UnsupportedOperationException {
         throw COULD_NOT_SET;
     }
 
-
-    public @Override String toString() {
+    @Override
+    public String toString() {
         return String.format(
                 "ImmutablePair{first=%s, second=%s}",
                 this.getFirst(),

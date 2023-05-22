@@ -18,18 +18,14 @@
 
 package de.florianmichael.rclasses.type.tuple.c;
 
-
 public final class MutableTriplet<A, B, C> extends Triplet<A, B, C> {
     private A first;
     private B second;
     private C third;
 
-
-    @SuppressWarnings("all")
     MutableTriplet() {
         this(null, null, null);
     }
-
 
     public MutableTriplet(final A first, final B second, final C third) {
         this.first = first;
@@ -37,33 +33,38 @@ public final class MutableTriplet<A, B, C> extends Triplet<A, B, C> {
         this.third = third;
     }
 
-
-    public @Override A getFirst() {
+    @Override
+    public A getFirst() {
         return this.first;
     }
 
-    public @Override B getSecond() {
+    @Override
+    public B getSecond() {
         return this.second;
     }
 
-    public @Override C getThird() {
+    @Override
+    public C getThird() {
         return this.third;
     }
 
-    public @Override void setFirst(final A first) {
+    @Override
+    public void setFirst(final A first) {
         this.first = first;
     }
 
-    public @Override void setSecond(final B second) {
+    @Override
+    public void setSecond(final B second) {
         this.second = second;
     }
 
-    public @Override void setThird(final C third) {
+    @Override
+    public void setThird(final C third) {
         this.third = third;
     }
 
-
-    public @Override String toString() {
+    @Override
+    public String toString() {
         return String.format(
                 "MutableTriplet{first=%s, second=%s, third=%s}",
                 this.getFirst(),

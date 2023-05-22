@@ -18,43 +18,28 @@
 
 package de.florianmichael.rclasses.type.tuple.h;
 
-
 public abstract class Octet<A, B, C, D, E, F, G, H> {
 
     public abstract A getFirst();
-
     public abstract B getSecond();
-
     public abstract C getThird();
-
     public abstract D getFourth();
-
     public abstract E getFifth();
-
     public abstract F getSixth();
-
     public abstract G getSeventh();
-
     public abstract H getEight();
 
     public abstract void setFirst(final A first);
-
     public abstract void setSecond(final B second);
-
     public abstract void setThird(final C third);
-
     public abstract void setFourth(final D third);
-
     public abstract void setFifth(final E fifth);
-
     public abstract void setSixth(final F sixth);
-
     public abstract void setSeventh(final G sixth);
-
     public abstract void setEight(final H eight);
 
-
-    public @Override String toString() {
+    @Override
+    public String toString() {
         return String.format(
                 "Octet{first=%s, second=%s, third=%s, fourth=%s, fifth=%s, sixth=%s, seventh=%s, eight=%s}",
                 this.getFirst(),

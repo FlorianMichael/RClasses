@@ -23,12 +23,9 @@ import de.florianmichael.rclasses.type.vec.b.DoubleVec;
 public final class ImmutableDoubleVec extends DoubleVec {
     private final double x, y, z;
 
-
-    @SuppressWarnings("all")
     ImmutableDoubleVec() {
         this(0, 0, 0);
     }
-
 
     public ImmutableDoubleVec(final double x, final double y, final double z) {
         this.x = x;
@@ -36,30 +33,35 @@ public final class ImmutableDoubleVec extends DoubleVec {
         this.z = z;
     }
 
-
-    public @Override double getX() {
+    @Override
+    public double getX() {
         return this.x;
     }
 
-    public @Override double getY() {
+    @Override
+    public double getY() {
         return this.y;
     }
 
-    public @Override double getZ() {
+    @Override
+    public double getZ() {
         return this.z;
     }
 
-    public @Override void setX(final double x) {
+    @Override
+    public void setX(final double x) {
     }
 
-    public @Override void setY(final double y) {
+    @Override
+    public void setY(final double y) {
     }
 
-    public @Override void setZ(final double z) {
+    @Override
+    public void setZ(final double z) {
     }
 
-
-    public @Override String toString() {
+    @Override
+    public String toString() {
         return String.format(
                 "ImmutableDoubleVec{x=%f, y=%f, z=%f}",
                 this.getX(),
