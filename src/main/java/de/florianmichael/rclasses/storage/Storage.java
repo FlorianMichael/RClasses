@@ -18,13 +18,15 @@
 
 package de.florianmichael.rclasses.storage;
 
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.function.Consumer;
 
 public abstract class Storage<T> {
     private final List<T> list = new CopyOnWriteArrayList<>();
+
+    private Consumer<T> additionConsumer;
+    private Consumer<T> removeConsumer;
 
     public abstract void init();
 
@@ -34,19 +36,33 @@ public abstract class Storage<T> {
     }
 
     public void insert(T t, int index) {
-        if (!list.contains(t)) list.add(index, t);
+        if (!list.contains(t)) {
+            list.add(index, t);
+            if (this.additionConsumer != null) this.additionConsumer.accept(t);
+        }
     }
 
     @SafeVarargs
     public final void remove(T... t) {
-        list.removeAll(Arrays.stream(t).toList());
+        for (T t1 : t) {
+            list.remove(t1);
+            if (this.removeConsumer != null) this.removeConsumer.accept(t1);
+        }
     }
 
     public T get(final Class<T> clazz) {
-        return list.stream().filter(t -> t.getClass() == clazz).findFirst().orElse(null);
+        return list.stream().filter(clazz::equals).findFirst().orElse(null);
     }
 
     public List<T> getList() {
         return list;
+    }
+
+    public void setAdditionConsumer(Consumer<T> additionConsumer) {
+        this.additionConsumer = additionConsumer;
+    }
+
+    public void setRemoveConsumer(Consumer<T> removeConsumer) {
+        this.removeConsumer = removeConsumer;
     }
 }
