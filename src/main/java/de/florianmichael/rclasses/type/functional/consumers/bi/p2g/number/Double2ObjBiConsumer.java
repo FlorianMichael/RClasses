@@ -25,7 +25,8 @@ public interface Double2ObjBiConsumer<V> extends BiConsumer<Double, V> {
     void acceptDouble(final double left, final V right);
 
     @Deprecated
-    default @Override void accept(final Double left, final V right) {
+    @Override
+    default void accept(final Double left, final V right) {
         this.acceptDouble(left, right);
     }
 
@@ -37,7 +38,8 @@ public interface Double2ObjBiConsumer<V> extends BiConsumer<Double, V> {
     }
 
     @Deprecated
-    default @Override BiConsumer<Double, V> andThen(final BiConsumer<? super Double, ? super V> after) {
+    @Override
+    default BiConsumer<Double, V> andThen(final BiConsumer<? super Double, ? super V> after) {
         return (l, r) -> {
             this.acceptDouble(l, r);
             after.accept(l, r);

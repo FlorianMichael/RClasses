@@ -25,7 +25,8 @@ public interface IntConsumer extends Consumer<Integer> {
     void acceptInt(final int value);
 
     @Deprecated
-    default @Override void accept(final Integer value) {
+    @Override
+    default void accept(final Integer value) {
         this.acceptInt(value);
     }
 
@@ -37,7 +38,8 @@ public interface IntConsumer extends Consumer<Integer> {
     }
 
     @Deprecated
-    default @Override Consumer<Integer> andThen(final Consumer<? super Integer> after) {
+    @Override
+    default Consumer<Integer> andThen(final Consumer<? super Integer> after) {
         return (value) -> {
             this.acceptInt(value);
             after.accept(value);

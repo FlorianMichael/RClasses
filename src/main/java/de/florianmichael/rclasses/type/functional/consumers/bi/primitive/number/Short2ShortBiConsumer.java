@@ -25,7 +25,8 @@ public interface Short2ShortBiConsumer extends BiConsumer<Short, Short> {
     void acceptShort(final short left, final short right);
 
     @Deprecated
-    default @Override void accept(final Short left, final Short right) {
+    @Override
+    default void accept(final Short left, final Short right) {
         this.acceptShort(left, right);
     }
 
@@ -37,7 +38,8 @@ public interface Short2ShortBiConsumer extends BiConsumer<Short, Short> {
     }
 
     @Deprecated
-    default @Override BiConsumer<Short, Short> andThen(final BiConsumer<? super Short, ? super Short> after) {
+    @Override
+    default BiConsumer<Short, Short> andThen(final BiConsumer<? super Short, ? super Short> after) {
         return (l, r) -> {
             this.acceptShort(l, r);
             after.accept(l, r);

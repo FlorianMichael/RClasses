@@ -25,7 +25,8 @@ public interface LongConsumer extends Consumer<Long> {
     void acceptLong(final long value);
 
     @Deprecated
-    default @Override void accept(final Long value) {
+    @Override
+    default void accept(final Long value) {
         this.acceptLong(value);
     }
 
@@ -37,7 +38,8 @@ public interface LongConsumer extends Consumer<Long> {
     }
 
     @Deprecated
-    default @Override Consumer<Long> andThen(final Consumer<? super Long> after) {
+    @Override
+    default Consumer<Long> andThen(final Consumer<? super Long> after) {
         return (value) -> {
             this.acceptLong(value);
             after.accept(value);

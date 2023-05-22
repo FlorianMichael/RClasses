@@ -25,7 +25,8 @@ public interface FloatConsumer extends Consumer<Float> {
     void acceptFloat(final float value);
 
     @Deprecated
-    default @Override void accept(final Float value) {
+    @Override
+    default void accept(final Float value) {
         this.acceptFloat(value);
     }
 
@@ -37,7 +38,8 @@ public interface FloatConsumer extends Consumer<Float> {
     }
 
     @Deprecated
-    default @Override Consumer<Float> andThen(final Consumer<? super Float> after) {
+    @Override
+    default Consumer<Float> andThen(final Consumer<? super Float> after) {
         return (value) -> {
             this.acceptFloat(value);
             after.accept(value);

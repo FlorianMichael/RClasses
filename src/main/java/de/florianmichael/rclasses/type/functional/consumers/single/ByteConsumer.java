@@ -25,7 +25,8 @@ public interface ByteConsumer extends Consumer<Byte> {
     void acceptByte(final byte value);
 
     @Deprecated
-    default @Override void accept(final Byte value) {
+    @Override
+    default void accept(final Byte value) {
         this.acceptByte(value);
     }
 
@@ -37,7 +38,8 @@ public interface ByteConsumer extends Consumer<Byte> {
     }
 
     @Deprecated
-    default @Override Consumer<Byte> andThen(final Consumer<? super Byte> after) {
+    @Override
+    default Consumer<Byte> andThen(final Consumer<? super Byte> after) {
         return (value) -> {
             this.acceptByte(value);
             after.accept(value);

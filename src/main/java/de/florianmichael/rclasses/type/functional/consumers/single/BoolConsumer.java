@@ -25,7 +25,8 @@ public interface BoolConsumer extends Consumer<Boolean> {
     void acceptBool(final boolean value);
 
     @Deprecated
-    default @Override void accept(final Boolean value) {
+    @Override
+    default void accept(final Boolean value) {
         this.acceptBool(value);
     }
 
@@ -37,7 +38,8 @@ public interface BoolConsumer extends Consumer<Boolean> {
     }
 
     @Deprecated
-    default @Override Consumer<Boolean> andThen(final Consumer<? super Boolean> after) {
+    @Override
+    default Consumer<Boolean> andThen(final Consumer<? super Boolean> after) {
         return (value) -> {
             this.acceptBool(value);
             after.accept(value);

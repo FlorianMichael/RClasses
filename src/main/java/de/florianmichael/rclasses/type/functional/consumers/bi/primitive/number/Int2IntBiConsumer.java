@@ -25,7 +25,8 @@ public interface Int2IntBiConsumer extends BiConsumer<Integer, Integer> {
     void acceptInt(final int left, final int right);
 
     @Deprecated
-    default @Override void accept(final Integer left, final Integer right) {
+    @Override
+    default void accept(final Integer left, final Integer right) {
         this.acceptInt(left, right);
     }
 
@@ -37,7 +38,8 @@ public interface Int2IntBiConsumer extends BiConsumer<Integer, Integer> {
     }
 
     @Deprecated
-    default @Override BiConsumer<Integer, Integer> andThen(final BiConsumer<? super Integer, ? super Integer> after) {
+    @Override
+    default BiConsumer<Integer, Integer> andThen(final BiConsumer<? super Integer, ? super Integer> after) {
         return (l, r) -> {
             this.acceptInt(l, r);
             after.accept(l, r);

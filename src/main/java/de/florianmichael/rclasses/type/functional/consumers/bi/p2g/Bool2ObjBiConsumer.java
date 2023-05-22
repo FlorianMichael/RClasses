@@ -25,7 +25,8 @@ public interface Bool2ObjBiConsumer<V> extends BiConsumer<Boolean, V> {
     void acceptBool(final boolean left, final V right);
 
     @Deprecated
-    default @Override void accept(final Boolean left, final V right) {
+    @Override
+    default void accept(final Boolean left, final V right) {
         this.acceptBool(left, right);
     }
 
@@ -37,7 +38,8 @@ public interface Bool2ObjBiConsumer<V> extends BiConsumer<Boolean, V> {
     }
 
     @Deprecated
-    default @Override BiConsumer<Boolean, V> andThen(final BiConsumer<? super Boolean, ? super V> after) {
+    @Override
+    default BiConsumer<Boolean, V> andThen(final BiConsumer<? super Boolean, ? super V> after) {
         return (l, r) -> {
             this.acceptBool(l, r);
             after.accept(l, r);

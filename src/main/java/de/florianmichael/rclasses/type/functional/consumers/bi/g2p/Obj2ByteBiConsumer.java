@@ -25,7 +25,8 @@ public interface Obj2ByteBiConsumer<V> extends BiConsumer<V, Byte> {
     void acceptByte(final V left, final byte right);
 
     @Deprecated
-    default @Override void accept(final V left, final Byte right) {
+    @Override
+    default void accept(final V left, final Byte right) {
         this.acceptByte(left, right);
     }
 
@@ -37,7 +38,8 @@ public interface Obj2ByteBiConsumer<V> extends BiConsumer<V, Byte> {
     }
 
     @Deprecated
-    default @Override BiConsumer<V, Byte> andThen(final BiConsumer<? super V, ? super Byte> after) {
+    @Override
+    default BiConsumer<V, Byte> andThen(final BiConsumer<? super V, ? super Byte> after) {
         return (l, r) -> {
             this.acceptByte(l, r);
             after.accept(l, r);

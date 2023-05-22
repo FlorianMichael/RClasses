@@ -25,7 +25,8 @@ public interface Char2CharBiConsumer extends BiConsumer<Character, Character> {
     void acceptChar(final char left, final char right);
 
     @Deprecated
-    default @Override void accept(final Character left, final Character right) {
+    @Override
+    default void accept(final Character left, final Character right) {
         this.acceptChar(left, right);
     }
 
@@ -37,7 +38,8 @@ public interface Char2CharBiConsumer extends BiConsumer<Character, Character> {
     }
 
     @Deprecated
-    default @Override BiConsumer<Character, Character> andThen(final BiConsumer<? super Character, ? super Character> after) {
+    @Override
+    default BiConsumer<Character, Character> andThen(final BiConsumer<? super Character, ? super Character> after) {
         return (l, r) -> {
             this.acceptChar(l, r);
             after.accept(l, r);

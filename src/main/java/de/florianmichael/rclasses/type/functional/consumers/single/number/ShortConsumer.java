@@ -25,7 +25,8 @@ public interface ShortConsumer extends Consumer<Short> {
     void acceptShort(final short value);
 
     @Deprecated
-    default @Override void accept(final Short value) {
+    @Override
+    default void accept(final Short value) {
         this.acceptShort(value);
     }
 
@@ -37,7 +38,8 @@ public interface ShortConsumer extends Consumer<Short> {
     }
 
     @Deprecated
-    default @Override Consumer<Short> andThen(final Consumer<? super Short> after) {
+    @Override
+    default Consumer<Short> andThen(final Consumer<? super Short> after) {
         return (value) -> {
             this.acceptShort(value);
             after.accept(value);

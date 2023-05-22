@@ -25,7 +25,8 @@ public interface Float2ObjBiConsumer<V> extends BiConsumer<Float, V> {
     void acceptFloat(final float left, final V right);
 
     @Deprecated
-    default @Override void accept(final Float left, final V right) {
+    @Override
+    default void accept(final Float left, final V right) {
         this.acceptFloat(left, right);
     }
 
@@ -37,7 +38,8 @@ public interface Float2ObjBiConsumer<V> extends BiConsumer<Float, V> {
     }
 
     @Deprecated
-    default @Override BiConsumer<Float, V> andThen(final BiConsumer<? super Float, ? super V> after) {
+    @Override
+    default BiConsumer<Float, V> andThen(final BiConsumer<? super Float, ? super V> after) {
         return (l, r) -> {
             this.acceptFloat(l, r);
             after.accept(l, r);

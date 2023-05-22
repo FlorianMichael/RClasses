@@ -25,7 +25,8 @@ public interface DoubleConsumer extends Consumer<Double> {
     void acceptDouble(final double value);
 
     @Deprecated
-    default @Override void accept(final Double value) {
+    @Override
+    default void accept(final Double value) {
         this.acceptDouble(value);
     }
 
@@ -37,7 +38,8 @@ public interface DoubleConsumer extends Consumer<Double> {
     }
 
     @Deprecated
-    default @Override Consumer<Double> andThen(final Consumer<? super Double> after) {
+    @Override
+    default Consumer<Double> andThen(final Consumer<? super Double> after) {
         return (value) -> {
             this.acceptDouble(value);
             after.accept(value);

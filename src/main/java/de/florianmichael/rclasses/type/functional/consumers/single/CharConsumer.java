@@ -25,7 +25,8 @@ public interface CharConsumer extends Consumer<Character> {
     void acceptChar(final char value);
 
     @Deprecated
-    default @Override void accept(final Character value) {
+    @Override
+    default void accept(final Character value) {
         this.acceptChar(value);
     }
 
@@ -37,7 +38,8 @@ public interface CharConsumer extends Consumer<Character> {
     }
 
     @Deprecated
-    default @Override Consumer<Character> andThen(final Consumer<? super Character> after) {
+    @Override
+    default Consumer<Character> andThen(final Consumer<? super Character> after) {
         return (value) -> {
             this.acceptChar(value);
             after.accept(value);
