@@ -18,11 +18,7 @@
 
 package de.florianmichael.rclasses.storage.type;
 
-import de.florianmichael.rclasses.storage.Storage;
+public interface IName {
 
-public abstract class NamedStorage<T extends IName> extends Storage<T> {
-    @SuppressWarnings("unchecked")
-    public <V extends T> V getByName(final String name) {
-        return (V) this.getList().stream().filter(t -> t.getName().equals(name)).findFirst().orElse(null);
-    }
+    String getName();
 }

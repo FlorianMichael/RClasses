@@ -16,13 +16,10 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package de.florianmichael.rclasses.storage.type;
+package de.florianmichael.rclasses.type.functional.throwable;
 
-import de.florianmichael.rclasses.storage.Storage;
+@FunctionalInterface
+public interface TRunnable {
 
-public abstract class NamedStorage<T extends IName> extends Storage<T> {
-    @SuppressWarnings("unchecked")
-    public <V extends T> V getByName(final String name) {
-        return (V) this.getList().stream().filter(t -> t.getName().equals(name)).findFirst().orElse(null);
-    }
+    void run() throws Throwable;
 }

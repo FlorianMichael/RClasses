@@ -18,8 +18,6 @@
 
 package de.florianmichael.rclasses.storage.type;
 
-import de.florianmichael.rclasses.storage.IName;
-
 public abstract class SelectableNamedStorage<T extends IName> extends NamedStorage<T> implements IName {
     private T current;
 

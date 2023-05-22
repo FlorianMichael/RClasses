@@ -15,14 +15,10 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+package de.florianmichael.rclasses.type.functional.throwable;
 
-package de.florianmichael.rclasses.storage.type;
+@FunctionalInterface
+public interface TSupplier<T> {
 
-import de.florianmichael.rclasses.storage.Storage;
-
-public abstract class NamedStorage<T extends IName> extends Storage<T> {
-    @SuppressWarnings("unchecked")
-    public <V extends T> V getByName(final String name) {
-        return (V) this.getList().stream().filter(t -> t.getName().equals(name)).findFirst().orElse(null);
-    }
+    T get() throws Throwable;
 }

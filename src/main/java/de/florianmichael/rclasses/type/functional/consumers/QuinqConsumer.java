@@ -16,13 +16,9 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package de.florianmichael.rclasses.storage.type;
+package de.florianmichael.rclasses.type.functional.consumers;
 
-import de.florianmichael.rclasses.storage.Storage;
-
-public abstract class NamedStorage<T extends IName> extends Storage<T> {
-    @SuppressWarnings("unchecked")
-    public <V extends T> V getByName(final String name) {
-        return (V) this.getList().stream().filter(t -> t.getName().equals(name)).findFirst().orElse(null);
-    }
+@FunctionalInterface
+public interface QuinqConsumer<T, U, V, W, X> {
+    void accept(T t, U u, V v, W w, X x);
 }

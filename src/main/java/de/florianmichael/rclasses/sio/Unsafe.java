@@ -16,13 +16,23 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package de.florianmichael.rclasses.storage.type;
+package de.florianmichael.rclasses.sio;
 
-import de.florianmichael.rclasses.storage.Storage;
+import java.lang.reflect.Field;
 
-public abstract class NamedStorage<T extends IName> extends Storage<T> {
-    @SuppressWarnings("unchecked")
-    public <V extends T> V getByName(final String name) {
-        return (V) this.getList().stream().filter(t -> t.getName().equals(name)).findFirst().orElse(null);
+public class Unsafe {
+    public final static sun.misc.Unsafe UNSAFE = getUnsafe();
+
+    public static sun.misc.Unsafe getUnsafe() {
+        try {
+            for (Field field : sun.misc.Unsafe.class.getDeclaredFields()) {
+                if (field.getType().equals(sun.misc.Unsafe.class)) {
+                    field.setAccessible(true);
+                    return (sun.misc.Unsafe) field.get(null);
+                }
+            }
+        } catch (Throwable ignored) {
+        }
+        throw new IllegalStateException("Unable to get Unsafe instance");
     }
 }

@@ -16,13 +16,20 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package de.florianmichael.rclasses.storage.type;
+package de.florianmichael.rclasses.type.functional.throwable;
 
-import de.florianmichael.rclasses.storage.Storage;
+import java.util.Objects;
 
-public abstract class NamedStorage<T extends IName> extends Storage<T> {
-    @SuppressWarnings("unchecked")
-    public <V extends T> V getByName(final String name) {
-        return (V) this.getList().stream().filter(t -> t.getName().equals(name)).findFirst().orElse(null);
+@FunctionalInterface
+public interface TBiConsumer<T, U> {
+    void accept(T t, U u) throws Throwable;
+
+    default TBiConsumer<T, U> andThen(TBiConsumer<? super T, ? super U> after) {
+        Objects.requireNonNull(after);
+
+        return (l, r) -> {
+            accept(l, r);
+            after.accept(l, r);
+        };
     }
 }

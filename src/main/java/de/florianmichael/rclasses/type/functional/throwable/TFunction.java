@@ -15,14 +15,26 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+package de.florianmichael.rclasses.type.functional.throwable;
 
-package de.florianmichael.rclasses.storage.type;
+import java.util.Objects;
 
-import de.florianmichael.rclasses.storage.Storage;
+@FunctionalInterface
+public interface TFunction<T, R> {
 
-public abstract class NamedStorage<T extends IName> extends Storage<T> {
-    @SuppressWarnings("unchecked")
-    public <V extends T> V getByName(final String name) {
-        return (V) this.getList().stream().filter(t -> t.getName().equals(name)).findFirst().orElse(null);
+    R apply(T t) throws Throwable;
+
+    default <V> TFunction<V, R> compose(TFunction<? super V, ? extends T> before) {
+        Objects.requireNonNull(before);
+        return (V v) -> apply(before.apply(v));
+    }
+
+    default <V> TFunction<T, V> andThen(TFunction<? super R, ? extends V> after) {
+        Objects.requireNonNull(after);
+        return (T t) -> after.apply(apply(t));
+    }
+
+    static <T> TFunction<T, T> identity() {
+        return t -> t;
     }
 }

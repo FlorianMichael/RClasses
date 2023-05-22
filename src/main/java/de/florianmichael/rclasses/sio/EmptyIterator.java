@@ -16,13 +16,19 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package de.florianmichael.rclasses.storage.type;
+package de.florianmichael.rclasses.sio;
 
-import de.florianmichael.rclasses.storage.Storage;
+import java.util.Iterator;
 
-public abstract class NamedStorage<T extends IName> extends Storage<T> {
-    @SuppressWarnings("unchecked")
-    public <V extends T> V getByName(final String name) {
-        return (V) this.getList().stream().filter(t -> t.getName().equals(name)).findFirst().orElse(null);
+public class EmptyIterator<T> implements Iterator<T> {
+
+    @Override
+    public boolean hasNext() {
+        return false;
+    }
+
+    @Override
+    public T next() {
+        return null;
     }
 }
