@@ -21,15 +21,13 @@ package de.florianmichael.rclasses.type.tuple.b;
 public abstract class Pair<A, B> {
 
     public abstract A getFirst();
-
     public abstract B getSecond();
 
     public abstract void setFirst(final A first);
-
     public abstract void setSecond(final B second);
 
-
-    public @Override String toString() {
+    @Override
+    public String toString() {
         return String.format(
                 "Pair{first=%s, second=%s}",
                 this.getFirst(),

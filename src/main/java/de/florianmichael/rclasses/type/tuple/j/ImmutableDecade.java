@@ -18,7 +18,6 @@
 
 package de.florianmichael.rclasses.type.tuple.j;
 
-
 public final class ImmutableDecade<A, B, C, D, E, F, G, H, I, J> extends Decade<A, B, C, D, E, F, G, H, I, J> {
     private static final UnsupportedOperationException COULD_NOT_SET = new UnsupportedOperationException("immutable pair-values aren't re-assignable!");
     private final A first;
@@ -32,12 +31,9 @@ public final class ImmutableDecade<A, B, C, D, E, F, G, H, I, J> extends Decade<
     private final I ninth;
     private final J tenth;
 
-
-    @SuppressWarnings("all")
     ImmutableDecade() {
         this(null, null, null, null, null, null, null, null, null, null);
     }
-
 
     public ImmutableDecade(final A first, final B second,
                            final C third, final D fourth,
@@ -56,89 +52,108 @@ public final class ImmutableDecade<A, B, C, D, E, F, G, H, I, J> extends Decade<
         this.tenth = tenth;
     }
 
-
-    public @Override A getFirst() {
+    @Override
+    public A getFirst() {
         return this.first;
     }
 
-    public @Override B getSecond() {
+    @Override
+    public B getSecond() {
         return this.second;
     }
 
-    public @Override C getThird() {
+    @Override
+    public C getThird() {
         return this.third;
     }
 
-    public @Override D getFourth() {
+    @Override
+    public D getFourth() {
         return this.fourth;
     }
 
-    public @Override E getFifth() {
+    @Override
+    public E getFifth() {
         return this.fifth;
     }
 
-    public @Override F getSixth() {
+    @Override
+    public F getSixth() {
         return this.sixth;
     }
 
-    public @Override G getSeventh() {
+    @Override
+    public G getSeventh() {
         return this.seventh;
     }
 
-    public @Override H getEight() {
+    @Override
+    public H getEight() {
         return this.eight;
     }
 
-    public @Override I getNinth() {
+    @Override
+    public I getNinth() {
         return this.ninth;
     }
 
-    public @Override J getTenth() {
+    @Override
+    public J getTenth() {
         return this.tenth;
     }
 
-    public @Override void setFirst(final A first) throws UnsupportedOperationException {
+    @Override
+    public void setFirst(final A first) throws UnsupportedOperationException {
         throw COULD_NOT_SET;
     }
 
-    public @Override void setSecond(final B second) throws UnsupportedOperationException {
+    @Override
+    public void setSecond(final B second) throws UnsupportedOperationException {
         throw COULD_NOT_SET;
     }
 
-    public @Override void setThird(final C third) throws UnsupportedOperationException {
+    @Override
+    public void setThird(final C third) throws UnsupportedOperationException {
         throw COULD_NOT_SET;
     }
 
-    public @Override void setFourth(final D fourth) throws UnsupportedOperationException {
+    @Override
+    public void setFourth(final D fourth) throws UnsupportedOperationException {
         throw COULD_NOT_SET;
     }
 
-    public @Override void setFifth(final E fifth) throws UnsupportedOperationException {
+    @Override
+    public void setFifth(final E fifth) throws UnsupportedOperationException {
         throw COULD_NOT_SET;
     }
 
-    public @Override void setSixth(final F sixth) throws UnsupportedOperationException {
+    @Override
+    public void setSixth(final F sixth) throws UnsupportedOperationException {
         throw COULD_NOT_SET;
     }
 
-    public @Override void setSeventh(final G seventh) throws UnsupportedOperationException {
+    @Override
+    public void setSeventh(final G seventh) throws UnsupportedOperationException {
         throw COULD_NOT_SET;
     }
 
-    public @Override void setEight(final H eight) throws UnsupportedOperationException {
+    @Override
+    public void setEight(final H eight) throws UnsupportedOperationException {
         throw COULD_NOT_SET;
     }
 
-    public @Override void setNinth(final I ninth) throws UnsupportedOperationException {
+    @Override
+    public void setNinth(final I ninth) throws UnsupportedOperationException {
         throw COULD_NOT_SET;
     }
 
-    public @Override void setTenth(final J tenth) throws UnsupportedOperationException {
+    @Override
+    public void setTenth(final J tenth) throws UnsupportedOperationException {
         throw COULD_NOT_SET;
     }
 
-
-    public @Override String toString() {
+    @Override
+    public String toString() {
         return String.format(
                 "ImmutableDecade{first=%s, second=%s, third=%s, fourth=%s, fifth=%s, sixth=%s, seventh=%s, eight=%s, ninth=%s, tenth=%s}",
                 this.getFirst(),

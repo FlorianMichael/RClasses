@@ -18,23 +18,18 @@
 
 package de.florianmichael.rclasses.type.tuple.c;
 
-
 public abstract class Triplet<A, B, C> {
 
     public abstract A getFirst();
-
     public abstract B getSecond();
-
     public abstract C getThird();
 
     public abstract void setFirst(final A first);
-
     public abstract void setSecond(final B second);
-
     public abstract void setThird(final C third);
 
-
-    public @Override String toString() {
+    @Override
+    public String toString() {
         return String.format(
                 "Triplet{first=%s, second=%s, third=%s}",
                 this.getFirst(),

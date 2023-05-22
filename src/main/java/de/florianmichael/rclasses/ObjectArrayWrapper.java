@@ -63,7 +63,6 @@ public class ObjectArrayWrapper {
 		return this.array[index];
 	}
 
-
 	public boolean isString(final int index) {
 		if(!this.isIndexValid(index)) {
 			return false;
@@ -159,11 +158,10 @@ public class ObjectArrayWrapper {
 		try {
 			Double.valueOf(this.get(index).toString());
 			return true;
-		} catch (Exception e) {}
+		} catch (Exception ignored) {}
 
 		return false;
 	}
-
 
 	public String getString(final int index, final String standart) {
 		if(!this.isIndexValid(index) || !this.isString(index)) {
@@ -229,7 +227,6 @@ public class ObjectArrayWrapper {
 		return Double.valueOf(this.get(index).toString());
 	}
 
-
 	public String getString(final int index) {
 		return this.getString(index, "");
 	}
@@ -265,7 +262,6 @@ public class ObjectArrayWrapper {
 	public void add(final Object object, final Object... objects) {
 		this.array = this.advance(object, objects);
 	}
-
 
 	public Object[] advance(final Object obToAdd, final Object... obs) {
 		Object[] newArray = new Object[this.getLength() + 1 + obs.length];
@@ -350,7 +346,6 @@ public class ObjectArrayWrapper {
 		}
 		return out.toString();
 	}
-
 
 	@Override
     public String toString() {

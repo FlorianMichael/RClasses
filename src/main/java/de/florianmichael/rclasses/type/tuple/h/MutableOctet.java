@@ -18,7 +18,6 @@
 
 package de.florianmichael.rclasses.type.tuple.h;
 
-
 public final class MutableOctet<A, B, C, D, E, F, G, H> extends Octet<A, B, C, D, E, F, G, H> {
     private A first;
     private B second;
@@ -29,12 +28,9 @@ public final class MutableOctet<A, B, C, D, E, F, G, H> extends Octet<A, B, C, D
     private G seventh;
     private H eight;
 
-
-    @SuppressWarnings("all")
     MutableOctet() {
         this(null, null, null, null, null, null, null, null);
     }
-
 
     public MutableOctet(final A first, final B second,
                         final C third, final D fourth,
@@ -50,73 +46,88 @@ public final class MutableOctet<A, B, C, D, E, F, G, H> extends Octet<A, B, C, D
         this.eight = eight;
     }
 
-
-    public @Override A getFirst() {
+    @Override
+    public A getFirst() {
         return this.first;
     }
 
-    public @Override B getSecond() {
+    @Override
+    public B getSecond() {
         return this.second;
     }
 
-    public @Override C getThird() {
+    @Override
+    public C getThird() {
         return this.third;
     }
 
-    public @Override D getFourth() {
+    @Override
+    public D getFourth() {
         return this.fourth;
     }
 
-    public @Override E getFifth() {
+    @Override
+    public E getFifth() {
         return this.fifth;
     }
 
-    public @Override F getSixth() {
+    @Override
+    public F getSixth() {
         return this.sixth;
     }
 
-    public @Override G getSeventh() {
+    @Override
+    public G getSeventh() {
         return this.seventh;
     }
 
-    public @Override H getEight() {
+    @Override
+    public H getEight() {
         return this.eight;
     }
 
-    public @Override void setFirst(final A first) {
+    @Override
+    public void setFirst(final A first) {
         this.first = first;
     }
 
-    public @Override void setSecond(final B second) {
+    @Override
+    public void setSecond(final B second) {
         this.second = second;
     }
 
-    public @Override void setThird(final C third) {
+    @Override
+    public void setThird(final C third) {
         this.third = third;
     }
 
-    public @Override void setFourth(final D fourth) {
+    @Override
+    public void setFourth(final D fourth) {
         this.fourth = fourth;
     }
 
-    public @Override void setFifth(final E fifth) {
+    @Override
+    public void setFifth(final E fifth) {
         this.fifth = fifth;
     }
 
-    public @Override void setSixth(final F sixth) {
+    @Override
+    public void setSixth(final F sixth) {
         this.sixth = sixth;
     }
 
-    public @Override void setSeventh(final G seventh) {
+    @Override
+    public void setSeventh(final G seventh) {
         this.seventh = seventh;
     }
 
-    public @Override void setEight(final H eight) {
+    @Override
+    public void setEight(final H eight) {
         this.eight = eight;
     }
 
-
-    public @Override String toString() {
+    @Override
+    public String toString() {
         return String.format(
                 "MutableOctet{first=%s, second=%s, third=%s, fourth=%s, fifth=%s, sixth=%s, seventh=%s, eight=%s}",
                 this.getFirst(),

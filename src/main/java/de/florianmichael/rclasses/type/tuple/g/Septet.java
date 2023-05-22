@@ -18,39 +18,26 @@
 
 package de.florianmichael.rclasses.type.tuple.g;
 
-
 public abstract class Septet<A, B, C, D, E, F, G> {
 
     public abstract A getFirst();
-
     public abstract B getSecond();
-
     public abstract C getThird();
-
     public abstract D getFourth();
-
     public abstract E getFifth();
-
     public abstract F getSixth();
-
     public abstract G getSeventh();
 
     public abstract void setFirst(final A first);
-
     public abstract void setSecond(final B second);
-
     public abstract void setThird(final C third);
-
     public abstract void setFourth(final D third);
-
     public abstract void setFifth(final E fifth);
-
     public abstract void setSixth(final F sixth);
-
     public abstract void setSeventh(final G sixth);
 
-
-    public @Override String toString() {
+    @Override
+    public String toString() {
         return String.format(
                 "Septet{first=%s, second=%s, third=%s, fourth=%s, fifth=%s, sixth=%s, seventh=%s}",
                 this.getFirst(),

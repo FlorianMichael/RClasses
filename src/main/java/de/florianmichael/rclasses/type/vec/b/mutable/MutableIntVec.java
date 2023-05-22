@@ -23,12 +23,9 @@ import de.florianmichael.rclasses.type.vec.b.IntVec;
 public final class MutableIntVec extends IntVec {
     private int x, y, z;
 
-
-    @SuppressWarnings("all")
     MutableIntVec() {
         this(0, 0, 0);
     }
-
 
     public MutableIntVec(final int x, final int y, final int z) {
         this.x = x;
@@ -36,33 +33,38 @@ public final class MutableIntVec extends IntVec {
         this.z = z;
     }
 
-
-    public @Override int getX() {
+    @Override
+    public int getX() {
         return this.x;
     }
 
-    public @Override int getY() {
+    @Override
+    public int getY() {
         return this.y;
     }
 
-    public @Override int getZ() {
+    @Override
+    public int getZ() {
         return this.z;
     }
 
-    public @Override void setX(final int x) {
+    @Override
+    public void setX(final int x) {
         this.x = x;
     }
 
-    public @Override void setY(final int y) {
+    @Override
+    public void setY(final int y) {
         this.y = y;
     }
 
-    public @Override void setZ(final int z) {
+    @Override
+    public void setZ(final int z) {
         this.z = z;
     }
 
-
-    public @Override String toString() {
+    @Override
+    public String toString() {
         return String.format(
                 "MutableIntVec{x=%d, y=%d, z=%d}",
                 this.getX(),

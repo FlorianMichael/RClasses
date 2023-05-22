@@ -18,19 +18,15 @@
 
 package de.florianmichael.rclasses.type.tuple.d;
 
-
 public final class MutableQuartet<A, B, C, D> extends Quartet<A, B, C, D> {
     private A first;
     private B second;
     private C third;
     private D fourth;
 
-
-    @SuppressWarnings("all")
     MutableQuartet() {
         this(null, null, null, null);
     }
-
 
     public MutableQuartet(final A first, final B second, final C third, final D fourth) {
         this.first = first;
@@ -39,41 +35,48 @@ public final class MutableQuartet<A, B, C, D> extends Quartet<A, B, C, D> {
         this.fourth = fourth;
     }
 
-
-    public @Override A getFirst() {
+    @Override
+    public A getFirst() {
         return this.first;
     }
 
-    public @Override B getSecond() {
+    @Override
+    public B getSecond() {
         return this.second;
     }
 
-    public @Override C getThird() {
+    @Override
+    public C getThird() {
         return this.third;
     }
 
-    public @Override D getFourth() {
+    @Override
+    public D getFourth() {
         return this.fourth;
     }
 
-    public @Override void setFirst(final A first) {
+    @Override
+    public void setFirst(final A first) {
         this.first = first;
     }
 
-    public @Override void setSecond(final B second) {
+    @Override
+    public void setSecond(final B second) {
         this.second = second;
     }
 
-    public @Override void setThird(final C third) {
+    @Override
+    public void setThird(final C third) {
         this.third = third;
     }
 
-    public @Override void setFourth(final D fourth) {
+    @Override
+    public void setFourth(final D fourth) {
         this.fourth = fourth;
     }
 
-
-    public @Override String toString() {
+    @Override
+    public String toString() {
         return String.format(
                 "MutableQuartet{first=%s, second=%s, third=%s, fourth=%s}",
                 this.getFirst(),

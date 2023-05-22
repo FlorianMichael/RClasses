@@ -18,19 +18,15 @@
 
 package de.florianmichael.rclasses.type.tuple.c;
 
-
 public final class ImmutableTriplet<A, B, C> extends Triplet<A, B, C> {
     private static final UnsupportedOperationException COULD_NOT_SET = new UnsupportedOperationException("immutable pair-values aren't re-assignable!");
     private final A first;
     private final B second;
     private final C third;
 
-
-    @SuppressWarnings("all")
     ImmutableTriplet() {
         this(null, null, null);
     }
-
 
     public ImmutableTriplet(final A first, final B second, final C third) {
         this.first = first;
@@ -38,33 +34,38 @@ public final class ImmutableTriplet<A, B, C> extends Triplet<A, B, C> {
         this.third = third;
     }
 
-
-    public @Override A getFirst() {
+    @Override
+    public A getFirst() {
         return this.first;
     }
 
-    public @Override B getSecond() {
+    @Override
+    public B getSecond() {
         return this.second;
     }
 
-    public @Override C getThird() {
+    @Override
+    public C getThird() {
         return this.third;
     }
 
-    public @Override void setFirst(final A first) throws UnsupportedOperationException {
+    @Override
+    public void setFirst(final A first) throws UnsupportedOperationException {
         throw COULD_NOT_SET;
     }
 
-    public @Override void setSecond(final B second) throws UnsupportedOperationException {
+    @Override
+    public void setSecond(final B second) throws UnsupportedOperationException {
         throw COULD_NOT_SET;
     }
 
-    public @Override void setThird(final C third) throws UnsupportedOperationException {
+    @Override
+    public void setThird(final C third) throws UnsupportedOperationException {
         throw COULD_NOT_SET;
     }
 
-
-    public @Override String toString() {
+    @Override
+    public String toString() {
         return String.format(
                 "ImmutableTriplet{first=%s, second=%s, third=%s}",
                 this.getFirst(),

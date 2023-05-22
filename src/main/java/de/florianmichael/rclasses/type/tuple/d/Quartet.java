@@ -18,27 +18,20 @@
 
 package de.florianmichael.rclasses.type.tuple.d;
 
-
 public abstract class Quartet<A, B, C, D> {
 
     public abstract A getFirst();
-
     public abstract B getSecond();
-
     public abstract C getThird();
-
     public abstract D getFourth();
 
     public abstract void setFirst(final A first);
-
     public abstract void setSecond(final B second);
-
     public abstract void setThird(final C third);
-
     public abstract void setFourth(final D fourth);
 
-
-    public @Override String toString() {
+    @Override
+    public String toString() {
         return String.format(
                 "Quartet{first=%s, second=%s, third=%s, fourth=%s}",
                 this.getFirst(),

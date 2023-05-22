@@ -315,7 +315,6 @@ public class MathUtils {
         return skewness(ArrayList::new, data);
     }
 
-
     public static double skewness(final IntFunction<List<Double>> type, final double... data) {
         final int count = data.length;
         final List<Double> numbers = type.apply(data.length);

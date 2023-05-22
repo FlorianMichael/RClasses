@@ -18,31 +18,22 @@
 
 package de.florianmichael.rclasses.type.tuple.e;
 
-
 public abstract class Quintet<A, B, C, D, E> {
 
     public abstract A getFirst();
-
     public abstract B getSecond();
-
     public abstract C getThird();
-
     public abstract D getFourth();
-
     public abstract E getFifth();
 
     public abstract void setFirst(final A first);
-
     public abstract void setSecond(final B second);
-
     public abstract void setThird(final C third);
-
     public abstract void setFourth(final D third);
-
     public abstract void setFifth(final E fifth);
 
-
-    public @Override String toString() {
+    @Override
+    public String toString() {
         return String.format(
                 "Quintet{first=%s, second=%s, third=%s, fourth=%s, fifth=%s}",
                 this.getFirst(),

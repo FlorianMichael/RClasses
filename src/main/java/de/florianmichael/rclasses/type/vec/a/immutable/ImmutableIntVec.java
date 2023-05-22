@@ -23,35 +23,35 @@ import de.florianmichael.rclasses.type.vec.a.IntVec;
 public final class ImmutableIntVec extends IntVec {
     private final int x, y;
 
-
-    @SuppressWarnings("all")
     ImmutableIntVec() {
         this(0, 0);
     }
-
 
     public ImmutableIntVec(final int x, final int y) {
         this.x = x;
         this.y = y;
     }
 
-
-    public @Override int getX() {
+    @Override
+    public int getX() {
         return this.x;
     }
 
-    public @Override int getY() {
+    @Override
+    public int getY() {
         return this.y;
     }
 
-    public @Override void setX(final int x) {
+    @Override
+    public void setX(final int x) {
     }
 
-    public @Override void setY(final int y) {
+    @Override
+    public void setY(final int y) {
     }
 
-
-    public @Override String toString() {
+    @Override
+    public String toString() {
         return String.format(
                 "ImmutableIntVec{x=%d, y=%d}",
                 this.getX(),

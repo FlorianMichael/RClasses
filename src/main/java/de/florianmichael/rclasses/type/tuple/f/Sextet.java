@@ -18,7 +18,6 @@
 
 package de.florianmichael.rclasses.type.tuple.f;
 
-
 public abstract class Sextet<A, B, C, D, E, F> {
 
     public abstract A getFirst();
@@ -45,8 +44,8 @@ public abstract class Sextet<A, B, C, D, E, F> {
 
     public abstract void setSixth(final F sixth);
 
-
-    public @Override String toString() {
+    @Override
+    public String toString() {
         return String.format(
                 "Sextet{first=%s, second=%s, third=%s, fourth=%s, fifth=%s, sixth=%s}",
                 this.getFirst(),
