@@ -29,7 +29,7 @@ public final class StringUtils {
     public final static String NUMBER_CHARS = "0123456789";
     public final static List<String> ESCAPED_CHARACTERS = Arrays.asList("\t", "\b", "\n", "\r");
     public final static String NEW_LINE = ESCAPED_CHARACTERS.get(2);
-    private final static String[] BYTES_UNIT = { "B", "KiB", "MiB", "GiB", "TiB" }; // IEC 60027-2
+    private final static String[] BYTES_UNIT = {"B", "KiB", "MiB", "GiB", "TiB"}; // IEC 60027-2
     private final static DecimalFormat OPTIONAL_FORMAT = new DecimalFormat("#.##");
 
     public static String format(final double places) {
