@@ -23,7 +23,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.function.Consumer;
 
 public abstract class Storage<T> {
-    private final CopyOnWriteArrayList<T> list = new CopyOnWriteArrayList<>();
+    private final List<T> list = new CopyOnWriteArrayList<>();
 
     private Consumer<T> additionConsumer;
     private Consumer<T> removeConsumer;
