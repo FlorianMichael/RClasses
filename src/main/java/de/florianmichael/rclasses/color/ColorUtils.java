@@ -28,8 +28,16 @@ public class ColorUtils {
         return new Color(color.getRed(), color.getGreen(), color.getBlue(), alpha);
     }
 
+    public static float[] rgb(final int color) {
+        return new float[] {
+                ((color >> 16) & 0xff) / 255f,
+                ((color >> 8) & 0xff) / 255f,
+                ((color) & 0xff) / 255f
+        };
+    }
+
     public static float[] rgba(final int color) {
-        return new float[]{
+        return new float[] {
                 ((color >> 16) & 0xff) / 255f,
                 ((color >> 8) & 0xff) / 255f,
                 ((color) & 0xff) / 255f,
