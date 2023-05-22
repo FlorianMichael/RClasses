@@ -20,7 +20,19 @@ package de.florianmichael.rclasses.storage.type;
 
 import de.florianmichael.rclasses.storage.Storage;
 
+import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.function.Supplier;
+
 public abstract class NamedStorage<T extends IName> extends Storage<T> {
+    public NamedStorage() {
+        this(CopyOnWriteArrayList::new);
+    }
+
+    public NamedStorage(final Supplier<List<T>> list) {
+        super(list);
+    }
+
     @SuppressWarnings("unchecked")
     public <V extends T> V getByName(final String name) {
         return (V) this.getList().stream().filter(t -> t.getName().equals(name)).findFirst().orElse(null);

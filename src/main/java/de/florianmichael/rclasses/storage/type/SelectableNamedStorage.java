@@ -18,7 +18,19 @@
 
 package de.florianmichael.rclasses.storage.type;
 
+import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.function.Supplier;
+
 public abstract class SelectableNamedStorage<T extends IName> extends NamedStorage<T> implements IName {
+    public SelectableNamedStorage() {
+        this(CopyOnWriteArrayList::new);
+    }
+
+    public SelectableNamedStorage(final Supplier<List<T>> list) {
+        super(list);
+    }
+
     private T current;
 
     public abstract T getDefault();
