@@ -102,6 +102,16 @@ public class MathUtils {
         return isInBounds(x, y, left, right, up - left, down - right);
     }
 
+    public static double roundAvoid(final double value, final int places) {
+        final double scale = Math.pow(10, places);
+        return Math.round(value * scale) / scale;
+    }
+
+    public static float roundAvoid(final float value, final int places) {
+        final float scale = (float) Math.pow(10, places);
+        return Math.round(value * scale) / scale;
+    }
+
     public static short sum(final short... values) {
         short value = 0;
         for (final short i : values) value += i;

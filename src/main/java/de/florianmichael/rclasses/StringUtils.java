@@ -32,10 +32,6 @@ public final class StringUtils {
     private final static String[] BYTES_UNIT = {"B", "KiB", "MiB", "GiB", "TiB"}; // IEC 60027-2
     private final static DecimalFormat OPTIONAL_FORMAT = new DecimalFormat("#.##");
 
-    public static String format(final double places) {
-        return String.format("%.2f", places);
-    }
-
     public static String formatBytes(final long value) {
         int index = (int) (Math.log(value) / Math.log(1024.0));
         double data = value / Math.pow(1024.0, index);
