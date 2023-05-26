@@ -24,7 +24,7 @@ dependencies {
 
 ## Source tree
 ```
-de.florianmichael.rlcasses
+de.florianmichael.rclasses
     /mappings - Converter for colors, keyboard formats and other standardized systems
     /math     - Implementation of mathematical concepts and general formulas such as percentage calculation or stochastics
     /model    - General valid model like color models or functions
