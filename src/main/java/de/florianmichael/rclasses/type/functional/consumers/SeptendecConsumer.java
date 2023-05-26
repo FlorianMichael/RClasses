@@ -16,6 +16,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+// From https://github.com/allinkdev/Consoomer (License: UNLICENSE, time: 26/05)
 package de.florianmichael.rclasses.type.functional.consumers;
 
 @FunctionalInterface
