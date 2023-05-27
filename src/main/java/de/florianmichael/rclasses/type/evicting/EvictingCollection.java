@@ -16,6 +16,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+// From: https://github.com/lumii500pg/Needle (License: UNLICENSE, time: 26/05)
 package de.florianmichael.rclasses.type.evicting;
 
 import java.util.Collection;

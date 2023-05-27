@@ -45,17 +45,17 @@ public class ColorUtils {
         };
     }
 
-    public static int toDecimal(final float[] rgba) {
-        return toDecimal(rgba[0], rgba[1], rgba[2], rgba[3]);
+    public static int toHex(final float[] rgba) {
+        return toHex(rgba[0], rgba[1], rgba[2], rgba[3]);
     }
 
-    public static int toDecimal(final float r, final float g, final float b) {
+    public static int toHex(final float r, final float g, final float b) {
         return (((int) (r * 255) & 0xFF) << 16) |
                 (((int) (g * 255) & 0xFF) << 8)  |
                 (((int) (b * 255) & 0xFF));
     }
 
-    public static int toDecimal(final float r, final float g, final float b, final float a) {
+    public static int toHex(final float r, final float g, final float b, final float a) {
         return (((int) (a * 255) & 0xFF) << 24) |
                 (((int) (r * 255) & 0xFF) << 16) |
                 (((int) (g * 255) & 0xFF) << 8)  |
