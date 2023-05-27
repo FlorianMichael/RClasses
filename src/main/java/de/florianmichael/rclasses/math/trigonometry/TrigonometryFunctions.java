@@ -20,7 +20,7 @@ package de.florianmichael.rclasses.math.trigonometry;
 
 import de.florianmichael.rclasses.math.trigonometry.impl.*;
 
-public enum TrigonometryFunctions {
+public enum TrigonometryFunctions implements Trigonometry {
 
     MINECRAFT("Minecraft", new MinecraftTrigonometry()),
     OPTIFINE_D5("Optifine <= D5", new OptifineD5Trigonometry()),
@@ -39,5 +39,15 @@ public enum TrigonometryFunctions {
     TrigonometryFunctions(final String name, final Trigonometry math) {
         this.name = name;
         this.math = math;
+    }
+
+    @Override
+    public float sin(float x) {
+        return this.math.sin(x);
+    }
+
+    @Override
+    public float cos(float x) {
+        return this.math.cos(x);
     }
 }

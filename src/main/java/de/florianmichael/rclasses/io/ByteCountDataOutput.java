@@ -16,7 +16,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package de.florianmichael.rclasses.sio;
+package de.florianmichael.rclasses.io;
 
 import java.io.DataOutput;
 

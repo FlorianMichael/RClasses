@@ -87,24 +87,11 @@ public enum EasingFunctions {
                 : ((float) Math.pow(2F, -20F * x + 10F) * (float) curvature) * 0.5F + 1F;
     }),
 
-    OUT_BOUNCE("Out bounce", x -> {// from in bounce
+    OUT_BOUNCE("Out bounce", x -> {
         final float n1 = 7.5625F;
         final float d1 = 2.75F;
-        return x < 1F / d1 ? n1 * x * x :
-                x < 2F / d1 ? n1 * (x -= 1.5F / d1) * x + 0.75F :
-                        x < 2.5F / d1 ? n1 * (x -= 2.25F / d1) * x + 0.9375F :
-                                n1 * (x -= 2.625F / d1) * x + 0.984375F;
-        /*
-        if (x < 1F / d1) {
-            return n1 * x * x;
-        } else if (x < 2F / d1) {
-            return n1 * (x -= 1.5F / d1) * x + 0.75F;
-        } else if (x < 2.5F / d1) {
-            return n1 * (x -= 2.25F / d1) * x + 0.9375F;
-        } else {
-            return n1 * (x -= 2.625F / d1) * x + 0.984375F;
-        }
-        */
+
+        return x < 1F / d1 ? n1 * x * x : x < 2F / d1 ? n1 * (x -= 1.5F / d1) * x + 0.75F : x < 2.5F / d1 ? n1 * (x -= 2.25F / d1) * x + 0.9375F : n1 * (x -= 2.625F / d1) * x + 0.984375F;
     }),
     IN_BOUNCE("In bounce", x -> 1F - EasingFunctions.OUT_BOUNCE.ease(1F - x)),
     IN_OUT_BOUNCE("In out bounce", x -> x < 0.5F ? (1F - EasingFunctions.OUT_BOUNCE.ease(1F - 2F * x)) * 0.5F : (1F + EasingFunctions.OUT_BOUNCE.ease(2F * x - 1F)) * 0.5F);
