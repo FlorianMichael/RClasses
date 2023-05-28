@@ -35,6 +35,9 @@ public final class StringUtils {
     public static String formatBytes(final long value) {
         int index = (int) (Math.log(value) / Math.log(1024.0));
         double data = value / Math.pow(1024.0, index);
+        if (index < 0) index = 0;
+        if (Double.isNaN(data)) data = 0;
+
         return OPTIONAL_FORMAT.format(data) + " " + BYTES_UNIT[index];
     }
 
