@@ -17,12 +17,17 @@
 
 package de.florianmichael.rclasses.math;
 
+import de.florianmichael.rclasses.math.trigonometry.TrigonometryFunctions;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Random;
 import java.util.function.IntFunction;
 
 public class MathUtils {
+    public final static float TAU = (float)Math.PI * 2;
+
     public static float interpolate(final float start, final float end, final float progress) {
         return (1 - progress) * start + progress * end;
     }
@@ -371,5 +376,36 @@ public class MathUtils {
 
     public static double standardDeviation(final double... data) {
         return Math.sqrt(variance(data));
+    }
+
+    public static double roundAwayFromZero(final double x) {
+        return x < 0 ? Math.floor(x) : x > 0 ? Math.ceil(x) : x;
+    }
+
+    // Made by https://github.com/DietrichPaul/
+    public static float boxMuellerDistribution(final Random random, final float min, final float max, final float mean, final float sigma) {
+        float u1, u2;
+        float z0;
+
+        do {
+            u1 = random.nextFloat();
+            u2 = random.nextFloat();
+            z0 = (float)Math.sqrt(-2.0F * (float) Math.log(u1)) * TrigonometryFunctions.MINECRAFT.cos(TAU * u2);
+        } while ((int) (z0 * sigma + mean) < min || (int) (z0 * sigma + mean) > max);
+
+        return mean + sigma * z0;
+    }
+
+    public static double boxMuellerDistribution(final Random random, final double min, final double max, final double mean, final double sigma) {
+        double u1, u2;
+        double z0;
+
+        do {
+            u1 = random.nextFloat();
+            u2 = random.nextFloat();
+            z0 = Math.sqrt(-2.0F * (float) Math.log(u1)) * TrigonometryFunctions.MINECRAFT.cos((float) (TAU * u2));
+        } while ((int) (z0 * sigma + mean) < min || (int) (z0 * sigma + mean) > max);
+
+        return mean + sigma * z0;
     }
 }

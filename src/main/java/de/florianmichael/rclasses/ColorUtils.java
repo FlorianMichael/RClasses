@@ -61,6 +61,19 @@ public class ColorUtils {
                 (((int) (b * 255) & 0xFF));
     }
 
+    public static Color colorInterpolate(final Color a, final Color b, final double t) {
+        return colorInterpolate(a, b, t, t, t, t);
+    }
+
+    public static Color colorInterpolate(final Color a, final Color b, final double tR, final double tG, final double tB, final double tA) {
+        return new Color(
+                (float) ((a.getRed() + (b.getRed() - a.getRed()) * tR) / 255F),
+                (float) ((a.getGreen() + (b.getGreen() - a.getGreen()) * tG) / 255F),
+                (float) ((a.getBlue() + (b.getBlue() - a.getBlue()) * tB) / 255F),
+                (float) ((a.getAlpha() + (b.getAlpha() - a.getAlpha()) * tA) / 255F)
+        );
+    }
+
     public static Color getRainbow() {
         return getRainbow(200, 0.5);
     }
