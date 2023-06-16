@@ -370,11 +370,24 @@ public class MathUtils {
         return variance / count;
     }
 
+    public static double variance(final long... data) {
+        final int count = data.length;
+        final double sum = sum(data);
+        final double average = sum / count;
+        double variance = 0.0D;
+        for (final double number : data) variance += Math.pow(number - average, 2.0D);
+        return variance / count;
+    }
+
     public static float standardDeviation(final float... data) {
         return (float) Math.sqrt(variance(data));
     }
 
     public static double standardDeviation(final double... data) {
+        return Math.sqrt(variance(data));
+    }
+
+    public static double standardDeviation(final long... data) {
         return Math.sqrt(variance(data));
     }
 
