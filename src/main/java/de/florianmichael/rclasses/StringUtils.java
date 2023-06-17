@@ -41,11 +41,19 @@ public final class StringUtils {
     }
 
     public static String whitespace(final int count) {
-        return "\u0009".repeat(count);
+        final StringBuilder builder = new StringBuilder();
+        for (int i = 0; i < count; i++) {
+            builder.append("\u0009");
+        }
+        return builder.toString();
     }
 
     public static String space(final int count) {
-        return "\u0020".repeat(count);
+        final StringBuilder builder = new StringBuilder();
+        for (int i = 0; i < count; i++) {
+            builder.append("\u0020");
+        }
+        return builder.toString();
     }
 
     public static String longestOf(final List<String> strings) {
