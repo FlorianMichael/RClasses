@@ -18,7 +18,7 @@ repositories {
 }
 
 dependencies {
-    implementation "com.github.FlorianMichael:RClasses:1.2.3"
+    implementation "com.github.FlorianMichael:RClasses:1.2.4"
 }
 ```
 
