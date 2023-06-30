@@ -17,7 +17,7 @@
 
 package de.florianmichael.rclasses.mappings;
 
-import de.florianmichael.rclasses.type.ReverseHashMap;
+import de.florianmichael.rclasses.model.ReverseHashMap;
 
 // https://github.com/kwhat/jnativehook/blob/master/src/java/org/jnativehook/keyboard/SwingKeyAdapter.java
 // https://gist.github.com/lilgallon/eb0cc2fc38920fb5081aba2c542eda55

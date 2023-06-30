@@ -29,4 +29,14 @@ public class Rectangle {
         this.z = z;
         this.w = w;
     }
+
+    @Override
+    public String toString() {
+        return "Rectangle{" +
+                "x=" + x +
+                ", y=" + y +
+                ", z=" + z +
+                ", w=" + w +
+                '}';
+    }
 }
