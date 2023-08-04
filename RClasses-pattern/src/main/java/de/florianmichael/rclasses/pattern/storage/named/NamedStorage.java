@@ -15,8 +15,9 @@
  * limitations under the License.
  */
 
-package de.florianmichael.rclasses.pattern.named;
+package de.florianmichael.rclasses.pattern.storage.named;
 
+import de.florianmichael.rclasses.pattern.IName;
 import de.florianmichael.rclasses.pattern.storage.Storage;
 
 import java.util.List;

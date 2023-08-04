@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package de.florianmichael.rclasses.pattern.named;
+package de.florianmichael.rclasses.pattern;
 
 public interface IName {
 
