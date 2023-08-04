@@ -17,7 +17,7 @@
 
 package de.florianmichael.rclasses.common.model;
 
-import de.florianmichael.rclasses.ColorUtils;
+import de.florianmichael.rclasses.common.ColorUtils;
 
 import java.awt.*;
 

@@ -18,7 +18,7 @@
 
 package de.florianmichael.rclasses.functional.tuple.immutable;
 
-import de.florianmichael.rclasses.type.tuple.Pair;
+import de.florianmichael.rclasses.functional.tuple.Pair;
 
 public final class ImmutablePair<A, B> extends Pair<A, B> {
     private static final UnsupportedOperationException COULD_NOT_SET = new UnsupportedOperationException("immutable pair-values aren't re-assignable!");
