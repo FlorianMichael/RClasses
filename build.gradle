@@ -1,72 +1,68 @@
-plugins {
-    id "java"
-    id "maven-publish"
-}
+subprojects {
+    apply plugin: "java"
+    apply plugin: "maven-publish"
 
-archivesBaseName = "RClasses"
-version = "1.2.5-SNAPSHOT"
-group = "de.florianmichael"
+    archivesBaseName = "RClasses-" + project.name
+    group = project.maven_group
+    version = project.maven_version
 
-repositories {
-    mavenCentral()
-}
-
-dependencies {
-}
-
-java {
-    withSourcesJar()
-    withJavadocJar()
-
-    sourceCompatibility = JavaVersion.VERSION_1_8
-    targetCompatibility = JavaVersion.VERSION_1_8
-}
-
-jar {
-    from("LICENSE") { rename { "${it}_${project.archivesBaseName}" } }
-}
-
-publishing {
     repositories {
-        maven {
-            name = "reposilite"
-            def releasesUrl = "https://maven.lenni0451.net/releases"
-            def snapshotsUrl = "https://maven.lenni0451.net/snapshots"
-            url = project.version.endsWith("SNAPSHOT") ? snapshotsUrl : releasesUrl
+        mavenCentral()
+    }
 
-            credentials(PasswordCredentials)
-            authentication {
-                basic(BasicAuthentication)
+    dependencies {
+    }
+
+    java {
+        withSourcesJar()
+        withJavadocJar()
+
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    publishing {
+        repositories {
+            maven {
+                name = "reposilite"
+                def releasesUrl = "https://maven.lenni0451.net/releases"
+                def snapshotsUrl = "https://maven.lenni0451.net/snapshots"
+                url = project.version.endsWith("SNAPSHOT") ? snapshotsUrl : releasesUrl
+
+                credentials(PasswordCredentials)
+                authentication {
+                    basic(BasicAuthentication)
+                }
             }
         }
-    }
-    publications {
-        maven(MavenPublication) {
-            artifactId = project.archivesBaseName
-            groupId = project.group
-            version = project.version
+        publications {
+            maven(MavenPublication) {
+                artifactId = project.archivesBaseName
+                groupId = project.group
+                version = project.version
 
-            from components.java
+                from components.java
 
-            pom {
-                name = artifactId
-                description = "Random collection of Java classes and utils"
-                url = "https://github.com/FlorianMichael/RClasses"
-                licenses {
-                    license {
-                        name = "Apache-2.0 license"
-                        url = "https://github.com/FlorianMichael/RClasses/blob/main/LICENSE"
+                pom {
+                    name = artifactId
+                    description = "Random collection of Java classes and utils"
+                    url = "https://github.com/FlorianMichael/RClasses"
+                    licenses {
+                        license {
+                            name = "Apache-2.0 license"
+                            url = "https://github.com/FlorianMichael/RClasses/blob/main/LICENSE"
+                        }
                     }
-                }
-                developers {
-                    developer {
-                        id = "FlorianMichael"
+                    developers {
+                        developer {
+                            id = "FlorianMichael"
+                        }
                     }
-                }
-                scm {
-                    connection = "scm:git:git://github.com/FlorianMichael/RClasses.git"
-                    developerConnection = "scm:git:ssh://github.com/FlorianMichael/RClasses.git"
-                    url = "github.com/FlorianMichael/RClasses"
+                    scm {
+                        connection = "scm:git:git://github.com/FlorianMichael/RClasses.git"
+                        developerConnection = "scm:git:ssh://github.com/FlorianMichael/RClasses.git"
+                        url = "github.com/FlorianMichael/RClasses"
+                    }
                 }
             }
         }
