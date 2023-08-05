@@ -141,7 +141,6 @@ public class ArrayUtils {
      * @param factory the array constructor
      * @return A new array containing the existing elements except the element at the specified position.
      * @param <T> the type of the array
-     * @apiNote example: Arrays.remove(array, index, String[]::new);
      */
     public static <T> T[] remove(final T[] array, final int index, final IntFunction<T[]> factory) {
         final int length = array.length - 1;
@@ -398,7 +397,6 @@ public class ArrayUtils {
      * @param factory the array constructor
      * @return A new array containing the existing elements plus the element to add.
      * @param <T> the type of the array
-     * @apiNote example: Arrays.add(array, adding, String[]::new);
      */
     public static <T> T[] add(final T[] array, final T adding, final IntFunction<T[]> factory) {
         final int length = array.length + 1;
@@ -416,7 +414,6 @@ public class ArrayUtils {
      * @param factory the array constructor
      * @return A new array containing the existing elements plus the element to add.
      * @param <T> the type of the array
-     * @apiNote example: Arrays.add(array, adding, String[]::new);
      */
     public static <T> T[] add(final T[] array, int index, final T adding, final IntFunction<T[]> factory) {
         index = Math.max(0, Math.min(array.length - 1, index));
@@ -561,7 +558,6 @@ public class ArrayUtils {
      * @param start the start index
      * @param end the end index
      * @return A new array containing the elements from the start index to the end index.
-     * @apiNote example: Arrays.sub(array, start, end, String[]::new);
      */
     public static <T> T[] sub(final T[] array, final int start, final int end, final IntFunction<T[]> factory) {
         final int min = Math.min(start, end), max = Math.max(start, end);
@@ -683,7 +679,6 @@ public class ArrayUtils {
      * @param factory the array constructor
      * @return A new array containing the elements of the first array and the second array.
      * @param <T> the type of the array
-     * @apiNote example: Arrays.merge(array1, array2, String[]::new);
      */
     public static <T> T[] merge(final T[] array1, final T[] array2, final IntFunction<T[]> factory) {
         final T[] objs = factory.apply(array1.length + array2.length);
@@ -842,7 +837,6 @@ public class ArrayUtils {
      * @param factory the array constructor
      * @return A new array containing the elements of the two-dimensional array.
      * @param <T> the type of the array
-     * @apiNote example: Arrays.deepMerge(new String[][]{array1, array2, array3}, String[]::new);
      */
     public static <T> T[] merge(final T[][] array, final IntFunction<T[]> factory) {
         int length = 0;
@@ -982,7 +976,6 @@ public class ArrayUtils {
      * @param factory the array factory
      * @return the reversed array
      * @param <T> the array type
-     * @apiNote example: Arrays.reverse(array, String[]::new);
      */
     public static <T> T[] reverse(final T[] array, final IntFunction<T[]> factory) {
         if (array.length <= 1) return array;

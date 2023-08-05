@@ -2,7 +2,7 @@ subprojects {
     apply plugin: "java"
     apply plugin: "maven-publish"
 
-    archivesBaseName = "RClasses-" + project.name
+    archivesBaseName = "RClasses-" + project.maven_name
     group = project.maven_group
     version = project.maven_version
 
@@ -37,7 +37,7 @@ subprojects {
         }
         publications {
             maven(MavenPublication) {
-                artifactId = project.archivesBaseName
+                artifactId = project.maven_name
                 groupId = project.group
                 version = project.version
 
