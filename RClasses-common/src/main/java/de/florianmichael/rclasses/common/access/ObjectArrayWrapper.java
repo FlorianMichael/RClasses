@@ -17,342 +17,196 @@
 
 package de.florianmichael.rclasses.common.access;
 
+import java.util.Arrays;
+
 public class ObjectArrayWrapper {
-	private static final ObjectArrayWrapper EMPTY = new ObjectArrayWrapper(new Object[0]);
-	
-	public static ObjectArrayWrapper empty() {
-		return EMPTY;
+	private final Object[] input;
+
+	public ObjectArrayWrapper(final Object[] input) {
+		this.input = input;
 	}
 
-	private Object[] array;
-
-	public ObjectArrayWrapper(final Object[] array) {
-		this.array = array;
-	}
-
-	public int getLength() {
-		return this.array.length;
+	public int length() {
+		return input.length;
 	}
 
 	public boolean isLength(final int length) {
-		return this.getLength() == length;
+		return input.length == length;
 	}
 
 	public boolean isSmaller(final int length) {
-		return this.getLength() < length;
+		return input.length < length;
 	}
 
-	public boolean isLarger(final int length) {
-		return this.getLength() > length;
+	public boolean isSmallerOrEqual(final int length) {
+		return input.length <= length;
+	}
+
+	public boolean isGreater(final int length) {
+		return input.length > length;
+	}
+
+	public boolean isGreaterOrEqual(final int length) {
+		return input.length >= length;
 	}
 
 	public boolean isEmpty() {
-		return this.getLength() == 0;
+		return input.length == 0;
 	}
 
 	public boolean isIndexValid(final int index) {
-		return index >= 0 && index < this.getLength();
+		return index >= 0 && index < input.length;
+	}
+
+	public boolean isIndexInvalid(final int index) {
+		return index < 0 || index >= input.length;
 	}
 
 	public Object get(final int index) {
-		if(!this.isIndexValid(index)) {
+		if (isIndexInvalid(index)) {
 			return null;
 		}
-
-		return this.array[index];
+		return input[index];
 	}
 
 	public boolean isString(final int index) {
-		if(!this.isIndexValid(index)) {
+		if (isIndexInvalid(index)) {
 			return false;
 		}
-
-		return this.get(index) instanceof String;
-	}
-
-	public boolean isBoolean(final int index) {
-		if(!this.isIndexValid(index)) {
-			return false;
-		}
-
-		try {
-			Boolean.valueOf(this.getString(index));
-			return true;
-		} catch (Exception e) {}
-
-		return false;
-	}
-
-	public boolean isChar(final int index) {
-        if(!this.isIndexValid(index)) {
-            return false;
-        }
-
-        try {
-            @SuppressWarnings("unused")
-			char c = (char) this.get(index);
-            return true;
-        } catch (Exception e) {}
-
-        return false;
-    }
-
-	public boolean isShort(final int index) {
-		if(!this.isIndexValid(index)) {
-			return false;
-		}
-
-		try {
-			Short.valueOf(this.get(index).toString());
-			return true;
-		} catch (Exception e) {}
-
-		return false;
-	}
-
-	public boolean isInteger(final int index) {
-		if(!this.isIndexValid(index)) {
-			return false;
-		}
-
-		try {
-			Integer.valueOf(this.get(index).toString());
-			return true;
-		} catch (Exception e) {}
-
-		return false;
-	}
-
-	public boolean isLong(final int index) {
-		if(!this.isIndexValid(index)) {
-			return false;
-		}
-
-		try {
-			Long.valueOf(this.get(index).toString());
-			return true;
-		} catch (Exception e) {}
-
-		return false;
-	}
-
-	public boolean isFloat(final int index) {
-		if(!this.isIndexValid(index)) {
-			return false;
-		}
-
-		try {
-			Float.valueOf(this.get(index).toString());
-			return true;
-		} catch (Exception e) {}
-
-		return false;
-	}
-
-	public boolean isDouble(final int index) {
-		if(!this.isIndexValid(index)) {
-			return false;
-		}
-
-		try {
-			Double.valueOf(this.get(index).toString());
-			return true;
-		} catch (Exception ignored) {}
-
-		return false;
-	}
-
-	public String getString(final int index, final String standart) {
-		if(!this.isIndexValid(index) || !this.isString(index)) {
-			return standart;
-		}
-
-		return this.get(index).toString();
-	}
-
-	public boolean getBoolean(final int index, final boolean standart) {
-	    if(!this.isIndexValid(index) || !this.isBoolean(index)) {
-	        return standart;
-        }
-
-        return Boolean.valueOf(this.getString(index));
-    }
-
-    public char getChar(final int index, final char standart) {
-	    if(!this.isIndexValid(index) || !this.isChar(index)) {
-	        return standart;
-        }
-
-        return (char) this.get(index);
-    }
-
-	public short getShort(final int index, final short standart) {
-		if(!this.isIndexValid(index) || !this.isShort(index)) {
-			return standart;
-		}
-
-		return Short.valueOf(this.get(index).toString());
-	}
-
-	public int getInteger(final int index, final int standart) {
-		if(!this.isIndexValid(index) || !this.isInteger(index)) {
-			return standart;
-		}
-
-		return Integer.valueOf(this.get(index).toString());
-	}
-
-	public long getLong(final int index, final long standart) {
-		if(!this.isIndexValid(index) || !this.isLong(index)) {
-			return standart;
-		}
-
-		return Long.valueOf(this.get(index).toString());
-	}
-
-	public float getFloat(final int index, final float standart) {
-		if(!this.isIndexValid(index) || !this.isFloat(index)) {
-			return standart;
-		}
-
-		return Float.valueOf(this.get(index).toString());
-	}
-
-	public double getDouble(final int index, final double standart) {
-		if(!this.isIndexValid(index) || !this.isDouble(index)) {
-			return standart;
-		}
-
-		return Double.valueOf(this.get(index).toString());
+		return input[index] instanceof String;
 	}
 
 	public String getString(final int index) {
-		return this.getString(index, "");
+		if (isIndexInvalid(index)) {
+			return null;
+		}
+		return (String) input[index];
+	}
+
+	public boolean isBoolean(final int index) {
+		if (isIndexInvalid(index)) {
+			return false;
+		}
+		return input[index] instanceof Boolean;
 	}
 
 	public boolean getBoolean(final int index) {
-	    return this.getBoolean(index, false);
-    }
+		if (isIndexInvalid(index)) {
+			return false;
+		}
+		return (Boolean) input[index];
+	}
 
-    public char getChar(final int index) {
-	    return this.getChar(index, "A".toCharArray()[0]);
-    }
+	public boolean isByte(final int index) {
+		if (isIndexInvalid(index)) {
+			return false;
+		}
+		return input[index] instanceof Byte;
+	}
+
+	public byte getByte(final int index) {
+		if (isIndexInvalid(index)) {
+			return 0;
+		}
+		return (Byte) input[index];
+	}
+
+	public boolean isShort(final int index) {
+		if (isIndexInvalid(index)) {
+			return false;
+		}
+		return input[index] instanceof Short;
+	}
 
 	public short getShort(final int index) {
-		return this.getShort(index, (short) 0);
+		if (isIndexInvalid(index)) {
+			return 0;
+		}
+		return (Short) input[index];
+	}
+
+	public boolean isInteger(final int index) {
+		if (isIndexInvalid(index)) {
+			return false;
+		}
+		return input[index] instanceof Integer;
 	}
 
 	public int getInteger(final int index) {
-		return this.getInteger(index, 0);
+		if (isIndexInvalid(index)) {
+			return 0;
+		}
+		return (Integer) input[index];
+	}
+
+	public boolean isLong(final int index) {
+		if (isIndexInvalid(index)) {
+			return false;
+		}
+		return input[index] instanceof Long;
 	}
 
 	public long getLong(final int index) {
-		return this.getLong(index, 0);
+		if (isIndexInvalid(index)) {
+			return 0;
+		}
+		return (Long) input[index];
+	}
+
+	public boolean isFloat(final int index) {
+		if (isIndexInvalid(index)) {
+			return false;
+		}
+		return input[index] instanceof Float;
 	}
 
 	public float getFloat(final int index) {
-		return this.getFloat(index, 0);
+		if (isIndexInvalid(index)) {
+			return 0;
+		}
+		return (Float) input[index];
+	}
+
+	public boolean isDouble(final int index) {
+		if (isIndexInvalid(index)) {
+			return false;
+		}
+		return input[index] instanceof Double;
 	}
 
 	public double getDouble(final int index) {
-		return this.getDouble(index, 0);
-	}
-
-	public void add(final Object object, final Object... objects) {
-		this.array = this.advance(object, objects);
-	}
-
-	public Object[] advance(final Object obToAdd, final Object... obs) {
-		Object[] newArray = new Object[this.getLength() + 1 + obs.length];
-
-		int i = 0;
-		for(Object ob : this.array) {
-			newArray[i] = ob;
-
-			i++;
+		if (isIndexInvalid(index)) {
+			return 0;
 		}
-		newArray[i] = obToAdd;
-		i++;
-		for(Object ob : obs) {
-			newArray[i] = ob;
-			i++;
-		}
-
-		return newArray;
+		return (Double) input[index];
 	}
 
-	public String[] advanceToStrings(final String strToAdd, final String... strs) {
-		String[] newArray = new String[this.getLength() + 1 + strs.length];
+	public boolean isCharacter(final int index) {
+		if (isIndexInvalid(index)) {
+			return false;
+		}
+		return input[index] instanceof Character;
+	}
 
-		int i = 0;
-		for(Object ob : this.array) {
-			newArray[i] = ob.toString();
+	public char getCharacter(final int index) {
+		if (isIndexInvalid(index)) {
+			return 0;
+		}
+		return (Character) input[index];
+	}
 
-			i++;
-		}
-		newArray[i] = strToAdd;
-		i++;
-		for(String str : strs) {
-			newArray[i] = str;
-			i++;
-		}
-
-		return newArray;
-	}
-	
-	public <T> T[] getAsArray() {
-		return (T[]) this.array;
-	}
-	
-	public String getAsString() {
-		return this.getAsString(0, " ");
-	}
-	
-	public String getAsString(final String combiner) {
-		return this.getAsString(0, combiner);
-	}
-	
-	public String getAsString(final int start) {
-		return this.getAsString(start, " ");
-	}
-	
-	public String getAsString(final int start, final String combiner) {
-		return this.getAsString(start, this.getLength() - 1, combiner);
-	}
-	
-	public String getAsString(final int start, final int end) {
-		return this.getAsString(start, end, " ");
-	}
-	
-	public String getAsString(int start, int end, final String combiner) {
-		if(start < 0) {
-			start = 0;
-		}
-		if(end > this.getLength() - 1) {
-			end = this.getLength() - 1;
-		}
-		if(end < start) {
-			return "";
-		}
-		
-		StringBuilder out = new StringBuilder();
-		for(int i = start; i <= end; i++) {
-			if(out.length() == 0) {
-				out = new StringBuilder(this.getString(i));
-			} else {
-				out.append(combiner).append(this.getString(i));
-			}
-		}
-		return out.toString();
+	public Object[] getInput() {
+		return input;
 	}
 
 	@Override
-    public String toString() {
-	    StringBuilder complete = new StringBuilder();
-		for (Object o : this.array) {
-			complete.append((complete.length() == 0) ? "" : ", ").append(o);
-		}
-        return "[" + complete + "]";
-    }
-	
+	public String toString() {
+		return "ObjectArrayWrapper{" +
+				"input=" + Arrays.toString(input) +
+				'}';
+	}
+
+	public static ObjectArrayWrapper createEmpty() {
+		return new ObjectArrayWrapper(new Object[0]);
+	}
 }
