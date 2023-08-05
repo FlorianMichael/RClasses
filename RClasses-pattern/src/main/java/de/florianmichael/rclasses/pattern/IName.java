@@ -17,7 +17,14 @@
 
 package de.florianmichael.rclasses.pattern;
 
+/**
+ * Interface for a nameable object.
+ */
 public interface IName {
 
+    /**
+     * Returns the name of the object.
+     * @return The name.
+     */
     String getName();
 }

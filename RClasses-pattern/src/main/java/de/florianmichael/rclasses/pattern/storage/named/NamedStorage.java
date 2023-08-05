@@ -24,19 +24,45 @@ import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.function.Supplier;
 
+/**
+ * Implementation of a named storage. This storage is used to store objects that implement the {@link IName} interface.
+ *
+ * @param <T> The type of the objects that are stored in this storage.
+ */
 public abstract class NamedStorage<T extends IName> extends Storage<T> {
+
+    /**
+     * Creates a new named storage with a {@link CopyOnWriteArrayList}.
+     */
     public NamedStorage() {
         this(CopyOnWriteArrayList::new);
     }
 
+    /**
+     * Creates a new named storage with the given list.
+     * @param list The list.
+     */
     public NamedStorage(final Supplier<List<T>> list) {
         super(list);
     }
 
+    /**
+     * Gets an object by its name. see {@link #getByName(String, boolean)} and {@link IName} for more information.
+     * @param name The name.
+     * @return The object.
+     * @param <V> The type of the object.
+     */
     public <V extends T> V getByName(final String name) {
         return getByName(name, false);
     }
 
+    /**
+     * Gets an object by its name. see {@link #getByName(String)} and {@link IName} for more information.
+     * @param name The name.
+     * @param ignoreCase Whether the case should be ignored.
+     * @return The object.
+     * @param <V> The type of the object.
+     */
     @SuppressWarnings("unchecked")
     public <V extends T> V getByName(final String name, final boolean ignoreCase) {
         return (V) this.getList().stream().filter(t -> ignoreCase ? t.getName().equals(name) : t.getName().equalsIgnoreCase(name)).findFirst().orElse(null);

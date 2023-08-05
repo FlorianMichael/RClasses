@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package de.florianmichael.rclasses.common.access;
+package de.florianmichael.rclasses.common.model;
 
 public class Rectangle {
     public float x;

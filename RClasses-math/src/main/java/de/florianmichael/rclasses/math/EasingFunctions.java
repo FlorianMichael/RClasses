@@ -23,7 +23,9 @@ import java.util.Locale;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-// https://github.com/FlorianMichael/RMath
+/**
+ * This enum contains all easing functions that are supported by the official easing reference implementation class.
+ */
 public enum EasingFunctions {
     LINEAR("Linear", x -> x),
 
@@ -98,11 +100,18 @@ public enum EasingFunctions {
     public final String name;
     public final Function<Float, Float> function;
 
+    /**
+     * @param name The name of the function
+     * @param function The function
+     */
     EasingFunctions(final String name, final Function<Float, Float> function) {
         this.name = name;
         this.function = function;
     }
 
+    /**
+     * @return A list of all the function names
+     */
     public static List<String> functionNames() {
         return Arrays.stream(values()).map(EasingFunctions::getName).collect(Collectors.toList());
     }

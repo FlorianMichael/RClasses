@@ -17,8 +17,22 @@
 
 package de.florianmichael.rclasses.math.trigonometry;
 
+/**
+ * Implementation of a trigonometry calculator.
+ */
 public interface Trigonometry {
 
+    /**
+     * Calculates the sine of a given value.
+     * @param x The value.
+     * @return The sine.
+     */
     float sin(final float x);
+
+    /**
+     * Calculates the cosine of a given value.
+     * @param x The value.
+     * @return The cosine.
+     */
     float cos(final float x);
 }

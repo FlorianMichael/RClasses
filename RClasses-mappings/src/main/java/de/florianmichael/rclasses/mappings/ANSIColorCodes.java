@@ -17,7 +17,11 @@
 
 package de.florianmichael.rclasses.mappings;
 
+/**
+ * ANSI color codes for console output.
+ */
 public class ANSIColorCodes {
+
     // Reset
     public final static String RESET = "\033[0m"; // Text Reset
 

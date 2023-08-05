@@ -20,16 +20,35 @@ package de.florianmichael.rclasses.pattern;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+/**
+ * Implementation of a reverse hash map. This map is able to get the key of a given value.
+ *
+ * @param <K> The key type.
+ * @param <V> The value type.
+ */
 public class ReverseHashMap<K, V> extends LinkedHashMap<K, V> {
 
+    /**
+     * The reversed map.
+     */
     private final Map<V, K> reversedMap = new LinkedHashMap<>();
 
+    /**
+     * Puts a key and a value into the map. The value will be also put into the reversed map.
+     * @param key The key.
+     * @param value The value.
+     * @return The value.
+     */
     @Override
     public V put(K key, V value) {
         this.reversedMap.put(value, key);
         return super.put(key, value);
     }
 
+    /**
+     * @param value The value.
+     * @return The key of the given value.
+     */
     public K getKey(final V value) {
         return this.reversedMap.get(value);
     }

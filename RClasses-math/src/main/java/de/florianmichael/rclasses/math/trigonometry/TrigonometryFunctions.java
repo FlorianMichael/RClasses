@@ -19,6 +19,9 @@ package de.florianmichael.rclasses.math.trigonometry;
 
 import de.florianmichael.rclasses.math.trigonometry.impl.*;
 
+/**
+ * Enum of all trigonometry functions.
+ */
 public enum TrigonometryFunctions implements Trigonometry {
 
     MINECRAFT("Minecraft", new MinecraftTrigonometry()),

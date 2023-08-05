@@ -26,11 +26,21 @@ public final class StringUtils {
     public final static String LOWER_CHARS = "abdcefghijklmnopqrstuvwxyz";
     public final static String SPECIAL_CHARS = "!@#$%&*()_+-=[]|,./?><";
     public final static String NUMBER_CHARS = "0123456789";
+
     public final static List<String> ESCAPED_CHARACTERS = Arrays.asList("\t", "\b", "\n", "\r");
     public final static String NEW_LINE = ESCAPED_CHARACTERS.get(2);
-    private final static String[] BYTES_UNIT = {"B", "KiB", "MiB", "GiB", "TiB"}; // IEC 60027-2
+
+    /**
+     * Convention: IEC 60027-2
+     */
+    private final static String[] BYTES_UNIT = {"B", "KiB", "MiB", "GiB", "TiB"};
     private final static DecimalFormat OPTIONAL_FORMAT = new DecimalFormat("#.##");
 
+    /**
+     * Formats a value in bytes to a human-readable format
+     * @param value The raw value in bytes
+     * @return The formatted value in bytes
+     */
     public static String formatBytes(final long value) {
         int index = (int) (Math.log(value) / Math.log(1024.0));
         double data = value / Math.pow(1024.0, index);
@@ -40,26 +50,64 @@ public final class StringUtils {
         return OPTIONAL_FORMAT.format(data) + " " + BYTES_UNIT[index];
     }
 
+
+    /**
+     * Uppercase the first letter of the string .
+     * @param string The string to uppercase
+     * @return The uppercase string
+     */
+    public static String uppercaseFirst(final String string) {
+        return string.substring(0, 1).toUpperCase() + string.substring(1).toLowerCase();
+    }
+
+    /**
+     * Reverses the given string
+     * @param string The string to reverse
+     * @return The reversed string
+     */
+    public static String reverse(final String string) {
+        final char[] characters = string.toCharArray();
+        final char[] reversed = new char[characters.length];
+        for (int i = 0; i < characters.length; i++) reversed[i] = characters[characters.length - i - 1];
+        return new String(reversed);
+    }
+
+    /**
+     * Generates a string of whitespaces
+     * @param count The count of whitespaces
+     * @return The generated string
+     */
     public static String whitespace(final int count) {
         final StringBuilder builder = new StringBuilder();
-        for (int i = 0; i < count; i++) {
-            builder.append("\u0009");
-        }
+        for (int i = 0; i < count; i++) builder.append("	");
         return builder.toString();
     }
 
+    /**
+     * Generates a string of spaces
+     * @param count The count of spaces
+     * @return The generated string
+     */
     public static String space(final int count) {
         final StringBuilder builder = new StringBuilder();
-        for (int i = 0; i < count; i++) {
-            builder.append("\u0020");
-        }
+        for (int i = 0; i < count; i++) builder.append(" ");
         return builder.toString();
     }
 
+    /**
+     * Returns the longest string of the given strings
+     * @param strings The strings to check
+     * @return The longest string
+     */
     public static String longestOf(final List<String> strings) {
         return longestOf(strings.toArray(new String[0]));
     }
 
+    /**
+     * Returns the longest string of the given strings
+     * @param strings The strings to check
+     * @return The longest string
+     */
     public static String longestOf(final String... strings) {
         String longestString = "";
         int max = 0;
@@ -70,10 +118,20 @@ public final class StringUtils {
         return longestString;
     }
 
+    /**
+     * Returns the smallest string of the given strings
+     * @param strings The strings to check
+     * @return The smallest string
+     */
     public static String smallestOf(final List<String> strings) {
         return smallestOf(strings.toArray(new String[0]));
     }
 
+    /**
+     * Returns the smallest string of the given strings
+     * @param strings The strings to check
+     * @return The smallest string
+     */
     public static String smallestOf(final String... strings) {
         String smallestString = "";
         long min = Long.MAX_VALUE;

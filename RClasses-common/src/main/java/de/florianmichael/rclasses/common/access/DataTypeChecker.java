@@ -17,8 +17,16 @@
 
 package de.florianmichael.rclasses.common.access;
 
+/**
+ * This file contains methods to check the data type of string.
+ */
 public class DataTypeChecker {
 
+    /**
+     * Checks if the given string is an integer.
+     * @param input The string to check.
+     * @return True if the string is an integer, false otherwise.
+     */
     public static boolean isInteger(final String input) {
         try {
             Integer.parseInt(input);
@@ -28,6 +36,11 @@ public class DataTypeChecker {
         }
     }
 
+    /**
+     * Checks if the given string is a long.
+     * @param input The string to check.
+     * @return True if the string is a long, false otherwise.
+     */
     public static boolean isLong(final String input) {
         try {
             Long.parseLong(input);
@@ -37,6 +50,11 @@ public class DataTypeChecker {
         }
     }
 
+    /**
+     * Checks if the given string is a float.
+     * @param input The string to check.
+     * @return True if the string is a float, false otherwise.
+     */
     public static boolean isFloat(final String input) {
         try {
             Float.parseFloat(input);
@@ -46,6 +64,11 @@ public class DataTypeChecker {
         }
     }
 
+    /**
+     * Checks if the given string is a double.
+     * @param input The string to check.
+     * @return True if the string is a double, false otherwise.
+     */
     public static boolean isDouble(final String input) {
         try {
             Double.parseDouble(input);
@@ -55,10 +78,20 @@ public class DataTypeChecker {
         }
     }
 
+    /**
+     * Checks if the given string is a boolean.
+     * @param input The string to check.
+     * @return True if the string is a boolean, false otherwise.
+     */
     public static boolean isBoolean(final String input) {
         return input.equalsIgnoreCase("true") || input.equalsIgnoreCase("false");
     }
 
+    /**
+     * Checks if the given string is a byte.
+     * @param input The string to check.
+     * @return True if the string is a byte, false otherwise.
+     */
     public static boolean isByte(final String input) {
         try {
             Byte.parseByte(input);
@@ -68,6 +101,11 @@ public class DataTypeChecker {
         }
     }
 
+    /**
+     * Checks if the given string is a short.
+     * @param input The string to check.
+     * @return True if the string is a short, false otherwise.
+     */
     public static boolean isShort(final String input) {
         try {
             Short.parseShort(input);
@@ -77,6 +115,11 @@ public class DataTypeChecker {
         }
     }
 
+    /**
+     * Checks if the given string is a character.
+     * @param input The string to check.
+     * @return True if the string is a character, false otherwise.
+     */
     public static boolean isCharacter(final String input) {
         return input.length() == 1;
     }

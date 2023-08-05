@@ -25,10 +25,19 @@ import java.nio.file.FileSystemNotFoundException;
 import java.nio.file.FileSystems;
 import java.util.Collections;
 
+/**
+ * Utility methods for IO.
+ */
 public class IOUtils {
 
+    /**
+     * The unsafe instance.
+     */
     public final static sun.misc.Unsafe UNSAFE = getUnsafe();
 
+    /**
+     * @return the unsafe instance
+     */
     public static sun.misc.Unsafe getUnsafe() {
         try {
             for (Field field : sun.misc.Unsafe.class.getDeclaredFields()) {
@@ -42,6 +51,12 @@ public class IOUtils {
         throw new IllegalStateException("Unable to get Unsafe instance");
     }
 
+    /**
+     * Gets a file system for the given URI or create one.
+     * @param uri the URI
+     * @return the file system
+     * @throws IOException if creating the file system fails
+     */
     private FileSystem getFileSystem(final URI uri) throws IOException {
         FileSystem fileSystem;
         try {
