@@ -1,5 +1,5 @@
 # RClasses
-Random collection of Java classes and utils
+Random collection of Java classes and utils in different sub modules which together form a commons library
 
 ## Why another commons library?
 I started this project because I wanted to have a collection of classes that I use in my projects. 
