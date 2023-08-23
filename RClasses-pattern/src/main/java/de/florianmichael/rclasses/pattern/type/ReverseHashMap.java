@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package de.florianmichael.rclasses.pattern;
+package de.florianmichael.rclasses.pattern.type;
 
 import java.util.LinkedHashMap;
 import java.util.Map;

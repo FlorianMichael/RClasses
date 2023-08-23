@@ -15,10 +15,9 @@
  * limitations under the License.
  */
 
-package de.florianmichael.rclasses.pattern.storage.named.ref;
+package de.florianmichael.rclasses.pattern.storage.named;
 
 import de.florianmichael.rclasses.pattern.IName;
-import de.florianmichael.rclasses.pattern.storage.named.NamedStorage;
 
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;

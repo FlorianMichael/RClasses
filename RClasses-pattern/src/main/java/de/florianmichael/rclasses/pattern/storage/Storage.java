@@ -121,7 +121,7 @@ public abstract class Storage<T> {
      */
     @SuppressWarnings("unchecked")
     public <V extends T> V getByClass(final Class<V> clazz) {
-        return (V) this.list.stream().filter(clazz::equals).findFirst().orElse(null);
+        return (V) this.list.stream().filter(t -> t.getClass() == clazz).findFirst().orElse(null);
     }
 
     public List<T> getList() {
