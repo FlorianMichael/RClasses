@@ -33,11 +33,11 @@ import java.awt.*;
  * angle of the vector from the origin to the point on the cone. The saturation is the distance from the origin.
  */
 public class HSBColor {
-    private float hue;
-    private float saturation;
-    private float brightness;
+    public float hue;
+    public float saturation;
+    public float brightness;
 
-    private float alpha;
+    public float alpha;
 
     /**
      * Creates a new HSBColor from the given color.
@@ -107,39 +107,6 @@ public class HSBColor {
         this.hue = hue;
         this.saturation = saturation;
         this.brightness = brightness;
-        this.alpha = alpha;
-    }
-
-    public float getHue() {
-        return hue;
-    }
-
-    public void setHue(float hue) {
-        this.hue = hue;
-    }
-
-    public float getSaturation() {
-        return saturation;
-    }
-
-
-    public void setSaturation(float saturation) {
-        this.saturation = saturation;
-    }
-
-    public float getBrightness() {
-        return brightness;
-    }
-
-    public void setBrightness(float brightness) {
-        this.brightness = brightness;
-    }
-
-    public float getAlpha() {
-        return alpha;
-    }
-
-    public void setAlpha(float alpha) {
         this.alpha = alpha;
     }
 }
