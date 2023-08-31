@@ -114,15 +114,32 @@ public class HSBColor {
         return hue;
     }
 
+    public void setHue(float hue) {
+        this.hue = hue;
+    }
+
     public float getSaturation() {
         return saturation;
+    }
+
+
+    public void setSaturation(float saturation) {
+        this.saturation = saturation;
     }
 
     public float getBrightness() {
         return brightness;
     }
 
+    public void setBrightness(float brightness) {
+        this.brightness = brightness;
+    }
+
     public float getAlpha() {
         return alpha;
+    }
+
+    public void setAlpha(float alpha) {
+        this.alpha = alpha;
     }
 }
