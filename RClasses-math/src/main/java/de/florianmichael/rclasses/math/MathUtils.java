@@ -179,7 +179,7 @@ public class MathUtils {
      * @return Whether the given point is in the bounds of the given rectangle. The bounds are absolute.
      */
     public static boolean isInBoundsAbsolute(final short x, final short y, final short left, final short up, final short right, final short down) {
-        return isInBounds(x, y, left, right, up - left, down - right);
+        return x >= left && x <= right && y >= up && y <= down;
     }
 
     /**
@@ -192,7 +192,7 @@ public class MathUtils {
      * @return Whether the given point is in the bounds of the given rectangle. The bounds are absolute.
      */
     public static boolean isInBoundsAbsolute(final int x, final int y, final int left, final int up, final int right, final int down) {
-        return isInBounds(x, y, left, right, up - left, down - right);
+        return x >= left && x <= right && y >= up && y <= down;
     }
 
     /**
@@ -205,7 +205,7 @@ public class MathUtils {
      * @return Whether the given point is in the bounds of the given rectangle. The bounds are absolute.
      */
     public static boolean isInBoundsAbsolute(final long x, final long y, final long left, final long up, final long right, final long down) {
-        return isInBounds(x, y, left, right, up - left, down - right);
+        return x >= left && x <= right && y >= up && y <= down;
     }
 
     /**
@@ -218,7 +218,7 @@ public class MathUtils {
      * @return Whether the given point is in the bounds of the given rectangle. The bounds are absolute.
      */
     public static boolean isInBoundsAbsolute(final float x, final float y, final float left, final float up, final float right, final float down) {
-        return isInBounds(x, y, left, right, up - left, down - right);
+        return x >= left && x <= right && y >= up && y <= down;
     }
 
     /**
@@ -231,7 +231,7 @@ public class MathUtils {
      * @return Whether the given point is in the bounds of the given rectangle. The bounds are absolute.
      */
     public static boolean isInBoundsAbsolute(final double x, final double y, final double left, final double up, final double right, final double down) {
-        return isInBounds(x, y, left, right, up - left, down - right);
+        return x >= left && x <= right && y >= up && y <= down;
     }
 
     /**
