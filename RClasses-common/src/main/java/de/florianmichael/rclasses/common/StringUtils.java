@@ -142,4 +142,19 @@ public final class StringUtils {
         }
         return smallestString;
     }
+
+    /**
+     * Normalizes the given enum name to a readable string (e.g. "TEST_ENUM" -> "Test enum"). This method is used to
+     * generate a readable name for the enum. "$" will be removed, "_" will be replaced with " ",
+     * and the first letter will be uppercase.
+     *
+     * @param name The name to normalize
+     * @return The normalized name
+     */
+    public static String normalizeEnumName(String name) {
+        name = name.replace("_", " ");
+        name = name.replace("$", "");
+
+        return name.charAt(0) + name.substring(1).toLowerCase();
+    }
 }
