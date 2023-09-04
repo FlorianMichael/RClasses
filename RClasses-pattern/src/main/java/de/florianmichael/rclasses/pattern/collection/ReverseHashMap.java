@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package de.florianmichael.rclasses.pattern.type;
+package de.florianmichael.rclasses.pattern.collection;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -50,6 +50,8 @@ public class ReverseHashMap<K, V> extends LinkedHashMap<K, V> {
      * @return The key of the given value.
      */
     public K getKey(final V value) {
+        if (!this.reversedMap.containsKey(value))
+            return null;
         return this.reversedMap.get(value);
     }
 }
