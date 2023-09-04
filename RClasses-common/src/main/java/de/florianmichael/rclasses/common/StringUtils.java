@@ -152,6 +152,8 @@ public final class StringUtils {
      * @return The normalized name
      */
     public static String normalizeEnumName(String name) {
+        if (name.length() < 2) return name;
+
         name = name.replace("_", " ");
         name = name.replace("$", "");
 
