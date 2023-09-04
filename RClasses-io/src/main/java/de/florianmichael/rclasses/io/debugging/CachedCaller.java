@@ -38,45 +38,17 @@ public class CachedCaller {
     /**
      * The last message that was called.
      */
-    private String message;
+    private Object field;
 
     private CachedCaller(Consumer<Object> caller) {
         this.caller = caller;
     }
 
-    public void call(final char message) {
-        call(String.valueOf(message));
-    }
+    public void call(final Object field) {
+        if (this.field.equals(field)) return;
+        this.field = field;
 
-    public void call(final int message) {
-        call(String.valueOf(message));
-    }
-
-    public void call(final long message) {
-        call(String.valueOf(message));
-    }
-
-    public void call(final float message) {
-        call(String.valueOf(message));
-    }
-
-    public void call(final double message) {
-        call(String.valueOf(message));
-    }
-
-    public void call(final boolean message) {
-        call(String.valueOf(message));
-    }
-
-    public void call(final Object message) {
-        call(String.valueOf(message));
-    }
-
-    public void call(final String message) {
-        if (this.message.equals(message)) return;
-        this.message = message;
-
-        caller.accept(message);
+        caller.accept(field);
     }
 
     /**
