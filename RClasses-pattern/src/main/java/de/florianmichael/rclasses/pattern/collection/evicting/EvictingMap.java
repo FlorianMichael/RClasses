@@ -2,11 +2,11 @@
  * This file is part of RClasses - https://github.com/FlorianMichael/RClasses
  * Copyright (C) 2023 FlorianMichael/EnZaXD and contributors
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
  *
- *    http://www.apache.org/licenses/LICENSE-2.0
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -16,41 +16,41 @@
  */
 
 // From: https://github.com/lumii500pg/Needle (License: UNLICENSE, time: 26/05)
-package de.florianmichael.rclasses.functional.evicting;
+package de.florianmichael.rclasses.pattern.collection.evicting;
 
 import java.util.Collections;
-import java.util.Set;
+import java.util.Map;
 
-public final class EvictingSet<V> {
-    private final Set<V> set;
+public final class EvictingMap<K, V> {
+    private final Map<K, V> map;
 
     private final int maxSize;
 
-    EvictingSet() {
-        this(Collections.emptySet(), 0);
+    EvictingMap() {
+        this(Collections.emptyMap(), 0);
     }
 
-    public EvictingSet(final Set<V> set, final int maxSize) {
-        this.set = set;
+    public EvictingMap(final Map<K, V> map, final int maxSize) {
+        this.map = map;
         this.maxSize = maxSize;
     }
 
-    public @SuppressWarnings("all") boolean add(final V value) {
+    public @SuppressWarnings("all") boolean put(final K key, final V value) {
         final boolean removedFirstEntry;
         if (this.isFull()) {
-            this.set.remove(this.set.toArray()[0]);
+            this.map.remove(this.map.keySet().toArray()[0]);
             removedFirstEntry = true;
         } else removedFirstEntry = false;
-        this.set.add(value);
+        this.map.put(key, value);
         return removedFirstEntry;
     }
 
     public boolean isFull() {
-        return this.set.size() >= this.maxSize;
+        return this.map.size() >= this.maxSize;
     }
 
-    public Set<V> getNormalSet() {
-        return this.set;
+    public Map<K, V> getNormalMap() {
+        return this.map;
     }
 
     public int getMaxSize() {
