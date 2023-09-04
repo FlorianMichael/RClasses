@@ -28,12 +28,11 @@ public final class StringUtils {
     public final static String NUMBER_CHARS = "0123456789";
 
     public final static List<String> ESCAPED_CHARACTERS = Arrays.asList("\t", "\b", "\n", "\r");
-    public final static String NEW_LINE = ESCAPED_CHARACTERS.get(2);
 
     /**
      * Convention: IEC 60027-2
      */
-    private final static String[] BYTES_UNIT = {"B", "KiB", "MiB", "GiB", "TiB"};
+    private final static String[] BYTES_UNIT = { "B", "KiB", "MiB", "GiB", "TiB" };
     private final static DecimalFormat OPTIONAL_FORMAT = new DecimalFormat("#.##");
 
     /**
@@ -49,7 +48,6 @@ public final class StringUtils {
 
         return OPTIONAL_FORMAT.format(data) + " " + BYTES_UNIT[index];
     }
-
 
     /**
      * Uppercase the first letter of the string .
@@ -68,7 +66,8 @@ public final class StringUtils {
     public static String reverse(final String string) {
         final char[] characters = string.toCharArray();
         final char[] reversed = new char[characters.length];
-        for (int i = 0; i < characters.length; i++) reversed[i] = characters[characters.length - i - 1];
+        for (int i = 0; i < characters.length; i++)
+            reversed[i] = characters[characters.length - i - 1];
         return new String(reversed);
     }
 
@@ -79,7 +78,8 @@ public final class StringUtils {
      */
     public static String whitespace(final int count) {
         final StringBuilder builder = new StringBuilder();
-        for (int i = 0; i < count; i++) builder.append("	");
+        for (int i = 0; i < count; i++)
+            builder.append("	");
         return builder.toString();
     }
 
@@ -90,7 +90,8 @@ public final class StringUtils {
      */
     public static String space(final int count) {
         final StringBuilder builder = new StringBuilder();
-        for (int i = 0; i < count; i++) builder.append(" ");
+        for (int i = 0; i < count; i++)
+            builder.append(" ");
         return builder.toString();
     }
 
@@ -135,7 +136,10 @@ public final class StringUtils {
     public static String smallestOf(final String... strings) {
         String smallestString = "";
         long min = Long.MAX_VALUE;
-        for (final String string : strings) if (string.length() < min) min = (smallestString = string).length();
+        for (final String string : strings) {
+            if (string.length() < min)
+                min = (smallestString = string).length();
+        }
         return smallestString;
     }
 }

@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package de.florianmichael.rclasses.io;
+package de.florianmichael.rclasses.io.model;
 
 import java.util.Iterator;
 

@@ -75,6 +75,24 @@ public class ColorUtils {
     }
 
     /**
+     * Returns the hex value of the given color.
+     * @param color The color to convert.
+     * @return The hex value of the given color.
+     */
+    public static String toHex(final int color) {
+        return String.format("#%06x", (color & 0x00FFFFFF));
+    }
+
+    /**
+     * Returns a color model from the given hex value.
+     * @param hex The hex value.
+     * @return The color model.
+     */
+    public static Color fromHex(final String hex) {
+        return Color.decode(hex);
+    }
+
+    /**
      * Splits the given color into an array of floats.
      * @param color The color to split.
      * @return The array of floats.
@@ -106,8 +124,8 @@ public class ColorUtils {
      * @param rgba The array of floats.
      * @return The color.
      */
-    public static int toHex(final float[] rgba) {
-        return toHex(rgba[0], rgba[1], rgba[2], rgba[3]);
+    public static int toSRGB(final float[] rgba) {
+        return toSRGB(rgba[0], rgba[1], rgba[2], rgba[3]);
     }
 
     /**
@@ -117,7 +135,7 @@ public class ColorUtils {
      * @param b The blue value.
      * @return The color.
      */
-    public static int toHex(final float r, final float g, final float b) {
+    public static int toSRGB(final float r, final float g, final float b) {
         return (((int) (r * 255) & 0xFF) << 16) |
                 (((int) (g * 255) & 0xFF) << 8)  |
                 (((int) (b * 255) & 0xFF));
@@ -131,7 +149,7 @@ public class ColorUtils {
      * @param a The alpha value.
      * @return The color.
      */
-    public static int toHex(final float r, final float g, final float b, final float a) {
+    public static int toSRGB(final float r, final float g, final float b, final float a) {
         return (((int) (a * 255) & 0xFF) << 24) |
                 (((int) (r * 255) & 0xFF) << 16) |
                 (((int) (g * 255) & 0xFF) << 8)  |

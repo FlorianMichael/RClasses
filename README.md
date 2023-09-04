@@ -1,17 +1,17 @@
 # RClasses
-Random collection of Java classes and utils in different sub modules which together form a commons library
+Random collection of Java classes and utils in different submodules which together form a commons library
 
 ## Why another commons library?
 I started this project because I wanted to have a collection of classes that I use in my projects. 
 I also wanted to have a place where I can test new concepts and ideas. 
 I know that there are already a lot of libraries that do the same thing, but I wanted to do it myself, so I can only add stuff I really need. 
-I also merged some other projects into this one, so I can have everything in one place.
 
-### Projects that are merged into RClasses
+### Projects that I can recommend
 - [Consoomer](https://github.com/allinkdev/Consoomer)
-- Parts of [Needle](https://github.com/sugisaru/Needle)
-
-Disclaimer: I am not the original author of these projects and I don't claim to be. The license of these projects is still the same as before and they are working with the RClasses license.
+- [Needle](https://github.com/sugisaru/Needle)
+- [Lenni0451's commons](https://github.com/Lenni0451/commons)
+- [Apache Commons](https://commons.apache.org/)
+- [Google Guava](https://github.com/google/guava)
 
 ## Contact
 If you encounter any issues, please report them on the
