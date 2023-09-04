@@ -20,6 +20,7 @@ package de.florianmichael.rclasses.common;
 import java.text.DecimalFormat;
 import java.util.Arrays;
 import java.util.List;
+import java.util.regex.Pattern;
 
 public final class StringUtils {
     public final static String UPPER_CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -141,5 +142,94 @@ public final class StringUtils {
                 min = (smallestString = string).length();
         }
         return smallestString;
+    }
+
+    /**
+     * Normalizes the given enum name to a readable string (e.g. "TEST_ENUM" -> "Test enum"). This method is used to
+     * generate a readable name for the enum. "$" will be removed, "_" will be replaced with " ",
+     * and the first letter will be uppercase.
+     *
+     * @param name The name to normalize
+     * @return The normalized name
+     */
+    public static String normalizeEnumName(String name) {
+        if (name.length() < 2) return name;
+
+        name = name.replace("_", " ");
+        name = name.replace("$", "");
+
+        return name.charAt(0) + name.substring(1).toLowerCase();
+    }
+
+    /**
+     * Replaces the last occurrence of a substring in a string with another substring.
+     *
+     * @param input       The input string.
+     * @param target      The substring to be replaced.
+     * @param replacement The substring to replace the last occurrence of the target.
+     * @return The modified string with the last occurrence replaced.
+     */
+    public static String replaceLast(final String input, final String target, final String replacement) {
+        if (input == null || target == null || replacement == null) {
+            return input;
+        }
+        return input.replaceFirst("(?s)(.*)" + target, "$1" + replacement);
+    }
+
+    /**
+     * Replaces all occurrences of a substring in a string, ignoring case sensitivity.
+     *
+     * @param input       The input string.
+     * @param target      The substring to be replaced.
+     * @param replacement The substring to replace all occurrences of the target.
+     * @return The modified string with all occurrences replaced.
+     */
+    public static String replaceIgnoreCase(final String input, final String target, final String replacement) {
+        if (input == null || target == null || replacement == null) {
+            return input;
+        }
+        return Pattern.compile(target, Pattern.CASE_INSENSITIVE).matcher(input).replaceAll(replacement);
+    }
+
+    /**
+     * Checks if a string contains another string, ignoring case sensitivity.
+     *
+     * @param input  The input string.
+     * @param target The string to check for containment.
+     * @return True if the input string contains the target string (case-insensitive), otherwise false.
+     */
+    public static boolean containsIgnoreCase(final String input, final String target) {
+        if (input == null || target == null) {
+            return false;
+        }
+        return input.toLowerCase().contains(target.toLowerCase());
+    }
+
+    /**
+     * Checks if a string ends with another string, ignoring case sensitivity.
+     *
+     * @param input  The input string.
+     * @param target The string to check for at the end.
+     * @return True if the input string ends with the target string (case-insensitive), otherwise false.
+     */
+    public static boolean endsWithIgnoreCase(final String input, final String target) {
+        if (input == null || target == null) {
+            return false;
+        }
+        return input.toLowerCase().endsWith(target.toLowerCase());
+    }
+
+    /**
+     * Checks if a string starts with another string, ignoring case sensitivity.
+     *
+     * @param input  The input string.
+     * @param target The string to check for at the beginning.
+     * @return True if the input string starts with the target string (case-insensitive), otherwise false.
+     */
+    public static boolean startsWithIgnoreCase(final String input, final String target) {
+        if (input == null || target == null) {
+            return false;
+        }
+        return input.toLowerCase().startsWith(target.toLowerCase());
     }
 }
