@@ -17,6 +17,8 @@
 
 package de.florianmichael.rclasses.common.access;
 
+import java.util.UUID;
+
 /**
  * This file contains methods to check the data type of string.
  */
@@ -122,5 +124,19 @@ public class DataTypeChecker {
      */
     public static boolean isCharacter(final String input) {
         return input.length() == 1;
+    }
+
+    /**
+     * Checks if a given string is a UUID.
+     * @param input The string to check.
+     * @return True if the string is a UUID, false otherwise.
+     */
+    public static boolean isUUID(final String input) {
+        try {
+            UUID.fromString(input);
+            return true;
+        } catch (final IllegalArgumentException e) {
+            return false;
+        }
     }
 }
