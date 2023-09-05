@@ -1,8 +1,8 @@
-include 'RClasses-all'
-include 'RClasses-io'
-include 'RClasses-mappings'
-include 'RClasses-math'
-include 'RClasses-functional'
-include 'RClasses-common'
-include 'RClasses-pattern'
+include "RClasses-all"
+include "RClasses-io"
+include "RClasses-mappings"
+include "RClasses-math"
+include "RClasses-functional"
+include "RClasses-common"
+include "RClasses-pattern"
 
