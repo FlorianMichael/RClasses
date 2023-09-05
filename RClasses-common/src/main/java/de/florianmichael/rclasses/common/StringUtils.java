@@ -56,6 +56,8 @@ public final class StringUtils {
      * @return The uppercase string
      */
     public static String uppercaseFirst(final String string) {
+        if (string.length() < 2) return string;
+
         return string.substring(0, 1).toUpperCase() + string.substring(1).toLowerCase();
     }
 
@@ -148,16 +150,16 @@ public final class StringUtils {
      * Normalizes the given enum name to a readable string (e.g. "TEST_ENUM" -> "Test enum"). This method is used to
      * generate a readable name for the enum. "$" will be removed, "_" will be replaced with " ",
      * and the first letter will be uppercase.
-     * @param name The name to normalize
+     * @param string The name to normalize
      * @return The normalized name
      */
-    public static String normalizeEnumName(String name) {
-        if (name.length() < 2) return name;
+    public static String normalizeEnumName(String string) {
+        if (string.length() < 2) return string;
 
-        name = name.replace("_", " ");
-        name = name.replace("$", "");
+        string = string.replace("_", " ");
+        string = string.replace("$", "");
 
-        return name.charAt(0) + name.substring(1).toLowerCase();
+        return string.charAt(0) + string.substring(1).toLowerCase();
     }
 
     /**
@@ -181,7 +183,7 @@ public final class StringUtils {
      * @param replacement The substring to replace all occurrences of the target.
      * @return The modified string with all occurrences replaced.
      */
-    public static String replaceIgnoreCase(final String string, final String sequence, final String replacement) {
+    public static String replaceAll(final String string, final String sequence, final String replacement) {
         if (string == null || sequence == null || replacement == null) return string;
 
         return Pattern.compile(sequence, Pattern.CASE_INSENSITIVE).matcher(string).replaceAll(replacement);
