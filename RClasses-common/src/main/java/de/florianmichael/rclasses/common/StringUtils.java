@@ -148,7 +148,6 @@ public final class StringUtils {
      * Normalizes the given enum name to a readable string (e.g. "TEST_ENUM" -> "Test enum"). This method is used to
      * generate a readable name for the enum. "$" will be removed, "_" will be replaced with " ",
      * and the first letter will be uppercase.
-     *
      * @param name The name to normalize
      * @return The normalized name
      */
@@ -163,73 +162,64 @@ public final class StringUtils {
 
     /**
      * Replaces the last occurrence of a substring in a string with another substring.
-     *
-     * @param input       The input string.
-     * @param target      The substring to be replaced.
+     * @param string The input string.
+     * @param target The substring to be replaced.
      * @param replacement The substring to replace the last occurrence of the target.
      * @return The modified string with the last occurrence replaced.
      */
-    public static String replaceLast(final String input, final String target, final String replacement) {
-        if (input == null || target == null || replacement == null) {
-            return input;
+    public static String replaceLast(final String string, final String target, final String replacement) {
+        if (string == null || target == null || replacement == null) {
+            return string;
         }
-        return input.replaceFirst("(?s)(.*)" + target, "$1" + replacement);
+        return string.replaceFirst("(?s)(.*)" + target, "$1" + replacement);
     }
 
     /**
      * Replaces all occurrences of a substring in a string, ignoring case sensitivity.
-     *
-     * @param input       The input string.
-     * @param target      The substring to be replaced.
+     * @param string The input string.
+     * @param sequence The substring to be replaced.
      * @param replacement The substring to replace all occurrences of the target.
      * @return The modified string with all occurrences replaced.
      */
-    public static String replaceIgnoreCase(final String input, final String target, final String replacement) {
-        if (input == null || target == null || replacement == null) {
-            return input;
-        }
-        return Pattern.compile(target, Pattern.CASE_INSENSITIVE).matcher(input).replaceAll(replacement);
+    public static String replaceIgnoreCase(final String string, final String sequence, final String replacement) {
+        if (string == null || sequence == null || replacement == null) return string;
+
+        return Pattern.compile(sequence, Pattern.CASE_INSENSITIVE).matcher(string).replaceAll(replacement);
     }
 
     /**
      * Checks if a string contains another string, ignoring case sensitivity.
-     *
-     * @param input  The input string.
-     * @param target The string to check for containment.
+     * @param string The input string.
+     * @param sequence The string to check for containment.
      * @return True if the input string contains the target string (case-insensitive), otherwise false.
      */
-    public static boolean containsIgnoreCase(final String input, final String target) {
-        if (input == null || target == null) {
-            return false;
-        }
-        return input.toLowerCase().contains(target.toLowerCase());
+    public static boolean contains(final String string, final String sequence) {
+        if (string == null || sequence == null) return false;
+
+        return string.toLowerCase().contains(sequence.toLowerCase());
     }
 
     /**
      * Checks if a string ends with another string, ignoring case sensitivity.
-     *
-     * @param input  The input string.
-     * @param target The string to check for at the end.
+     * @param string The input string.
+     * @param suffix The string to check for at the end.
      * @return True if the input string ends with the target string (case-insensitive), otherwise false.
      */
-    public static boolean endsWithIgnoreCase(final String input, final String target) {
-        if (input == null || target == null) {
-            return false;
-        }
-        return input.toLowerCase().endsWith(target.toLowerCase());
+    public static boolean endsWith(final String string, final String suffix) {
+        if (string == null || suffix == null) return false;
+
+        return string.toLowerCase().endsWith(suffix.toLowerCase());
     }
 
     /**
      * Checks if a string starts with another string, ignoring case sensitivity.
-     *
-     * @param input  The input string.
-     * @param target The string to check for at the beginning.
+     * @param input The input string.
+     * @param prefix The string to check for at the beginning.
      * @return True if the input string starts with the target string (case-insensitive), otherwise false.
      */
-    public static boolean startsWithIgnoreCase(final String input, final String target) {
-        if (input == null || target == null) {
-            return false;
-        }
-        return input.toLowerCase().startsWith(target.toLowerCase());
+    public static boolean startsWith(final String input, final String prefix) {
+        if (input == null || prefix == null) return false;
+
+        return input.toLowerCase().startsWith(prefix.toLowerCase());
     }
 }
