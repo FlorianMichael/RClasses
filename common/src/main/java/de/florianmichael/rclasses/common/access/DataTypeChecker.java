@@ -17,6 +17,7 @@
 
 package de.florianmichael.rclasses.common.access;
 
+import java.math.BigInteger;
 import java.util.UUID;
 
 /**
@@ -39,6 +40,21 @@ public class DataTypeChecker {
     }
 
     /**
+     * Checks if the given string is an integer.
+     * @param input The string to check.
+     * @param radix The radix used while parsing the input.
+     * @return True if the string is an integer, false otherwise.
+     */
+    public static boolean isInteger(final String input, final int radix) {
+        try {
+            Integer.parseInt(input, radix);
+            return true;
+        } catch (final NumberFormatException e) {
+            return false;
+        }
+    }
+
+    /**
      * Checks if the given string is a long.
      * @param input The string to check.
      * @return True if the string is a long, false otherwise.
@@ -46,6 +62,21 @@ public class DataTypeChecker {
     public static boolean isLong(final String input) {
         try {
             Long.parseLong(input);
+            return true;
+        } catch (final NumberFormatException e) {
+            return false;
+        }
+    }
+
+    /**
+     * Checks if the given string is a long.
+     * @param input The string to check.
+     * @param radix The radix used while parsing the input.
+     * @return True if the string is a long, false otherwise.
+     */
+    public static boolean isLong(final String input, final int radix) {
+        try {
+            Long.parseLong(input, radix);
             return true;
         } catch (final NumberFormatException e) {
             return false;
@@ -104,6 +135,21 @@ public class DataTypeChecker {
     }
 
     /**
+     * Checks if the given string is a byte.
+     * @param input The string to check.
+     * @param radix The radix used while parsing the input.
+     * @return True if the string is a byte, false otherwise.
+     */
+    public static boolean isByte(final String input, final int radix) {
+        try {
+            Byte.parseByte(input, radix);
+            return true;
+        } catch (final NumberFormatException e) {
+            return false;
+        }
+    }
+
+    /**
      * Checks if the given string is a short.
      * @param input The string to check.
      * @return True if the string is a short, false otherwise.
@@ -111,6 +157,21 @@ public class DataTypeChecker {
     public static boolean isShort(final String input) {
         try {
             Short.parseShort(input);
+            return true;
+        } catch (final NumberFormatException e) {
+            return false;
+        }
+    }
+
+    /**
+     * Chekcks if the given string is a short.
+     * @param input The string to check.
+     * @param radix The radix used while parsing the input.
+     * @return True if the string is a short, false otherwise.
+     */
+    public static boolean isShort(final String input, final int radix) {
+        try {
+            Short.parseShort(input, radix);
             return true;
         } catch (final NumberFormatException e) {
             return false;
