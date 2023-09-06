@@ -31,6 +31,7 @@ public class DataTypeChecker {
      * @return True if the string is an integer, false otherwise.
      */
     public static boolean isInteger(final String input) {
+        if (input.isEmpty() || input.length() > 11) return false;
         try {
             Integer.parseInt(input);
             return true;
@@ -46,6 +47,7 @@ public class DataTypeChecker {
      * @return True if the string is an integer, false otherwise.
      */
     public static boolean isInteger(final String input, final int radix) {
+        if (input.isEmpty() || input.length() > maximumStringSize(radix, Integer.MAX_VALUE)) return false;
         try {
             Integer.parseInt(input, radix);
             return true;
@@ -60,6 +62,7 @@ public class DataTypeChecker {
      * @return True if the string is a long, false otherwise.
      */
     public static boolean isLong(final String input) {
+        if (input.isEmpty() || input.length() > 20) return false;
         try {
             Long.parseLong(input);
             return true;
@@ -75,6 +78,7 @@ public class DataTypeChecker {
      * @return True if the string is a long, false otherwise.
      */
     public static boolean isLong(final String input, final int radix) {
+        if (input.isEmpty() || input.length() > maximumStringSize(radix, Long.MAX_VALUE)) return false;
         try {
             Long.parseLong(input, radix);
             return true;
@@ -126,6 +130,7 @@ public class DataTypeChecker {
      * @return True if the string is a byte, false otherwise.
      */
     public static boolean isByte(final String input) {
+        if (input.isEmpty() || input.length() > 4) return false;
         try {
             Byte.parseByte(input);
             return true;
@@ -141,6 +146,7 @@ public class DataTypeChecker {
      * @return True if the string is a byte, false otherwise.
      */
     public static boolean isByte(final String input, final int radix) {
+        if (input.isEmpty() || input.length() > maximumStringSize(radix, Byte.MAX_VALUE)) return false;
         try {
             Byte.parseByte(input, radix);
             return true;
@@ -155,6 +161,7 @@ public class DataTypeChecker {
      * @return True if the string is a short, false otherwise.
      */
     public static boolean isShort(final String input) {
+        if (input.isEmpty() || input.length() > 6) return false;
         try {
             Short.parseShort(input);
             return true;
@@ -170,6 +177,7 @@ public class DataTypeChecker {
      * @return True if the string is a short, false otherwise.
      */
     public static boolean isShort(final String input, final int radix) {
+        if (input.isEmpty() || input.length() > maximumStringSize(radix, Short.MAX_VALUE)) return false;
         try {
             Short.parseShort(input, radix);
             return true;
@@ -193,6 +201,7 @@ public class DataTypeChecker {
      * @return True if the string is a UUID, false otherwise.
      */
     public static boolean isUUID(final String input) {
+        if (input.length() != 36) return false;
         try {
             UUID.fromString(input);
             return true;
@@ -217,11 +226,19 @@ public class DataTypeChecker {
      * @return True if the string is a BigInteger, false otherwise.
      */
     public static boolean isBigInteger(final String input, final int radix) {
+        if (input.isEmpty()) return false;
         try {
             new BigInteger(input, radix);
             return true;
         } catch (final NumberFormatException e) {
             return false;
         }
+    }
+
+    /**
+     * Returns the size of the biggest possible string that can be used to encode a number within the given maximum value and radix.
+     */
+    private static int maximumStringSize(int radix, long maxValue) {
+        return (int) Math.ceil(Math.log(maxValue) / Math.log(radix)) + 1;
     }
 }
