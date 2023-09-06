@@ -200,4 +200,28 @@ public class DataTypeChecker {
             return false;
         }
     }
+
+    /**
+     * Checks if the given string is a {@link BigInteger}
+     * @param input The string to check.
+     * @return True if the string is a BigInteger, false otherwise.
+     */
+    public static boolean isBigInteger(final String input) {
+        return isBigInteger(input, 10);
+    }
+
+    /**
+     * Checks if the given string is a {@link BigInteger}
+     * @param input The string to check.
+     * @param radix The radix used while parsing the input.
+     * @return True if the string is a BigInteger, false otherwise.
+     */
+    public static boolean isBigInteger(final String input, final int radix) {
+        try {
+            new BigInteger(input, radix);
+            return true;
+        } catch (final NumberFormatException e) {
+            return false;
+        }
+    }
 }
