@@ -10,6 +10,7 @@ dependencies {
     projectInclude project(":RClasses-mappings")
     projectInclude project(":RClasses-math")
     projectInclude project(":RClasses-pattern")
+    projectInclude project(":RClasses-kotlin-support")
 }
 
 jar {

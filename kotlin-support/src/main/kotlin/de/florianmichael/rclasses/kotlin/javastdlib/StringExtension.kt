@@ -20,6 +20,7 @@ package de.florianmichael.rclasses.kotlin.javastdlib
 /**
  * @param target The string to replace
  * @param replacement The string to replace with
+ * @param fallback The string to return if the target string was not found (optional)
  * @return The string with the last occurrence of the target string replaced with the replacement string
  */
 fun String.replaceLast(target: String, replacement: String, fallback: String = this): String {
@@ -30,6 +31,7 @@ fun String.replaceLast(target: String, replacement: String, fallback: String = t
 }
 
 /**
+ * @param fallback The string to return if the target string was not found (optional)
  * @return The string with the first character replaced with the uppercase version of it (if it is a letter).
  */
 fun String.uppercaseFirst(fallback: String = this): String {

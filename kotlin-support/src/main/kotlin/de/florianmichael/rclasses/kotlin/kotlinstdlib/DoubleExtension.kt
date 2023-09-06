@@ -20,7 +20,8 @@ package de.florianmichael.rclasses.kotlin.kotlinstdlib
 import kotlin.math.pow
 
 /**
- * Rounds a double to the given amount of decimals
+ * @param decimals The amount of decimals to round to
+ * @return Rounds a double to the given amount of decimals
  */
 fun Double.roundAvoid(decimals: Double): Double {
     val scale = 10.0.pow(decimals)
