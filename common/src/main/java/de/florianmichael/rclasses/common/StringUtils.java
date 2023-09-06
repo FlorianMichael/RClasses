@@ -224,4 +224,14 @@ public final class StringUtils {
 
         return input.toLowerCase().startsWith(prefix.toLowerCase());
     }
+
+    /**
+     * Returns the size of the biggest possible string that can be used to encode a number within the given maximum value and radix.
+     * @param radix The radix (base) to be used for encoding the number. Must be greater than 1.
+     * @param maxValue The maximum value that needs to be encoded. Must be a non-negative integer.
+     * @return The size of the largest string needed to encode the number.
+     */
+    public static int maximumStringSize(final int radix, final long maxValue) {
+        return (int) Math.ceil(Math.log(maxValue) / Math.log(radix)) + 1;
+    }
 }

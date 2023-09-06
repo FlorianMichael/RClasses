@@ -17,6 +17,8 @@
 
 package de.florianmichael.rclasses.common.access;
 
+import de.florianmichael.rclasses.common.StringUtils;
+
 import java.math.BigInteger;
 import java.util.UUID;
 
@@ -51,7 +53,7 @@ public class DataTypeChecker {
      * @return True if the string is an integer, false otherwise.
      */
     public static boolean isInteger(final String input, final int radix) {
-        if (input.isEmpty() || input.length() > maximumStringSize(radix, Integer.MAX_VALUE)) return false;
+        if (input.isEmpty() || input.length() > StringUtils.maximumStringSize(radix, Integer.MAX_VALUE)) return false;
         try {
             Integer.parseInt(input, radix);
             return true;
@@ -82,7 +84,7 @@ public class DataTypeChecker {
      * @return True if the string is a long, false otherwise.
      */
     public static boolean isLong(final String input, final int radix) {
-        if (input.isEmpty() || input.length() > maximumStringSize(radix, Long.MAX_VALUE)) return false;
+        if (input.isEmpty() || input.length() > StringUtils.maximumStringSize(radix, Long.MAX_VALUE)) return false;
         try {
             Long.parseLong(input, radix);
             return true;
@@ -150,7 +152,7 @@ public class DataTypeChecker {
      * @return True if the string is a byte, false otherwise.
      */
     public static boolean isByte(final String input, final int radix) {
-        if (input.isEmpty() || input.length() > maximumStringSize(radix, Byte.MAX_VALUE)) return false;
+        if (input.isEmpty() || input.length() > StringUtils.maximumStringSize(radix, Byte.MAX_VALUE)) return false;
         try {
             Byte.parseByte(input, radix);
             return true;
@@ -181,7 +183,7 @@ public class DataTypeChecker {
      * @return True if the string is a short, false otherwise.
      */
     public static boolean isShort(final String input, final int radix) {
-        if (input.isEmpty() || input.length() > maximumStringSize(radix, Short.MAX_VALUE)) return false;
+        if (input.isEmpty() || input.length() > StringUtils.maximumStringSize(radix, Short.MAX_VALUE)) return false;
         try {
             Short.parseShort(input, radix);
             return true;
@@ -237,12 +239,5 @@ public class DataTypeChecker {
         } catch (final NumberFormatException e) {
             return false;
         }
-    }
-
-    /**
-     * Returns the size of the biggest possible string that can be used to encode a number within the given maximum value and radix.
-     */
-    private static int maximumStringSize(int radix, long maxValue) {
-        return (int) Math.ceil(Math.log(maxValue) / Math.log(radix)) + 1;
     }
 }
