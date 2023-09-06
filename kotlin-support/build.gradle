@@ -1,0 +1,11 @@
+plugins {
+    id "org.jetbrains.kotlin.jvm" version "1.9.10"
+}
+
+kotlin {
+    jvmToolchain(8)
+}
+
+dependencies {
+    implementation project(":RClasses-common")
+}

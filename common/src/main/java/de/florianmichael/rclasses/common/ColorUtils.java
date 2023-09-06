@@ -64,7 +64,6 @@ public class ColorUtils {
         return new Color(color.getRed(), color.getGreen(), color.getBlue(), alpha);
     }
 
-
     /**
      * Invert a color
      * @param color The color to invert

@@ -37,3 +37,4 @@ If you just want the latest jar file you can download it from the GitHub [Action
 | mappings        | Converter for formats and registries for default formats and conventions                                  |
 | math            | Implementation of mathematical concepts and general formulas such as percentage calculation or stochastic |
 | pattern         | Abstracted implementations of different patterns like Registry, Storage, ...                              |
+| kotlin-support  | Adds kotlin extensions for some useful methods provided by the common module                              |
