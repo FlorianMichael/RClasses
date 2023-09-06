@@ -99,6 +99,7 @@ public class DataTypeChecker {
      * @return True if the string is a float, false otherwise.
      */
     public static boolean isFloat(final String input) {
+        if (input.isEmpty()) return false;
         try {
             Float.parseFloat(input);
             return true;
@@ -113,6 +114,7 @@ public class DataTypeChecker {
      * @return True if the string is a double, false otherwise.
      */
     public static boolean isDouble(final String input) {
+        if (input.isEmpty()) return false;
         try {
             Double.parseDouble(input);
             return true;
