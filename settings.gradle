@@ -6,3 +6,10 @@ include "RClasses-functional"
 include "RClasses-common"
 include "RClasses-pattern"
 
+project(":RClasses-all").projectDir = file("all")
+project(":RClasses-io").projectDir = file("io")
+project(":RClasses-mappings").projectDir = file("mappings")
+project(":RClasses-math").projectDir = file("math")
+project(":RClasses-functional").projectDir = file("functional")
+project(":RClasses-common").projectDir = file("common")
+project(":RClasses-pattern").projectDir = file("pattern")

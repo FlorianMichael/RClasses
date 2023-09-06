@@ -19,8 +19,8 @@ package de.florianmichael.rclasses.io.access;
 
 import de.florianmichael.rclasses.io.WebUtils;
 
-import java.io.*;
-import java.net.HttpURLConnection;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.net.URL;
 import java.net.URLConnection;
 import java.nio.channels.Channels;

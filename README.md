@@ -28,12 +28,12 @@ You can also find instructions how to implement it into your build script there.
 If you just want the latest jar file you can download it from the GitHub [Actions](https://github.com/FlorianMichael/RClasses/actions) or use the [Release](https://github.com/FlorianMichael/RClasses/releases).
 
 ## Source tree
-| Sub module name     | Description                                                                                               |
-|---------------------|-----------------------------------------------------------------------------------------------------------|
-| RClasses-all        | Only for the maven server, when included, all other sub modules will be loaded at one time.               |
-| RClasses-common     | Different utils for a specific topic/area                                                                 |
-| RClasses-functional | Implementation of own STD types like throwable functional interfaces                                      |
-| RClasses-io         | Streams, File/Web access and Input/Output stuff that works with the Java STD                              |
-| Rclasses-mappings   | Converter for formats and registries for default formats and conventions                                  |
-| RClasses-math       | Implementation of mathematical concepts and general formulas such as percentage calculation or stochastic |
-| RClasses-pattern    | Abstracted implementations of different patterns like Registry, Storage, ...                              |
+| Sub module name | Description                                                                                               |
+|-----------------|-----------------------------------------------------------------------------------------------------------|
+| all             | Only for the maven server, when included, all other sub modules will be loaded at one time.               |
+| common          | Different utils for a specific topic/area                                                                 |
+| functional      | Implementation of own STD types like throwable functional interfaces                                      |
+| io              | Streams, File/Web access and Input/Output stuff that works with the Java STD                              |
+| mappings        | Converter for formats and registries for default formats and conventions                                  |
+| math            | Implementation of mathematical concepts and general formulas such as percentage calculation or stochastic |
+| pattern         | Abstracted implementations of different patterns like Registry, Storage, ...                              |
