@@ -17,12 +17,19 @@
 
 package de.florianmichael.rclasses.common.access;
 
+import de.florianmichael.rclasses.common.StringUtils;
+
+import java.math.BigInteger;
 import java.util.UUID;
 
 /**
  * This file contains methods to check the data type of string.
  */
 public class DataTypeChecker {
+    private static final int MAX_INTEGER_STRING_LENGTH = StringUtils.maximumStringSize(10, Integer.MAX_VALUE);
+    private static final int MAX_LONG_STRING_LENGTH = StringUtils.maximumStringSize(10, Long.MAX_VALUE);
+    private static final int MAX_SHORT_STRING_LENGTH = StringUtils.maximumStringSize(10, Short.MAX_VALUE);
+    private static final int MAX_BYTE_STRING_LENGTH = StringUtils.maximumStringSize(10, Byte.MAX_VALUE);
 
     /**
      * Checks if the given string is an integer.
@@ -30,8 +37,25 @@ public class DataTypeChecker {
      * @return True if the string is an integer, false otherwise.
      */
     public static boolean isInteger(final String input) {
+        if (input.isEmpty() || input.length() > MAX_INTEGER_STRING_LENGTH) return false;
         try {
             Integer.parseInt(input);
+            return true;
+        } catch (final NumberFormatException e) {
+            return false;
+        }
+    }
+
+    /**
+     * Checks if the given string is an integer.
+     * @param input The string to check.
+     * @param radix The radix used while parsing the input.
+     * @return True if the string is an integer, false otherwise.
+     */
+    public static boolean isInteger(final String input, final int radix) {
+        if (input.isEmpty() || input.length() > StringUtils.maximumStringSize(radix, Integer.MAX_VALUE)) return false;
+        try {
+            Integer.parseInt(input, radix);
             return true;
         } catch (final NumberFormatException e) {
             return false;
@@ -44,8 +68,25 @@ public class DataTypeChecker {
      * @return True if the string is a long, false otherwise.
      */
     public static boolean isLong(final String input) {
+        if (input.isEmpty() || input.length() > MAX_LONG_STRING_LENGTH) return false;
         try {
             Long.parseLong(input);
+            return true;
+        } catch (final NumberFormatException e) {
+            return false;
+        }
+    }
+
+    /**
+     * Checks if the given string is a long.
+     * @param input The string to check.
+     * @param radix The radix used while parsing the input.
+     * @return True if the string is a long, false otherwise.
+     */
+    public static boolean isLong(final String input, final int radix) {
+        if (input.isEmpty() || input.length() > StringUtils.maximumStringSize(radix, Long.MAX_VALUE)) return false;
+        try {
+            Long.parseLong(input, radix);
             return true;
         } catch (final NumberFormatException e) {
             return false;
@@ -58,6 +99,7 @@ public class DataTypeChecker {
      * @return True if the string is a float, false otherwise.
      */
     public static boolean isFloat(final String input) {
+        if (input.isEmpty()) return false;
         try {
             Float.parseFloat(input);
             return true;
@@ -72,6 +114,7 @@ public class DataTypeChecker {
      * @return True if the string is a double, false otherwise.
      */
     public static boolean isDouble(final String input) {
+        if (input.isEmpty()) return false;
         try {
             Double.parseDouble(input);
             return true;
@@ -95,8 +138,25 @@ public class DataTypeChecker {
      * @return True if the string is a byte, false otherwise.
      */
     public static boolean isByte(final String input) {
+        if (input.isEmpty() || input.length() > MAX_BYTE_STRING_LENGTH) return false;
         try {
             Byte.parseByte(input);
+            return true;
+        } catch (final NumberFormatException e) {
+            return false;
+        }
+    }
+
+    /**
+     * Checks if the given string is a byte.
+     * @param input The string to check.
+     * @param radix The radix used while parsing the input.
+     * @return True if the string is a byte, false otherwise.
+     */
+    public static boolean isByte(final String input, final int radix) {
+        if (input.isEmpty() || input.length() > StringUtils.maximumStringSize(radix, Byte.MAX_VALUE)) return false;
+        try {
+            Byte.parseByte(input, radix);
             return true;
         } catch (final NumberFormatException e) {
             return false;
@@ -109,8 +169,25 @@ public class DataTypeChecker {
      * @return True if the string is a short, false otherwise.
      */
     public static boolean isShort(final String input) {
+        if (input.isEmpty() || input.length() > MAX_SHORT_STRING_LENGTH) return false;
         try {
             Short.parseShort(input);
+            return true;
+        } catch (final NumberFormatException e) {
+            return false;
+        }
+    }
+
+    /**
+     * Chekcks if the given string is a short.
+     * @param input The string to check.
+     * @param radix The radix used while parsing the input.
+     * @return True if the string is a short, false otherwise.
+     */
+    public static boolean isShort(final String input, final int radix) {
+        if (input.isEmpty() || input.length() > StringUtils.maximumStringSize(radix, Short.MAX_VALUE)) return false;
+        try {
+            Short.parseShort(input, radix);
             return true;
         } catch (final NumberFormatException e) {
             return false;
@@ -132,10 +209,36 @@ public class DataTypeChecker {
      * @return True if the string is a UUID, false otherwise.
      */
     public static boolean isUUID(final String input) {
+        if (input.length() != 36) return false;
         try {
             UUID.fromString(input);
             return true;
         } catch (final IllegalArgumentException e) {
+            return false;
+        }
+    }
+
+    /**
+     * Checks if the given string is a {@link BigInteger}
+     * @param input The string to check.
+     * @return True if the string is a BigInteger, false otherwise.
+     */
+    public static boolean isBigInteger(final String input) {
+        return isBigInteger(input, 10);
+    }
+
+    /**
+     * Checks if the given string is a {@link BigInteger}
+     * @param input The string to check.
+     * @param radix The radix used while parsing the input.
+     * @return True if the string is a BigInteger, false otherwise.
+     */
+    public static boolean isBigInteger(final String input, final int radix) {
+        if (input.isEmpty()) return false;
+        try {
+            new BigInteger(input, radix);
+            return true;
+        } catch (final NumberFormatException e) {
             return false;
         }
     }
