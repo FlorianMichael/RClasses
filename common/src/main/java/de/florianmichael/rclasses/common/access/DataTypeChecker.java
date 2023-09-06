@@ -24,6 +24,10 @@ import java.util.UUID;
  * This file contains methods to check the data type of string.
  */
 public class DataTypeChecker {
+    private static final int MAX_INTEGER_STRING_LENGTH = StringUtils.maximumStringSize(10, Integer.MAX_VALUE);
+    private static final int MAX_LONG_STRING_LENGTH = StringUtils.maximumStringSize(10, Long.MAX_VALUE);
+    private static final int MAX_SHORT_STRING_LENGTH = StringUtils.maximumStringSize(10, Short.MAX_VALUE);
+    private static final int MAX_BYTE_STRING_LENGTH = StringUtils.maximumStringSize(10, Byte.MAX_VALUE);
 
     /**
      * Checks if the given string is an integer.
@@ -31,7 +35,7 @@ public class DataTypeChecker {
      * @return True if the string is an integer, false otherwise.
      */
     public static boolean isInteger(final String input) {
-        if (input.isEmpty() || input.length() > 11) return false;
+        if (input.isEmpty() || input.length() > MAX_INTEGER_STRING_LENGTH) return false;
         try {
             Integer.parseInt(input);
             return true;
@@ -62,7 +66,7 @@ public class DataTypeChecker {
      * @return True if the string is a long, false otherwise.
      */
     public static boolean isLong(final String input) {
-        if (input.isEmpty() || input.length() > 20) return false;
+        if (input.isEmpty() || input.length() > MAX_LONG_STRING_LENGTH) return false;
         try {
             Long.parseLong(input);
             return true;
@@ -130,7 +134,7 @@ public class DataTypeChecker {
      * @return True if the string is a byte, false otherwise.
      */
     public static boolean isByte(final String input) {
-        if (input.isEmpty() || input.length() > 4) return false;
+        if (input.isEmpty() || input.length() > MAX_BYTE_STRING_LENGTH) return false;
         try {
             Byte.parseByte(input);
             return true;
@@ -161,7 +165,7 @@ public class DataTypeChecker {
      * @return True if the string is a short, false otherwise.
      */
     public static boolean isShort(final String input) {
-        if (input.isEmpty() || input.length() > 6) return false;
+        if (input.isEmpty() || input.length() > MAX_SHORT_STRING_LENGTH) return false;
         try {
             Short.parseShort(input);
             return true;
