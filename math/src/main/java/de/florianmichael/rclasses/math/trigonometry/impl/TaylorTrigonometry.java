@@ -21,7 +21,7 @@ import de.florianmichael.rclasses.math.trigonometry.Trigonometry;
 
 public class TaylorTrigonometry implements Trigonometry {
 
-    private static final float BF_SIN_TO_COS;
+    private final static float BF_SIN_TO_COS;
     static {
         BF_SIN_TO_COS = (float)(Math.PI * 0.5f);
     }

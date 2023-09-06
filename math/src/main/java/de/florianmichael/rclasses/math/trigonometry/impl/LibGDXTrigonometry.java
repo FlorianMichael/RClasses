@@ -20,20 +20,20 @@ package de.florianmichael.rclasses.math.trigonometry.impl;
 import de.florianmichael.rclasses.math.trigonometry.Trigonometry;
 
 public class LibGDXTrigonometry implements Trigonometry {
-    public static final float BF_PI = 3.1415927f;
+    public final static float BF_PI = 3.1415927f;
 
-    private static final int BF_SIN_BITS = 14; // 16KB. Adjust for accuracy.
-    private static final int BF_SIN_MASK = ~(-1 << BF_SIN_BITS);
-    private static final int BF_SIN_COUNT = BF_SIN_MASK + 1;
+    private final static int BF_SIN_BITS = 14; // 16KB. Adjust for accuracy.
+    private final static int BF_SIN_MASK = ~(-1 << BF_SIN_BITS);
+    private final static int BF_SIN_COUNT = BF_SIN_MASK + 1;
 
-    private static final float BF_radFull = BF_PI * 2;
-    private static final float BF_degFull = 360;
-    private static final float BF_radToIndex = BF_SIN_COUNT / BF_radFull;
-    private static final float BF_degToIndex = BF_SIN_COUNT / BF_degFull;
+    private final static float BF_radFull = BF_PI * 2;
+    private final static float BF_degFull = 360;
+    private final static float BF_radToIndex = BF_SIN_COUNT / BF_radFull;
+    private final static float BF_degToIndex = BF_SIN_COUNT / BF_degFull;
 
-    public static final float BF_degreesToRadians = BF_PI / 180;
+    public final static float BF_degreesToRadians = BF_PI / 180;
 
-    private static final float[] BF_table = new float[BF_SIN_COUNT];
+    private final static float[] BF_table = new float[BF_SIN_COUNT];
 
     static {
         for(int i = 0; i < BF_SIN_COUNT; i++) {

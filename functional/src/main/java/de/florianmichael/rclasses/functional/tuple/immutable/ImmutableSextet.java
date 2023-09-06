@@ -21,7 +21,7 @@ package de.florianmichael.rclasses.functional.tuple.immutable;
 import de.florianmichael.rclasses.functional.tuple.Sextet;
 
 public final class ImmutableSextet<A, B, C, D, E, F> extends Sextet<A, B, C, D, E, F> {
-    private static final UnsupportedOperationException COULD_NOT_SET = new UnsupportedOperationException("immutable pair-values aren't re-assignable!");
+    private final static UnsupportedOperationException COULD_NOT_SET = new UnsupportedOperationException("immutable pair-values aren't re-assignable!");
     private final A first;
     private final B second;
     private final C third;

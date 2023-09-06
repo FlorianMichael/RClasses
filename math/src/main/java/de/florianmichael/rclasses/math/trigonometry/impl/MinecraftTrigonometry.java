@@ -21,7 +21,7 @@ import de.florianmichael.rclasses.math.trigonometry.Trigonometry;
 
 public class MinecraftTrigonometry implements Trigonometry {
 
-    private static final float[] SIN_TABLE = new float[65536];
+    private final static float[] SIN_TABLE = new float[65536];
 
     static {
         for (int i = 0; i < 65536; ++i) {

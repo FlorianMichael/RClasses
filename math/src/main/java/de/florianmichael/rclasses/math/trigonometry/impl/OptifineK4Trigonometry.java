@@ -22,8 +22,8 @@ import de.florianmichael.rclasses.math.trigonometry.Trigonometry;
 public class OptifineK4Trigonometry implements Trigonometry {
 
 
-    private static final float radToIndex = roundToFloat(651.8986469044033D);
-    private static final float[] SIN_TABLE_FAST = new float[4096];
+    private final static float radToIndex = roundToFloat(651.8986469044033D);
+    private final static float[] SIN_TABLE_FAST = new float[4096];
 
     static {
         for (int j = 0; j < SIN_TABLE_FAST.length; ++j)

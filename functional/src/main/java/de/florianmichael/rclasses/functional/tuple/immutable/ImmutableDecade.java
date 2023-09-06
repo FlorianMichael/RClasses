@@ -21,7 +21,7 @@ package de.florianmichael.rclasses.functional.tuple.immutable;
 import de.florianmichael.rclasses.functional.tuple.Decade;
 
 public final class ImmutableDecade<A, B, C, D, E, F, G, H, I, J> extends Decade<A, B, C, D, E, F, G, H, I, J> {
-    private static final UnsupportedOperationException COULD_NOT_SET = new UnsupportedOperationException("immutable pair-values aren't re-assignable!");
+    private final static UnsupportedOperationException COULD_NOT_SET = new UnsupportedOperationException("immutable pair-values aren't re-assignable!");
     private final A first;
     private final B second;
     private final C third;

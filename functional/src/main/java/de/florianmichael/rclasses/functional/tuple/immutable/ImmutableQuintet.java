@@ -21,7 +21,7 @@ package de.florianmichael.rclasses.functional.tuple.immutable;
 import de.florianmichael.rclasses.functional.tuple.Quintet;
 
 public final class ImmutableQuintet<A, B, C, D, E> extends Quintet<A, B, C, D, E> {
-    private static final UnsupportedOperationException COULD_NOT_SET = new UnsupportedOperationException("immutable pair-values aren't re-assignable!");
+    private final static UnsupportedOperationException COULD_NOT_SET = new UnsupportedOperationException("immutable pair-values aren't re-assignable!");
     private final A first;
     private final B second;
     private final C third;

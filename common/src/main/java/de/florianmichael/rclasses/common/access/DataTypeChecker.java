@@ -26,10 +26,12 @@ import java.util.UUID;
  * This file contains methods to check the data type of string.
  */
 public class DataTypeChecker {
-    private static final int MAX_INTEGER_STRING_LENGTH = StringUtils.maximumStringSize(10, Integer.MAX_VALUE);
-    private static final int MAX_LONG_STRING_LENGTH = StringUtils.maximumStringSize(10, Long.MAX_VALUE);
-    private static final int MAX_SHORT_STRING_LENGTH = StringUtils.maximumStringSize(10, Short.MAX_VALUE);
-    private static final int MAX_BYTE_STRING_LENGTH = StringUtils.maximumStringSize(10, Byte.MAX_VALUE);
+    private final static int DEFAULT_RADIX = 10;
+
+    private final static int MAX_INTEGER_STRING_LENGTH = StringUtils.maximumStringSize(DEFAULT_RADIX, Integer.MAX_VALUE);
+    private final static int MAX_LONG_STRING_LENGTH = StringUtils.maximumStringSize(DEFAULT_RADIX, Long.MAX_VALUE);
+    private final static int MAX_SHORT_STRING_LENGTH = StringUtils.maximumStringSize(DEFAULT_RADIX, Short.MAX_VALUE);
+    private final static int MAX_BYTE_STRING_LENGTH = StringUtils.maximumStringSize(DEFAULT_RADIX, Byte.MAX_VALUE);
 
     /**
      * Checks if the given string is an integer.
@@ -179,7 +181,7 @@ public class DataTypeChecker {
     }
 
     /**
-     * Chekcks if the given string is a short.
+     * Checks if the given string is a short.
      * @param input The string to check.
      * @param radix The radix used while parsing the input.
      * @return True if the string is a short, false otherwise.
@@ -224,7 +226,7 @@ public class DataTypeChecker {
      * @return True if the string is a BigInteger, false otherwise.
      */
     public static boolean isBigInteger(final String input) {
-        return isBigInteger(input, 10);
+        return isBigInteger(input, DEFAULT_RADIX);
     }
 
     /**

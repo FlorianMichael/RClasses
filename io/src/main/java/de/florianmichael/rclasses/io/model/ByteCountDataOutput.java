@@ -23,7 +23,7 @@ import java.io.DataOutput;
  * Output stream that counts the number of bytes written.
  */
 public class ByteCountDataOutput implements DataOutput {
-    public static final ByteCountDataOutput INSTANCE = new ByteCountDataOutput();
+    public final static ByteCountDataOutput INSTANCE = new ByteCountDataOutput();
 
     private int count = 0;
 

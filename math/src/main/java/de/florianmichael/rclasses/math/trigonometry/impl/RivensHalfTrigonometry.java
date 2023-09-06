@@ -21,10 +21,10 @@ import de.florianmichael.rclasses.math.trigonometry.Trigonometry;
 
 public class RivensHalfTrigonometry implements Trigonometry {
 
-    private static final float BF_SIN_TO_COS;
-    private static final int BF_SIN_BITS, BF_SIN_MASK, BF_SIN_MASK2, BF_SIN_COUNT, BF_SIN_COUNT2;
-    private static final float BF_radFull, BF_radToIndex;
-    private static final float[] BF_sinHalf;
+    private final static float BF_SIN_TO_COS;
+    private final static int BF_SIN_BITS, BF_SIN_MASK, BF_SIN_MASK2, BF_SIN_COUNT, BF_SIN_COUNT2;
+    private final static float BF_radFull, BF_radToIndex;
+    private final static float[] BF_sinHalf;
 
     static {
         BF_SIN_TO_COS = (float)(Math.PI * 0.5f);
