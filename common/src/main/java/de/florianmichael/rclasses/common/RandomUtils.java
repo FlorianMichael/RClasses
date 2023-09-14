@@ -100,12 +100,9 @@ public class RandomUtils {
     }
 
     /**
-     * @param min The minimum value.
-     * @param max The maximum value.
-     *
-     * @return A random boolean between min and max.
+     * @return A random boolean (either true or false).
      */
-    public static boolean randomBoolean(final boolean min, final boolean max) {
+    public static boolean randomBoolean() {
         return Math.random() < 0.5;
     }
 }
