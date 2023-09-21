@@ -21,30 +21,49 @@ package de.florianmichael.rclasses.pattern.collection.evicting;
 import java.util.Collections;
 import java.util.Set;
 
+/**
+ * Implementation of an evicting set. This set will remove the first entry if the set is full.
+ * @param <V> The type of the set.
+ */
 public final class EvictingSet<V> {
-    private final Set<V> set;
 
+    private final Set<V> set;
     private final int maxSize;
 
-    EvictingSet() {
+    /**
+     * Dummy constructor.
+     */
+    public EvictingSet() {
         this(Collections.emptySet(), 0);
     }
 
+    /**
+     * Creates a new evicting set.
+     * @param set     The set.
+     * @param maxSize The maximum size of the set.
+     */
     public EvictingSet(final Set<V> set, final int maxSize) {
         this.set = set;
         this.maxSize = maxSize;
     }
 
+    /**
+     * Adds a value to the set. If the set is full, the first entry will be removed. Returns true if the set was full.
+     * @param value The value to add.
+     * @return      True if the set was full.
+     */
     public @SuppressWarnings("all") boolean add(final V value) {
-        final boolean removedFirstEntry;
-        if (this.isFull()) {
+        final boolean full = this.set.size() >= this.maxSize;
+        if (full) {
             this.set.remove(this.set.toArray()[0]);
-            removedFirstEntry = true;
-        } else removedFirstEntry = false;
+        }
         this.set.add(value);
-        return removedFirstEntry;
+        return full;
     }
 
+    /**
+     * @return True if the set is full.
+     */
     public boolean isFull() {
         return this.set.size() >= this.maxSize;
     }

@@ -17,8 +17,16 @@
 
 package de.florianmichael.rclasses.functional.throwable;
 
+/**
+ * This is a functional interface that can be used to replace Runnable and throw exceptions.
+ */
 @FunctionalInterface
 public interface TRunnable {
 
+    /**
+     * Runs this runnable and throws an exception.
+     *
+     * @throws Throwable The exception
+     */
     void run() throws Throwable;
 }

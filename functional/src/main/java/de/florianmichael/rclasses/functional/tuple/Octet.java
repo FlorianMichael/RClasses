@@ -18,6 +18,9 @@
 
 package de.florianmichael.rclasses.functional.tuple;
 
+/**
+ * Represents a tuple of eight elements.
+ */
 public abstract class Octet<A, B, C, D, E, F, G, H> {
 
     public abstract A getFirst();
@@ -40,16 +43,15 @@ public abstract class Octet<A, B, C, D, E, F, G, H> {
 
     @Override
     public String toString() {
-        return String.format(
-                "Octet{first=%s, second=%s, third=%s, fourth=%s, fifth=%s, sixth=%s, seventh=%s, eight=%s}",
-                this.getFirst(),
-                this.getSecond(),
-                this.getThird(),
-                this.getFourth(),
-                this.getFifth(),
-                this.getSixth(),
-                this.getSeventh(),
-                this.getEight()
-        );
+        return "Octet{" +
+                "first=" + getFirst() +
+                ", second=" + getSecond() +
+                ", third=" + getThird() +
+                ", fourth=" + getFourth() +
+                ", fifth=" + getFifth() +
+                ", sixth=" + getSixth() +
+                ", seventh=" + getSeventh() +
+                ", eight=" + getEight() +
+                '}';
     }
 }

@@ -20,8 +20,14 @@ package de.florianmichael.rclasses.functional.tuple.immutable;
 
 import de.florianmichael.rclasses.functional.tuple.Octet;
 
+import java.util.Objects;
+
+/**
+ * Represents a tuple of eight elements.
+ */
 public final class ImmutableOctet<A, B, C, D, E, F, G, H> extends Octet<A, B, C, D, E, F, G, H> {
-    private final static UnsupportedOperationException COULD_NOT_SET = new UnsupportedOperationException("immutable pair-values aren't re-assignable!");
+    private final static UnsupportedOperationException COULD_NOT_SET = new UnsupportedOperationException("The object is immutable!");
+
     private final A first;
     private final B second;
     private final C third;
@@ -31,14 +37,11 @@ public final class ImmutableOctet<A, B, C, D, E, F, G, H> extends Octet<A, B, C,
     private final G seventh;
     private final H eight;
 
-    ImmutableOctet() {
+    public ImmutableOctet() {
         this(null, null, null, null, null, null, null, null);
     }
 
-    public ImmutableOctet(final A first, final B second,
-                          final C third, final D fourth,
-                          final E fifth, final F sixth,
-                          final G seventh, final H eight) {
+    public ImmutableOctet(final A first, final B second, final C third, final D fourth, final E fifth, final F sixth, final G seventh, final H eight) {
         this.first = first;
         this.second = second;
         this.third = third;
@@ -131,16 +134,28 @@ public final class ImmutableOctet<A, B, C, D, E, F, G, H> extends Octet<A, B, C,
 
     @Override
     public String toString() {
-        return String.format(
-                "ImmutableOctet{first=%s, second=%s, third=%s, fourth=%s, fifth=%s, sixth=%s, seventh=%s, eight=%s}",
-                this.getFirst(),
-                this.getSecond(),
-                this.getThird(),
-                this.getFourth(),
-                this.getFifth(),
-                this.getSixth(),
-                this.getSeventh(),
-                this.getEight()
-        );
+        return "ImmutableOctet{" +
+                "first=" + first +
+                ", second=" + second +
+                ", third=" + third +
+                ", fourth=" + fourth +
+                ", fifth=" + fifth +
+                ", sixth=" + sixth +
+                ", seventh=" + seventh +
+                ", eight=" + eight +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ImmutableOctet<?, ?, ?, ?, ?, ?, ?, ?> that = (ImmutableOctet<?, ?, ?, ?, ?, ?, ?, ?>) o;
+        return Objects.equals(first, that.first) && Objects.equals(second, that.second) && Objects.equals(third, that.third) && Objects.equals(fourth, that.fourth) && Objects.equals(fifth, that.fifth) && Objects.equals(sixth, that.sixth) && Objects.equals(seventh, that.seventh) && Objects.equals(eight, that.eight);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(first, second, third, fourth, fifth, sixth, seventh, eight);
     }
 }

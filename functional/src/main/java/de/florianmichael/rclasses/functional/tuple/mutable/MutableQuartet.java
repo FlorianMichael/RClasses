@@ -20,13 +20,19 @@ package de.florianmichael.rclasses.functional.tuple.mutable;
 
 import de.florianmichael.rclasses.functional.tuple.Quartet;
 
+import java.util.Objects;
+
+/**
+ * Represents a mutable tuple of four elements.
+ */
 public final class MutableQuartet<A, B, C, D> extends Quartet<A, B, C, D> {
+
     private A first;
     private B second;
     private C third;
     private D fourth;
 
-    MutableQuartet() {
+    public MutableQuartet() {
         this(null, null, null, null);
     }
 
@@ -79,12 +85,24 @@ public final class MutableQuartet<A, B, C, D> extends Quartet<A, B, C, D> {
 
     @Override
     public String toString() {
-        return String.format(
-                "MutableQuartet{first=%s, second=%s, third=%s, fourth=%s}",
-                this.getFirst(),
-                this.getSecond(),
-                this.getThird(),
-                this.getFourth()
-        );
+        return "MutableQuartet{" +
+                "first=" + first +
+                ", second=" + second +
+                ", third=" + third +
+                ", fourth=" + fourth +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        MutableQuartet<?, ?, ?, ?> that = (MutableQuartet<?, ?, ?, ?>) o;
+        return Objects.equals(first, that.first) && Objects.equals(second, that.second) && Objects.equals(third, that.third) && Objects.equals(fourth, that.fourth);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(first, second, third, fourth);
     }
 }

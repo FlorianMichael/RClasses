@@ -20,7 +20,11 @@ package de.florianmichael.rclasses.functional.tuple.mutable;
 
 import de.florianmichael.rclasses.functional.tuple.Octet;
 
+/**
+ * Represents a mutable tuple of eight elements.
+ */
 public final class MutableOctet<A, B, C, D, E, F, G, H> extends Octet<A, B, C, D, E, F, G, H> {
+
     private A first;
     private B second;
     private C third;
@@ -30,14 +34,11 @@ public final class MutableOctet<A, B, C, D, E, F, G, H> extends Octet<A, B, C, D
     private G seventh;
     private H eight;
 
-    MutableOctet() {
+    public MutableOctet() {
         this(null, null, null, null, null, null, null, null);
     }
 
-    public MutableOctet(final A first, final B second,
-                        final C third, final D fourth,
-                        final E fifth, final F sixth,
-                        final G seventh, final H eight) {
+    public MutableOctet(final A first, final B second, final C third, final D fourth, final E fifth, final F sixth, final G seventh, final H eight) {
         this.first = first;
         this.second = second;
         this.third = third;
@@ -130,16 +131,15 @@ public final class MutableOctet<A, B, C, D, E, F, G, H> extends Octet<A, B, C, D
 
     @Override
     public String toString() {
-        return String.format(
-                "MutableOctet{first=%s, second=%s, third=%s, fourth=%s, fifth=%s, sixth=%s, seventh=%s, eight=%s}",
-                this.getFirst(),
-                this.getSecond(),
-                this.getThird(),
-                this.getFourth(),
-                this.getFifth(),
-                this.getSixth(),
-                this.getSeventh(),
-                this.getEight()
-        );
+        return "MutableOctet{" +
+                "first=" + first +
+                ", second=" + second +
+                ", third=" + third +
+                ", fourth=" + fourth +
+                ", fifth=" + fifth +
+                ", sixth=" + sixth +
+                ", seventh=" + seventh +
+                ", eight=" + eight +
+                '}';
     }
 }

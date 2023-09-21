@@ -21,30 +21,51 @@ package de.florianmichael.rclasses.pattern.collection.evicting;
 import java.util.Collections;
 import java.util.Map;
 
+/**
+ * Implementation of an evicting map. This map will remove the first entry if the map is full.
+ * @param <K> The type of the key.
+ * @param <V> The type of the value.
+ */
 public final class EvictingMap<K, V> {
-    private final Map<K, V> map;
 
+    private final Map<K, V> map;
     private final int maxSize;
 
-    EvictingMap() {
+    /**
+     * Dummy constructor.
+     */
+    public EvictingMap() {
         this(Collections.emptyMap(), 0);
     }
 
+    /**
+     * Creates a new evicting map.
+     * @param map     The map.
+     * @param maxSize The maximum size of the map.
+     */
     public EvictingMap(final Map<K, V> map, final int maxSize) {
         this.map = map;
         this.maxSize = maxSize;
     }
 
+    /**
+     * Puts a key and a value into the map. If the map is full, the first entry will be removed. Returns true if the map was full.
+     * @param key   The key.
+     * @param value The value.
+     * @return      True if the map was full.
+     */
     public @SuppressWarnings("all") boolean put(final K key, final V value) {
-        final boolean removedFirstEntry;
-        if (this.isFull()) {
+        final boolean full = this.map.size() >= this.maxSize;
+        if (full) {
             this.map.remove(this.map.keySet().toArray()[0]);
-            removedFirstEntry = true;
-        } else removedFirstEntry = false;
+        }
         this.map.put(key, value);
-        return removedFirstEntry;
+        return full;
     }
 
+    /**
+     * @return True if the map is full.
+     */
     public boolean isFull() {
         return this.map.size() >= this.maxSize;
     }

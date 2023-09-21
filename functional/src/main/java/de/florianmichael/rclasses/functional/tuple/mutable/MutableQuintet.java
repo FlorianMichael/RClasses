@@ -27,12 +27,11 @@ public final class MutableQuintet<A, B, C, D, E> extends Quintet<A, B, C, D, E> 
     private D fourth;
     private E fifth;
 
-    MutableQuintet() {
+    public MutableQuintet() {
         this(null, null, null, null, null);
     }
 
-    public MutableQuintet(final A first, final B second,
-                          final C third, final D fourth, final E fifth) {
+    public MutableQuintet(final A first, final B second, final C third, final D fourth, final E fifth) {
         this.first = first;
         this.second = second;
         this.third = third;

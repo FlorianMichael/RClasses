@@ -19,11 +19,32 @@ package de.florianmichael.rclasses.functional.throwable;
 
 import java.util.Objects;
 
+/**
+ * This is a functional interface that can be used to replace BiFunction<T, U, R> and throw exceptions.
+ *
+ * @param <T> The first argument type
+ * @param <U> The second argument type
+ * @param <R> The return type
+ */
 @FunctionalInterface
 public interface TBiFunction<T, U, R> {
 
+    /**
+     * Applies this function to the given arguments and throws an exception.
+     *
+     * @param t          The first argument
+     * @param u          The second argument
+     * @return           The return value
+     * @throws Throwable The exception
+     */
     R apply(T t, U u) throws Throwable;
 
+    /**
+     * @param after      The operation to perform after this operation
+     * @return           A composed {@code TBiFunction} that performs in sequence this operation followed by the {@code after}
+     * @param <V>        The return type of the {@code after} function, and of the composed function
+     * @throws Throwable The exception
+     */
     default <V> TBiFunction<T, U, V> andThen(TFunction<? super R, ? extends V> after) throws Throwable {
         Objects.requireNonNull(after);
         return (T t, U u) -> after.apply(apply(t, u));

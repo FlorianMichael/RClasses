@@ -18,6 +18,9 @@
 
 package de.florianmichael.rclasses.functional.tuple;
 
+/**
+ * Represents a tuple of five elements.
+ */
 public abstract class Quintet<A, B, C, D, E> {
 
     public abstract A getFirst();
@@ -34,13 +37,12 @@ public abstract class Quintet<A, B, C, D, E> {
 
     @Override
     public String toString() {
-        return String.format(
-                "Quintet{first=%s, second=%s, third=%s, fourth=%s, fifth=%s}",
-                this.getFirst(),
-                this.getSecond(),
-                this.getThird(),
-                this.getFourth(),
-                this.getFifth()
-        );
+        return "Quintet{" +
+                "first=" + getFirst() +
+                ", second=" + getSecond() +
+                ", third=" + getThird() +
+                ", fourth=" + getFourth() +
+                ", fifth=" + getFifth() +
+                '}';
     }
 }

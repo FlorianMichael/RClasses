@@ -20,7 +20,13 @@ package de.florianmichael.rclasses.functional.tuple.mutable;
 
 import de.florianmichael.rclasses.functional.tuple.Sextet;
 
+import java.util.Objects;
+
+/**
+ * Represents a mutable tuple of six elements.
+ */
 public final class MutableSextet<A, B, C, D, E, F> extends Sextet<A, B, C, D, E, F> {
+
     private A first;
     private B second;
     private C third;
@@ -28,13 +34,11 @@ public final class MutableSextet<A, B, C, D, E, F> extends Sextet<A, B, C, D, E,
     private E fifth;
     private F sixth;
 
-    MutableSextet() {
+    public MutableSextet() {
         this(null, null, null, null, null, null);
     }
 
-    public MutableSextet(final A first, final B second,
-                         final C third, final D fourth,
-                         final E fifth, final F sixth) {
+    public MutableSextet(final A first, final B second, final C third, final D fourth, final E fifth, final F sixth) {
         this.first = first;
         this.second = second;
         this.third = third;
@@ -105,14 +109,26 @@ public final class MutableSextet<A, B, C, D, E, F> extends Sextet<A, B, C, D, E,
 
     @Override
     public String toString() {
-        return String.format(
-                "MutableSextet{first=%s, second=%s, third=%s, fourth=%s, fifth=%s, sixth=%s}",
-                this.getFirst(),
-                this.getSecond(),
-                this.getThird(),
-                this.getFourth(),
-                this.getFifth(),
-                this.getSixth()
-        );
+        return "MutableSextet{" +
+                "first=" + first +
+                ", second=" + second +
+                ", third=" + third +
+                ", fourth=" + fourth +
+                ", fifth=" + fifth +
+                ", sixth=" + sixth +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        MutableSextet<?, ?, ?, ?, ?, ?> that = (MutableSextet<?, ?, ?, ?, ?, ?>) o;
+        return Objects.equals(first, that.first) && Objects.equals(second, that.second) && Objects.equals(third, that.third) && Objects.equals(fourth, that.fourth) && Objects.equals(fifth, that.fifth) && Objects.equals(sixth, that.sixth);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(first, second, third, fourth, fifth, sixth);
     }
 }

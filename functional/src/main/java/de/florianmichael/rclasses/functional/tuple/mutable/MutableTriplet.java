@@ -20,12 +20,18 @@ package de.florianmichael.rclasses.functional.tuple.mutable;
 
 import de.florianmichael.rclasses.functional.tuple.Triplet;
 
+import java.util.Objects;
+
+/**
+ * Represents a mutable tuple of three elements.
+ */
 public final class MutableTriplet<A, B, C> extends Triplet<A, B, C> {
+
     private A first;
     private B second;
     private C third;
 
-    MutableTriplet() {
+    public MutableTriplet() {
         this(null, null, null);
     }
 
@@ -67,11 +73,23 @@ public final class MutableTriplet<A, B, C> extends Triplet<A, B, C> {
 
     @Override
     public String toString() {
-        return String.format(
-                "MutableTriplet{first=%s, second=%s, third=%s}",
-                this.getFirst(),
-                this.getSecond(),
-                this.getThird()
-        );
+        return "MutableTriplet{" +
+                "first=" + first +
+                ", second=" + second +
+                ", third=" + third +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        MutableTriplet<?, ?, ?> that = (MutableTriplet<?, ?, ?>) o;
+        return Objects.equals(first, that.first) && Objects.equals(second, that.second) && Objects.equals(third, that.third);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(first, second, third);
     }
 }

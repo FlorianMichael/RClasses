@@ -20,7 +20,13 @@ package de.florianmichael.rclasses.functional.tuple.mutable;
 
 import de.florianmichael.rclasses.functional.tuple.Decade;
 
+import java.util.Objects;
+
+/**
+ * Represents a mutable tuple of ten elements.
+ */
 public final class MutableDecade<A, B, C, D, E, F, G, H, I, J> extends Decade<A, B, C, D, E, F, G, H, I, J> {
+
     private A first;
     private B second;
     private C third;
@@ -32,14 +38,11 @@ public final class MutableDecade<A, B, C, D, E, F, G, H, I, J> extends Decade<A,
     private I ninth;
     private J tenth;
 
-    MutableDecade() {
+    public MutableDecade() {
         this(null, null, null, null, null, null, null, null, null, null);
     }
-    public MutableDecade(final A first, final B second,
-                         final C third, final D fourth,
-                         final E fifth, final F sixth,
-                         final G seventh, final H eight,
-                         final I ninth, final J tenth) {
+
+    public MutableDecade(final A first, final B second, final C third, final D fourth, final E fifth, final F sixth, final G seventh, final H eight, final I ninth, final J tenth) {
         this.first = first;
         this.second = second;
         this.third = third;
@@ -150,20 +153,33 @@ public final class MutableDecade<A, B, C, D, E, F, G, H, I, J> extends Decade<A,
     public void setTenth(final J tenth) {
         this.tenth = tenth;
     }
+
     @Override
     public String toString() {
-        return String.format(
-                "MutableDecade{first=%s, second=%s, third=%s, fourth=%s, fifth=%s, sixth=%s, seventh=%s, eight=%s, ninth=%s, tenth=%s}",
-                this.getFirst(),
-                this.getSecond(),
-                this.getThird(),
-                this.getFourth(),
-                this.getFifth(),
-                this.getSixth(),
-                this.getSeventh(),
-                this.getEight(),
-                this.getNinth(),
-                this.getTenth()
-        );
+        return "MutableDecade{" +
+                "first=" + first +
+                ", second=" + second +
+                ", third=" + third +
+                ", fourth=" + fourth +
+                ", fifth=" + fifth +
+                ", sixth=" + sixth +
+                ", seventh=" + seventh +
+                ", eight=" + eight +
+                ", ninth=" + ninth +
+                ", tenth=" + tenth +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        MutableDecade<?, ?, ?, ?, ?, ?, ?, ?, ?, ?> that = (MutableDecade<?, ?, ?, ?, ?, ?, ?, ?, ?, ?>) o;
+        return Objects.equals(first, that.first) && Objects.equals(second, that.second) && Objects.equals(third, that.third) && Objects.equals(fourth, that.fourth) && Objects.equals(fifth, that.fifth) && Objects.equals(sixth, that.sixth) && Objects.equals(seventh, that.seventh) && Objects.equals(eight, that.eight) && Objects.equals(ninth, that.ninth) && Objects.equals(tenth, that.tenth);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(first, second, third, fourth, fifth, sixth, seventh, eight, ninth, tenth);
     }
 }

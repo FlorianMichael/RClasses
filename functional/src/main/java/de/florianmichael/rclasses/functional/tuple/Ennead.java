@@ -17,56 +17,44 @@
  */
 
 package de.florianmichael.rclasses.functional.tuple;
+
+/**
+ * Represents a tuple of nine elements.
+ */
 public abstract class Ennead<A, B, C, D, E, F, G, H, I> {
 
     public abstract A getFirst();
-
     public abstract B getSecond();
-
     public abstract C getThird();
-
     public abstract D getFourth();
-
     public abstract E getFifth();
-
     public abstract F getSixth();
-
     public abstract G getSeventh();
-
     public abstract H getEight();
-
     public abstract I getNinth();
 
     public abstract void setFirst(final A first);
-
     public abstract void setSecond(final B second);
-
     public abstract void setThird(final C third);
-
     public abstract void setFourth(final D third);
-
     public abstract void setFifth(final E fifth);
-
     public abstract void setSixth(final F sixth);
-
     public abstract void setSeventh(final G sixth);
-
     public abstract void setEight(final H eight);
-
     public abstract void setNinth(final I ninth);
+
     @Override
     public String toString() {
-        return String.format(
-                "Ennead{first=%s, second=%s, third=%s, fourth=%s, fifth=%s, sixth=%s, seventh=%s, eight=%s, ninth=%s}",
-                this.getFirst(),
-                this.getSecond(),
-                this.getThird(),
-                this.getFourth(),
-                this.getFifth(),
-                this.getSixth(),
-                this.getSeventh(),
-                this.getEight(),
-                this.getNinth()
-        );
+        return "Ennead{" +
+                "first=" + getFirst() +
+                ", second=" + getSecond() +
+                ", third=" + getThird() +
+                ", fourth=" + getFourth() +
+                ", fifth=" + getFifth() +
+                ", sixth=" + getSixth() +
+                ", seventh=" + getSeventh() +
+                ", eight=" + getEight() +
+                ", ninth=" + getNinth() +
+                '}';
     }
 }

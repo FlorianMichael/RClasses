@@ -18,6 +18,9 @@
 
 package de.florianmichael.rclasses.functional.tuple;
 
+/**
+ * Represents a tuple of three elements.
+ */
 public abstract class Triplet<A, B, C> {
 
     public abstract A getFirst();
@@ -30,11 +33,10 @@ public abstract class Triplet<A, B, C> {
 
     @Override
     public String toString() {
-        return String.format(
-                "Triplet{first=%s, second=%s, third=%s}",
-                this.getFirst(),
-                this.getSecond(),
-                this.getThird()
-        );
+        return "Triplet{" +
+                "first=" + getFirst() +
+                ", second=" + getSecond() +
+                ", third=" + getThird() +
+                '}';
     }
 }

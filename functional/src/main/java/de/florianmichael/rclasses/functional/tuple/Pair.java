@@ -18,6 +18,9 @@
 
 package de.florianmichael.rclasses.functional.tuple;
 
+/**
+ * Represents a tuple of two elements.
+ */
 public abstract class Pair<A, B> {
 
     public abstract A getFirst();
@@ -28,10 +31,9 @@ public abstract class Pair<A, B> {
 
     @Override
     public String toString() {
-        return String.format(
-                "Pair{first=%s, second=%s}",
-                this.getFirst(),
-                this.getSecond()
-        );
+        return "Pair{" +
+                "first=" + getFirst() +
+                ", second=" + getSecond() +
+                '}';
     }
 }

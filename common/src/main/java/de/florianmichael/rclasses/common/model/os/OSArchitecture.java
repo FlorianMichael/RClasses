@@ -17,6 +17,8 @@
 
 package de.florianmichael.rclasses.common.model.os;
 
+import java.util.Objects;
+
 /**
  * This class represents the architecture of the operating system.
  */
@@ -51,5 +53,35 @@ public class OSArchitecture {
 
     public boolean is64Bit() {
         return arm64 || amd64 || mips64 || ppc64 || sparc || ia64;
+    }
+
+    @Override
+    public String toString() {
+        return "OSArchitecture{" +
+                "amd64=" + amd64 +
+                ", x86=" + x86 +
+                ", arm64=" + arm64 +
+                ", arm=" + arm +
+                ", ia64=" + ia64 +
+                ", mips64=" + mips64 +
+                ", mips=" + mips +
+                ", ppc64=" + ppc64 +
+                ", s390x=" + s390x +
+                ", sparc=" + sparc +
+                ", s390=" + s390 +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        OSArchitecture that = (OSArchitecture) o;
+        return amd64 == that.amd64 && x86 == that.x86 && arm64 == that.arm64 && arm == that.arm && ia64 == that.ia64 && mips64 == that.mips64 && mips == that.mips && ppc64 == that.ppc64 && s390x == that.s390x && sparc == that.sparc && s390 == that.s390;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(amd64, x86, arm64, arm, ia64, mips64, mips, ppc64, s390x, sparc, s390);
     }
 }

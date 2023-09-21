@@ -20,13 +20,18 @@ package de.florianmichael.rclasses.functional.tuple.immutable;
 
 import de.florianmichael.rclasses.functional.tuple.Pair;
 
+import java.util.Objects;
+
+/**
+ * Represents a tuple of two elements.
+ */
 public final class ImmutablePair<A, B> extends Pair<A, B> {
-    private final static UnsupportedOperationException COULD_NOT_SET = new UnsupportedOperationException("immutable pair-values aren't re-assignable!");
+    private final static UnsupportedOperationException COULD_NOT_SET = new UnsupportedOperationException("The object is immutable!");
 
     private final A first;
     private final B second;
 
-    ImmutablePair() {
+    public ImmutablePair() {
         this(null, null);
     }
 
@@ -41,13 +46,13 @@ public final class ImmutablePair<A, B> extends Pair<A, B> {
     }
 
     @Override
-    public void setFirst(final A first) throws UnsupportedOperationException {
-        throw COULD_NOT_SET;
+    public B getSecond() {
+        return this.second;
     }
 
     @Override
-    public B getSecond() {
-        return this.second;
+    public void setFirst(final A first) throws UnsupportedOperationException {
+        throw COULD_NOT_SET;
     }
 
     @Override
@@ -57,10 +62,22 @@ public final class ImmutablePair<A, B> extends Pair<A, B> {
 
     @Override
     public String toString() {
-        return String.format(
-                "ImmutablePair{first=%s, second=%s}",
-                this.getFirst(),
-                this.getSecond()
-        );
+        return "ImmutablePair{" +
+                "first=" + first +
+                ", second=" + second +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ImmutablePair<?, ?> that = (ImmutablePair<?, ?>) o;
+        return Objects.equals(first, that.first) && Objects.equals(second, that.second);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(first, second);
     }
 }

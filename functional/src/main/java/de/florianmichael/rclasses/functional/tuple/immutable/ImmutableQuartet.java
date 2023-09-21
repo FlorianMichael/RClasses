@@ -20,19 +20,24 @@ package de.florianmichael.rclasses.functional.tuple.immutable;
 
 import de.florianmichael.rclasses.functional.tuple.Quartet;
 
+import java.util.Objects;
+
+/**
+ * Represents a tuple of four elements.
+ */
 public final class ImmutableQuartet<A, B, C, D> extends Quartet<A, B, C, D> {
-    private final static UnsupportedOperationException COULD_NOT_SET = new UnsupportedOperationException("immutable pair-values aren't re-assignable!");
+    private final static UnsupportedOperationException COULD_NOT_SET = new UnsupportedOperationException("The object is immutable!");
+
     private final A first;
     private final B second;
     private final C third;
     private final D fourth;
 
-    ImmutableQuartet() {
+    public ImmutableQuartet() {
         this(null, null, null, null);
     }
 
-    public ImmutableQuartet(final A first, final B second,
-                            final C third, final D fourth) {
+    public ImmutableQuartet(final A first, final B second, final C third, final D fourth) {
         this.first = first;
         this.second = second;
         this.third = third;
@@ -81,12 +86,24 @@ public final class ImmutableQuartet<A, B, C, D> extends Quartet<A, B, C, D> {
 
     @Override
     public String toString() {
-        return String.format(
-                "ImmutableQuartet{first=%s, second=%s, third=%s, fourth=%s}",
-                this.getFirst(),
-                this.getSecond(),
-                this.getThird(),
-                this.getFourth()
-        );
+        return "ImmutableQuartet{" +
+                "first=" + first +
+                ", second=" + second +
+                ", third=" + third +
+                ", fourth=" + fourth +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ImmutableQuartet<?, ?, ?, ?> that = (ImmutableQuartet<?, ?, ?, ?>) o;
+        return Objects.equals(first, that.first) && Objects.equals(second, that.second) && Objects.equals(third, that.third) && Objects.equals(fourth, that.fourth);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(first, second, third, fourth);
     }
 }

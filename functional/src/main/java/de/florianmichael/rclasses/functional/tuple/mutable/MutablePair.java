@@ -20,11 +20,17 @@ package de.florianmichael.rclasses.functional.tuple.mutable;
 
 import de.florianmichael.rclasses.functional.tuple.Pair;
 
+import java.util.Objects;
+
+/**
+ * Represents a mutable tuple of two elements.
+ */
 public final class MutablePair<A, B> extends Pair<A, B> {
+
     private A first;
     private B second;
 
-    MutablePair() {
+    public MutablePair() {
         this(null, null);
     }
 
@@ -55,10 +61,22 @@ public final class MutablePair<A, B> extends Pair<A, B> {
 
     @Override
     public String toString() {
-        return String.format(
-                "MutablePair{first=%s, second=%s}",
-                this.getFirst(),
-                this.getSecond()
-        );
+        return "MutablePair{" +
+                "first=" + first +
+                ", second=" + second +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        MutablePair<?, ?> that = (MutablePair<?, ?>) o;
+        return Objects.equals(first, that.first) && Objects.equals(second, that.second);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(first, second);
     }
 }

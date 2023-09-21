@@ -18,6 +18,9 @@
 
 package de.florianmichael.rclasses.functional.tuple;
 
+/**
+ * Represents a tuple of four elements.
+ */
 public abstract class Quartet<A, B, C, D> {
 
     public abstract A getFirst();
@@ -32,12 +35,11 @@ public abstract class Quartet<A, B, C, D> {
 
     @Override
     public String toString() {
-        return String.format(
-                "Quartet{first=%s, second=%s, third=%s, fourth=%s}",
-                this.getFirst(),
-                this.getSecond(),
-                this.getThird(),
-                this.getFourth()
-        );
+        return "Quartet{" +
+                "first=" + getFirst() +
+                ", second=" + getSecond() +
+                ", third=" + getThird() +
+                ", fourth=" + getFourth() +
+                '}';
     }
 }

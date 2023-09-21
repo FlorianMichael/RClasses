@@ -18,6 +18,9 @@
 
 package de.florianmichael.rclasses.functional.tuple;
 
+/**
+ * Represents a tuple of seven elements.
+ */
 public abstract class Septet<A, B, C, D, E, F, G> {
 
     public abstract A getFirst();
@@ -38,15 +41,14 @@ public abstract class Septet<A, B, C, D, E, F, G> {
 
     @Override
     public String toString() {
-        return String.format(
-                "Septet{first=%s, second=%s, third=%s, fourth=%s, fifth=%s, sixth=%s, seventh=%s}",
-                this.getFirst(),
-                this.getSecond(),
-                this.getThird(),
-                this.getFourth(),
-                this.getFifth(),
-                this.getSixth(),
-                this.getSeventh()
-        );
+        return "Septet{" +
+                "first=" + getFirst() +
+                ", second=" + getSecond() +
+                ", third=" + getThird() +
+                ", fourth=" + getFourth() +
+                ", fifth=" + getFifth() +
+                ", sixth=" + getSixth() +
+                ", seventh=" + getSeventh() +
+                '}';
     }
 }

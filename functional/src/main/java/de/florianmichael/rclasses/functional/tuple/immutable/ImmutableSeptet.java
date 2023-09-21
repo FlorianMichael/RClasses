@@ -20,8 +20,14 @@ package de.florianmichael.rclasses.functional.tuple.immutable;
 
 import de.florianmichael.rclasses.functional.tuple.Septet;
 
+import java.util.Objects;
+
+/**
+ * Represents a tuple of seven elements.
+ */
 public final class ImmutableSeptet<A, B, C, D, E, F, G> extends Septet<A, B, C, D, E, F, G> {
-    private final static UnsupportedOperationException COULD_NOT_SET = new UnsupportedOperationException("immutable pair-values aren't re-assignable!");
+    private final static UnsupportedOperationException COULD_NOT_SET = new UnsupportedOperationException("The object is immutable!");
+
     private final A first;
     private final B second;
     private final C third;
@@ -30,13 +36,11 @@ public final class ImmutableSeptet<A, B, C, D, E, F, G> extends Septet<A, B, C, 
     private final F sixth;
     private final G seventh;
 
-    ImmutableSeptet() {
+    public ImmutableSeptet() {
         this(null, null, null, null, null, null, null);
     }
 
-    public ImmutableSeptet(final A first, final B second,
-                           final C third, final D fourth,
-                           final E fifth, final F sixth, final G seventh) {
+    public ImmutableSeptet(final A first, final B second, final C third, final D fourth, final E fifth, final F sixth, final G seventh) {
         this.first = first;
         this.second = second;
         this.third = third;
@@ -118,15 +122,27 @@ public final class ImmutableSeptet<A, B, C, D, E, F, G> extends Septet<A, B, C, 
 
     @Override
     public String toString() {
-        return String.format(
-                "ImmutableSeptet{first=%s, second=%s, third=%s, fourth=%s, fifth=%s, sixth=%s, seventh=%s}",
-                this.getFirst(),
-                this.getSecond(),
-                this.getThird(),
-                this.getFourth(),
-                this.getFifth(),
-                this.getSixth(),
-                this.getSeventh()
-        );
+        return "ImmutableSeptet{" +
+                "first=" + first +
+                ", second=" + second +
+                ", third=" + third +
+                ", fourth=" + fourth +
+                ", fifth=" + fifth +
+                ", sixth=" + sixth +
+                ", seventh=" + seventh +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ImmutableSeptet<?, ?, ?, ?, ?, ?, ?> that = (ImmutableSeptet<?, ?, ?, ?, ?, ?, ?>) o;
+        return Objects.equals(first, that.first) && Objects.equals(second, that.second) && Objects.equals(third, that.third) && Objects.equals(fourth, that.fourth) && Objects.equals(fifth, that.fifth) && Objects.equals(sixth, that.sixth) && Objects.equals(seventh, that.seventh);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(first, second, third, fourth, fifth, sixth, seventh);
     }
 }

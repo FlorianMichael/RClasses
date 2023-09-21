@@ -15,10 +15,10 @@
  * limitations under the License.
  */
 
-// From https://github.com/allinkdev/Consoomer (License: UNLICENSE, time: 26/05)
 package de.florianmichael.rclasses.functional.functions;
 
 @FunctionalInterface
 public interface DuodecFunction<T, U, V, W, X, Y, Z, A, B, C, D, E, F> {
+
     F accept(T t, U u, V v, W w, X x, Y y, Z z, A a, B b, C c, D d, E e);
 }

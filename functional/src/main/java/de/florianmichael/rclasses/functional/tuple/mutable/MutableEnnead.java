@@ -20,7 +20,13 @@ package de.florianmichael.rclasses.functional.tuple.mutable;
 
 import de.florianmichael.rclasses.functional.tuple.Ennead;
 
+import java.util.Objects;
+
+/**
+ * Represents a mutable tuple of nine elements.
+ */
 public final class MutableEnnead<A, B, C, D, E, F, G, H, I> extends Ennead<A, B, C, D, E, F, G, H, I> {
+
     private A first;
     private B second;
     private C third;
@@ -31,13 +37,11 @@ public final class MutableEnnead<A, B, C, D, E, F, G, H, I> extends Ennead<A, B,
     private H eight;
     private I ninth;
 
-    MutableEnnead() {
+    public MutableEnnead() {
         this(null, null, null, null, null, null, null, null, null);
     }
-    public MutableEnnead(final A first, final B second,
-                         final C third, final D fourth,
-                         final E fifth, final F sixth,
-                         final G seventh, final H eight, final I ninth) {
+
+    public MutableEnnead(final A first, final B second, final C third, final D fourth, final E fifth, final F sixth, final G seventh, final H eight, final I ninth) {
         this.first = first;
         this.second = second;
         this.third = third;
@@ -137,19 +141,32 @@ public final class MutableEnnead<A, B, C, D, E, F, G, H, I> extends Ennead<A, B,
     public void setNinth(final I ninth) {
         this.ninth = ninth;
     }
+
     @Override
     public String toString() {
-        return String.format(
-                "MutableEnnead{first=%s, second=%s, third=%s, fourth=%s, fifth=%s, sixth=%s, seventh=%s, eight=%s, ninth=%s}",
-                this.getFirst(),
-                this.getSecond(),
-                this.getThird(),
-                this.getFourth(),
-                this.getFifth(),
-                this.getSixth(),
-                this.getSeventh(),
-                this.getEight(),
-                this.getNinth()
-        );
+        return "MutableEnnead{" +
+                "first=" + first +
+                ", second=" + second +
+                ", third=" + third +
+                ", fourth=" + fourth +
+                ", fifth=" + fifth +
+                ", sixth=" + sixth +
+                ", seventh=" + seventh +
+                ", eight=" + eight +
+                ", ninth=" + ninth +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        MutableEnnead<?, ?, ?, ?, ?, ?, ?, ?, ?> that = (MutableEnnead<?, ?, ?, ?, ?, ?, ?, ?, ?>) o;
+        return Objects.equals(first, that.first) && Objects.equals(second, that.second) && Objects.equals(third, that.third) && Objects.equals(fourth, that.fourth) && Objects.equals(fifth, that.fifth) && Objects.equals(sixth, that.sixth) && Objects.equals(seventh, that.seventh) && Objects.equals(eight, that.eight) && Objects.equals(ninth, that.ninth);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(first, second, third, fourth, fifth, sixth, seventh, eight, ninth);
     }
 }

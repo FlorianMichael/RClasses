@@ -15,10 +15,10 @@
  * limitations under the License.
  */
 
-// From https://github.com/allinkdev/Consoomer (License: UNLICENSE, time: 26/05)
 package de.florianmichael.rclasses.functional.functions;
 
 @FunctionalInterface
 public interface TriFunction<T, U, V, W> {
+
     W accept(T t, U u, V v);
 }

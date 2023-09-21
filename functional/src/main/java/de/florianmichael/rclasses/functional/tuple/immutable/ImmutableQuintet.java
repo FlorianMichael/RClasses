@@ -20,20 +20,25 @@ package de.florianmichael.rclasses.functional.tuple.immutable;
 
 import de.florianmichael.rclasses.functional.tuple.Quintet;
 
+import java.util.Objects;
+
+/**
+ * Represents a tuple of five elements.
+ */
 public final class ImmutableQuintet<A, B, C, D, E> extends Quintet<A, B, C, D, E> {
-    private final static UnsupportedOperationException COULD_NOT_SET = new UnsupportedOperationException("immutable pair-values aren't re-assignable!");
+    private final static UnsupportedOperationException COULD_NOT_SET = new UnsupportedOperationException("The object is immutable!");
+
     private final A first;
     private final B second;
     private final C third;
     private final D fourth;
     private final E fifth;
 
-    ImmutableQuintet() {
+    public ImmutableQuintet() {
         this(null, null, null, null, null);
     }
 
-    public ImmutableQuintet(final A first, final B second,
-                            final C third, final D fourth, final E fifth) {
+    public ImmutableQuintet(final A first, final B second, final C third, final D fourth, final E fifth) {
         this.first = first;
         this.second = second;
         this.third = third;
@@ -93,13 +98,25 @@ public final class ImmutableQuintet<A, B, C, D, E> extends Quintet<A, B, C, D, E
 
     @Override
     public String toString() {
-        return String.format(
-                "ImmutableQuintet{first=%s, second=%s, third=%s, fourth=%s, fifth=%s}",
-                this.getFirst(),
-                this.getSecond(),
-                this.getThird(),
-                this.getFourth(),
-                this.getFifth()
-        );
+        return "ImmutableQuintet{" +
+                "first=" + first +
+                ", second=" + second +
+                ", third=" + third +
+                ", fourth=" + fourth +
+                ", fifth=" + fifth +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ImmutableQuintet<?, ?, ?, ?, ?> that = (ImmutableQuintet<?, ?, ?, ?, ?>) o;
+        return Objects.equals(first, that.first) && Objects.equals(second, that.second) && Objects.equals(third, that.third) && Objects.equals(fourth, that.fourth) && Objects.equals(fifth, that.fifth);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(first, second, third, fourth, fifth);
     }
 }

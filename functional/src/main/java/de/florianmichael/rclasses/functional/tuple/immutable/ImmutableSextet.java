@@ -20,8 +20,14 @@ package de.florianmichael.rclasses.functional.tuple.immutable;
 
 import de.florianmichael.rclasses.functional.tuple.Sextet;
 
+import java.util.Objects;
+
+/**
+ * Represents a tuple of six elements.
+ */
 public final class ImmutableSextet<A, B, C, D, E, F> extends Sextet<A, B, C, D, E, F> {
-    private final static UnsupportedOperationException COULD_NOT_SET = new UnsupportedOperationException("immutable pair-values aren't re-assignable!");
+    private final static UnsupportedOperationException COULD_NOT_SET = new UnsupportedOperationException("The object is immutable!");
+
     private final A first;
     private final B second;
     private final C third;
@@ -29,13 +35,11 @@ public final class ImmutableSextet<A, B, C, D, E, F> extends Sextet<A, B, C, D, 
     private final E fifth;
     private final F sixth;
 
-    ImmutableSextet() {
+    public ImmutableSextet() {
         this(null, null, null, null, null, null);
     }
 
-    public ImmutableSextet(final A first, final B second,
-                           final C third, final D fourth,
-                           final E fifth, final F sixth) {
+    public ImmutableSextet(final A first, final B second, final C third, final D fourth, final E fifth, final F sixth) {
         this.first = first;
         this.second = second;
         this.third = third;
@@ -106,14 +110,26 @@ public final class ImmutableSextet<A, B, C, D, E, F> extends Sextet<A, B, C, D, 
 
     @Override
     public String toString() {
-        return String.format(
-                "ImmutableSextet{first=%s, second=%s, third=%s, fourth=%s, fifth=%s, sixth=%s}",
-                this.getFirst(),
-                this.getSecond(),
-                this.getThird(),
-                this.getFourth(),
-                this.getFifth(),
-                this.getSixth()
-        );
+        return "ImmutableSextet{" +
+                "first=" + first +
+                ", second=" + second +
+                ", third=" + third +
+                ", fourth=" + fourth +
+                ", fifth=" + fifth +
+                ", sixth=" + sixth +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ImmutableSextet<?, ?, ?, ?, ?, ?> that = (ImmutableSextet<?, ?, ?, ?, ?, ?>) o;
+        return Objects.equals(first, that.first) && Objects.equals(second, that.second) && Objects.equals(third, that.third) && Objects.equals(fourth, that.fourth) && Objects.equals(fifth, that.fifth) && Objects.equals(sixth, that.sixth);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(first, second, third, fourth, fifth, sixth);
     }
 }

@@ -20,8 +20,14 @@ package de.florianmichael.rclasses.functional.tuple.immutable;
 
 import de.florianmichael.rclasses.functional.tuple.Decade;
 
+import java.util.Objects;
+
+/**
+ * Represents a tuple of ten elements. Additionally, this class is immutable.
+ */
 public final class ImmutableDecade<A, B, C, D, E, F, G, H, I, J> extends Decade<A, B, C, D, E, F, G, H, I, J> {
-    private final static UnsupportedOperationException COULD_NOT_SET = new UnsupportedOperationException("immutable pair-values aren't re-assignable!");
+    private final static UnsupportedOperationException COULD_NOT_SET = new UnsupportedOperationException("The object is immutable!");
+
     private final A first;
     private final B second;
     private final C third;
@@ -33,15 +39,11 @@ public final class ImmutableDecade<A, B, C, D, E, F, G, H, I, J> extends Decade<
     private final I ninth;
     private final J tenth;
 
-    ImmutableDecade() {
+    public ImmutableDecade() {
         this(null, null, null, null, null, null, null, null, null, null);
     }
 
-    public ImmutableDecade(final A first, final B second,
-                           final C third, final D fourth,
-                           final E fifth, final F sixth,
-                           final G seventh, final H eight,
-                           final I ninth, final J tenth) {
+    public ImmutableDecade(final A first, final B second, final C third, final D fourth, final E fifth, final F sixth, final G seventh, final H eight, final I ninth, final J tenth) {
         this.first = first;
         this.second = second;
         this.third = third;
@@ -156,18 +158,30 @@ public final class ImmutableDecade<A, B, C, D, E, F, G, H, I, J> extends Decade<
 
     @Override
     public String toString() {
-        return String.format(
-                "ImmutableDecade{first=%s, second=%s, third=%s, fourth=%s, fifth=%s, sixth=%s, seventh=%s, eight=%s, ninth=%s, tenth=%s}",
-                this.getFirst(),
-                this.getSecond(),
-                this.getThird(),
-                this.getFourth(),
-                this.getFifth(),
-                this.getSixth(),
-                this.getSeventh(),
-                this.getEight(),
-                this.getNinth(),
-                this.getTenth()
-        );
+        return "ImmutableDecade{" +
+                "first=" + first +
+                ", second=" + second +
+                ", third=" + third +
+                ", fourth=" + fourth +
+                ", fifth=" + fifth +
+                ", sixth=" + sixth +
+                ", seventh=" + seventh +
+                ", eight=" + eight +
+                ", ninth=" + ninth +
+                ", tenth=" + tenth +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ImmutableDecade<?, ?, ?, ?, ?, ?, ?, ?, ?, ?> that = (ImmutableDecade<?, ?, ?, ?, ?, ?, ?, ?, ?, ?>) o;
+        return Objects.equals(first, that.first) && Objects.equals(second, that.second) && Objects.equals(third, that.third) && Objects.equals(fourth, that.fourth) && Objects.equals(fifth, that.fifth) && Objects.equals(sixth, that.sixth) && Objects.equals(seventh, that.seventh) && Objects.equals(eight, that.eight) && Objects.equals(ninth, that.ninth) && Objects.equals(tenth, that.tenth);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(first, second, third, fourth, fifth, sixth, seventh, eight, ninth, tenth);
     }
 }

@@ -20,13 +20,19 @@ package de.florianmichael.rclasses.functional.tuple.immutable;
 
 import de.florianmichael.rclasses.functional.tuple.Triplet;
 
+import java.util.Objects;
+
+/**
+ * Represents a tuple of three elements.
+ */
 public final class ImmutableTriplet<A, B, C> extends Triplet<A, B, C> {
-    private final static UnsupportedOperationException COULD_NOT_SET = new UnsupportedOperationException("immutable pair-values aren't re-assignable!");
+    private final static UnsupportedOperationException COULD_NOT_SET = new UnsupportedOperationException("The object is immutable!");
+
     private final A first;
     private final B second;
     private final C third;
 
-    ImmutableTriplet() {
+    public ImmutableTriplet() {
         this(null, null, null);
     }
 
@@ -68,11 +74,23 @@ public final class ImmutableTriplet<A, B, C> extends Triplet<A, B, C> {
 
     @Override
     public String toString() {
-        return String.format(
-                "ImmutableTriplet{first=%s, second=%s, third=%s}",
-                this.getFirst(),
-                this.getSecond(),
-                this.getThird()
-        );
+        return "ImmutableTriplet{" +
+                "first=" + first +
+                ", second=" + second +
+                ", third=" + third +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ImmutableTriplet<?, ?, ?> that = (ImmutableTriplet<?, ?, ?>) o;
+        return Objects.equals(first, that.first) && Objects.equals(second, that.second) && Objects.equals(third, that.third);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(first, second, third);
     }
 }
