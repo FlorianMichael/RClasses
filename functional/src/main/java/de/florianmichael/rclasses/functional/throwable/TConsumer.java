@@ -20,7 +20,7 @@ package de.florianmichael.rclasses.functional.throwable;
 import java.util.Objects;
 
 /**
- * This is a functional interface that can be used to replace Consumer<T> and throw exceptions.
+ * This is a functional interface that can be used to replace Consumer and throw exceptions.
  *
  * @param <T> The argument type
  */

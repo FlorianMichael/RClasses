@@ -20,7 +20,7 @@ package de.florianmichael.rclasses.functional.throwable;
 import java.util.Objects;
 
 /**
- * This is a functional interface that can be used to replace BiFunction<T, U, R> and throw exceptions.
+ * This is a functional interface that can be used to replace BiFunction and throw exceptions.
  *
  * @param <T> The first argument type
  * @param <U> The second argument type

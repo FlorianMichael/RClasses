@@ -20,7 +20,7 @@ package de.florianmichael.rclasses.functional.throwable;
 import java.util.Objects;
 
 /**
- * This is a functional interface that can be used to replace BiConsumer<T, U> and throw exceptions.
+ * This is a functional interface that can be used to replace BiConsumer and throw exceptions.
  */
 @FunctionalInterface
 public interface TBiConsumer<T, U> {

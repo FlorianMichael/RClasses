@@ -18,7 +18,7 @@
 package de.florianmichael.rclasses.functional.throwable;
 
 /**
- * This is a functional interface that can be used to replace Supplier<T> and throw exceptions.
+ * This is a functional interface that can be used to replace Supplier and throw exceptions.
  *
  * @param <T> The return type
  */
