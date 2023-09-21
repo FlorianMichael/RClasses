@@ -20,12 +20,12 @@ package de.florianmichael.rclasses.functional.consumers.generics.p2g;
 import java.util.function.BiConsumer;
 
 /**
- * A functional interface for a BiConsumer that takes a byte and an object.
+ * A functional interface for a BiConsumer that takes an int and an object.
  *
  * @param <V> the type of the object
  */
 @FunctionalInterface
-public interface Byte2ObjBiConsumer<V> extends BiConsumer<Byte, V> {
+public interface Int2ObjBiConsumer<V> extends BiConsumer<Integer, V> {
 
     /**
      * Performs this operation on the given arguments.
@@ -33,30 +33,30 @@ public interface Byte2ObjBiConsumer<V> extends BiConsumer<Byte, V> {
      * @param left  the first input argument
      * @param right the second input argument
      */
-    void acceptByte(final byte left, final V right);
+    void acceptInt(final int left, final V right);
 
     @Deprecated
     @Override
-    default void accept(final Byte left, final V right) {
-        this.acceptByte(left, right);
+    default void accept(final Integer left, final V right) {
+        this.acceptInt(left, right);
     }
 
     /**
      * @param after the operation to perform after this operation
-     * @return      a composed {@link Byte2ObjBiConsumer} that performs in sequence this operation followed by the {@code after} operation
+     * @return      a composed {@link Int2ObjBiConsumer} that performs in sequence this operation followed by the {@code after} operation
      */
-    default Byte2ObjBiConsumer<V> andThenByte(final Byte2ObjBiConsumer<V> after) {
+    default Int2ObjBiConsumer<V> andThenInt(final Int2ObjBiConsumer<V> after) {
         return (l, r) -> {
-            this.acceptByte(l, r);
-            after.acceptByte(l, r);
+            this.acceptInt(l, r);
+            after.acceptInt(l, r);
         };
     }
 
     @Deprecated
     @Override
-    default BiConsumer<Byte, V> andThen(final BiConsumer<? super Byte, ? super V> after) {
+    default BiConsumer<Integer, V> andThen(final BiConsumer<? super Integer, ? super V> after) {
         return (l, r) -> {
-            this.acceptByte(l, r);
+            this.acceptInt(l, r);
             after.accept(l, r);
         };
     }

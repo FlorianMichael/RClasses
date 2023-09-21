@@ -19,8 +19,20 @@ package de.florianmichael.rclasses.functional.consumers.generics.p2g;
 
 import java.util.function.BiConsumer;
 
+/**
+ * A functional interface for a BiConsumer that takes a char and an object.
+ *
+ * @param <V> the type of the object
+ */
 @FunctionalInterface
 public interface Char2ObjBiConsumer<V> extends BiConsumer<Character, V> {
+
+    /**
+     * Performs this operation on the given arguments.
+     *
+     * @param left  the first input argument
+     * @param right the second input argument
+     */
     void acceptChar(final char left, final V right);
 
     @Deprecated
@@ -29,6 +41,10 @@ public interface Char2ObjBiConsumer<V> extends BiConsumer<Character, V> {
         this.acceptChar(left, right);
     }
 
+    /**
+     * @param after the operation to perform after this operation
+     * @return      a composed {@link Char2ObjBiConsumer} that performs in sequence this operation followed by the {@code after} operation
+     */
     default Char2ObjBiConsumer<V> andThenChar(final Char2ObjBiConsumer<V> after) {
         return (l, r) -> {
             this.acceptChar(l, r);

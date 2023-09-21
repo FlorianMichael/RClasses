@@ -15,48 +15,47 @@
  * limitations under the License.
  */
 
-package de.florianmichael.rclasses.functional.consumers.generics.p2g;
+package de.florianmichael.rclasses.functional.consumers.generics.g2p;
 
 import java.util.function.BiConsumer;
 
 /**
- * A functional interface for a BiConsumer that takes a byte and an object.
+ * A functional interface for a {@link BiConsumer} with a primitive {@code long} and a generic second argument.
  *
- * @param <V> the type of the object
+ * @param <V> the type of the generic argument
  */
 @FunctionalInterface
-public interface Byte2ObjBiConsumer<V> extends BiConsumer<Byte, V> {
+public interface Obj2LongBiConsumer<V> extends BiConsumer<V, Long> {
 
     /**
      * Performs this operation on the given arguments.
-     *
      * @param left  the first input argument
      * @param right the second input argument
      */
-    void acceptByte(final byte left, final V right);
+    void acceptLong(final V left, final long right);
 
     @Deprecated
     @Override
-    default void accept(final Byte left, final V right) {
-        this.acceptByte(left, right);
+    default void accept(final V left, final Long right) {
+        this.acceptLong(left, right);
     }
 
     /**
      * @param after the operation to perform after this operation
-     * @return      a composed {@link Byte2ObjBiConsumer} that performs in sequence this operation followed by the {@code after} operation
+     * @return      a composed {@link Obj2LongBiConsumer} that performs in sequence this operation followed by the {@code after} operation
      */
-    default Byte2ObjBiConsumer<V> andThenByte(final Byte2ObjBiConsumer<V> after) {
+    default Obj2LongBiConsumer<V> andThenLong(final Obj2LongBiConsumer<V> after) {
         return (l, r) -> {
-            this.acceptByte(l, r);
-            after.acceptByte(l, r);
+            this.acceptLong(l, r);
+            after.acceptLong(l, r);
         };
     }
 
     @Deprecated
     @Override
-    default BiConsumer<Byte, V> andThen(final BiConsumer<? super Byte, ? super V> after) {
+    default BiConsumer<V, Long> andThen(final BiConsumer<? super V, ? super Long> after) {
         return (l, r) -> {
-            this.acceptByte(l, r);
+            this.acceptLong(l, r);
             after.accept(l, r);
         };
     }
