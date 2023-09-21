@@ -15,17 +15,18 @@
  * limitations under the License.
  */
 
-package de.florianmichael.rclasses.pattern;
+package de.florianmichael.rclasses.pattern.functional;
 
 /**
- * Interface for a nameable object.
+ * Interface for a copyable object.
+ *
+ * @param <T> The type of the object.
  */
 @FunctionalInterface
-public interface IName {
+public interface ICopyable<T> {
 
     /**
-     * Returns the name of the object.
-     * @return The name.
+     * @return A copy of the object.
      */
-    String getName();
+    T copy();
 }

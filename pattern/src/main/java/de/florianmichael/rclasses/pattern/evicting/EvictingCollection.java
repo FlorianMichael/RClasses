@@ -15,13 +15,14 @@
  * limitations under the License.
  */
 
-package de.florianmichael.rclasses.pattern.collection.evicting;
+package de.florianmichael.rclasses.pattern.evicting;
 
 import java.util.Collection;
 import java.util.Collections;
 
 /**
  * Implementation of an evicting collection. This collection will remove the first entry if the collection is full.
+ *
  * @param <V> The type of the collection.
  */
 public final class EvictingCollection<V> {
@@ -49,6 +50,7 @@ public final class EvictingCollection<V> {
 
     /**
      * Adds a value to the collection. If the collection is full, the first entry will be removed. Returns true if the collection was full.
+     *
      * @param value The value to add.
      * @return      True if the collection was full.
      */

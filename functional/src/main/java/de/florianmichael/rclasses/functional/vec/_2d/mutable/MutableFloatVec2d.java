@@ -19,10 +19,13 @@ package de.florianmichael.rclasses.functional.vec._2d.mutable;
 
 import de.florianmichael.rclasses.functional.vec._2d.FloatVec2d;
 
+import java.util.Objects;
+
 public final class MutableFloatVec2d extends FloatVec2d {
+
     private float x, y;
 
-    MutableFloatVec2d() {
+    public MutableFloatVec2d() {
         this(0.0F, 0.0F);
     }
 
@@ -53,10 +56,22 @@ public final class MutableFloatVec2d extends FloatVec2d {
 
     @Override
     public String toString() {
-        return String.format(
-                "MutableFloatVec{x=%f, y=%f}",
-                this.getX(),
-                this.getY()
-        );
+        return "MutableFloatVec2d{" +
+                "x=" + x +
+                ", y=" + y +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        MutableFloatVec2d that = (MutableFloatVec2d) o;
+        return Float.compare(x, that.x) == 0 && Float.compare(y, that.y) == 0;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(x, y);
     }
 }

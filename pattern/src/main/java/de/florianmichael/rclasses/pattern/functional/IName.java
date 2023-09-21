@@ -15,9 +15,16 @@
  * limitations under the License.
  */
 
-package de.florianmichael.rclasses.common.model;
+package de.florianmichael.rclasses.pattern.functional;
 
-public enum Alignment {
-    LEFT, MIDDLE, RIGHT,
-    TOP, BOTTOM
+/**
+ * Interface for a nameable object.
+ */
+@FunctionalInterface
+public interface IName {
+
+    /**
+     * @return The name of the object.
+     */
+    String getName();
 }

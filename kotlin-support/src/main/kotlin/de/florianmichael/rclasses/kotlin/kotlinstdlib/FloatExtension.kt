@@ -21,7 +21,7 @@ import kotlin.math.pow
 
 /**
  * @param decimals The amount of decimals to round to
- * @return Rounds a float to the given amount of decimals
+ * @return         Rounds a float to the given amount of decimals
  */
 fun Float.roundAvoid(decimals: Float): Float {
     val scale = 10F.pow(decimals)

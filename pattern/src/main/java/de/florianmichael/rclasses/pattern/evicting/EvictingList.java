@@ -15,14 +15,14 @@
  * limitations under the License.
  */
 
-// From: https://github.com/lumii500pg/Needle (License: UNLICENSE, time: 26/05)
-package de.florianmichael.rclasses.pattern.collection.evicting;
+package de.florianmichael.rclasses.pattern.evicting;
 
 import java.util.Collections;
 import java.util.List;
 
 /**
  * Implementation of an evicting list. This list will remove the first entry if the list is full.
+ *
  * @param <V> The type of the list.
  */
 public final class EvictingList<V> {

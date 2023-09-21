@@ -15,9 +15,7 @@
  * limitations under the License.
  */
 
-package de.florianmichael.rclasses.common.model;
-
-import de.florianmichael.rclasses.common.ColorUtils;
+package de.florianmichael.rclasses.common.color;
 
 import java.awt.*;
 
@@ -41,6 +39,7 @@ public class HSBColor {
 
     /**
      * Creates a new HSBColor from the given color.
+     *
      * @param color The color to create the HSBColor from.
      */
     public HSBColor(final Color color) {
@@ -55,10 +54,11 @@ public class HSBColor {
 
     /**
      * Creates a new HSBColor from the given hue, saturation, brightness, and alpha values.
-     * @param hue The hue of the color.
+     *
+     * @param hue        The hue of the color.
      * @param saturation The saturation of the color.
      * @param brightness The brightness of the color.
-     * @param alpha The alpha of the color.
+     * @param alpha      The alpha of the color.
      */
     public HSBColor(final float hue, final float saturation, final float brightness, final float alpha) {
         this.hue = hue;
@@ -73,11 +73,12 @@ public class HSBColor {
     public Color getColor() {
         final Color color = Color.getHSBColor(this.hue, this.saturation, this.brightness);
 
-        return ColorUtils.withAlpha(color, (int) (this.alpha * 255.0F));
+        return new Color(color.getRed(), color.getGreen(), color.getBlue(), (int) (this.alpha * 255.0F));
     }
 
     /**
      * Sets the color of this HSBColor to the given color, see {@link Color}.
+     *
      * @param color The color to set.
      */
     public void setColor(final Color color) {
@@ -88,7 +89,8 @@ public class HSBColor {
 
     /**
      * Sets the color of this HSBColor to the given hue, saturation, brightness, and alpha values.
-     * @param hue The hue of the color.
+     *
+     * @param hue        The hue of the color.
      * @param saturation The saturation of the color.
      * @param brightness The brightness of the color.
      */
@@ -98,10 +100,11 @@ public class HSBColor {
 
     /**
      * Sets the color of this HSBColor to the given hue, saturation, brightness, and alpha values.
-     * @param hue The hue of the color.
+     *
+     * @param hue        The hue of the color.
      * @param saturation The saturation of the color.
      * @param brightness The brightness of the color.
-     * @param alpha The alpha of the color.
+     * @param alpha      The alpha of the color.
      */
     public void setColor(final float hue, final float saturation, final float brightness, final float alpha) {
         this.hue = hue;

@@ -15,12 +15,13 @@
  * limitations under the License.
  */
 
-package de.florianmichael.rclasses.pattern;
+package de.florianmichael.rclasses.common.collection;
 
 import java.util.List;
 
 /**
  * Class for calculating slices of a list. This is useful for splitting a list into multiple parts.
+ *
  * @param <T> The type of the list elements.
  */
 public class SliceCalculation<T> {

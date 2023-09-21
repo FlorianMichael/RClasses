@@ -19,10 +19,13 @@ package de.florianmichael.rclasses.functional.vec._2d.immutable;
 
 import de.florianmichael.rclasses.functional.vec._2d.DoubleVec2d;
 
+import java.util.Objects;
+
 public final class ImmutableDoubleVec2d extends DoubleVec2d {
+
     private final double x, y;
 
-    ImmutableDoubleVec2d() {
+    public ImmutableDoubleVec2d() {
         this(0.0D, 0.0D);
     }
 
@@ -51,10 +54,22 @@ public final class ImmutableDoubleVec2d extends DoubleVec2d {
 
     @Override
     public String toString() {
-        return String.format(
-                "ImmutableDoubleVec{x=%f, y=%f}",
-                this.getX(),
-                this.getY()
-        );
+        return "ImmutableDoubleVec2d{" +
+                "x=" + x +
+                ", y=" + y +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ImmutableDoubleVec2d that = (ImmutableDoubleVec2d) o;
+        return Double.compare(x, that.x) == 0 && Double.compare(y, that.y) == 0;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(x, y);
     }
 }

@@ -17,7 +17,7 @@
 
 package de.florianmichael.rclasses.pattern.storage.named;
 
-import de.florianmichael.rclasses.pattern.IName;
+import de.florianmichael.rclasses.pattern.functional.IName;
 
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -40,6 +40,7 @@ public abstract class SelectableNamedStorage<T extends IName> extends NamedStora
 
     /**
      * Creates a new named storage with the given list.
+     *
      * @param list The list.
      */
     public SelectableNamedStorage(final Supplier<List<T>> list) {
@@ -53,12 +54,14 @@ public abstract class SelectableNamedStorage<T extends IName> extends NamedStora
 
     /**
      * Gets the default object. This is the object that is returned when {@link #getCurrent()} is called and the current object is null.
+     *
      * @return The default object.
      */
     public abstract T getDefault();
 
     /**
      * Gets the current object. If the current object is null, the default object is returned.
+     *
      * @return The current object.
      */
     public T getCurrent() {
@@ -72,6 +75,7 @@ public abstract class SelectableNamedStorage<T extends IName> extends NamedStora
 
     /**
      * Sets the current object by its name.
+     *
      * @param name The name.
      */
     public void setCurrentByName(final String name) {

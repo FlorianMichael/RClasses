@@ -26,11 +26,32 @@ import java.net.URLConnection;
 import java.nio.channels.Channels;
 import java.nio.channels.ReadableByteChannel;
 
+/**
+ * Utility class for file access. This class provides methods to download files from the internet.
+ */
 public class FileAccess {
+
+    /**
+     * Downloads a file from the internet and saves it to the given output file.
+     *
+     * @param url        The url to download the file from.
+     * @param output     The file to save the downloaded file to.
+     * @return           The output file.
+     * @throws Throwable If an error occurs while downloading the file.
+     */
     public static File downloadFile(final String url, final File output) throws Throwable {
         return downloadFile(url, WebUtils.DEFAULT_AGENT, output);
     }
 
+    /**
+     * Downloads a file from the internet and saves it to the given output file.
+     *
+     * @param url        The url to download the file from.
+     * @param agent      The user agent to use.
+     * @param output     The file to save the downloaded file to.
+     * @return           The output file.
+     * @throws Throwable If an error occurs while downloading the file.
+     */
     public static File downloadFile(final String url, final String agent, final File output) throws Throwable {
         final URLConnection urlConnection = new URL(url).openConnection();
         urlConnection.setRequestProperty("User-Agent", agent);

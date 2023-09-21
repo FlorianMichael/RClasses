@@ -19,10 +19,13 @@ package de.florianmichael.rclasses.functional.vec._2d.mutable;
 
 import de.florianmichael.rclasses.functional.vec._2d.DoubleVec2d;
 
+import java.util.Objects;
+
 public final class MutableDoubleVec2d extends DoubleVec2d {
+
     private double x, y;
 
-    MutableDoubleVec2d() {
+    public MutableDoubleVec2d() {
         this(0.0D, 0.0D);
     }
 
@@ -53,10 +56,22 @@ public final class MutableDoubleVec2d extends DoubleVec2d {
 
     @Override
     public String toString() {
-        return String.format(
-                "MutableDoubleVec{x=%f, y=%f}",
-                this.getX(),
-                this.getY()
-        );
+        return "MutableDoubleVec2d{" +
+                "x=" + x +
+                ", y=" + y +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        MutableDoubleVec2d that = (MutableDoubleVec2d) o;
+        return Double.compare(x, that.x) == 0 && Double.compare(y, that.y) == 0;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(x, y);
     }
 }

@@ -24,7 +24,7 @@ public class VirtualKeyToGLFWCodes {
 
     /**
      * @param vk_code virtual key code
-     * @return GLFW key code (if not present, -1 is returned)
+     * @return        GLFW key code (if not present, -1 is returned)
      */
     public static int vk_to_glfw(final int vk_code) {
         if (vk_code == 127) {

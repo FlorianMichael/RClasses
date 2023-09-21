@@ -21,25 +21,25 @@ import java.awt.Color
 
 /**
  * @param red The new red value of the color
- * @return The color with the given red value. The other values are the same as the original color
+ * @return    The color with the given red value. The other values are the same as the original color
  */
 fun Color.withRed(red: Int) = Color(red, green, blue, alpha)
 
 /**
  * @param green The new green value of the color
- * @return The color with the given green value. The other values are the same as the original color
+ * @return      The color with the given green value. The other values are the same as the original color
  */
 fun Color.withGreen(green: Int) = Color(red, green, blue, alpha)
 
 /**
  * @param blue The new blue value of the color
- * @return The color with the given blue value. The other values are the same as the original color
+ * @return     The color with the given blue value. The other values are the same as the original color
  */
 fun Color.withBlue(blue: Int) = Color(red, green, blue, alpha)
 
 /**
  * @param alpha The new alpha value of the color
- * @return The color with the given alpha value. The other values are the same as the original color
+ * @return      The color with the given alpha value. The other values are the same as the original color
  */
 fun Color.withAlpha(alpha: Int) = Color(red, green, blue, alpha)
 

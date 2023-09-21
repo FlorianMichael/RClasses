@@ -19,10 +19,13 @@ package de.florianmichael.rclasses.functional.vec._2d.immutable;
 
 import de.florianmichael.rclasses.functional.vec._2d.ByteVec2d;
 
+import java.util.Objects;
+
 public final class ImmutableByteVec2d extends ByteVec2d {
+
     private final byte x, y;
-    
-    ImmutableByteVec2d() {
+
+    public ImmutableByteVec2d() {
         this((byte) 0, (byte) 0);
     }
     
@@ -48,13 +51,25 @@ public final class ImmutableByteVec2d extends ByteVec2d {
     @Override
     public void setY(final byte y) {
     }
-    
+
     @Override
     public String toString() {
-        return String.format(
-                "ImmutableByteVec{x=%d, y=%d}",
-                this.getX(),
-                this.getY()
-        );
+        return "ImmutableByteVec2d{" +
+                "x=" + x +
+                ", y=" + y +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ImmutableByteVec2d that = (ImmutableByteVec2d) o;
+        return x == that.x && y == that.y;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(x, y);
     }
 }

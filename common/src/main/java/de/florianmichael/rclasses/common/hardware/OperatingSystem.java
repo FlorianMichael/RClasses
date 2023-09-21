@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package de.florianmichael.rclasses.common.model.os;
+package de.florianmichael.rclasses.common.hardware;
 
 /**
  * This enum represents the operating system the program is running on.

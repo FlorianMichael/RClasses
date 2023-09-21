@@ -15,28 +15,14 @@
  * limitations under the License.
  */
 
-package de.florianmichael.rclasses.common.model;
+package de.florianmichael.rclasses.math.model;
 
-public class Rectangle {
-    public float x;
-    public float y;
-    public float z;
-    public float w;
+/**
+ * Enum for the alignment of an object. The alignment is used to determine the position of an object relative to another object.
+ */
+public enum Alignment {
+    LEFT, RIGHT,
+    TOP, BOTTOM,
 
-    public Rectangle(float x, float y, float z, float w) {
-        this.x = x;
-        this.y = y;
-        this.z = z;
-        this.w = w;
-    }
-
-    @Override
-    public String toString() {
-        return "Rectangle{" +
-                "x=" + x +
-                ", y=" + y +
-                ", z=" + z +
-                ", w=" + w +
-                '}';
-    }
+    MIDDLE
 }

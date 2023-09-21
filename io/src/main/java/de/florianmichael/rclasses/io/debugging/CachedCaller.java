@@ -44,6 +44,11 @@ public class CachedCaller {
         this.caller = caller;
     }
 
+    /**
+     * Calls the caller with the given field if the field is not equal to the last field.
+     *
+     * @param field The field to call the caller with.
+     */
     public void call(final Object field) {
         if (this.field.equals(field)) return;
         this.field = field;

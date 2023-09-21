@@ -19,10 +19,13 @@ package de.florianmichael.rclasses.functional.vec._2d.mutable;
 
 import de.florianmichael.rclasses.functional.vec._2d.ShortVec2d;
 
+import java.util.Objects;
+
 public final class MutableShortVec2d extends ShortVec2d {
+
     private short x, y;
 
-    MutableShortVec2d() {
+    public MutableShortVec2d() {
         this((short) 0, (short) 0);
     }
 
@@ -53,10 +56,22 @@ public final class MutableShortVec2d extends ShortVec2d {
 
     @Override
     public String toString() {
-        return String.format(
-                "MutableShortVec{x=%d, y=%d}",
-                this.getX(),
-                this.getY()
-        );
+        return "MutableShortVec2d{" +
+                "x=" + x +
+                ", y=" + y +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        MutableShortVec2d that = (MutableShortVec2d) o;
+        return x == that.x && y == that.y;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(x, y);
     }
 }

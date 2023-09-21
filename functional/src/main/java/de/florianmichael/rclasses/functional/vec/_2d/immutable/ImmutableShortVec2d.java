@@ -19,10 +19,13 @@ package de.florianmichael.rclasses.functional.vec._2d.immutable;
 
 import de.florianmichael.rclasses.functional.vec._2d.ShortVec2d;
 
+import java.util.Objects;
+
 public final class ImmutableShortVec2d extends ShortVec2d {
+
     private final short x, y;
 
-    ImmutableShortVec2d() {
+    public ImmutableShortVec2d() {
         this((short) 0, (short) 0);
     }
 
@@ -51,10 +54,22 @@ public final class ImmutableShortVec2d extends ShortVec2d {
 
     @Override
     public String toString() {
-        return String.format(
-                "ImmutableShortVec{x=%d, y=%d}",
-                this.getX(),
-                this.getY()
-        );
+        return "ImmutableShortVec2d{" +
+                "x=" + x +
+                ", y=" + y +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ImmutableShortVec2d that = (ImmutableShortVec2d) o;
+        return x == that.x && y == that.y;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(x, y);
     }
 }

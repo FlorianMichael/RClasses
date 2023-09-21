@@ -63,7 +63,7 @@ public class MSTimer {
 
     /**
      * @param delay The delay to check.
-     * @return Whether the timer has reached the given delay.
+     * @return      Whether the timer has reached the given delay.
      */
     public boolean hasReached(final long delay) {
         return this.getDelta() >= delay;

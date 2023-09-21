@@ -28,6 +28,7 @@ import java.util.function.Supplier;
  * removing objects. The storage is thread-safe. The storage is abstract and must be implemented. The storage can be
  * initialized by calling the {@link #init()} method. The storage can be added and removed objects by calling the
  * {@link #add(Object...)} and {@link #remove(Object...)} methods.
+ *
  * @param <T> The type of the storage.
  */
 public abstract class Storage<T> {
@@ -64,6 +65,7 @@ public abstract class Storage<T> {
 
     /**
      * Adds objects to the storage.
+     *
      * @param t The objects.
      */
     @SafeVarargs
@@ -73,6 +75,7 @@ public abstract class Storage<T> {
 
     /**
      * Removes objects from the storage.
+     *
      * @param t The objects.
      */
     @SafeVarargs
@@ -85,7 +88,8 @@ public abstract class Storage<T> {
 
     /**
      * Adds an object to the storage by the given index.
-     * @param t The object.
+     *
+     * @param t     The object.
      * @param index The index.
      */
     public void addBy(final T t, final int index) {
@@ -96,7 +100,8 @@ public abstract class Storage<T> {
 
     /**
      * Inserts an object to the storage by the given index.
-     * @param t The object.
+     *
+     * @param t     The object.
      * @param index The index.
      */
     public void insert(final T t, int index) {
@@ -107,6 +112,7 @@ public abstract class Storage<T> {
 
     /**
      * Removes an object from the storage by the given index.
+     *
      * @param index The index.
      */
     public void removeBy(final int index) {
@@ -115,9 +121,10 @@ public abstract class Storage<T> {
 
     /**
      * Gets an object from the storage by the given class type.
+     *
      * @param clazz The class.
-     * @return The object.
-     * @param <V> The type of the object.
+     * @return      The object.
+     * @param <V>   The type of the object.
      */
     @SuppressWarnings("unchecked")
     public <V extends T> V getByClass(final Class<V> clazz) {

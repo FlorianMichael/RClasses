@@ -21,6 +21,7 @@ import java.util.Iterator;
 
 /**
  * An empty iterator.
+ *
  * @param <T> the type of elements returned by this iterator
  */
 public class EmptyIterator<T> implements Iterator<T> {

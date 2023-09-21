@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package de.florianmichael.rclasses.common.access;
+package de.florianmichael.rclasses.common.object;
 
 import java.util.Arrays;
 
@@ -27,6 +27,7 @@ public class ObjectArrayWrapper {
 
 	/**
 	 * Creates a new instance of this class.
+	 *
 	 * @param input The array to wrap.
 	 */
 	public ObjectArrayWrapper(final Object[] input) {
@@ -42,7 +43,7 @@ public class ObjectArrayWrapper {
 
 	/**
 	 * @param length The length to check.
-	 * @return True if the length of the wrapped array is equal to the given length.
+	 * @return 		 True if the length of the wrapped array is equal to the given length.
 	 */
 	public boolean isLength(final int length) {
 		return input.length == length;
@@ -50,7 +51,7 @@ public class ObjectArrayWrapper {
 
 	/**
 	 * @param length The length to check.
-	 * @return True if the length of the wrapped array is smaller than the given length.
+	 * @return 		 True if the length of the wrapped array is smaller than the given length.
 	 */
 	public boolean isSmaller(final int length) {
 		return input.length < length;
@@ -58,7 +59,7 @@ public class ObjectArrayWrapper {
 
 	/**
 	 * @param length The length to check.
-	 * @return True if the length of the wrapped array is smaller or equal to the given length.
+	 * @return 		 True if the length of the wrapped array is smaller or equal to the given length.
 	 */
 	public boolean isSmallerOrEqual(final int length) {
 		return input.length <= length;
@@ -66,7 +67,7 @@ public class ObjectArrayWrapper {
 
 	/**
 	 * @param length The length to check.
-	 * @return True if the length of the wrapped array is greater than the given length.
+	 * @return 		 True if the length of the wrapped array is greater than the given length.
 	 */
 	public boolean isGreater(final int length) {
 		return input.length > length;
@@ -74,7 +75,7 @@ public class ObjectArrayWrapper {
 
 	/**
 	 * @param length The length to check.
-	 * @return True if the length of the wrapped array is greater or equal to the given length.
+	 * @return 		 True if the length of the wrapped array is greater or equal to the given length.
 	 */
 	public boolean isGreaterOrEqual(final int length) {
 		return input.length >= length;
@@ -89,7 +90,7 @@ public class ObjectArrayWrapper {
 
 	/**
 	 * @param index The index to check.
-	 * @return True if the index is valid, false otherwise.
+	 * @return 		True if the index is valid, false otherwise.
 	 */
 	public boolean isIndexValid(final int index) {
 		return index >= 0 && index < input.length;
@@ -97,7 +98,7 @@ public class ObjectArrayWrapper {
 
 	/**
 	 * @param index The index to check.
-	 * @return True if the index is invalid, false otherwise.
+	 * @return 		True if the index is invalid, false otherwise.
 	 */
 	public boolean isIndexInvalid(final int index) {
 		return index < 0 || index >= input.length;
@@ -105,7 +106,7 @@ public class ObjectArrayWrapper {
 
 	/**
 	 * @param index The index to get.
-	 * @return The object at the given index or null if the index is invalid.
+	 * @return 		The object at the given index or null if the index is invalid.
 	 */
 	public Object get(final int index) {
 		if (isIndexInvalid(index)) {
@@ -116,7 +117,7 @@ public class ObjectArrayWrapper {
 
 	/**
 	 * @param index The index to check.
-	 * @return True if the object at the given index is not null and a String, false otherwise.
+	 * @return 		True if the object at the given index is not null and a String, false otherwise.
 	 */
 	public boolean isString(final int index) {
 		if (isIndexInvalid(index)) {
@@ -127,7 +128,7 @@ public class ObjectArrayWrapper {
 
 	/**
 	 * @param index The index to get.
-	 * @return The string at the given index or null if the index is invalid.
+	 * @return 		The string at the given index or null if the index is invalid.
 	 */
 	public String getString(final int index) {
 		if (isIndexInvalid(index)) {
@@ -138,7 +139,7 @@ public class ObjectArrayWrapper {
 
 	/**
 	 * @param index The index to check.
-	 * @return True if the object at the given index is not null and a Boolean, false otherwise.
+	 * @return 		True if the object at the given index is not null and a Boolean, false otherwise.
 	 */
 	public boolean isBoolean(final int index) {
 		if (isIndexInvalid(index)) {
@@ -149,7 +150,7 @@ public class ObjectArrayWrapper {
 
 	/**
 	 * @param index The index to get.
-	 * @return The boolean at the given index or false if the index is invalid.
+	 * @return 		The boolean at the given index or false if the index is invalid.
 	 */
 	public boolean getBoolean(final int index) {
 		if (isIndexInvalid(index)) {
@@ -160,7 +161,7 @@ public class ObjectArrayWrapper {
 
 	/**
 	 * @param index The index to check.
-	 * @return True if the object at the given index is not null and a Byte, false otherwise.
+	 * @return 		True if the object at the given index is not null and a Byte, false otherwise.
 	 */
 	public boolean isByte(final int index) {
 		if (isIndexInvalid(index)) {
@@ -171,7 +172,7 @@ public class ObjectArrayWrapper {
 
 	/**
 	 * @param index The index to get.
-	 * @return The byte at the given index or 0 if the index is invalid.
+	 * @return 		The byte at the given index or 0 if the index is invalid.
 	 */
 	public byte getByte(final int index) {
 		if (isIndexInvalid(index)) {
@@ -182,7 +183,7 @@ public class ObjectArrayWrapper {
 
 	/**
 	 * @param index The index to check.
-	 * @return True if the object at the given index is not null and a Short, false otherwise.
+	 * @return 		True if the object at the given index is not null and a Short, false otherwise.
 	 */
 	public boolean isShort(final int index) {
 		if (isIndexInvalid(index)) {
@@ -193,7 +194,7 @@ public class ObjectArrayWrapper {
 
 	/**
 	 * @param index The index to get.
-	 * @return The short at the given index or 0 if the index is invalid.
+	 * @return 		The short at the given index or 0 if the index is invalid.
 	 */
 	public short getShort(final int index) {
 		if (isIndexInvalid(index)) {
@@ -204,7 +205,7 @@ public class ObjectArrayWrapper {
 
 	/**
 	 * @param index The index to check.
-	 * @return True if the object at the given index is not null and an Integer, false otherwise.
+	 * @return 		True if the object at the given index is not null and an Integer, false otherwise.
 	 */
 	public boolean isInteger(final int index) {
 		if (isIndexInvalid(index)) {
@@ -215,7 +216,7 @@ public class ObjectArrayWrapper {
 
 	/**
 	 * @param index The index to get.
-	 * @return The integer at the given index or 0 if the index is invalid.
+	 * @return 		The integer at the given index or 0 if the index is invalid.
 	 */
 	public int getInteger(final int index) {
 		if (isIndexInvalid(index)) {
@@ -226,7 +227,7 @@ public class ObjectArrayWrapper {
 
 	/**
 	 * @param index The index to check.
-	 * @return True if the object at the given index is not null and a Long, false otherwise.
+	 * @return 		True if the object at the given index is not null and a Long, false otherwise.
 	 */
 	public boolean isLong(final int index) {
 		if (isIndexInvalid(index)) {
@@ -237,7 +238,7 @@ public class ObjectArrayWrapper {
 
 	/**
 	 * @param index The index to get.
-	 * @return The long at the given index or 0 if the index is invalid.
+	 * @return 		The long at the given index or 0 if the index is invalid.
 	 */
 	public long getLong(final int index) {
 		if (isIndexInvalid(index)) {
@@ -248,7 +249,7 @@ public class ObjectArrayWrapper {
 
 	/**
 	 * @param index The index to check.
-	 * @return True if the object at the given index is not null and a Float, false otherwise.
+	 * @return 		True if the object at the given index is not null and a Float, false otherwise.
 	 */
 	public boolean isFloat(final int index) {
 		if (isIndexInvalid(index)) {
@@ -259,7 +260,7 @@ public class ObjectArrayWrapper {
 
 	/**
 	 * @param index The index to get.
-	 * @return The float at the given index or 0 if the index is invalid.
+	 * @return 		The float at the given index or 0 if the index is invalid.
 	 */
 	public float getFloat(final int index) {
 		if (isIndexInvalid(index)) {
@@ -270,7 +271,7 @@ public class ObjectArrayWrapper {
 
 	/**
 	 * @param index The index to check.
-	 * @return True if the object at the given index is not null and a Double, false otherwise.
+	 * @return 		True if the object at the given index is not null and a Double, false otherwise.
 	 */
 	public boolean isDouble(final int index) {
 		if (isIndexInvalid(index)) {
@@ -281,7 +282,7 @@ public class ObjectArrayWrapper {
 
 	/**
 	 * @param index The index to get.
-	 * @return The double at the given index or 0 if the index is invalid.
+	 * @return 		The double at the given index or 0 if the index is invalid.
 	 */
 	public double getDouble(final int index) {
 		if (isIndexInvalid(index)) {
@@ -292,7 +293,7 @@ public class ObjectArrayWrapper {
 
 	/**
 	 * @param index The index to check.
-	 * @return True if the object at the given index is not null and a Character, false otherwise.
+	 * @return 		True if the object at the given index is not null and a Character, false otherwise.
 	 */
 	public boolean isCharacter(final int index) {
 		if (isIndexInvalid(index)) {
@@ -303,7 +304,7 @@ public class ObjectArrayWrapper {
 
 	/**
 	 * @param index The index to get.
-	 * @return The character at the given index or 0 if the index is invalid.
+	 * @return 		The character at the given index or 0 if the index is invalid.
 	 */
 	public char getCharacter(final int index) {
 		if (isIndexInvalid(index)) {

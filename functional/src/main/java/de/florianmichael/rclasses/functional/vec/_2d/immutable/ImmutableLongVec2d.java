@@ -19,12 +19,16 @@ package de.florianmichael.rclasses.functional.vec._2d.immutable;
 
 import de.florianmichael.rclasses.functional.vec._2d.LongVec2d;
 
+import java.util.Objects;
+
 public final class ImmutableLongVec2d extends LongVec2d {
+
     private final long x, y;
 
-    ImmutableLongVec2d() {
+    public ImmutableLongVec2d() {
         this(0L, 0L);
     }
+
     public ImmutableLongVec2d(final long x, final long y) {
         this.x = x;
         this.y = y;
@@ -50,10 +54,22 @@ public final class ImmutableLongVec2d extends LongVec2d {
 
     @Override
     public String toString() {
-        return String.format(
-                "ImmutableLongVec{x=%d, y=%d}",
-                this.getX(),
-                this.getY()
-        );
+        return "ImmutableLongVec2d{" +
+                "x=" + x +
+                ", y=" + y +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ImmutableLongVec2d that = (ImmutableLongVec2d) o;
+        return x == that.x && y == that.y;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(x, y);
     }
 }

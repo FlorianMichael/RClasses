@@ -45,7 +45,8 @@ public class WebUtils {
 
     /**
      * Creates a new instance of {@link WebUtils} with the given user agent and accept method.
-     * @param userAgent the user agent
+     *
+     * @param userAgent    the user agent
      * @param acceptMethod the accept method
      */
     protected WebUtils(final String userAgent, final String acceptMethod) {
@@ -57,7 +58,8 @@ public class WebUtils {
 
     /**
      * Adds an optional header to the request.
-     * @param key header key
+     *
+     * @param key   header key
      * @param value header value
      */
     public void withHeader(final String key, final String value) {
@@ -66,6 +68,7 @@ public class WebUtils {
 
     /**
      * Removes an optional header from the request.
+     *
      * @param key header key
      */
     public void removeHeader(final String key) {
@@ -74,8 +77,9 @@ public class WebUtils {
 
     /**
      * Performs a GET request to the given URL.
-     * @param url the url
-     * @return the response
+     *
+     * @param url          the url
+     * @return             the response
      * @throws IOException if an error occurs
      */
     public String get(final String url) throws IOException {
@@ -84,9 +88,10 @@ public class WebUtils {
 
     /**
      * Performs a POST request to the given URL with the given input.
-     * @param url the url
-     * @param input the input
-     * @return the response
+     *
+     * @param url          the url
+     * @param input        the input
+     * @return             the response
      * @throws IOException if an error occurs
      */
     public String post(final String url, final String... input) throws IOException {
@@ -95,6 +100,7 @@ public class WebUtils {
 
     /**
      * Performs a POST request to the given URL with the given input.
+     *
      * @return the response
      */
     public static WebUtils create() {
@@ -103,8 +109,9 @@ public class WebUtils {
 
     /**
      * Performs a POST request to the given URL with the given input.
+     *
      * @param userAgent the user agent
-     * @return the response
+     * @return          the response
      */
     public static WebUtils create(String userAgent) {
         return new WebUtils(userAgent, ACCEPT_METHOD);
@@ -112,9 +119,10 @@ public class WebUtils {
 
     /**
      * Performs a POST request to the given URL with the given input.
-     * @param userAgent the user agent
+     *
+     * @param userAgent    the user agent
      * @param acceptMethod the accept method
-     * @return the response
+     * @return             the response
      */
     public static WebUtils create(String userAgent, String acceptMethod) {
         return new WebUtils(userAgent, acceptMethod);
@@ -122,10 +130,11 @@ public class WebUtils {
 
     /**
      * Performs a POST request to the given URL with the given input.
-     * @param userAgent the user agent
+     *
+     * @param userAgent    the user agent
      * @param acceptMethod the accept method
-     * @param url the url
-     * @return the response
+     * @param url          the url
+     * @return             the response
      * @throws IOException if an error occurs
      */
     public static String performGet(final String userAgent, final String acceptMethod, final String url) throws IOException {
@@ -134,12 +143,13 @@ public class WebUtils {
 
     /**
      * Performs a GET request to the given URL with the given input.
-     * @param userAgent the user agent
-     * @param acceptMethod the accept method
-     * @param url the url
+     *
+     * @param userAgent       the user agent
+     * @param acceptMethod    the accept method
+     * @param url             the url
      * @param optionalHeaders the optional headers
-     * @return the response
-     * @throws IOException if an error occurs
+     * @return                the response
+     * @throws IOException    if an error occurs
      */
     public static String performGet(final String userAgent, final String acceptMethod, final String url, final Map<String, String> optionalHeaders) throws IOException {
         final HttpURLConnection connection = (HttpURLConnection) new URL(url).openConnection();
@@ -168,11 +178,12 @@ public class WebUtils {
 
     /**
      * Performs a POST request to the given URL with the given input.
-     * @param userAgent the user agent
+     *
+     * @param userAgent    the user agent
      * @param acceptMethod the accept method
-     * @param url the url
-     * @param input the input
-     * @return the response
+     * @param url          the url
+     * @param input        the input
+     * @return             the response
      * @throws IOException if an error occurs
      */
     public static String performPost(final String userAgent, final String acceptMethod, final String url, final String... input) throws IOException {
@@ -181,13 +192,14 @@ public class WebUtils {
 
     /**
      * Performs a POST request to the given URL with the given input.
-     * @param userAgent the user agent
-     * @param acceptMethod the accept method
-     * @param url the url
+     *
+     * @param userAgent       the user agent
+     * @param acceptMethod    the accept method
+     * @param url             the url
      * @param optionalHeaders the optional headers
-     * @param input the input
-     * @return the response
-     * @throws IOException if an error occurs
+     * @param input           the input
+     * @return                the response
+     * @throws IOException    if an error occurs
      */
     public static String performPost(final String userAgent, final String acceptMethod, final String url, final Map<String, String> optionalHeaders, final String... input) throws IOException {
         final HttpURLConnection connection = (HttpURLConnection) new URL(url).openConnection();

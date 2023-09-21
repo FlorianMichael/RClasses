@@ -38,8 +38,9 @@ public final class StringUtils {
 
     /**
      * Formats a value in bytes to a human-readable format
+     *
      * @param value The raw value in bytes
-     * @return The formatted value in bytes
+     * @return      The formatted value in bytes
      */
     public static String formatBytes(final long value) {
         int index = (int) (Math.log(value) / Math.log(1024.0));
@@ -51,9 +52,10 @@ public final class StringUtils {
     }
 
     /**
-     * Uppercase the first letter of the string .
+     * Uppercase the first letter of the string.
+     *
      * @param string The string to uppercase
-     * @return The uppercase string
+     * @return       The uppercase string
      */
     public static String uppercaseFirst(final String string) {
         if (string.length() < 2) return string;
@@ -63,8 +65,9 @@ public final class StringUtils {
 
     /**
      * Reverses the given string
+     *
      * @param string The string to reverse
-     * @return The reversed string
+     * @return       The reversed string
      */
     public static String reverse(final String string) {
         final char[] characters = string.toCharArray();
@@ -76,8 +79,9 @@ public final class StringUtils {
 
     /**
      * Generates a string of whitespaces
+     *
      * @param count The count of whitespaces
-     * @return The generated string
+     * @return      The generated string
      */
     public static String whitespace(final int count) {
         final StringBuilder builder = new StringBuilder();
@@ -88,8 +92,9 @@ public final class StringUtils {
 
     /**
      * Generates a string of spaces
+     *
      * @param count The count of spaces
-     * @return The generated string
+     * @return      The generated string
      */
     public static String space(final int count) {
         final StringBuilder builder = new StringBuilder();
@@ -100,8 +105,9 @@ public final class StringUtils {
 
     /**
      * Returns the longest string of the given strings
+     *
      * @param strings The strings to check
-     * @return The longest string
+     * @return        The longest string
      */
     public static String longestOf(final List<String> strings) {
         return longestOf(strings.toArray(new String[0]));
@@ -109,8 +115,9 @@ public final class StringUtils {
 
     /**
      * Returns the longest string of the given strings
+     *
      * @param strings The strings to check
-     * @return The longest string
+     * @return        The longest string
      */
     public static String longestOf(final String... strings) {
         String longestString = "";
@@ -124,8 +131,9 @@ public final class StringUtils {
 
     /**
      * Returns the smallest string of the given strings
+     *
      * @param strings The strings to check
-     * @return The smallest string
+     * @return        The smallest string
      */
     public static String smallestOf(final List<String> strings) {
         return smallestOf(strings.toArray(new String[0]));
@@ -133,8 +141,9 @@ public final class StringUtils {
 
     /**
      * Returns the smallest string of the given strings
+     *
      * @param strings The strings to check
-     * @return The smallest string
+     * @return        The smallest string
      */
     public static String smallestOf(final String... strings) {
         String smallestString = "";
@@ -150,8 +159,9 @@ public final class StringUtils {
      * Normalizes the given enum name to a readable string (e.g. "TEST_ENUM" -> "Test enum"). This method is used to
      * generate a readable name for the enum. "$" will be removed, "_" will be replaced with " ",
      * and the first letter will be uppercase.
+     *
      * @param string The name to normalize
-     * @return The normalized name
+     * @return       The normalized name
      */
     public static String normalizeEnumName(String string) {
         if (string.length() < 2) return string;
@@ -164,10 +174,11 @@ public final class StringUtils {
 
     /**
      * Replaces the last occurrence of a substring in a string with another substring.
-     * @param string The input string.
-     * @param target The substring to be replaced.
+     *
+     * @param string      The input string.
+     * @param target      The substring to be replaced.
      * @param replacement The substring to replace the last occurrence of the target.
-     * @return The modified string with the last occurrence replaced.
+     * @return            The modified string with the last occurrence replaced.
      */
     public static String replaceLast(final String string, final String target, final String replacement) {
         if (string == null || target == null || replacement == null) {
@@ -178,10 +189,11 @@ public final class StringUtils {
 
     /**
      * Replaces all occurrences of a substring in a string, ignoring case sensitivity.
-     * @param string The input string.
-     * @param sequence The substring to be replaced.
+     *
+     * @param string      The input string.
+     * @param sequence    The substring to be replaced.
      * @param replacement The substring to replace all occurrences of the target.
-     * @return The modified string with all occurrences replaced.
+     * @return            The modified string with all occurrences replaced.
      */
     public static String replaceAll(final String string, final String sequence, final String replacement) {
         if (string == null || sequence == null || replacement == null) return string;
@@ -191,9 +203,10 @@ public final class StringUtils {
 
     /**
      * Checks if a string contains another string, ignoring case sensitivity.
-     * @param string The input string.
+     *
+     * @param string   The input string.
      * @param sequence The string to check for containment.
-     * @return True if the input string contains the target string (case-insensitive), otherwise false.
+     * @return         True if the input string contains the target string (case-insensitive), otherwise false.
      */
     public static boolean contains(final String string, final String sequence) {
         if (string == null || sequence == null) return false;
@@ -203,9 +216,10 @@ public final class StringUtils {
 
     /**
      * Checks if a string ends with another string, ignoring case sensitivity.
+     *
      * @param string The input string.
      * @param suffix The string to check for at the end.
-     * @return True if the input string ends with the target string (case-insensitive), otherwise false.
+     * @return       True if the input string ends with the target string (case-insensitive), otherwise false.
      */
     public static boolean endsWith(final String string, final String suffix) {
         if (string == null || suffix == null) return false;
@@ -215,9 +229,10 @@ public final class StringUtils {
 
     /**
      * Checks if a string starts with another string, ignoring case sensitivity.
-     * @param input The input string.
+     *
+     * @param input  The input string.
      * @param prefix The string to check for at the beginning.
-     * @return True if the input string starts with the target string (case-insensitive), otherwise false.
+     * @return       True if the input string starts with the target string (case-insensitive), otherwise false.
      */
     public static boolean startsWith(final String input, final String prefix) {
         if (input == null || prefix == null) return false;
@@ -227,9 +242,10 @@ public final class StringUtils {
 
     /**
      * Returns the size of the biggest possible string that can be used to encode a number within the given maximum value and radix.
-     * @param radix The radix (base) to be used for encoding the number. Must be greater than 1.
+     *
+     * @param radix    The radix (base) to be used for encoding the number. Must be greater than 1.
      * @param maxValue The maximum value that needs to be encoded. Must be a non-negative integer.
-     * @return The size of the largest string needed to encode the number.
+     * @return         The size of the largest string needed to encode the number.
      */
     public static int maximumStringSize(final int radix, final long maxValue) {
         return (int) Math.ceil(Math.log(maxValue) / Math.log(radix)) + 1;

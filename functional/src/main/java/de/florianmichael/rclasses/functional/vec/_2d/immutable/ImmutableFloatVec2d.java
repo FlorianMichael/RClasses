@@ -19,10 +19,13 @@ package de.florianmichael.rclasses.functional.vec._2d.immutable;
 
 import de.florianmichael.rclasses.functional.vec._2d.FloatVec2d;
 
+import java.util.Objects;
+
 public final class ImmutableFloatVec2d extends FloatVec2d {
+
     private final float x, y;
 
-    ImmutableFloatVec2d() {
+    public ImmutableFloatVec2d() {
         this(0.0F, 0.0F);
     }
 
@@ -51,10 +54,22 @@ public final class ImmutableFloatVec2d extends FloatVec2d {
 
     @Override
     public String toString() {
-        return String.format(
-                "ImmutableFloatVec{x=%f, y=%f}",
-                this.getX(),
-                this.getY()
-        );
+        return "ImmutableFloatVec2d{" +
+                "x=" + x +
+                ", y=" + y +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ImmutableFloatVec2d that = (ImmutableFloatVec2d) o;
+        return Float.compare(x, that.x) == 0 && Float.compare(y, that.y) == 0;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(x, y);
     }
 }

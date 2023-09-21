@@ -19,10 +19,13 @@ package de.florianmichael.rclasses.functional.vec._2d.mutable;
 
 import de.florianmichael.rclasses.functional.vec._2d.LongVec2d;
 
+import java.util.Objects;
+
 public final class MutableLongVec2d extends LongVec2d {
+
     private long x, y;
 
-    MutableLongVec2d() {
+    public MutableLongVec2d() {
         this(0L, 0L);
     }
 
@@ -53,10 +56,22 @@ public final class MutableLongVec2d extends LongVec2d {
 
     @Override
     public String toString() {
-        return String.format(
-                "MutableLongVec{x=%d, y=%d}",
-                this.getX(),
-                this.getY()
-        );
+        return "MutableLongVec2d{" +
+                "x=" + x +
+                ", y=" + y +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        MutableLongVec2d that = (MutableLongVec2d) o;
+        return x == that.x && y == that.y;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(x, y);
     }
 }

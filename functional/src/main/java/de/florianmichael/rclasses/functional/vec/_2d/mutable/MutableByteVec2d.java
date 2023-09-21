@@ -19,10 +19,13 @@ package de.florianmichael.rclasses.functional.vec._2d.mutable;
 
 import de.florianmichael.rclasses.functional.vec._2d.ByteVec2d;
 
+import java.util.Objects;
+
 public final class MutableByteVec2d extends ByteVec2d {
+
     private byte x, y;
 
-    MutableByteVec2d() {
+    public MutableByteVec2d() {
         this((byte) 0, (byte) 0);
     }
 
@@ -53,10 +56,22 @@ public final class MutableByteVec2d extends ByteVec2d {
 
     @Override
     public String toString() {
-        return String.format(
-                "MutableByteVec{x=%d, y=%d}",
-                this.getX(),
-                this.getY()
-        );
+        return "MutableByteVec2d{" +
+                "x=" + x +
+                ", y=" + y +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        MutableByteVec2d that = (MutableByteVec2d) o;
+        return x == that.x && y == that.y;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(x, y);
     }
 }

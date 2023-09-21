@@ -15,14 +15,14 @@
  * limitations under the License.
  */
 
-// From: https://github.com/lumii500pg/Needle (License: UNLICENSE, time: 26/05)
-package de.florianmichael.rclasses.pattern.collection.evicting;
+package de.florianmichael.rclasses.pattern.evicting;
 
 import java.util.Collections;
 import java.util.Map;
 
 /**
  * Implementation of an evicting map. This map will remove the first entry if the map is full.
+ *
  * @param <K> The type of the key.
  * @param <V> The type of the value.
  */
@@ -40,6 +40,7 @@ public final class EvictingMap<K, V> {
 
     /**
      * Creates a new evicting map.
+     *
      * @param map     The map.
      * @param maxSize The maximum size of the map.
      */
@@ -50,6 +51,7 @@ public final class EvictingMap<K, V> {
 
     /**
      * Puts a key and a value into the map. If the map is full, the first entry will be removed. Returns true if the map was full.
+     *
      * @param key   The key.
      * @param value The value.
      * @return      True if the map was full.

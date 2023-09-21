@@ -15,14 +15,14 @@
  * limitations under the License.
  */
 
-// From: https://github.com/lumii500pg/Needle (License: UNLICENSE, time: 26/05)
-package de.florianmichael.rclasses.pattern.collection.evicting;
+package de.florianmichael.rclasses.pattern.evicting;
 
 import java.util.Collections;
 import java.util.Set;
 
 /**
  * Implementation of an evicting set. This set will remove the first entry if the set is full.
+ *
  * @param <V> The type of the set.
  */
 public final class EvictingSet<V> {
@@ -39,6 +39,7 @@ public final class EvictingSet<V> {
 
     /**
      * Creates a new evicting set.
+     *
      * @param set     The set.
      * @param maxSize The maximum size of the set.
      */
@@ -49,6 +50,7 @@ public final class EvictingSet<V> {
 
     /**
      * Adds a value to the set. If the set is full, the first entry will be removed. Returns true if the set was full.
+     *
      * @param value The value to add.
      * @return      True if the set was full.
      */

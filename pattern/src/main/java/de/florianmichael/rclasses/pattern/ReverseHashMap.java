@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package de.florianmichael.rclasses.pattern.collection;
+package de.florianmichael.rclasses.pattern;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -35,9 +35,10 @@ public class ReverseHashMap<K, V> extends LinkedHashMap<K, V> {
 
     /**
      * Puts a key and a value into the map. The value will be also put into the reversed map.
-     * @param key The key.
+     *
+     * @param key   The key.
      * @param value The value.
-     * @return The value.
+     * @return      The value.
      */
     @Override
     public V put(K key, V value) {
@@ -47,7 +48,7 @@ public class ReverseHashMap<K, V> extends LinkedHashMap<K, V> {
 
     /**
      * @param value The value.
-     * @return The key of the given value.
+     * @return      The key of the given value.
      */
     public K getKey(final V value) {
         if (!this.reversedMap.containsKey(value))
