@@ -32,70 +32,70 @@ public class RandomUtils {
     /**
      * @param min The minimum value.
      * @param max The maximum value.
-     * @return A random integer between min and max.
+     * @return A random integer between min (inclusive) and max (exclusive).
      */
     public static int randomInt(final int min, final int max) {
-        return (int) (Math.random() * (max - min + 1) + min);
+        return ThreadLocalRandom.current().nextInt(min, max);
     }
 
     /**
      * @param min The minimum value.
      * @param max The maximum value.
-     * @return A random double between min and max.
+     * @return A random double between min (inclusive) and max (exclusive).
      */
     public static double randomDouble(final double min, final double max) {
-        return Math.random() * (max - min + 1) + min;
+        return ThreadLocalRandom.current().nextDouble(min, max);
     }
 
     /**
      * @param min The minimum value.
      * @param max The maximum value.
-     * @return A random float between min and max.
+     * @return A random float between min (inclusive) and max (exclusive).
      */
     public static float randomFloat(final float min, final float max) {
-        return (float) (Math.random() * (max - min + 1) + min);
+        return ThreadLocalRandom.current().nextFloat(min, max);
     }
 
     /**
      * @param min The minimum value.
      * @param max The maximum value.
-     * @return A random long between min and max.
+     * @return A random long between min (inclusive) and max (exclusive).
      */
     public static long randomLong(final long min, final long max) {
-        return (long) (Math.random() * (max - min + 1) + min);
+        return ThreadLocalRandom.current().nextLong(min, max);
     }
 
     /**
      * @param min The minimum value.
      * @param max The maximum value.
-     * @return A random short between min and max.
+     * @return A random short between min (inclusive) and max (exclusive).
      */
     public static short randomShort(final short min, final short max) {
-        return (short) (Math.random() * (max - min + 1) + min);
+        return (short) ThreadLocalRandom.current().nextInt(min, max);
     }
 
     /**
      * @param min The minimum value.
      * @param max The maximum value.
-     * @return A random byte between min and max.
+     * @return A random byte between min (inclusive) and max (exclusive).
      */
     public static byte randomByte(final byte min, final byte max) {
-        return (byte) (Math.random() * (max - min + 1) + min);
+        return (byte) ThreadLocalRandom.current().nextInt(min, max);
     }
 
     /**
      * @param min The minimum value.
      * @param max The maximum value.
-     * @return A random char between min and max.
+     * @return A random char between min (inclusive) and max (exclusive).
      */
     public static char randomChar(final char min, final char max) {
-        return (char) (Math.random() * (max - min + 1) + min);
+        return (char) ThreadLocalRandom.current().nextInt(min, max);
     }
 
     /**
      * @return A random boolean (either true or false).
      */
     public static boolean randomBoolean() {
-        return Math.random() < 0.5;
+        return ThreadLocalRandom.current().nextBoolean();
     }
 }
