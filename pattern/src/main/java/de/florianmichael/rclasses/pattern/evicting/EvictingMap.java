@@ -54,7 +54,7 @@ public final class EvictingMap<K, V> {
      *
      * @param key   The key.
      * @param value The value.
-     * @return      True if the map was full.
+     * @return True if the map was full.
      */
     public @SuppressWarnings("all") boolean put(final K key, final V value) {
         final boolean full = this.map.size() >= this.maxSize;

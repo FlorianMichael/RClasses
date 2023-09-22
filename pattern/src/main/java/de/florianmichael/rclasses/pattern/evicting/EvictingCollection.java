@@ -52,7 +52,7 @@ public final class EvictingCollection<V> {
      * Adds a value to the collection. If the collection is full, the first entry will be removed. Returns true if the collection was full.
      *
      * @param value The value to add.
-     * @return      True if the collection was full.
+     * @return True if the collection was full.
      */
     public @SuppressWarnings("all") boolean add(final V value) {
         final boolean full = this.collection.size() >= this.maxSize;

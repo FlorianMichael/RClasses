@@ -43,7 +43,7 @@ public interface Char2ObjBiConsumer<V> extends BiConsumer<Character, V> {
 
     /**
      * @param after the operation to perform after this operation
-     * @return      a composed {@link Char2ObjBiConsumer} that performs in sequence this operation followed by the {@code after} operation
+     * @return a composed {@link Char2ObjBiConsumer} that performs in sequence this operation followed by the {@code after} operation
      */
     default Char2ObjBiConsumer<V> andThenChar(final Char2ObjBiConsumer<V> after) {
         return (l, r) -> {

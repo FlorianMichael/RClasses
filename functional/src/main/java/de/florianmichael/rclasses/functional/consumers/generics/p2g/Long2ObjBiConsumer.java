@@ -43,7 +43,7 @@ public interface Long2ObjBiConsumer<V> extends BiConsumer<Long, V> {
 
     /**
      * @param after the operation to perform after this operation
-     * @return      a composed {@link Long2ObjBiConsumer} that performs in sequence this operation followed by the {@code after} operation
+     * @return a composed {@link Long2ObjBiConsumer} that performs in sequence this operation followed by the {@code after} operation
      */
     default Long2ObjBiConsumer<V> andThenLong(final Long2ObjBiConsumer<V> after) {
         return (l, r) -> {

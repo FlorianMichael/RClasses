@@ -38,7 +38,7 @@ public class ReverseHashMap<K, V> extends LinkedHashMap<K, V> {
      *
      * @param key   The key.
      * @param value The value.
-     * @return      The value.
+     * @return The value.
      */
     @Override
     public V put(K key, V value) {
@@ -48,7 +48,7 @@ public class ReverseHashMap<K, V> extends LinkedHashMap<K, V> {
 
     /**
      * @param value The value.
-     * @return      The key of the given value.
+     * @return The key of the given value.
      */
     public K getKey(final V value) {
         if (!this.reversedMap.containsKey(value))

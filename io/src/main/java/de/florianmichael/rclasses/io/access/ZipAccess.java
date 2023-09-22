@@ -36,8 +36,8 @@ public class ZipAccess {
     /**
      * Unzips the given zip file to the given target directory.
      *
-     * @param source       the zip file
-     * @param target       the target directory
+     * @param source the zip file
+     * @param target the target directory
      * @throws IOException if an I/O error occurs
      */
     public static void unzipFolder(final File source, final Path target) throws IOException {
@@ -50,7 +50,8 @@ public class ZipAccess {
                 if (isDirectory) {
                     createDirectories(newPath);
                 } else {
-                    if (newPath.getParent() != null && notExists(newPath.getParent())) createDirectories(newPath.getParent());
+                    if (newPath.getParent() != null && notExists(newPath.getParent()))
+                        createDirectories(newPath.getParent());
                     copy(zis, newPath, StandardCopyOption.REPLACE_EXISTING);
                 }
                 zipEntry = zis.getNextEntry();
@@ -64,7 +65,7 @@ public class ZipAccess {
      *
      * @param zipFilePath   the zip file
      * @param destDirectory the target directory
-     * @throws IOException  if an I/O error occurs
+     * @throws IOException if an I/O error occurs
      */
     public static void unzip(final String zipFilePath, final String destDirectory) throws IOException {
         final File destDir = new File(destDirectory);
@@ -87,8 +88,8 @@ public class ZipAccess {
     /**
      * Extracts a file from the given zip input stream to the given file path.
      *
-     * @param zipIn        the zip input stream
-     * @param filePath     the file path
+     * @param zipIn    the zip input stream
+     * @param filePath the file path
      * @throws IOException if an I/O error occurs
      */
     public static void extractFile(final ZipInputStream zipIn, final String filePath) throws IOException {
@@ -102,9 +103,9 @@ public class ZipAccess {
     /**
      * Protects against zip slip vulnerability.
      *
-     * @param zipEntry     the zip entry
-     * @param targetDir    the target directory
-     * @return             the normalized path
+     * @param zipEntry  the zip entry
+     * @param targetDir the target directory
+     * @return the normalized path
      * @throws IOException if an I/O error occurs
      */
     public static Path zipSlipProtect(final ZipEntry zipEntry, final Path targetDir) throws IOException {

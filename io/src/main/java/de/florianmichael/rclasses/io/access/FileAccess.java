@@ -34,9 +34,9 @@ public class FileAccess {
     /**
      * Downloads a file from the internet and saves it to the given output file.
      *
-     * @param url        The url to download the file from.
-     * @param output     The file to save the downloaded file to.
-     * @return           The output file.
+     * @param url    The url to download the file from.
+     * @param output The file to save the downloaded file to.
+     * @return The output file.
      * @throws Throwable If an error occurs while downloading the file.
      */
     public static File downloadFile(final String url, final File output) throws Throwable {
@@ -46,10 +46,10 @@ public class FileAccess {
     /**
      * Downloads a file from the internet and saves it to the given output file.
      *
-     * @param url        The url to download the file from.
-     * @param agent      The user agent to use.
-     * @param output     The file to save the downloaded file to.
-     * @return           The output file.
+     * @param url    The url to download the file from.
+     * @param agent  The user agent to use.
+     * @param output The file to save the downloaded file to.
+     * @return The output file.
      * @throws Throwable If an error occurs while downloading the file.
      */
     public static File downloadFile(final String url, final String agent, final File output) throws Throwable {

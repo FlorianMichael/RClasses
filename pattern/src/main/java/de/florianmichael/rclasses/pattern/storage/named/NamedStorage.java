@@ -51,8 +51,8 @@ public abstract class NamedStorage<T extends IName> extends Storage<T> {
      * Gets an object by its name. see {@link #getByName(String, boolean)} and {@link IName} for more information.
      *
      * @param name The name.
-     * @return     The object.
      * @param <V>  The type of the object.
+     * @return The object.
      */
     public <V extends T> V getByName(final String name) {
         return getByName(name, false);
@@ -63,8 +63,8 @@ public abstract class NamedStorage<T extends IName> extends Storage<T> {
      *
      * @param name       The name.
      * @param ignoreCase Whether the case should be ignored.
-     * @return           The object.
      * @param <V>        The type of the object.
+     * @return The object.
      */
     @SuppressWarnings("unchecked")
     public <V extends T> V getByName(final String name, final boolean ignoreCase) {

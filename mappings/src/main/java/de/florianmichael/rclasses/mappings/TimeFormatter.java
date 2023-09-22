@@ -52,7 +52,7 @@ public class TimeFormatter {
 
     /**
      * @param time The time to format
-     * @return     The given time in the format dd.MM.yyyy
+     * @return The given time in the format dd.MM.yyyy
      */
     public static String formatTime(final LocalDateTime time) {
         return TIME_FORMAT.format(time);
@@ -60,7 +60,7 @@ public class TimeFormatter {
 
     /**
      * @param time The time to format
-     * @return     The given time in the format HH:mm:ss
+     * @return The given time in the format HH:mm:ss
      */
     public static String formatDate(final LocalDateTime time) {
         return DATE_FORMAT.format(time);
@@ -68,7 +68,7 @@ public class TimeFormatter {
 
     /**
      * @param time The time to format
-     * @return     The given time in the format dd.MM.yyyy HH:mm:ss
+     * @return The given time in the format dd.MM.yyyy HH:mm:ss
      */
     public static String formatDateTime(final LocalDateTime time) {
         return formatDate(time) + " " + formatTime(time);

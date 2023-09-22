@@ -52,6 +52,7 @@ public abstract class Storage<T> {
 
     /**
      * Creates a new storage with the given list.
+     *
      * @param list The list.
      */
     public Storage(final Supplier<List<T>> list) {
@@ -123,8 +124,8 @@ public abstract class Storage<T> {
      * Gets an object from the storage by the given class type.
      *
      * @param clazz The class.
-     * @return      The object.
      * @param <V>   The type of the object.
+     * @return The object.
      */
     @SuppressWarnings("unchecked")
     public <V extends T> V getByClass(final Class<V> clazz) {

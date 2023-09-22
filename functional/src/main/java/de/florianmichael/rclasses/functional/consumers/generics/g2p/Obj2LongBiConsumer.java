@@ -29,6 +29,7 @@ public interface Obj2LongBiConsumer<V> extends BiConsumer<V, Long> {
 
     /**
      * Performs this operation on the given arguments.
+     *
      * @param left  the first input argument
      * @param right the second input argument
      */
@@ -42,7 +43,7 @@ public interface Obj2LongBiConsumer<V> extends BiConsumer<V, Long> {
 
     /**
      * @param after the operation to perform after this operation
-     * @return      a composed {@link Obj2LongBiConsumer} that performs in sequence this operation followed by the {@code after} operation
+     * @return a composed {@link Obj2LongBiConsumer} that performs in sequence this operation followed by the {@code after} operation
      */
     default Obj2LongBiConsumer<V> andThenLong(final Obj2LongBiConsumer<V> after) {
         return (l, r) -> {

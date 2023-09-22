@@ -32,17 +32,17 @@ public interface TBiFunction<T, U, R> {
     /**
      * Applies this function to the given arguments and throws an exception.
      *
-     * @param t          The first argument
-     * @param u          The second argument
-     * @return           The return value
+     * @param t The first argument
+     * @param u The second argument
+     * @return The return value
      * @throws Throwable The exception
      */
     R apply(T t, U u) throws Throwable;
 
     /**
-     * @param after      The operation to perform after this operation
-     * @return           A composed {@code TBiFunction} that performs in sequence this operation followed by the {@code after}
-     * @param <V>        The return type of the {@code after} function, and of the composed function
+     * @param after The operation to perform after this operation
+     * @param <V>   The return type of the {@code after} function, and of the composed function
+     * @return A composed {@code TBiFunction} that performs in sequence this operation followed by the {@code after}
      * @throws Throwable The exception
      */
     default <V> TBiFunction<T, U, V> andThen(TFunction<? super R, ? extends V> after) throws Throwable {

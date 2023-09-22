@@ -43,7 +43,7 @@ public interface Obj2ByteBiConsumer<V> extends BiConsumer<V, Byte> {
 
     /**
      * @param after the operation to perform after this operation
-     * @return      a composed {@link Obj2ByteBiConsumer} that performs in sequence this operation followed by the {@code after} operation
+     * @return a composed {@link Obj2ByteBiConsumer} that performs in sequence this operation followed by the {@code after} operation
      */
     default Obj2ByteBiConsumer<V> andThenByte(final Obj2ByteBiConsumer<V> after) {
         return (l, r) -> {

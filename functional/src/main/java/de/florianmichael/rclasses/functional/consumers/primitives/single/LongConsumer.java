@@ -40,7 +40,7 @@ public interface LongConsumer extends Consumer<Long> {
 
     /**
      * @param after the operation to perform after this operation
-     * @return      a composed {@link LongConsumer} that performs in sequence this operation followed by the {@code after} operation
+     * @return a composed {@link LongConsumer} that performs in sequence this operation followed by the {@code after} operation
      */
     default LongConsumer andThenLong(final LongConsumer after) {
         return (value) -> {

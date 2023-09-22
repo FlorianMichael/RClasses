@@ -29,6 +29,7 @@ public interface Obj2BoolBiConsumer<V> extends BiConsumer<V, Boolean> {
 
     /**
      * Performs this operation on the given arguments.
+     *
      * @param left  the first input argument
      * @param right the second input argument
      */
@@ -42,7 +43,7 @@ public interface Obj2BoolBiConsumer<V> extends BiConsumer<V, Boolean> {
 
     /**
      * @param after the operation to perform after this operation
-     * @return      a composed {@link Obj2BoolBiConsumer} that performs in sequence this operation followed by the {@code after} operation
+     * @return a composed {@link Obj2BoolBiConsumer} that performs in sequence this operation followed by the {@code after} operation
      */
     default Obj2BoolBiConsumer<V> andThenBool(final Obj2BoolBiConsumer<V> after) {
         return (l, r) -> {

@@ -40,7 +40,7 @@ public interface DoubleConsumer extends Consumer<Double> {
 
     /**
      * @param after the operation to perform after this operation
-     * @return      a composed {@link DoubleConsumer} that performs in sequence this operation followed by the {@code after} operation
+     * @return a composed {@link DoubleConsumer} that performs in sequence this operation followed by the {@code after} operation
      */
     default DoubleConsumer andThenDouble(final DoubleConsumer after) {
         return (value) -> {

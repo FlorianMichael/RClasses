@@ -40,7 +40,7 @@ public interface FloatConsumer extends Consumer<Float> {
 
     /**
      * @param after the operation to perform after this operation
-     * @return      a composed {@link FloatConsumer} that performs in sequence this operation followed by the {@code after} operation
+     * @return a composed {@link FloatConsumer} that performs in sequence this operation followed by the {@code after} operation
      */
     default FloatConsumer andThenFloat(final FloatConsumer after) {
         return (value) -> {

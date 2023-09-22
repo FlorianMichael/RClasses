@@ -27,6 +27,7 @@ public interface Byte2ByteBiConsumer extends BiConsumer<Byte, Byte> {
 
     /**
      * Performs this operation on the given arguments.
+     *
      * @param left  the first input argument
      * @param right the second input argument
      */
@@ -40,7 +41,7 @@ public interface Byte2ByteBiConsumer extends BiConsumer<Byte, Byte> {
 
     /**
      * @param after the operation to perform after this operation
-     * @return      a composed {@link Byte2ByteBiConsumer} that performs in sequence this operation followed by the {@code after} operation
+     * @return a composed {@link Byte2ByteBiConsumer} that performs in sequence this operation followed by the {@code after} operation
      */
     default Byte2ByteBiConsumer andThenByte(final Byte2ByteBiConsumer after) {
         return (l, r) -> {

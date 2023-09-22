@@ -27,6 +27,7 @@ public interface Double2DoubleBiConsumer extends BiConsumer<Double, Double> {
 
     /**
      * Performs this operation on the given arguments.
+     *
      * @param left  the first input argument
      * @param right the second input argument
      */
@@ -40,7 +41,7 @@ public interface Double2DoubleBiConsumer extends BiConsumer<Double, Double> {
 
     /**
      * @param after the operation to perform after this operation
-     * @return      a composed {@link Double2DoubleBiConsumer} that performs in sequence this operation followed by the {@code after} operation
+     * @return a composed {@link Double2DoubleBiConsumer} that performs in sequence this operation followed by the {@code after} operation
      */
     default Double2DoubleBiConsumer andThenDouble(final Double2DoubleBiConsumer after) {
         return (l, r) -> {

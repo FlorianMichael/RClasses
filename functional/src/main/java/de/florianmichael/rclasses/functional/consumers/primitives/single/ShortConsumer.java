@@ -40,7 +40,7 @@ public interface ShortConsumer extends Consumer<Short> {
 
     /**
      * @param after the operation to perform after this operation
-     * @return      a composed {@link ShortConsumer} that performs in sequence this operation followed by the {@code after} operation
+     * @return a composed {@link ShortConsumer} that performs in sequence this operation followed by the {@code after} operation
      */
     default ShortConsumer andThenShort(final ShortConsumer after) {
         return (value) -> {

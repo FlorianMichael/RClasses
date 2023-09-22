@@ -52,7 +52,7 @@ public final class EvictingList<V> {
      * Adds a value to the list. If the list is full, the first entry will be removed. Returns true if the list was full.
      *
      * @param value The value to add.
-     * @return      True if the list was full.
+     * @return True if the list was full.
      */
     public boolean add(final V value) {
         final boolean full = this.list.size() >= this.maxSize;

@@ -40,7 +40,7 @@ public interface ByteConsumer extends Consumer<Byte> {
 
     /**
      * @param after the operation to perform after this operation
-     * @return      a composed {@link ByteConsumer} that performs in sequence this operation followed by the {@code after} operation
+     * @return a composed {@link ByteConsumer} that performs in sequence this operation followed by the {@code after} operation
      */
     default ByteConsumer andThenByte(final ByteConsumer after) {
         return (value) -> {

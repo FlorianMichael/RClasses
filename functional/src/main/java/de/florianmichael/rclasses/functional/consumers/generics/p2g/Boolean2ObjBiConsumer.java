@@ -43,7 +43,7 @@ public interface Boolean2ObjBiConsumer<V> extends BiConsumer<Boolean, V> {
 
     /**
      * @param after the operation to perform after this operation
-     * @return      a composed {@link Boolean2ObjBiConsumer} that performs in sequence this operation followed by the {@code after} operation
+     * @return a composed {@link Boolean2ObjBiConsumer} that performs in sequence this operation followed by the {@code after} operation
      */
     default Boolean2ObjBiConsumer<V> andThenBool(final Boolean2ObjBiConsumer<V> after) {
         return (l, r) -> {

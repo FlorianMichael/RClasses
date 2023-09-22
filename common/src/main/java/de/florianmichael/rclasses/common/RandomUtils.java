@@ -32,8 +32,7 @@ public class RandomUtils {
     /**
      * @param min The minimum value.
      * @param max The maximum value.
-     *
-     * @return    A random integer between min and max.
+     * @return A random integer between min and max.
      */
     public static int randomInt(final int min, final int max) {
         return (int) (Math.random() * (max - min + 1) + min);
@@ -42,8 +41,7 @@ public class RandomUtils {
     /**
      * @param min The minimum value.
      * @param max The maximum value.
-     *
-     * @return    A random double between min and max.
+     * @return A random double between min and max.
      */
     public static double randomDouble(final double min, final double max) {
         return Math.random() * (max - min + 1) + min;
@@ -52,8 +50,7 @@ public class RandomUtils {
     /**
      * @param min The minimum value.
      * @param max The maximum value.
-     *
-     * @return    A random float between min and max.
+     * @return A random float between min and max.
      */
     public static float randomFloat(final float min, final float max) {
         return (float) (Math.random() * (max - min + 1) + min);
@@ -62,8 +59,7 @@ public class RandomUtils {
     /**
      * @param min The minimum value.
      * @param max The maximum value.
-     *
-     * @return    A random long between min and max.
+     * @return A random long between min and max.
      */
     public static long randomLong(final long min, final long max) {
         return (long) (Math.random() * (max - min + 1) + min);
@@ -72,8 +68,7 @@ public class RandomUtils {
     /**
      * @param min The minimum value.
      * @param max The maximum value.
-     *
-     * @return    A random short between min and max.
+     * @return A random short between min and max.
      */
     public static short randomShort(final short min, final short max) {
         return (short) (Math.random() * (max - min + 1) + min);
@@ -82,8 +77,7 @@ public class RandomUtils {
     /**
      * @param min The minimum value.
      * @param max The maximum value.
-     *
-     * @return    A random byte between min and max.
+     * @return A random byte between min and max.
      */
     public static byte randomByte(final byte min, final byte max) {
         return (byte) (Math.random() * (max - min + 1) + min);
@@ -92,8 +86,7 @@ public class RandomUtils {
     /**
      * @param min The minimum value.
      * @param max The maximum value.
-     *
-     * @return    A random char between min and max.
+     * @return A random char between min and max.
      */
     public static char randomChar(final char min, final char max) {
         return (char) (Math.random() * (max - min + 1) + min);

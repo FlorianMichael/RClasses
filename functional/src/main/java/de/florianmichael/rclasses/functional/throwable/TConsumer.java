@@ -30,17 +30,20 @@ public interface TConsumer<T> {
     /**
      * Accepts the given argument and throws an exception.
      *
-     * @param t          The argument
+     * @param t The argument
      * @throws Throwable The exception
      */
     void accept(T t) throws Throwable;
 
     /**
      * @param after The operation to perform after this operation
-     * @return      A composed {@code TConsumer} that performs in sequence this operation followed by the {@code after}
+     * @return A composed {@code TConsumer} that performs in sequence this operation followed by the {@code after}
      */
     default TConsumer<T> andThen(TConsumer<? super T> after) {
         Objects.requireNonNull(after);
-        return (T t) -> { accept(t); after.accept(t); };
+        return (T t) -> {
+            accept(t);
+            after.accept(t);
+        };
     }
 }

@@ -27,6 +27,7 @@ public interface Char2CharBiConsumer extends BiConsumer<Character, Character> {
 
     /**
      * Performs this operation on the given arguments.
+     *
      * @param left  the first input argument
      * @param right the second input argument
      */
@@ -40,7 +41,7 @@ public interface Char2CharBiConsumer extends BiConsumer<Character, Character> {
 
     /**
      * @param after the operation to perform after this operation
-     * @return      a composed {@link Char2CharBiConsumer} that performs in sequence this operation followed by the {@code after} operation
+     * @return a composed {@link Char2CharBiConsumer} that performs in sequence this operation followed by the {@code after} operation
      */
     default Char2CharBiConsumer andThenChar(final Char2CharBiConsumer after) {
         return (l, r) -> {

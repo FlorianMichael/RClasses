@@ -43,7 +43,7 @@ public interface Short2ObjBiConsumer<V> extends BiConsumer<Short, V> {
 
     /**
      * @param after the operation to perform after this operation
-     * @return      a composed {@link Short2ObjBiConsumer} that performs in sequence this operation followed by the {@code after} operation
+     * @return a composed {@link Short2ObjBiConsumer} that performs in sequence this operation followed by the {@code after} operation
      */
     default Short2ObjBiConsumer<V> andThenShort(final Short2ObjBiConsumer<V> after) {
         return (l, r) -> {

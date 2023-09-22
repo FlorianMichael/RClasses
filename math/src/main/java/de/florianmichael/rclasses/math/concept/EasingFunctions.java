@@ -101,7 +101,7 @@ public enum EasingFunctions {
     public final Function<Float, Float> function;
 
     /**
-     * @param name The name of the function
+     * @param name     The name of the function
      * @param function The function
      */
     EasingFunctions(final String name, final Function<Float, Float> function) {

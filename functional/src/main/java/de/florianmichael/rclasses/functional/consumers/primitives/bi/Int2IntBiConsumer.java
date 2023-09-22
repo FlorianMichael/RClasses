@@ -27,6 +27,7 @@ public interface Int2IntBiConsumer extends BiConsumer<Integer, Integer> {
 
     /**
      * Performs this operation on the given parameters.
+     *
      * @param left  the first input argument
      * @param right the second input argument
      */
@@ -40,7 +41,7 @@ public interface Int2IntBiConsumer extends BiConsumer<Integer, Integer> {
 
     /**
      * @param after the operation to perform after this operation
-     * @return      a composed {@link Int2IntBiConsumer} that performs in sequence this operation followed by the {@code after} operation
+     * @return a composed {@link Int2IntBiConsumer} that performs in sequence this operation followed by the {@code after} operation
      */
     default Int2IntBiConsumer andThenInt(final Int2IntBiConsumer after) {
         return (l, r) -> {

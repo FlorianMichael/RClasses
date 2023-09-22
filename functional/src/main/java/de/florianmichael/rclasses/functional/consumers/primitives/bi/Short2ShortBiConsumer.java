@@ -27,6 +27,7 @@ public interface Short2ShortBiConsumer extends BiConsumer<Short, Short> {
 
     /**
      * Performs this operation on the given parameters.
+     *
      * @param left  the first input argument
      * @param right the second input argument
      */
@@ -40,7 +41,7 @@ public interface Short2ShortBiConsumer extends BiConsumer<Short, Short> {
 
     /**
      * @param after the operation to perform after this operation
-     * @return      a composed {@link Short2ShortBiConsumer} that performs in sequence this operation followed by the {@code after} operation
+     * @return a composed {@link Short2ShortBiConsumer} that performs in sequence this operation followed by the {@code after} operation
      */
     default Short2ShortBiConsumer andThenShort(final Short2ShortBiConsumer after) {
         return (l, r) -> {

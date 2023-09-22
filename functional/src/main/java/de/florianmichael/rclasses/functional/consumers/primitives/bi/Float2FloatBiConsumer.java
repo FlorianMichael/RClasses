@@ -27,6 +27,7 @@ public interface Float2FloatBiConsumer extends BiConsumer<Float, Float> {
 
     /**
      * Performs this operation on the given parameters.
+     *
      * @param left  the first input argument
      * @param right the second input argument
      */
@@ -40,7 +41,7 @@ public interface Float2FloatBiConsumer extends BiConsumer<Float, Float> {
 
     /**
      * @param after the operation to perform after this operation
-     * @return      a composed {@link Float2FloatBiConsumer} that performs in sequence this operation followed by the {@code after} operation
+     * @return a composed {@link Float2FloatBiConsumer} that performs in sequence this operation followed by the {@code after} operation
      */
     default Float2FloatBiConsumer andThenFloat(final Float2FloatBiConsumer after) {
         return (l, r) -> {

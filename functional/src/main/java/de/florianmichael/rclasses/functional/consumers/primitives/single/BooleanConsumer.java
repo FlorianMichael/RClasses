@@ -40,7 +40,7 @@ public interface BooleanConsumer extends Consumer<Boolean> {
 
     /**
      * @param after the operation to perform after this operation
-     * @return      a composed {@link BooleanConsumer} that performs in sequence this operation followed by the {@code after} operation
+     * @return a composed {@link BooleanConsumer} that performs in sequence this operation followed by the {@code after} operation
      */
     default BooleanConsumer andThenBoolean(final BooleanConsumer after) {
         return (value) -> {

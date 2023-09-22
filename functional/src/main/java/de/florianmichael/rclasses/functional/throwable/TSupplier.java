@@ -28,7 +28,7 @@ public interface TSupplier<T> {
     /**
      * Gets a result and throws an exception.
      *
-     * @return           The return value
+     * @return The return value
      * @throws Throwable The exception
      */
     T get() throws Throwable;

@@ -27,7 +27,7 @@ public class Percentage {
      *
      * @param percentageDecimal The percentage as decimal.
      * @param base              The base value.
-     * @return                  The percentage value.
+     * @return The percentage value.
      */
     public static float value(final float percentageDecimal, final float base) {
         return percentageDecimal * base * 0.01F; // * 0.01 = : 100
@@ -38,7 +38,7 @@ public class Percentage {
      *
      * @param percentageDecimal The percentage as decimal.
      * @param value             The percentage value.
-     * @return                  The base value.
+     * @return The base value.
      */
     public static float base(final float percentageDecimal, final float value) {
         return (value / percentageDecimal) * 100F;
@@ -49,7 +49,7 @@ public class Percentage {
      *
      * @param value The percentage value.
      * @param base  The base value.
-     * @return      The percentage.
+     * @return The percentage.
      */
     public static float percentage(final float value, final float base) {
         return (value / base) * 100F;
@@ -59,7 +59,7 @@ public class Percentage {
      * Converts a percentage to a decimal.
      *
      * @param percentage The percentage.
-     * @return           The decimal.
+     * @return The decimal.
      */
     public static float toDecimal(final float percentage) {
         return percentage * 0.01F; // * 0.01 = : 100
@@ -69,7 +69,7 @@ public class Percentage {
      * Converts a decimal to a percentage.
      *
      * @param decimal The decimal.
-     * @return        The percentage.
+     * @return The percentage.
      */
     public static float toPercentage(final float decimal) {
         return decimal * 100F;
@@ -80,7 +80,7 @@ public class Percentage {
      *
      * @param percentageDecimal The percentage as decimal.
      * @param base              The base value.
-     * @return                  The percentage value.
+     * @return The percentage value.
      */
     public static double value(final double percentageDecimal, final double base) {
         return percentageDecimal * base * 0.01; // * 0.01 = : 100
@@ -91,7 +91,7 @@ public class Percentage {
      *
      * @param percentageDecimal The percentage as decimal.
      * @param value             The percentage value.
-     * @return                  The base value.
+     * @return The base value.
      */
     public static double base(final double percentageDecimal, final double value) {
         return (value / percentageDecimal) * 100D;
@@ -103,7 +103,7 @@ public class Percentage {
      *
      * @param value The percentage value.
      * @param base  The base value.
-     * @return      The percentage.
+     * @return The percentage.
      */
     public static double percentage(final double value, final double base) {
         return (value / base) * 100D;
@@ -113,7 +113,7 @@ public class Percentage {
      * Converts a percentage to a decimal.
      *
      * @param percentage The percentage.
-     * @return           The decimal.
+     * @return The decimal.
      */
     public static double toDecimal(final double percentage) {
         return percentage * 0.01D; // * 0.01 = : 100
@@ -123,7 +123,7 @@ public class Percentage {
      * Converts a decimal to a percentage.
      *
      * @param decimal The decimal.
-     * @return        The percentage.
+     * @return The percentage.
      */
     public static double toPercentage(final double decimal) {
         return decimal * 100D;

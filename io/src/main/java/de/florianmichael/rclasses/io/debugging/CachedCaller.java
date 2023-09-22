@@ -58,6 +58,7 @@ public class CachedCaller {
 
     /**
      * Creates a new CachedCaller with the given caller.
+     *
      * @param caller The caller to use
      * @return The new CachedCaller
      */

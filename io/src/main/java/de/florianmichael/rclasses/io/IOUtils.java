@@ -54,8 +54,8 @@ public class IOUtils {
     /**
      * Gets a file system for the given URI or create one.
      *
-     * @param uri          the URI
-     * @return             the file system
+     * @param uri the URI
+     * @return the file system
      * @throws IOException if creating the file system fails
      */
     private FileSystem getFileSystem(final URI uri) throws IOException {

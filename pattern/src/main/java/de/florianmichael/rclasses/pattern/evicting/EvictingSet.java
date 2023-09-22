@@ -52,7 +52,7 @@ public final class EvictingSet<V> {
      * Adds a value to the set. If the set is full, the first entry will be removed. Returns true if the set was full.
      *
      * @param value The value to add.
-     * @return      True if the set was full.
+     * @return True if the set was full.
      */
     public @SuppressWarnings("all") boolean add(final V value) {
         final boolean full = this.set.size() >= this.maxSize;

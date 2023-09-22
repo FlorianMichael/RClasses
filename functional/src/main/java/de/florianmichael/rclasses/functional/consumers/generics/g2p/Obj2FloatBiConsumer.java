@@ -43,7 +43,7 @@ public interface Obj2FloatBiConsumer<V> extends BiConsumer<V, Float> {
 
     /**
      * @param after the operation to perform after this operation
-     * @return      a composed {@link Obj2FloatBiConsumer} that performs in sequence this operation followed by the {@code after} operation
+     * @return a composed {@link Obj2FloatBiConsumer} that performs in sequence this operation followed by the {@code after} operation
      */
     default Obj2FloatBiConsumer<V> andThenFloat(final Obj2FloatBiConsumer<V> after) {
         return (l, r) -> {

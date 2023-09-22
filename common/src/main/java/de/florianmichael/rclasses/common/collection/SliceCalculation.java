@@ -42,8 +42,9 @@ public class SliceCalculation<T> {
 
     /**
      * Returns the slice at the given index. The index must be between 0 and the slice count.
+     *
      * @param sliceIndex The index of the slice.
-     * @return           The slice.
+     * @return The slice.
      */
     public List<T> getSlice(final int sliceIndex) {
         if (sliceIndex < 0 || sliceIndex >= this.getSliceCount()) {
@@ -55,9 +56,10 @@ public class SliceCalculation<T> {
 
     /**
      * Returns the number of slices for the given size and slice size.
+     *
      * @param size      The size.
      * @param sliceSize The slice size.
-     * @return          The number of slices.
+     * @return The number of slices.
      */
     public static int getSliceCount(final int size, final int sliceSize) {
         return (int) Math.ceil((double) size / (double) sliceSize);
