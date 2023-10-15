@@ -21,7 +21,6 @@ package de.florianmichael.rclasses.math;
  * Implementation of a math utility.
  */
 public class Arithmetics {
-    public final static float TAU = (float) Math.PI * 2;
 
     /**
      * Interpolates between two values with the given progress.
