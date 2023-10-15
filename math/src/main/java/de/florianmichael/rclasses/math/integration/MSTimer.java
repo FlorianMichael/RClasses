@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package de.florianmichael.rclasses.math.concept;
+package de.florianmichael.rclasses.math.integration;
 
 /**
  * A simple timer class.

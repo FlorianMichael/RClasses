@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package de.florianmichael.rclasses.math.concept;
+package de.florianmichael.rclasses.math;
 
 /**
  * Implementation of a percentage calculator.

@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package de.florianmichael.rclasses.math.concept;
+package de.florianmichael.rclasses.math.integration;
 
 import java.util.Arrays;
 import java.util.List;

@@ -2,11 +2,11 @@
  * This file is part of RClasses - https://github.com/FlorianMichael/RClasses
  * Copyright (C) 2023 FlorianMichael/EnZaXD and contributors
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
  *
- *    http://www.apache.org/licenses/LICENSE-2.0
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -15,11 +15,9 @@
  * limitations under the License.
  */
 
-package de.florianmichael.rclasses.math.trigonometry.impl;
+package de.florianmichael.rclasses.math.geometry.impl;
 
-import de.florianmichael.rclasses.math.trigonometry.Trigonometry;
-
-public class RivensTrigonometry implements Trigonometry {
+public class RivensTrigonometry implements TrigonometryBase {
 
     private final static int BF_SIN_BITS, BF_SIN_MASK, BF_SIN_COUNT;
     private final static float BF_radFull, BF_radToIndex;

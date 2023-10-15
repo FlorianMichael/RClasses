@@ -15,14 +15,24 @@
  * limitations under the License.
  */
 
-package de.florianmichael.rclasses.math.model;
+package de.florianmichael.rclasses.math.geometry.impl;
 
 /**
- * Enum for the alignment of an object. The alignment is used to determine the position of an object relative to another object.
+ * Implementation of a trigonometry calculator.
  */
-public enum Alignment {
-    LEFT, RIGHT,
-    TOP, BOTTOM,
+public interface TrigonometryBase {
 
-    MIDDLE
+    /**
+     * Calculates the sine of a given value.
+     * @param x The value.
+     * @return The sine.
+     */
+    float sin(final float x);
+
+    /**
+     * Calculates the cosine of a given value.
+     * @param x The value.
+     * @return The cosine.
+     */
+    float cos(final float x);
 }
