@@ -7,7 +7,7 @@ I also wanted to have a place where I can test new concepts and ideas.
 I know that there are already a lot of libraries that do the same thing, but I wanted to do it myself, so I can only add stuff I really need. 
 
 ### Projects that I can recommend
-- [Needle](https://github.com/sugisaru/Needle)
+- [Library-Needle](https://github.com/sugisaru/Library-Needle)
 - [Lenni0451's commons](https://github.com/Lenni0451/commons)
 - [Apache Commons](https://commons.apache.org/)
 - [Google Guava](https://github.com/google/guava)
