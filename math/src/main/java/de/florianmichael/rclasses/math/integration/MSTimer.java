@@ -75,10 +75,10 @@ public class MSTimer {
      * @return Whether the timer has reached the given delay.
      */
     public boolean hasReached(final long delay, final boolean reset) {
-        final boolean flag = getDelta() >= delay;
-        if (reset) reset();
+        final boolean reached = getDelta() >= delay;
+        if (reached && reset) reset();
 
-        return flag;
+        return reached;
     }
 
     /**
