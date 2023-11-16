@@ -52,9 +52,9 @@ public class RandomUtils {
      * @param max The maximum value.
      * @return A random float between min (inclusive) and max (exclusive).
      */
-//    public static float randomFloat(final float min, final float max) {
-//        return ThreadLocalRandom.current().nextFloat(min, max);
-//    }
+    public static float randomFloat(final float min, final float max) {
+        return ThreadLocalRandom.current().nextFloat(min, max);
+    }
 
     /**
      * @param min The minimum value.
@@ -100,6 +100,8 @@ public class RandomUtils {
     }
 
     /**
+     * Generates a random string with the specified length and characters. If all the boolean parameters are false, lowercase will be set to true.
+     *
      * @param minLength The minimum length of the string.
      * @param maxLength The maximum length of the string.
      * @param lowercase Whether to include lowercase characters.
