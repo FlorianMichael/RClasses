@@ -52,9 +52,9 @@ public class RandomUtils {
      * @param max The maximum value.
      * @return A random float between min (inclusive) and max (exclusive).
      */
-    public static float randomFloat(final float min, final float max) {
-        return ThreadLocalRandom.current().nextFloat(min, max);
-    }
+//    public static float randomFloat(final float min, final float max) {
+//        return ThreadLocalRandom.current().nextFloat(min, max);
+//    }
 
     /**
      * @param min The minimum value.
@@ -97,5 +97,49 @@ public class RandomUtils {
      */
     public static boolean randomBoolean() {
         return ThreadLocalRandom.current().nextBoolean();
+    }
+
+    /**
+     * @param minLength The minimum length of the string.
+     * @param maxLength The maximum length of the string.
+     * @param lowercase Whether to include lowercase characters.
+     * @param uppercase Whether to include uppercase characters.
+     * @param number    Whether to include number characters.
+     * @param special   Whether to include special characters.
+     * @return A random string with a random length between minLength (inclusive) and maxLength (exclusive) and characters.
+     */
+    public static String randomString(final int minLength, final int maxLength, final boolean lowercase, final boolean uppercase, final boolean number, final boolean special) {
+        return randomString(randomInt(minLength, maxLength), lowercase, uppercase, number, special);
+    }
+
+    /**
+     * Generates a random string with the specified length and characters. If all the boolean parameters are false, lowercase will be set to true.
+     *
+     * @param length    The length of the string.
+     * @param lowercase Whether to include lowercase characters.
+     * @param uppercase Whether to include uppercase characters.
+     * @param number    Whether to include number characters.
+     * @param special   Whether to include special characters.
+     * @return A random string with the specified length and characters.
+     */
+    public static String randomString(final int length, boolean lowercase, boolean uppercase, boolean number, boolean special) {
+        if (!lowercase && !uppercase && !number && !special) {
+            lowercase = true;
+        }
+
+        final StringBuilder builder = new StringBuilder();
+        while (builder.length() < length) {
+            final char character = (char) ThreadLocalRandom.current().nextInt(256);
+            if (lowercase && character >= 'a' && character <= 'z') {
+                builder.append(character);
+            } else if (uppercase && character >= 'A' && character <= 'Z') {
+                builder.append(character);
+            } else if (number && character >= '0' && character <= '9') {
+                builder.append(character);
+            } else if (special) {
+                builder.append(character);
+            }
+        }
+        return builder.toString();
     }
 }
