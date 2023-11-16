@@ -53,7 +53,7 @@ public class RandomUtils {
      * @return A random float between min (inclusive) and max (exclusive).
      */
     public static float randomFloat(final float min, final float max) {
-        return ThreadLocalRandom.current().nextFloat(min, max);
+        return min + ThreadLocalRandom.current().nextFloat() * (max - min); // Java 8 support
     }
 
     /**
