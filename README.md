@@ -7,7 +7,7 @@ I also wanted to have a place where I can test new concepts and ideas.
 I know that there are already a lot of libraries that do the same thing, but I wanted to do it myself, so I can only add stuff I really need. 
 
 ### Projects that I can recommend
-- [Library-Needle](https://github.com/sugisaru/Library-Needle)
+- [Library-Needle](https://github.com/vergessene/Library-Needle)
 - [Lenni0451's commons](https://github.com/Lenni0451/commons)
 - [Apache Commons](https://commons.apache.org/)
 - [Google Guava](https://github.com/google/guava)
@@ -20,7 +20,7 @@ If you just want to talk or need help with RClasses feel free to join my
 
 ## How to add this to your project
 ### Gradle/Maven
-To use RClasses with Gradle/Maven you can use [Maven Central](https://mvnrepository.com/artifact/de.florianmichael/RClasses), [Lenni0451 server](https://maven.lenni0451.net/#/releases/de/florianmichael/rclasses) or [Jitpack](https://jitpack.io/#FlorianMichael/RClasses).  
+To use RClasses with Gradle/Maven you can use [Maven Central](https://mvnrepository.com/artifact/de.florianmichael/RClasses), [Lenni0451's repository](https://maven.lenni0451.net/#/releases/de/florianmichael/rclasses) or [Jitpack](https://jitpack.io/#FlorianMichael/RClasses).  
 You can also find instructions how to implement it into your build script there.
 
 ### Jar File
@@ -29,8 +29,8 @@ If you just want the latest jar file you can download it from the GitHub [Action
 ## Source tree
 | Sub module name | Description                                                                                               |
 |-----------------|-----------------------------------------------------------------------------------------------------------|
-| all             | Only for the maven server, when included, all other sub modules will be loaded at one time.               |
-| common          | Different utils for a specific topic/area                                                                 |
+| all             | Includes all sub modules, can be used to include the whole library at once.                               |
+| common          | Different utils you often need when developing average Java programs.                                     |
 | functional      | Implementation of own STD types like throwable functional interfaces                                      |
 | io              | Streams, File/Web access and Input/Output stuff that works with the Java STD                              |
 | mappings        | Converter for formats and registries for default formats and conventions                                  |
