@@ -33,7 +33,6 @@ If you just want the latest jar file you can download it from the GitHub [Action
 | common          | Different utils you often need when developing average Java programs.                                     |
 | functional      | Implementation of own STD types like throwable functional interfaces                                      |
 | io              | Streams, File/Web access and Input/Output stuff that works with the Java STD                              |
-| mappings        | Converter for formats and registries for default formats and conventions                                  |
 | math            | Implementation of mathematical concepts and general formulas such as percentage calculation or stochastic |
 | pattern         | Abstracted implementations of different patterns like Registry, Storage, ...                              |
 | kotlin-support  | Adds kotlin extensions for some useful methods provided by the common module                              |

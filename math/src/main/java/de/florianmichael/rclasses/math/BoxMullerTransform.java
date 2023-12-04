@@ -15,7 +15,9 @@
  * limitations under the License.
  */
 
-package de.florianmichael.rclasses.math.integration;
+package de.florianmichael.rclasses.math;
+
+import de.florianmichael.rclasses.math.integration.MathConstants;
 
 import java.util.Random;
 

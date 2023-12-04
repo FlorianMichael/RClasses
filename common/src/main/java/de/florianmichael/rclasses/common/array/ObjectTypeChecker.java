@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package de.florianmichael.rclasses.common.object;
+package de.florianmichael.rclasses.common.array;
 
 import de.florianmichael.rclasses.common.StringUtils;
 

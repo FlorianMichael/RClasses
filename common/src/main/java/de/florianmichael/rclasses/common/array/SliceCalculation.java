@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package de.florianmichael.rclasses.common.collection;
+package de.florianmichael.rclasses.common.array;
 
 import java.util.List;
 

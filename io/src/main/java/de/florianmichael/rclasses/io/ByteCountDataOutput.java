@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package de.florianmichael.rclasses.io.model;
+package de.florianmichael.rclasses.io;
 
 import java.io.DataOutput;
 

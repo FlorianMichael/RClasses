@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package de.florianmichael.rclasses.common.hardware;
+package de.florianmichael.rclasses.common.model;
 
 import java.util.Objects;
 

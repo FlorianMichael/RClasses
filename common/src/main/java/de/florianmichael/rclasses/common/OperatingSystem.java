@@ -15,7 +15,9 @@
  * limitations under the License.
  */
 
-package de.florianmichael.rclasses.common.hardware;
+package de.florianmichael.rclasses.common;
+
+import de.florianmichael.rclasses.common.model.OSArchitecture;
 
 /**
  * This enum represents the operating system the program is running on.

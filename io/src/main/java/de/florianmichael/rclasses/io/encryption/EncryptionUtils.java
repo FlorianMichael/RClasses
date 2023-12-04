@@ -17,10 +17,10 @@
 
 package de.florianmichael.rclasses.io.encryption;
 
+import de.florianmichael.rclasses.io.AESKeyLength;
 import de.florianmichael.rclasses.io.encryption.impl.AES;
 import de.florianmichael.rclasses.io.encryption.impl.Base64;
 import de.florianmichael.rclasses.io.encryption.impl.Rot13;
-import de.florianmichael.rclasses.io.model.AESKeyLength;
 
 import javax.crypto.KeyGenerator;
 import javax.crypto.SecretKey;

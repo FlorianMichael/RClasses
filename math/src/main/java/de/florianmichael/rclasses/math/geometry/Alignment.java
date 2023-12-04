@@ -15,24 +15,14 @@
  * limitations under the License.
  */
 
-package de.florianmichael.rclasses.io.model;
-
-import java.util.Iterator;
+package de.florianmichael.rclasses.math.geometry;
 
 /**
- * An empty iterator.
- *
- * @param <T> the type of elements returned by this iterator
+ * Enum for the alignment of an object. The alignment is used to determine the position of an object relative to another object.
  */
-public class EmptyIterator<T> implements Iterator<T> {
+public enum Alignment {
+    LEFT, RIGHT,
+    TOP, BOTTOM,
 
-    @Override
-    public boolean hasNext() {
-        return false;
-    }
-
-    @Override
-    public T next() {
-        return null;
-    }
+    MIDDLE
 }

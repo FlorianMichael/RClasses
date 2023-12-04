@@ -15,21 +15,24 @@
  * limitations under the License.
  */
 
-package de.florianmichael.rclasses.io.model;
+package de.florianmichael.rclasses.io;
 
-public enum AESKeyLength {
+import java.util.Iterator;
 
-    BITS_128,
-    BITS_192,
-    BITS_256;
+/**
+ * An empty iterator.
+ *
+ * @param <T> the type of elements returned by this iterator
+ */
+public class EmptyIterator<T> implements Iterator<T> {
 
-    private final int keyLength;
-
-    AESKeyLength() {
-        this.keyLength = Integer.parseInt(this.name().split("_")[1]);
+    @Override
+    public boolean hasNext() {
+        return false;
     }
 
-    public int getKeyLength() {
-        return keyLength;
+    @Override
+    public T next() {
+        return null;
     }
 }

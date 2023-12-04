@@ -15,22 +15,22 @@
  * limitations under the License.
  */
 
-package de.florianmichael.rclasses.common.object;
+package de.florianmichael.rclasses.common.array;
 
 import java.util.Arrays;
 
 /**
  * This files wraps an object array and provides methods to check the length and the index.
  */
-public class ObjectArrayWrapper {
-    private final Object[] input;
+public class ObjectArrayWrapper<T> {
+    private final T[] input;
 
     /**
      * Creates a new instance of this class.
      *
      * @param input The array to wrap.
      */
-    public ObjectArrayWrapper(final Object[] input) {
+    public ObjectArrayWrapper(final T[] input) {
         this.input = input;
     }
 
@@ -104,11 +104,15 @@ public class ObjectArrayWrapper {
         return index < 0 || index >= input.length;
     }
 
+    public T[] getSlice(final int start, final int end) {
+        return Arrays.copyOfRange(this.input, start, end);
+    }
+
     /**
      * @param index The index to get.
      * @return The object at the given index or null if the index is invalid.
      */
-    public Object get(final int index) {
+    public T get(final int index) {
         if (isIndexInvalid(index)) {
             return null;
         }
@@ -316,7 +320,7 @@ public class ObjectArrayWrapper {
     /**
      * @return The wrapped array.
      */
-    public Object[] getInput() {
+    public T[] getInput() {
         return input;
     }
 
@@ -328,10 +332,10 @@ public class ObjectArrayWrapper {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        ObjectArrayWrapper that = (ObjectArrayWrapper) o;
+    public boolean equals(Object object) {
+        if (this == object) return true;
+        if (object == null || getClass() != object.getClass()) return false;
+        ObjectArrayWrapper<?> that = (ObjectArrayWrapper<?>) object;
         return Arrays.equals(input, that.input);
     }
 
@@ -343,7 +347,7 @@ public class ObjectArrayWrapper {
     /**
      * @return An empty wrapper.
      */
-    public static ObjectArrayWrapper createEmpty() {
-        return new ObjectArrayWrapper(new Object[0]);
+    public static ObjectArrayWrapper<Object> createEmpty() {
+        return new ObjectArrayWrapper<>(new Object[0]);
     }
 }

@@ -15,14 +15,21 @@
  * limitations under the License.
  */
 
-package de.florianmichael.rclasses.math.integration;
+package de.florianmichael.rclasses.io;
 
-/**
- * Enum for the alignment of an object. The alignment is used to determine the position of an object relative to another object.
- */
-public enum Alignment {
-    LEFT, RIGHT,
-    TOP, BOTTOM,
+public enum AESKeyLength {
 
-    MIDDLE
+    BITS_128,
+    BITS_192,
+    BITS_256;
+
+    private final int keyLength;
+
+    AESKeyLength() {
+        this.keyLength = Integer.parseInt(this.name().split("_")[1]);
+    }
+
+    public int getKeyLength() {
+        return keyLength;
+    }
 }
