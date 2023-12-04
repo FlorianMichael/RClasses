@@ -7,7 +7,6 @@ dependencies {
     projectInclude project(":RClasses-common")
     projectInclude project(":RClasses-functional")
     projectInclude project(":RClasses-io")
-    projectInclude project(":RClasses-mappings")
     projectInclude project(":RClasses-math")
     projectInclude project(":RClasses-pattern")
     projectInclude project(":RClasses-kotlin-support")

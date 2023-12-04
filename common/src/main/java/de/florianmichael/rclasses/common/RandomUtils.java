@@ -18,6 +18,7 @@
 package de.florianmichael.rclasses.common;
 
 import java.security.SecureRandom;
+import java.util.List;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -104,6 +105,45 @@ public class RandomUtils {
      */
     public static boolean randomBoolean() {
         return ThreadLocalRandom.current().nextBoolean();
+    }
+
+    /**
+     * @param array The array to get the random element from.
+     * @param <T>   The type of the array.
+     * @return A random element from the given array.
+     */
+    public static <T> T randomElement(final T[] array) {
+        if (array.length == 0) return null;
+        return array[randomInt(0, array.length)];
+    }
+
+    /**
+     * @param list The list to get the random element from.
+     * @param <T>  The type of the list.
+     * @return A random element from the given list.
+     */
+    public static <T> T randomElement(final List<T> list) {
+        if (list.isEmpty()) return null;
+        return list.get(randomInt(0, list.size()));
+    }
+
+    /**
+     * @param length The length of the byte array.
+     * @return A random byte array with the specified length.
+     */
+    public static byte[] randomBytes(final int length) {
+        return randomBytes(length, length);
+    }
+
+    /**
+     * @param minLength The minimum length of the byte array.
+     * @param maxLength The maximum length of the byte array.
+     * @return A random byte array with a random length between minLength (inclusive) and maxLength (exclusive).
+     */
+    public static byte[] randomBytes(final int minLength, final int maxLength) {
+        final byte[] bytes = new byte[randomInt(minLength, maxLength)];
+        SECURE_RANDOM.nextBytes(bytes);
+        return bytes;
     }
 
     /**

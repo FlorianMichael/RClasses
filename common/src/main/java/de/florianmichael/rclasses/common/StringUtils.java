@@ -72,8 +72,10 @@ public final class StringUtils {
     public static String reverse(final String string) {
         final char[] characters = string.toCharArray();
         final char[] reversed = new char[characters.length];
-        for (int i = 0; i < characters.length; i++)
+        for (int i = 0; i < characters.length; i++) {
             reversed[i] = characters[characters.length - i - 1];
+        }
+
         return new String(reversed);
     }
 
