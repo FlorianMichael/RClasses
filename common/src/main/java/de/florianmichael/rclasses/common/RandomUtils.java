@@ -36,7 +36,7 @@ public class RandomUtils {
      * @return A random integer between min (inclusive) and max (exclusive).
      */
     public static int randomInt(final int min, final int max) {
-        if (min == max || min > max) return min;
+        if (min >= max) return min;
         return ThreadLocalRandom.current().nextInt(min, max);
     }
 
@@ -46,7 +46,7 @@ public class RandomUtils {
      * @return A random double between min (inclusive) and max (exclusive).
      */
     public static double randomDouble(final double min, final double max) {
-        if (min == max || min > max) return min;
+        if (min >= max) return min;
         return ThreadLocalRandom.current().nextDouble(min, max);
     }
 
@@ -56,7 +56,7 @@ public class RandomUtils {
      * @return A random float between min (inclusive) and max (exclusive).
      */
     public static float randomFloat(final float min, final float max) {
-        if (min == max || min > max) return min;
+        if (min >= max) return min;
         return min + ThreadLocalRandom.current().nextFloat() * (max - min); // Java 8 support
     }
 
@@ -66,7 +66,7 @@ public class RandomUtils {
      * @return A random long between min (inclusive) and max (exclusive).
      */
     public static long randomLong(final long min, final long max) {
-        if (min == max || min > max) return min;
+        if (min >= max) return min;
         return ThreadLocalRandom.current().nextLong(min, max);
     }
 
@@ -76,7 +76,7 @@ public class RandomUtils {
      * @return A random short between min (inclusive) and max (exclusive).
      */
     public static short randomShort(final short min, final short max) {
-        if (min == max || min > max) return min;
+        if (min >= max) return min;
         return (short) ThreadLocalRandom.current().nextInt(min, max);
     }
 
@@ -86,7 +86,7 @@ public class RandomUtils {
      * @return A random byte between min (inclusive) and max (exclusive).
      */
     public static byte randomByte(final byte min, final byte max) {
-        if (min == max || min > max) return min;
+        if (min >= max) return min;
         return (byte) ThreadLocalRandom.current().nextInt(min, max);
     }
 
@@ -96,7 +96,7 @@ public class RandomUtils {
      * @return A random char between min (inclusive) and max (exclusive).
      */
     public static char randomChar(final char min, final char max) {
-        if (min == max || min > max) return min;
+        if (min >= max) return min;
         return (char) ThreadLocalRandom.current().nextInt(min, max);
     }
 
