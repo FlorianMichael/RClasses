@@ -23,11 +23,14 @@ import de.florianmichael.rclasses.io.encryption.Encryptor;
 import javax.crypto.Cipher;
 import javax.crypto.NoSuchPaddingException;
 import javax.crypto.SecretKey;
+import javax.crypto.spec.IvParameterSpec;
 import java.security.NoSuchAlgorithmException;
+import java.util.Base64;
 
 public class AES implements Encryptor {
     private final static Cipher CIPHER;
 
+    private final IvParameterSpec iv = EncryptionUtils.generateIv();
     private final SecretKey secretKey;
 
     public AES(SecretKey secretKey) {
@@ -45,8 +48,8 @@ public class AES implements Encryptor {
     @Override
     public byte[] encrypt(byte[] data) {
         try {
-            CIPHER.init(Cipher.ENCRYPT_MODE, secretKey, EncryptionUtils.generateIv());
-            return CIPHER.doFinal(data);
+            CIPHER.init(Cipher.ENCRYPT_MODE, secretKey, iv);
+            return Base64.getEncoder().encode(CIPHER.doFinal(data));
         } catch (Exception e) {
             return null;
         }
@@ -55,8 +58,8 @@ public class AES implements Encryptor {
     @Override
     public byte[] decrypt(byte[] data) {
         try {
-            CIPHER.init(Cipher.DECRYPT_MODE, secretKey, EncryptionUtils.generateIv());
-            return CIPHER.doFinal(data);
+            CIPHER.init(Cipher.DECRYPT_MODE, secretKey, iv);
+            return CIPHER.doFinal(Base64.getDecoder().decode(data));
         } catch (Exception e) {
             return null;
         }
