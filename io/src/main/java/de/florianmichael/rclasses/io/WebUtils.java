@@ -61,18 +61,22 @@ public class WebUtils {
      *
      * @param key   header key
      * @param value header value
+     * @return this
      */
-    public void withHeader(final String key, final String value) {
+    public WebUtils withHeader(final String key, final String value) {
         optionalHeaders.put(key, value);
+        return this;
     }
 
     /**
      * Removes an optional header from the request.
      *
      * @param key header key
+     * @return this
      */
-    public void removeHeader(final String key) {
+    public WebUtils removeHeader(final String key) {
         optionalHeaders.remove(key);
+        return this;
     }
 
     /**
@@ -221,7 +225,7 @@ public class WebUtils {
         final BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
 
         StringBuilder result = new StringBuilder();
-        String line = null;
+        String line;
 
         while ((line = bufferedReader.readLine()) != null) {
             result.append(line).append(System.lineSeparator());
