@@ -17,7 +17,6 @@
 
 package de.florianmichael.rclasses.io.encryption.impl;
 
-import de.florianmichael.rclasses.io.encryption.EncryptionUtils;
 import de.florianmichael.rclasses.io.encryption.Encryptor;
 
 import javax.crypto.Cipher;
@@ -30,10 +29,11 @@ import java.util.Base64;
 public class AES implements Encryptor {
     private final static Cipher CIPHER;
 
-    private final IvParameterSpec iv = EncryptionUtils.generateIv();
+    private final IvParameterSpec initialVector;
     private final SecretKey secretKey;
 
-    public AES(SecretKey secretKey) {
+    public AES(final IvParameterSpec initialVector, final SecretKey secretKey) {
+        this.initialVector = initialVector;
         this.secretKey = secretKey;
     }
 
@@ -48,7 +48,7 @@ public class AES implements Encryptor {
     @Override
     public byte[] encrypt(byte[] data) {
         try {
-            CIPHER.init(Cipher.ENCRYPT_MODE, secretKey, iv);
+            CIPHER.init(Cipher.ENCRYPT_MODE, secretKey, initialVector);
             return Base64.getEncoder().encode(CIPHER.doFinal(data));
         } catch (Exception e) {
             return null;
@@ -58,10 +58,11 @@ public class AES implements Encryptor {
     @Override
     public byte[] decrypt(byte[] data) {
         try {
-            CIPHER.init(Cipher.DECRYPT_MODE, secretKey, iv);
+            CIPHER.init(Cipher.DECRYPT_MODE, secretKey, initialVector);
             return CIPHER.doFinal(Base64.getDecoder().decode(data));
         } catch (Exception e) {
             return null;
         }
     }
+
 }

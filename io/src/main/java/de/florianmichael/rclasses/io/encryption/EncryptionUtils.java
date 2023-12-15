@@ -46,7 +46,11 @@ public class EncryptionUtils {
     }
 
     public static AES aes(final SecretKey secretKey) {
-        return new AES(secretKey);
+        return aes(generateIv(), secretKey);
+    }
+
+    public static AES aes(final IvParameterSpec initialVector, final SecretKey secretKey) {
+        return new AES(initialVector, secretKey);
     }
 
     public static Rot13 rot13(final int offset) {
