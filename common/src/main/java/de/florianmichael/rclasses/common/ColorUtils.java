@@ -214,9 +214,22 @@ public class ColorUtils {
      * @return The rainbow color.
      */
     public static Color getRainbow(final long delay, final double time) {
+        return getRainbow(delay, time, 1F, 1F);
+    }
+
+    /**
+     * Returns a rainbow color.
+     *
+     * @param delay      The delay.
+     * @param time       The time.
+     * @param saturation The saturation.
+     * @param brightness The brightness.
+     * @return The rainbow color.
+     */
+    public static Color getRainbow(final long delay, final double time, final float saturation, final float brightness) {
         double rainbowState = Math.ceil((System.currentTimeMillis() * time + delay) / 20.0);
         rainbowState %= 360.0;
 
-        return Color.getHSBColor((float) (rainbowState / 360.0F), 1F, 1F);
+        return Color.getHSBColor((float) (rainbowState / 360.0F), saturation, brightness);
     }
 }
