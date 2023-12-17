@@ -39,7 +39,7 @@ public interface TrigonometryBase {
     /**
      * Calculates the tangent of a given value.
      * @param x The value.
-     * @return The sine.
+     * @return The tangent.
      */
     default float tan(final float x) {
         return sin(x) / cos(x);
