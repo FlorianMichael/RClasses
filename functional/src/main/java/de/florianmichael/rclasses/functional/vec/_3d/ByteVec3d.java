@@ -39,4 +39,5 @@ public abstract class ByteVec3d {
                 this.getZ()
         );
     }
+
 }

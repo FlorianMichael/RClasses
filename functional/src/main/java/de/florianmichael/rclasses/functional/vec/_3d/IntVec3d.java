@@ -38,4 +38,5 @@ public abstract class IntVec3d {
                 ", z=" + this.getZ() +
                 "}";
     }
+
 }

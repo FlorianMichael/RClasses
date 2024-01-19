@@ -135,4 +135,5 @@ public class EncryptionUtils {
     public static SecretKey fromString(final String key, final byte[] salt, final int iterationCount, final int keyLength) throws InvalidKeySpecException {
         return new SecretKeySpec(FACTORY.generateSecret(new PBEKeySpec(key.toCharArray(), salt, iterationCount, keyLength)).getEncoded(), "AES");
     }
+
 }

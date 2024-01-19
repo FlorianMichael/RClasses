@@ -57,4 +57,5 @@ public interface BooleanConsumer extends Consumer<Boolean> {
             after.accept(value);
         };
     }
+
 }

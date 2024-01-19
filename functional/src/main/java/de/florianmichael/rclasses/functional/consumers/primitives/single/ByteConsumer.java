@@ -57,4 +57,5 @@ public interface ByteConsumer extends Consumer<Byte> {
             after.accept(value);
         };
     }
+
 }

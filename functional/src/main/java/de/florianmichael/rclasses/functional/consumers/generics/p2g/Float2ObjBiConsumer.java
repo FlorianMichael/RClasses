@@ -60,4 +60,5 @@ public interface Float2ObjBiConsumer<V> extends BiConsumer<Float, V> {
             after.accept(l, r);
         };
     }
+
 }

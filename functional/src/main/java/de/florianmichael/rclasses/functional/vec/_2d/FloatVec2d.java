@@ -35,4 +35,5 @@ public abstract class FloatVec2d {
                 ", y=" + this.getY() +
                 "}";
     }
+
 }

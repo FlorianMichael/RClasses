@@ -74,4 +74,5 @@ public final class MutableDoubleVec2d extends DoubleVec2d {
     public int hashCode() {
         return Objects.hash(x, y);
     }
+
 }

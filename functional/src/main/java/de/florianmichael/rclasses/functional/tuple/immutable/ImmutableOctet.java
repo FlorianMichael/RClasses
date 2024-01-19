@@ -157,4 +157,5 @@ public final class ImmutableOctet<A, B, C, D, E, F, G, H> extends Octet<A, B, C,
     public int hashCode() {
         return Objects.hash(first, second, third, fourth, fifth, sixth, seventh, eight);
     }
+
 }

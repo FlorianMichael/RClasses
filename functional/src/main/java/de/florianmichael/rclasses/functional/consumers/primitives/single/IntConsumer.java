@@ -57,4 +57,5 @@ public interface IntConsumer extends Consumer<Integer> {
             after.accept(value);
         };
     }
+
 }

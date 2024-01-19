@@ -64,4 +64,5 @@ public class SliceCalculation<T> {
     public static int getSliceCount(final int size, final int sliceSize) {
         return (int) Math.ceil((double) size / (double) sliceSize);
     }
+
 }

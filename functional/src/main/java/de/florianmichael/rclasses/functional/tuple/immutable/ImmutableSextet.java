@@ -131,4 +131,5 @@ public final class ImmutableSextet<A, B, C, D, E, F> extends Sextet<A, B, C, D, 
     public int hashCode() {
         return Objects.hash(first, second, third, fourth, fifth, sixth);
     }
+
 }

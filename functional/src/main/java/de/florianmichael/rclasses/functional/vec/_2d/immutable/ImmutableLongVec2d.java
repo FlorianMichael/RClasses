@@ -72,4 +72,5 @@ public final class ImmutableLongVec2d extends LongVec2d {
     public int hashCode() {
         return Objects.hash(x, y);
     }
+
 }

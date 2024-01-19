@@ -35,4 +35,5 @@ public abstract class LongVec2d {
                 ", y=" + this.getY() +
                 "}";
     }
+
 }

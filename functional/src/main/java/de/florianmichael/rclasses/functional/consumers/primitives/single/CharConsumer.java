@@ -57,4 +57,5 @@ public interface CharConsumer extends Consumer<Character> {
             after.accept(value);
         };
     }
+
 }

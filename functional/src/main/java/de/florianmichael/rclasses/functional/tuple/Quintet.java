@@ -44,4 +44,5 @@ public abstract class Quintet<A, B, C, D, E> {
                 ", fifth=" + getFifth() +
                 '}';
     }
+
 }

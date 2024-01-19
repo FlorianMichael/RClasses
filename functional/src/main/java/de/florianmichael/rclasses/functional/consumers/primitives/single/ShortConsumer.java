@@ -57,4 +57,5 @@ public interface ShortConsumer extends Consumer<Short> {
             after.accept(value);
         };
     }
+
 }

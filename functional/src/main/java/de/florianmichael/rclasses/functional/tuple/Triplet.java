@@ -38,4 +38,5 @@ public abstract class Triplet<A, B, C> {
                 ", third=" + getThird() +
                 '}';
     }
+
 }

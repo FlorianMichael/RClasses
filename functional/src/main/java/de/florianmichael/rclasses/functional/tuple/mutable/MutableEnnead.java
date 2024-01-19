@@ -168,4 +168,5 @@ public final class MutableEnnead<A, B, C, D, E, F, G, H, I> extends Ennead<A, B,
     public int hashCode() {
         return Objects.hash(first, second, third, fourth, fifth, sixth, seventh, eight, ninth);
     }
+
 }

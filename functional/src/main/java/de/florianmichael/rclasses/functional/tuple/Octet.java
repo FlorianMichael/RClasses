@@ -53,4 +53,5 @@ public abstract class Octet<A, B, C, D, E, F, G, H> {
                 ", eight=" + getEight() +
                 '}';
     }
+
 }

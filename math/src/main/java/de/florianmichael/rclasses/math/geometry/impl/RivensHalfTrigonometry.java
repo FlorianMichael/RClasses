@@ -66,4 +66,5 @@ public class RivensHalfTrigonometry implements TrigonometryBase {
     public float cos(float x) {
         return sin(x + BF_SIN_TO_COS);
     }
+
 }

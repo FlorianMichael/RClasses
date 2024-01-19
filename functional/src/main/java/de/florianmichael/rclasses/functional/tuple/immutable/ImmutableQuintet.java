@@ -118,4 +118,5 @@ public final class ImmutableQuintet<A, B, C, D, E> extends Quintet<A, B, C, D, E
     public int hashCode() {
         return Objects.hash(first, second, third, fourth, fifth);
     }
+
 }

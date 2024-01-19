@@ -27,4 +27,5 @@ public interface IName {
      * @return The name of the object.
      */
     String getName();
+
 }

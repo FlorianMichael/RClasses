@@ -46,4 +46,5 @@ public interface TConsumer<T> {
             after.accept(t);
         };
     }
+
 }

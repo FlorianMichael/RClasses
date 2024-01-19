@@ -44,4 +44,5 @@ public interface TrigonometryBase {
     default float tan(final float x) {
         return sin(x) / cos(x);
     }
+
 }

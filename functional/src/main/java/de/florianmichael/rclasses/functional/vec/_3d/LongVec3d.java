@@ -38,4 +38,5 @@ public abstract class LongVec3d {
                 ", z=" + this.getZ() +
                 "}";
     }
+
 }

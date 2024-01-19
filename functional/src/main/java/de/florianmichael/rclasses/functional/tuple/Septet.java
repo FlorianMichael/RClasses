@@ -50,4 +50,5 @@ public abstract class Septet<A, B, C, D, E, F, G> {
                 ", seventh=" + getSeventh() +
                 '}';
     }
+
 }

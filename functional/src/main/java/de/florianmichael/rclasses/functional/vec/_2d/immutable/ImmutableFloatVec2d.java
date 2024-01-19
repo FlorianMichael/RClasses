@@ -72,4 +72,5 @@ public final class ImmutableFloatVec2d extends FloatVec2d {
     public int hashCode() {
         return Objects.hash(x, y);
     }
+
 }

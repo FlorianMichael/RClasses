@@ -183,4 +183,5 @@ public final class ImmutableDecade<A, B, C, D, E, F, G, H, I, J> extends Decade<
     public int hashCode() {
         return Objects.hash(first, second, third, fourth, fifth, sixth, seventh, eight, ninth, tenth);
     }
+
 }

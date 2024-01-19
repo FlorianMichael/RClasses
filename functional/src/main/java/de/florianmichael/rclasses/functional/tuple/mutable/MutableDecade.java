@@ -181,4 +181,5 @@ public final class MutableDecade<A, B, C, D, E, F, G, H, I, J> extends Decade<A,
     public int hashCode() {
         return Objects.hash(first, second, third, fourth, fifth, sixth, seventh, eight, ninth, tenth);
     }
+
 }

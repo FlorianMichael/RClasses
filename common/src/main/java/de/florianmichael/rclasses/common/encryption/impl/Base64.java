@@ -30,4 +30,5 @@ public class Base64 implements Encryptor {
     public byte[] decrypt(byte[] data) {
         return java.util.Base64.getDecoder().decode(data);
     }
+
 }

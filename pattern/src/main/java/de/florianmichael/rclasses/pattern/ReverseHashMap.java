@@ -51,8 +51,8 @@ public class ReverseHashMap<K, V> extends LinkedHashMap<K, V> {
      * @return The key of the given value.
      */
     public K getKey(final V value) {
-        if (!this.reversedMap.containsKey(value))
-            return null;
+        if (!this.reversedMap.containsKey(value)) return null;
         return this.reversedMap.get(value);
     }
+
 }

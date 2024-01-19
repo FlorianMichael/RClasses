@@ -59,4 +59,5 @@ public abstract class Decade<A, B, C, D, E, F, G, H, I, J> {
                 ", tenth=" + getTenth() +
                 '}';
     }
+
 }

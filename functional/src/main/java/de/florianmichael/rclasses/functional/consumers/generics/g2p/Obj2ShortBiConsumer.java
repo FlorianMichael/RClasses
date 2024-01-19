@@ -60,4 +60,5 @@ public interface Obj2ShortBiConsumer<V> extends BiConsumer<V, Short> {
             after.accept(l, r);
         };
     }
+
 }

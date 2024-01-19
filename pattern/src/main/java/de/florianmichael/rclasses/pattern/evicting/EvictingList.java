@@ -77,4 +77,5 @@ public final class EvictingList<V> {
     public int getMaxSize() {
         return this.maxSize;
     }
+
 }

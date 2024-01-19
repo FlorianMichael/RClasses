@@ -47,4 +47,5 @@ public abstract class Sextet<A, B, C, D, E, F> {
                 ", sixth=" + getSixth() +
                 '}';
     }
+
 }

@@ -58,4 +58,5 @@ public class RivensTrigonometry implements TrigonometryBase {
     public float cos(float x) {
         return BF_cos[(int)(x * BF_radToIndex) & BF_SIN_MASK];
     }
+
 }

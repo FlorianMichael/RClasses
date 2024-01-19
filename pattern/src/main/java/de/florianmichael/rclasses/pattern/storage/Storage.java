@@ -143,4 +143,5 @@ public abstract class Storage<T> {
     public void setRemoveConsumer(final Consumer<T> removeConsumer) {
         this.removeConsumer = removeConsumer;
     }
+
 }

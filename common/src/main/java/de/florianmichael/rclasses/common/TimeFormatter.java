@@ -73,4 +73,5 @@ public class TimeFormatter {
     public static String formatDateTime(final LocalDateTime time) {
         return formatDate(time) + " " + formatTime(time);
     }
+
 }

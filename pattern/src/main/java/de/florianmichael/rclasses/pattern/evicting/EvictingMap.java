@@ -79,4 +79,5 @@ public final class EvictingMap<K, V> {
     public int getMaxSize() {
         return this.maxSize;
     }
+
 }

@@ -49,4 +49,5 @@ public interface TBiFunction<T, U, R> {
         Objects.requireNonNull(after);
         return (T t, U u) -> after.apply(apply(t, u));
     }
+
 }

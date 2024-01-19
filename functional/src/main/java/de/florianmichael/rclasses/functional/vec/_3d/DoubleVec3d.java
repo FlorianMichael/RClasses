@@ -38,4 +38,5 @@ public abstract class DoubleVec3d {
                 ", z=" + this.getZ() +
                 "}";
     }
+
 }

@@ -83,4 +83,5 @@ public final class ImmutableByteVec3d extends ByteVec3d {
     public int hashCode() {
         return Objects.hash(x, y, z);
     }
+
 }

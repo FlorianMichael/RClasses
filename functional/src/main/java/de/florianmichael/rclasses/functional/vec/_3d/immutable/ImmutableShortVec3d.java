@@ -83,4 +83,5 @@ public final class ImmutableShortVec3d extends ShortVec3d {
     public int hashCode() {
         return Objects.hash(x, y, z);
     }
+
 }

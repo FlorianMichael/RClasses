@@ -60,4 +60,5 @@ public interface Int2ObjBiConsumer<V> extends BiConsumer<Integer, V> {
             after.accept(l, r);
         };
     }
+
 }

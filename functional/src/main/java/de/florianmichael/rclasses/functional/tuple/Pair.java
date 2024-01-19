@@ -35,4 +35,5 @@ public abstract class Pair<A, B> {
                 ", second=" + getSecond() +
                 '}';
     }
+
 }

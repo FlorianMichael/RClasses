@@ -57,4 +57,5 @@ public interface FloatConsumer extends Consumer<Float> {
             after.accept(value);
         };
     }
+
 }

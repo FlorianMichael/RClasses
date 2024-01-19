@@ -58,4 +58,5 @@ public interface Byte2ByteBiConsumer extends BiConsumer<Byte, Byte> {
             after.accept(l, r);
         };
     }
+
 }

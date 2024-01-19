@@ -44,4 +44,5 @@ public class OptifineK4Trigonometry implements TrigonometryBase {
     public float cos(float x) {
         return SIN_TABLE_FAST[(int)(x * radToIndex + 1024.0F) & 4095];
     }
+
 }

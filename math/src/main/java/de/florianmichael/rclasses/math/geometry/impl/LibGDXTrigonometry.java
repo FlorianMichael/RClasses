@@ -51,4 +51,5 @@ public class LibGDXTrigonometry implements TrigonometryBase {
     public float cos(float x) {
         return BF_table[(int)((x + BF_PI / 2) * BF_radToIndex) & BF_SIN_MASK];
     }
+
 }

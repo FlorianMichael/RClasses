@@ -57,4 +57,5 @@ public interface LongConsumer extends Consumer<Long> {
             after.accept(value);
         };
     }
+
 }

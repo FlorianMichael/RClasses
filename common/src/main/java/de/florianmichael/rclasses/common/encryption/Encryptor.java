@@ -49,4 +49,5 @@ public interface Encryptor {
     default String decrypt(final String data) {
         return new String(decrypt(data.getBytes()));
     }
+
 }

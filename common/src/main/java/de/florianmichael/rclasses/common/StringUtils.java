@@ -252,4 +252,5 @@ public final class StringUtils {
     public static int maximumStringSize(final int radix, final long maxValue) {
         return (int) Math.ceil(Math.log(maxValue) / Math.log(radix)) + 1;
     }
+
 }

@@ -143,4 +143,5 @@ public final class MutableSeptet<A, B, C, D, E, F, G> extends Septet<A, B, C, D,
     public int hashCode() {
         return Objects.hash(first, second, third, fourth, fifth, sixth, seventh);
     }
+
 }

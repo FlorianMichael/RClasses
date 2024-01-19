@@ -60,4 +60,5 @@ public interface Boolean2ObjBiConsumer<V> extends BiConsumer<Boolean, V> {
             after.accept(l, r);
         };
     }
+
 }

@@ -81,4 +81,5 @@ public abstract class SelectableNamedStorage<T extends IName> extends NamedStora
     public void setCurrentByName(final String name) {
         setCurrent(getList().stream().filter(t -> t.getName().equals(name)).findFirst().orElse(null));
     }
+
 }

@@ -367,4 +367,5 @@ public class Statistics {
     public static double standardDeviation(final long... data) {
         return Math.sqrt(variance(data));
     }
+
 }

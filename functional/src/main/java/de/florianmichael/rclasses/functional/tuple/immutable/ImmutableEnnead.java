@@ -170,4 +170,5 @@ public final class ImmutableEnnead<A, B, C, D, E, F, G, H, I> extends Ennead<A, 
     public int hashCode() {
         return Objects.hash(first, second, third, fourth, fifth, sixth, seventh, eight, ninth);
     }
+
 }

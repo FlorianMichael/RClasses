@@ -52,4 +52,5 @@ public enum Trigonometry implements TrigonometryBase {
     public float cos(float x) {
         return this.math.cos(x);
     }
+
 }

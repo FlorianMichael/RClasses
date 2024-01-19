@@ -83,4 +83,5 @@ public final class ImmutableLongVec3d extends LongVec3d {
     public int hashCode() {
         return Objects.hash(x, y, z);
     }
+
 }

@@ -141,4 +141,5 @@ public final class MutableOctet<A, B, C, D, E, F, G, H> extends Octet<A, B, C, D
                 ", eight=" + eight +
                 '}';
     }
+
 }

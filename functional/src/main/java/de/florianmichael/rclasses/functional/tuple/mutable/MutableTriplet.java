@@ -91,4 +91,5 @@ public final class MutableTriplet<A, B, C> extends Triplet<A, B, C> {
     public int hashCode() {
         return Objects.hash(first, second, third);
     }
+
 }

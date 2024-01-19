@@ -28,4 +28,5 @@ public class JavaTrigonometry implements TrigonometryBase {
     public float cos(float x) {
         return (float) Math.cos(x);
     }
+
 }

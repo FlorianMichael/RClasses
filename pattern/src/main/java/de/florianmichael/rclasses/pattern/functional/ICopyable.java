@@ -29,4 +29,5 @@ public interface ICopyable<T> {
      * @return A copy of the object.
      */
     T copy();
+
 }

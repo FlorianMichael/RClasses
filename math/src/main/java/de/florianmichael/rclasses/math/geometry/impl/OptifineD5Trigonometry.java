@@ -40,4 +40,5 @@ public class OptifineD5Trigonometry implements TrigonometryBase {
     public float cos(float x) {
         return SIN_TABLE_FAST[(int) ((x + ((float) Math.PI / 2F)) * 651.8986F) & 4095];
     }
+
 }

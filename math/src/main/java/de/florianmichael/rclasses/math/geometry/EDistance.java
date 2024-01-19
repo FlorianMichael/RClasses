@@ -133,4 +133,5 @@ public class EDistance {
     public static double squaredDistance(final double x1, final double y1, final double z1, final double x2, final double y2, final double z2) {
         return Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2) + Math.pow(z2 - z1, 2);
     }
+
 }

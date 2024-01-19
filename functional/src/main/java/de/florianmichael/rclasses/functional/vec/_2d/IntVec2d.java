@@ -35,4 +35,5 @@ public abstract class IntVec2d {
                 ", y=" + this.getY() +
                 "}";
     }
+
 }

@@ -74,4 +74,5 @@ public final class MutableFloatVec2d extends FloatVec2d {
     public int hashCode() {
         return Objects.hash(x, y);
     }
+
 }

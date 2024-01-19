@@ -58,4 +58,5 @@ public interface Int2IntBiConsumer extends BiConsumer<Integer, Integer> {
             after.accept(l, r);
         };
     }
+
 }

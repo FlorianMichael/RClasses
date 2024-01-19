@@ -35,4 +35,5 @@ public abstract class ByteVec2d {
                 ", y=" + this.getY() +
                 "}";
     }
+
 }

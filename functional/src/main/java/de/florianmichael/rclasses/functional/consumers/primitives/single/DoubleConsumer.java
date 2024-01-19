@@ -57,4 +57,5 @@ public interface DoubleConsumer extends Consumer<Double> {
             after.accept(value);
         };
     }
+
 }

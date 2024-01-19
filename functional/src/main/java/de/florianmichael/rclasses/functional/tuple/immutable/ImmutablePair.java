@@ -79,4 +79,5 @@ public final class ImmutablePair<A, B> extends Pair<A, B> {
     public int hashCode() {
         return Objects.hash(first, second);
     }
+
 }

@@ -41,4 +41,5 @@ public abstract class Quartet<A, B, C, D> {
                 ", fourth=" + getFourth() +
                 '}';
     }
+
 }

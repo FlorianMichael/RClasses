@@ -74,4 +74,5 @@ public final class MutableIntVec2d extends IntVec2d {
     public int hashCode() {
         return Objects.hash(x, y);
     }
+
 }

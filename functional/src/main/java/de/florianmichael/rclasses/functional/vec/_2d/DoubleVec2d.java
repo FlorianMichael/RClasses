@@ -35,4 +35,5 @@ public abstract class DoubleVec2d {
                 ", y=" + this.getY() +
                 "}";
     }
+
 }

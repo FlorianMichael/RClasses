@@ -36,4 +36,5 @@ public class MinecraftTrigonometry implements TrigonometryBase {
     public float cos(float value) {
         return SIN_TABLE[(int) (value * 10430.378F + 16384.0F) & 65535];
     }
+
 }

@@ -60,4 +60,5 @@ public interface Obj2CharBiConsumer<V> extends BiConsumer<V, Character> {
             after.accept(l, r);
         };
     }
+
 }

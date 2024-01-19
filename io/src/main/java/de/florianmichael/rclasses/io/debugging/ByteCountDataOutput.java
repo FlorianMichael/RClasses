@@ -126,4 +126,5 @@ public class ByteCountDataOutput implements DataOutput {
 
         return utfLength;
     }
+
 }

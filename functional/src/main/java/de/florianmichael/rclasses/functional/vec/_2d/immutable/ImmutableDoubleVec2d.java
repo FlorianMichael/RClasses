@@ -72,4 +72,5 @@ public final class ImmutableDoubleVec2d extends DoubleVec2d {
     public int hashCode() {
         return Objects.hash(x, y);
     }
+
 }

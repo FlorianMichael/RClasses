@@ -128,4 +128,5 @@ public class Percentage {
     public static double toPercentage(final double decimal) {
         return decimal * 100D;
     }
+
 }

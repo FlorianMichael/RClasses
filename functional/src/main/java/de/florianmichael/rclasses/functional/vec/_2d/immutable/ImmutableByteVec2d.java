@@ -72,4 +72,5 @@ public final class ImmutableByteVec2d extends ByteVec2d {
     public int hashCode() {
         return Objects.hash(x, y);
     }
+
 }

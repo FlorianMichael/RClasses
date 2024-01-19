@@ -38,4 +38,5 @@ public abstract class ShortVec3d {
                 ", z=" + this.getZ() +
                 "}";
     }
+
 }

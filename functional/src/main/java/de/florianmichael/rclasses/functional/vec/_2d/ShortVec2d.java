@@ -35,4 +35,5 @@ public abstract class ShortVec2d {
                 ", y=" + this.getY() +
                 "}";
     }
+
 }

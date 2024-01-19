@@ -38,4 +38,5 @@ public abstract class FloatVec3d {
                 ", z=" + this.getZ() +
                 "}";
     }
+
 }

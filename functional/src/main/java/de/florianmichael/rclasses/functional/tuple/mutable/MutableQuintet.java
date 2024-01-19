@@ -99,4 +99,5 @@ public final class MutableQuintet<A, B, C, D, E> extends Quintet<A, B, C, D, E> 
                 this.getFifth()
         );
     }
+
 }

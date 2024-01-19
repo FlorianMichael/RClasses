@@ -72,4 +72,5 @@ public final class ImmutableShortVec2d extends ShortVec2d {
     public int hashCode() {
         return Objects.hash(x, y);
     }
+
 }

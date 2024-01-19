@@ -84,4 +84,5 @@ public class OSArchitecture {
     public int hashCode() {
         return Objects.hash(amd64, x86, arm64, arm, ia64, mips64, mips, ppc64, s390x, sparc, s390);
     }
+
 }

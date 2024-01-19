@@ -130,4 +130,5 @@ public final class MutableSextet<A, B, C, D, E, F> extends Sextet<A, B, C, D, E,
     public int hashCode() {
         return Objects.hash(first, second, third, fourth, fifth, sixth);
     }
+
 }

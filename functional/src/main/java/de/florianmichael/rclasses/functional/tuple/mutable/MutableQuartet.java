@@ -104,4 +104,5 @@ public final class MutableQuartet<A, B, C, D> extends Quartet<A, B, C, D> {
     public int hashCode() {
         return Objects.hash(first, second, third, fourth);
     }
+
 }

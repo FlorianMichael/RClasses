@@ -46,4 +46,5 @@ public interface TBiConsumer<T, U> {
             after.accept(l, r);
         };
     }
+
 }

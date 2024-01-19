@@ -112,4 +112,5 @@ public class HSBColor {
         this.brightness = brightness;
         this.alpha = alpha;
     }
+
 }

@@ -60,4 +60,5 @@ public interface Double2ObjBiConsumer<V> extends BiConsumer<Double, V> {
             after.accept(l, r);
         };
     }
+
 }

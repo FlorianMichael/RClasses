@@ -86,4 +86,5 @@ public final class MutableDoubleVec3d extends DoubleVec3d {
     public int hashCode() {
         return Objects.hash(x, y, z);
     }
+
 }

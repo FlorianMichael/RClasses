@@ -56,4 +56,5 @@ public abstract class Ennead<A, B, C, D, E, F, G, H, I> {
                 ", ninth=" + getNinth() +
                 '}';
     }
+
 }

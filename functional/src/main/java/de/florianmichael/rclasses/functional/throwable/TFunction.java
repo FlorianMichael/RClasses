@@ -64,4 +64,5 @@ public interface TFunction<T, R> {
     static <T> TFunction<T, T> identity() {
         return t -> t;
     }
+
 }

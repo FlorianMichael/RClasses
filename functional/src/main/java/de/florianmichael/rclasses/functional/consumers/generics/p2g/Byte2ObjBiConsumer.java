@@ -60,4 +60,5 @@ public interface Byte2ObjBiConsumer<V> extends BiConsumer<Byte, V> {
             after.accept(l, r);
         };
     }
+
 }

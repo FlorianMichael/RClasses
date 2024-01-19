@@ -58,4 +58,5 @@ public interface Long2LongBiConsumer extends BiConsumer<Long, Long> {
             after.accept(l, r);
         };
     }
+
 }

@@ -232,4 +232,5 @@ public class ColorUtils {
 
         return Color.getHSBColor((float) (rainbowState / 360.0F), saturation, brightness);
     }
+
 }

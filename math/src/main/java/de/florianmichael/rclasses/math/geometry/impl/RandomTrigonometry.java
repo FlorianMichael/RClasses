@@ -28,4 +28,5 @@ public class RandomTrigonometry implements TrigonometryBase {
     public float cos(float x) {
         return (float) Math.random() * x;
     }
+
 }

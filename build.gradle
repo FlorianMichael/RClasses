@@ -89,4 +89,5 @@ subprojects {
     project.tasks.withType(PublishToMavenRepository).forEach {
         it.dependsOn(project.tasks.withType(Sign))
     }
+
 }
