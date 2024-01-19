@@ -2,9 +2,9 @@
 Random collection of Java classes and utils in different submodules which together form a commons library
 
 ## Why another commons library?
-I started this project because I wanted to have a collection of classes that I use in my projects. 
-I also wanted to have a place where I can test new concepts and ideas. 
-I know that there are already a lot of libraries that do the same thing, but I wanted to do it myself, so I can only add stuff I really need. 
+I made this to prevent myself from copying pasting code from project to project, this repository contains random utils I need in my projects.
+
+Note: This project is mainly for my own use, there won't be any deprecated methods and I won't guarantee any backwards compatibility. Breaking API changes with every version are to be expected.
 
 ### Projects that I can recommend
 - [Lenni0451's commons](https://github.com/Lenni0451/commons)

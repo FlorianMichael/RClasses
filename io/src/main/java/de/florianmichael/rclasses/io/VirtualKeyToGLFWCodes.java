@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package de.florianmichael.rclasses.io.mappings;
+package de.florianmichael.rclasses.io;
 
 /**
  * Converts virtual key codes to GLFW key codes

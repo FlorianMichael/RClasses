@@ -15,38 +15,37 @@
  * limitations under the License.
  */
 
-package de.florianmichael.rclasses.io.encryption;
+package de.florianmichael.rclasses.io.debugging;
 
 /**
- * Interface for encryptors.
+ * Utility class to count calls in a certain time.
  */
-public interface Encryptor {
+public class CallCounter {
 
     /**
-     * @param data The data to encrypt.
-     * @return The encrypted data.
+     * Default instances counting calls in a second.
      */
-    byte[] encrypt(byte[] data);
+    public static final CallCounter INSTANCE = new CallCounter(1000);
 
-    /**
-     * @param data The data to decrypt.
-     * @return The decrypted data.
-     */
-    byte[] decrypt(byte[] data);
+    private final long delay;
 
-    /**
-     * @param data The data to encrypt.
-     * @return The encrypted data.
-     */
-    default String encrypt(final String data) {
-        return new String(encrypt(data.getBytes()));
+    private int count;
+    private long lastCall;
+
+    public CallCounter(final long delay) {
+        this.delay = delay;
     }
 
     /**
-     * @param data The data to decrypt.
-     * @return The decrypted data.
+     * Counts a call. If the delay is reached, the counter is reset and the count is printed to the console {@link System#out}.
      */
-    default String decrypt(final String data) {
-        return new String(decrypt(data.getBytes()));
+    public void hello() {
+        if (System.currentTimeMillis() - lastCall > delay) {
+            System.out.println("CallCounter: " + count);
+            count = 0;
+            lastCall = System.currentTimeMillis();
+        }
+        count++;
     }
+
 }

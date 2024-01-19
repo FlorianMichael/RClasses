@@ -15,21 +15,21 @@
  * limitations under the License.
  */
 
-package de.florianmichael.rclasses.io;
+package de.florianmichael.rclasses.math.timer;
 
-public enum AESKeyLength {
+/**
+ * Wrapper for {@link MSTimer} which uses {@link System#nanoTime()} instead of {@link System#currentTimeMillis()}.
+ */
+public class NSTimer extends MSTimer {
 
-    BITS_128,
-    BITS_192,
-    BITS_256;
-
-    private final int keyLength;
-
-    AESKeyLength() {
-        this.keyLength = Integer.parseInt(this.name().split("_")[1]);
+    @Override
+    public void reset() {
+        this.time = System.nanoTime();
     }
 
-    public int getKeyLength() {
-        return keyLength;
+    @Override
+    public long getDelta() {
+        return System.nanoTime() - this.time;
     }
+
 }

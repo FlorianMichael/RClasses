@@ -50,9 +50,11 @@ public class CachedCaller {
      * @param field The field to call the caller with.
      */
     public void call(final Object field) {
-        if (this.field.equals(field)) return;
-        this.field = field;
+        if (this.field.equals(field)) {
+            return;
+        }
 
+        this.field = field;
         caller.accept(field);
     }
 
@@ -65,4 +67,5 @@ public class CachedCaller {
     public static CachedCaller of(final Consumer<Object> caller) {
         return new CachedCaller(caller);
     }
+
 }

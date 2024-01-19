@@ -22,6 +22,7 @@ import de.florianmichael.rclasses.math.integration.MathConstants;
 import java.util.Random;
 
 public class BoxMullerTransform {
+
     /**
      * @param random The random object to use.
      * @param min    The minimum value.
@@ -63,4 +64,5 @@ public class BoxMullerTransform {
 
         return mean + sigma * z0;
     }
+
 }

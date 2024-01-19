@@ -15,14 +15,13 @@
  * limitations under the License.
  */
 
-package de.florianmichael.rclasses.common;
-
-import de.florianmichael.rclasses.common.model.OSArchitecture;
+package de.florianmichael.rclasses.common.os;
 
 /**
  * This enum represents the operating system the program is running on.
  */
 public enum OperatingSystem {
+
     WINDOWS, LINUX, MAC, SOLARIS, UNKNOWN;
 
     /**
@@ -63,4 +62,5 @@ public enum OperatingSystem {
                 return "so";
         }
     }
+
 }

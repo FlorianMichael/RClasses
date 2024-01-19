@@ -17,18 +17,12 @@
 
 package de.florianmichael.rclasses.io;
 
-import java.io.IOException;
 import java.lang.reflect.Field;
-import java.net.URI;
-import java.nio.file.FileSystem;
-import java.nio.file.FileSystemNotFoundException;
-import java.nio.file.FileSystems;
-import java.util.Collections;
 
 /**
  * Utility methods for IO.
  */
-public class IOUtils {
+public class UnsafeAccess {
 
     /**
      * The unsafe instance.
@@ -51,20 +45,4 @@ public class IOUtils {
         throw new IllegalStateException("Unable to get Unsafe instance");
     }
 
-    /**
-     * Gets a file system for the given URI or create one.
-     *
-     * @param uri the URI
-     * @return the file system
-     * @throws IOException if creating the file system fails
-     */
-    private FileSystem getFileSystem(final URI uri) throws IOException {
-        FileSystem fileSystem;
-        try {
-            fileSystem = FileSystems.getFileSystem(uri);
-        } catch (FileSystemNotFoundException e) {
-            fileSystem = FileSystems.newFileSystem(uri, Collections.emptyMap());
-        }
-        return fileSystem;
-    }
 }

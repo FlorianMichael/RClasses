@@ -26,6 +26,7 @@ import java.util.concurrent.ThreadLocalRandom;
  * This class contains some useful methods for generating random numbers.
  */
 public class RandomUtils {
+
     public final static Random RANDOM = new Random();
     public final static SecureRandom SECURE_RANDOM = new SecureRandom();
     public final static ThreadLocalRandom MAIN_THREAD_RANDOM = ThreadLocalRandom.current();
@@ -193,4 +194,5 @@ public class RandomUtils {
         }
         return builder.toString();
     }
+
 }

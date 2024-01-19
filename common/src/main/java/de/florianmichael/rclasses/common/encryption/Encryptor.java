@@ -15,25 +15,38 @@
  * limitations under the License.
  */
 
-package de.florianmichael.rclasses.io;
-
-import java.util.Iterator;
+package de.florianmichael.rclasses.common.encryption;
 
 /**
- * An empty iterator.
- *
- * @param <T> the type of elements returned by this iterator
+ * Interface for encryptors.
  */
-public class EmptyIterator<T> implements Iterator<T> {
+public interface Encryptor {
 
-    @Override
-    public boolean hasNext() {
-        return false;
+    /**
+     * @param data The data to encrypt.
+     * @return The encrypted data.
+     */
+    byte[] encrypt(byte[] data);
+
+    /**
+     * @param data The data to decrypt.
+     * @return The decrypted data.
+     */
+    byte[] decrypt(byte[] data);
+
+    /**
+     * @param data The data to encrypt.
+     * @return The encrypted data.
+     */
+    default String encrypt(final String data) {
+        return new String(encrypt(data.getBytes()));
     }
 
-    @Override
-    public T next() {
-        return null;
+    /**
+     * @param data The data to decrypt.
+     * @return The decrypted data.
+     */
+    default String decrypt(final String data) {
+        return new String(decrypt(data.getBytes()));
     }
-
 }

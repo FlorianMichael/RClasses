@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package de.florianmichael.rclasses.common;
+package de.florianmichael.rclasses.common.array;
 
 import java.util.Objects;
 import java.util.function.IntFunction;

@@ -15,23 +15,75 @@
  * limitations under the License.
  */
 
-package de.florianmichael.rclasses.io.access;
+package de.florianmichael.rclasses.common;
 
 import java.io.BufferedOutputStream;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.nio.file.StandardCopyOption;
+import java.net.URI;
+import java.net.URL;
+import java.net.URLConnection;
+import java.nio.channels.Channels;
+import java.nio.channels.ReadableByteChannel;
+import java.nio.file.*;
+import java.util.Collections;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
 import static java.nio.file.Files.*;
 
-/**
- * Utility class for accessing zip files.
- */
-public class ZipAccess {
+public class FileUtils {
+
+    /**
+     * Gets a file system for the given URI or create one.
+     *
+     * @param uri the URI
+     * @return the file system
+     * @throws IOException if creating the file system fails
+     */
+    private FileSystem getFileSystem(final URI uri) throws IOException {
+        FileSystem fileSystem;
+        try {
+            fileSystem = FileSystems.getFileSystem(uri);
+        } catch (FileSystemNotFoundException e) {
+            fileSystem = FileSystems.newFileSystem(uri, Collections.emptyMap());
+        }
+        return fileSystem;
+    }
+
+    /**
+     * Downloads a file from the internet and saves it to the given output file.
+     *
+     * @param url    The url to download the file from.
+     * @param output The file to save the downloaded file to.
+     * @return The output file.
+     * @throws Throwable If an error occurs while downloading the file.
+     */
+    public static File downloadFile(final String url, final File output) throws Throwable {
+        return downloadFile(url, WebUtils.DEFAULT_AGENT, output);
+    }
+
+    /**
+     * Downloads a file from the internet and saves it to the given output file.
+     *
+     * @param url    The url to download the file from.
+     * @param agent  The user agent to use.
+     * @param output The file to save the downloaded file to.
+     * @return The output file.
+     * @throws Throwable If an error occurs while downloading the file.
+     */
+    public static File downloadFile(final String url, final String agent, final File output) throws Throwable {
+        final URLConnection urlConnection = new URL(url).openConnection();
+        urlConnection.setRequestProperty("User-Agent", agent);
+        urlConnection.connect();
+        try (final ReadableByteChannel channel = Channels.newChannel(urlConnection.getInputStream())) {
+            try (final FileOutputStream fileOutputStream = new FileOutputStream(output)) {
+                fileOutputStream.getChannel().transferFrom(channel, 0, Long.MAX_VALUE);
+            }
+        }
+        return output;
+    }
 
     /**
      * Unzips the given zip file to the given target directory.
@@ -117,4 +169,5 @@ public class ZipAccess {
         }
         return normalizePath;
     }
+
 }

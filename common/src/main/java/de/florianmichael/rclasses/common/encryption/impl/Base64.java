@@ -15,37 +15,19 @@
  * limitations under the License.
  */
 
-package de.florianmichael.rclasses.io.encryption.impl;
+package de.florianmichael.rclasses.common.encryption.impl;
 
-import de.florianmichael.rclasses.io.encryption.Encryptor;
+import de.florianmichael.rclasses.common.encryption.Encryptor;
 
-public class Rot13 implements Encryptor {
-
-    private final int offset;
-
-    public Rot13(int offset) {
-        this.offset = offset;
-    }
+public class Base64 implements Encryptor {
 
     @Override
     public byte[] encrypt(byte[] data) {
-        StringBuilder result = new StringBuilder();
-
-        for (char c : new String(data).toCharArray()) {
-            if (Character.isLetter(c)) {
-                char base = Character.isLowerCase(c) ? 'a' : 'A';
-                result.append((char) (base + (c - base + offset) % 26));
-            } else {
-                result.append(c);
-            }
-        }
-
-        return result.toString().getBytes();
+        return java.util.Base64.getEncoder().encode(data);
     }
 
     @Override
     public byte[] decrypt(byte[] data) {
-        // Rot13 is its own inverse, so decrypting is the same as encrypting
-        return encrypt(data);
+        return java.util.Base64.getDecoder().decode(data);
     }
 }

@@ -15,12 +15,12 @@
  * limitations under the License.
  */
 
-package de.florianmichael.rclasses.io.encryption;
+package de.florianmichael.rclasses.common.encryption;
 
-import de.florianmichael.rclasses.io.AESKeyLength;
-import de.florianmichael.rclasses.io.encryption.impl.AES;
-import de.florianmichael.rclasses.io.encryption.impl.Base64;
-import de.florianmichael.rclasses.io.encryption.impl.Rot13;
+import de.florianmichael.rclasses.common.RandomUtils;
+import de.florianmichael.rclasses.common.encryption.impl.AES;
+import de.florianmichael.rclasses.common.encryption.impl.Base64;
+import de.florianmichael.rclasses.common.encryption.impl.Rot13;
 
 import javax.crypto.KeyGenerator;
 import javax.crypto.SecretKey;
@@ -38,7 +38,7 @@ import java.security.spec.InvalidKeySpecException;
 public class EncryptionUtils {
     private final static Base64 BASE_64 = new Base64();
 
-    private final static byte[] SALT = System.getenv("PROCESSOR_IDENTIFIER").getBytes();
+    private final static byte[] SALT = RandomUtils.randomBytes(16);
     private final static SecretKeyFactory FACTORY;
 
     public static Base64 base64() {
@@ -121,7 +121,7 @@ public class EncryptionUtils {
      * @throws InvalidKeySpecException If the key is invalid.
      */
     public static SecretKey fromString(final String key, final byte[] salt, final int iterationCount) throws InvalidKeySpecException {
-        return fromString(key, salt, iterationCount, AESKeyLength.BITS_256.getKeyLength());
+        return fromString(key, salt, iterationCount, AESKeyLength.BITS_256.keyLength);
     }
 
     /**

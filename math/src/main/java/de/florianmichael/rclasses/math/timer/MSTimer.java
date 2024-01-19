@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package de.florianmichael.rclasses.math.integration;
+package de.florianmichael.rclasses.math.timer;
 
 /**
  * A simple timer class.
@@ -24,7 +24,7 @@ public class MSTimer {
     /**
      * The time in milliseconds.
      */
-    private long time = System.currentTimeMillis();
+    protected long time = System.currentTimeMillis();
 
     /**
      * Whether the timer is paused or not.
@@ -98,4 +98,5 @@ public class MSTimer {
     public void setTime(final long time) {
         this.time = time;
     }
+
 }

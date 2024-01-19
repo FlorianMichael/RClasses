@@ -15,19 +15,11 @@
  * limitations under the License.
  */
 
-package de.florianmichael.rclasses.io.encryption.impl;
+package de.florianmichael.rclasses.math;
 
-import de.florianmichael.rclasses.io.encryption.Encryptor;
+/**
+ * Wrapper class file for {@link Arithmetics} to fit the naming conventions.
+ */
+public class MathUtils extends Arithmetics {
 
-public class Base64 implements Encryptor {
-
-    @Override
-    public byte[] encrypt(byte[] data) {
-        return java.util.Base64.getEncoder().encode(data);
-    }
-
-    @Override
-    public byte[] decrypt(byte[] data) {
-        return java.util.Base64.getDecoder().decode(data);
-    }
 }

@@ -15,16 +15,18 @@
  * limitations under the License.
  */
 
-package de.florianmichael.rclasses.math.integration;
+package de.florianmichael.rclasses.common.encryption;
 
-/**
- * A class containing mathematical constants.
- */
-public class MathConstants {
+public enum AESKeyLength {
 
-    public final static double SQRT_2 = Math.sqrt(2);
-    public final static double SQRT_3 = Math.sqrt(3);
-    public final static double GOLDEN_RATIO = (1 + Math.sqrt(5)) / 2;
-    public final static double TAU = Math.PI * 2;
+    BITS_128(128),
+    BITS_192(192),
+    BITS_256(256);
+
+    public final int keyLength;
+
+    AESKeyLength(final int keyLength) {
+        this.keyLength = keyLength;
+    }
 
 }

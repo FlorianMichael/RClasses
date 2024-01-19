@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package de.florianmichael.rclasses.io.mappings;
+package de.florianmichael.rclasses.common;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;

@@ -18,9 +18,14 @@
 package de.florianmichael.rclasses.math;
 
 /**
- * Implementation of a math utility.
+ * Implementation of basic arithmetics and math functions.
  */
 public class Arithmetics {
+
+    /**
+     * The value of PI as a float. Equivalent to {@link Math#PI}.
+     */
+    public static final float PI = 3.14159265358979323846F;
 
     /**
      * Interpolates between two values with the given progress.
@@ -94,6 +99,26 @@ public class Arithmetics {
         if (value == Double.MIN_VALUE) return Double.MAX_VALUE;
         if (value == Double.MAX_VALUE) return Double.MIN_VALUE;
         return -value;
+    }
+
+    /**
+     * Equivalent to {@link Math#toRadians(double)} for floats.
+     *
+     * @param angleDegrees The angle in degrees.
+     * @return The angle in radians.
+     */
+    public static float toRadians(final float angleDegrees) {
+        return angleDegrees / 180F * PI;
+    }
+
+    /**
+     * Equivalent to {@link Math#toDegrees(double)} for floats.
+     *
+     * @param angleRadians The angle in radians.
+     * @return The angle in degrees.
+     */
+    public static float toDegrees(final float angleRadians) {
+        return angleRadians * 180F / PI;
     }
 
     /**
@@ -239,4 +264,5 @@ public class Arithmetics {
     public static boolean isDecimal(final double value) {
         return value % 1 != 0;
     }
+
 }

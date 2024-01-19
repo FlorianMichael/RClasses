@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package de.florianmichael.rclasses.common.model;
+package de.florianmichael.rclasses.common.color;
 
 import java.awt.*;
 

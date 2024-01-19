@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package de.florianmichael.rclasses.io;
+package de.florianmichael.rclasses.common;
 
 import java.io.BufferedReader;
 import java.io.DataOutputStream;

@@ -15,9 +15,9 @@
  * limitations under the License.
  */
 
-package de.florianmichael.rclasses.io.encryption.impl;
+package de.florianmichael.rclasses.common.encryption.impl;
 
-import de.florianmichael.rclasses.io.encryption.Encryptor;
+import de.florianmichael.rclasses.common.encryption.Encryptor;
 
 import javax.crypto.Cipher;
 import javax.crypto.NoSuchPaddingException;
