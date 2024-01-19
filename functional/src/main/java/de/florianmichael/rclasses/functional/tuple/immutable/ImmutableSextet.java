@@ -25,7 +25,7 @@ import java.util.Objects;
  * Represents a tuple of six elements.
  */
 public final class ImmutableSextet<A, B, C, D, E, F> extends Sextet<A, B, C, D, E, F> {
-    private final static UnsupportedOperationException COULD_NOT_SET = new UnsupportedOperationException("The object is immutable!");
+    private static final UnsupportedOperationException COULD_NOT_SET = new UnsupportedOperationException("The object is immutable!");
 
     private final A first;
     private final B second;

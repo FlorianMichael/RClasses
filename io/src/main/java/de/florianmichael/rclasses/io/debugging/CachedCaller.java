@@ -28,7 +28,7 @@ public class CachedCaller {
     /**
      * A CachedCaller that calls System.out.println
      */
-    public final static CachedCaller SYS_OUT = new CachedCaller(System.out::println);
+    public static final CachedCaller SYS_OUT = new CachedCaller(System.out::println);
 
     /**
      * The caller which is called when the message changes.

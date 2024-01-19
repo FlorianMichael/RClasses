@@ -19,7 +19,7 @@ package de.florianmichael.rclasses.math.geometry.impl;
 
 public class OptifineD5Trigonometry implements TrigonometryBase {
 
-    private final static float[] SIN_TABLE_FAST = new float[4096];
+    private static final float[] SIN_TABLE_FAST = new float[4096];
 
     static {
         int i;

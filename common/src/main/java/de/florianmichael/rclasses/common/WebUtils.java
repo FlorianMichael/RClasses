@@ -34,10 +34,10 @@ public class WebUtils {
     /**
      * Creates a new instance of {@link WebUtils} with the default user agent and accept method.
      */
-    public final static WebUtils DEFAULT = create();
+    public static final WebUtils DEFAULT = create();
 
-    public final static String DEFAULT_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.102 Safari/537.36 OPR/90.0.4480.117";
-    public final static String ACCEPT_METHOD = "application/json";
+    public static final String DEFAULT_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.102 Safari/537.36 OPR/90.0.4480.117";
+    public static final String ACCEPT_METHOD = "application/json";
 
     private final String userAgent;
     private final String acceptMethod;

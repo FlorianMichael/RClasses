@@ -25,7 +25,7 @@ import java.util.Objects;
  * Represents a tuple of nine elements.
  */
 public final class ImmutableEnnead<A, B, C, D, E, F, G, H, I> extends Ennead<A, B, C, D, E, F, G, H, I> {
-    private final static UnsupportedOperationException COULD_NOT_SET = new UnsupportedOperationException("The object is immutable!");
+    private static final UnsupportedOperationException COULD_NOT_SET = new UnsupportedOperationException("The object is immutable!");
 
     private final A first;
     private final B second;

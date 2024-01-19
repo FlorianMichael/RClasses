@@ -20,8 +20,8 @@ package de.florianmichael.rclasses.common.color;
 import java.awt.*;
 
 public class ColorUtils {
-    public final static Color MIN_INT = new Color(Integer.MIN_VALUE, true);
-    public final static Color MAX_INT = new Color(Integer.MAX_VALUE, true);
+    public static final Color MIN_INT = new Color(Integer.MIN_VALUE, true);
+    public static final Color MAX_INT = new Color(Integer.MAX_VALUE, true);
 
     /**
      * Returns a new color with the given red value.

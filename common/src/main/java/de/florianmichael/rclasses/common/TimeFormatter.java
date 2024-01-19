@@ -26,8 +26,8 @@ import java.time.format.DateTimeFormatter;
  * @see DateTimeFormatter
  */
 public class TimeFormatter {
-    public final static DateTimeFormatter DATE_FORMAT = DateTimeFormatter.ofPattern("dd.MM.yyyy");
-    public final static DateTimeFormatter TIME_FORMAT = DateTimeFormatter.ofPattern("HH:mm:ss");
+    public static final DateTimeFormatter DATE_FORMAT = DateTimeFormatter.ofPattern("dd.MM.yyyy");
+    public static final DateTimeFormatter TIME_FORMAT = DateTimeFormatter.ofPattern("HH:mm:ss");
 
     /**
      * @return The current date in the format dd.MM.yyyy

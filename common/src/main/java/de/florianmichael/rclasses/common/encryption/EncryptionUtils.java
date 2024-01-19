@@ -36,10 +36,10 @@ import java.security.spec.InvalidKeySpecException;
  * Utility class for encryption.
  */
 public class EncryptionUtils {
-    private final static Base64 BASE_64 = new Base64();
+    private static final Base64 BASE_64 = new Base64();
 
-    private final static byte[] SALT = RandomUtils.randomBytes(16);
-    private final static SecretKeyFactory FACTORY;
+    private static final byte[] SALT = RandomUtils.randomBytes(16);
+    private static final SecretKeyFactory FACTORY;
 
     public static Base64 base64() {
         return BASE_64;

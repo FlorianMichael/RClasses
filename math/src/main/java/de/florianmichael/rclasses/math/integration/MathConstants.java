@@ -22,9 +22,9 @@ package de.florianmichael.rclasses.math.integration;
  */
 public class MathConstants {
 
-    public final static double SQRT_2 = Math.sqrt(2);
-    public final static double SQRT_3 = Math.sqrt(3);
-    public final static double GOLDEN_RATIO = (1 + Math.sqrt(5)) / 2;
-    public final static double TAU = Math.PI * 2;
+    public static final double SQRT_2 = Math.sqrt(2);
+    public static final double SQRT_3 = Math.sqrt(3);
+    public static final double GOLDEN_RATIO = (1 + Math.sqrt(5)) / 2;
+    public static final double TAU = Math.PI * 2;
 
 }

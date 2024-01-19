@@ -19,7 +19,7 @@ package de.florianmichael.rclasses.math.geometry.impl;
 
 public class TaylorTrigonometry implements TrigonometryBase {
 
-    private final static float BF_SIN_TO_COS;
+    private static final float BF_SIN_TO_COS;
     static {
         BF_SIN_TO_COS = (float)(Math.PI * 0.5f);
     }

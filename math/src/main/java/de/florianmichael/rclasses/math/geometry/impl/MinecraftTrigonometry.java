@@ -19,7 +19,7 @@ package de.florianmichael.rclasses.math.geometry.impl;
 
 public class MinecraftTrigonometry implements TrigonometryBase {
 
-    private final static float[] SIN_TABLE = new float[65536];
+    private static final float[] SIN_TABLE = new float[65536];
 
     static {
         for (int i = 0; i < 65536; ++i) {

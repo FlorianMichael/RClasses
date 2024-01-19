@@ -19,10 +19,10 @@ package de.florianmichael.rclasses.math.geometry.impl;
 
 public class RivensTrigonometry implements TrigonometryBase {
 
-    private final static int BF_SIN_BITS, BF_SIN_MASK, BF_SIN_COUNT;
-    private final static float BF_radFull, BF_radToIndex;
-    private final static float BF_degFull, BF_degToIndex;
-    private final static float[] BF_sin, BF_cos;
+    private static final int BF_SIN_BITS, BF_SIN_MASK, BF_SIN_COUNT;
+    private static final float BF_radFull, BF_radToIndex;
+    private static final float BF_degFull, BF_degToIndex;
+    private static final float[] BF_sin, BF_cos;
 
     static {
         BF_SIN_BITS  = 12;

@@ -26,12 +26,12 @@ import java.util.UUID;
  * This file contains methods to check the data type of string.
  */
 public class ObjectTypeChecker {
-    private final static int DEFAULT_RADIX = 10;
+    private static final int DEFAULT_RADIX = 10;
 
-    private final static int MAX_INTEGER_STRING_LENGTH = StringUtils.maximumStringSize(DEFAULT_RADIX, Integer.MAX_VALUE);
-    private final static int MAX_LONG_STRING_LENGTH = StringUtils.maximumStringSize(DEFAULT_RADIX, Long.MAX_VALUE);
-    private final static int MAX_SHORT_STRING_LENGTH = StringUtils.maximumStringSize(DEFAULT_RADIX, Short.MAX_VALUE);
-    private final static int MAX_BYTE_STRING_LENGTH = StringUtils.maximumStringSize(DEFAULT_RADIX, Byte.MAX_VALUE);
+    private static final int MAX_INTEGER_STRING_LENGTH = StringUtils.maximumStringSize(DEFAULT_RADIX, Integer.MAX_VALUE);
+    private static final int MAX_LONG_STRING_LENGTH = StringUtils.maximumStringSize(DEFAULT_RADIX, Long.MAX_VALUE);
+    private static final int MAX_SHORT_STRING_LENGTH = StringUtils.maximumStringSize(DEFAULT_RADIX, Short.MAX_VALUE);
+    private static final int MAX_BYTE_STRING_LENGTH = StringUtils.maximumStringSize(DEFAULT_RADIX, Byte.MAX_VALUE);
 
     /**
      * Checks if the given string is an integer.

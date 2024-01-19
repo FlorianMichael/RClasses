@@ -27,7 +27,7 @@ public class UnsafeAccess {
     /**
      * The unsafe instance.
      */
-    public final static sun.misc.Unsafe UNSAFE = getUnsafe();
+    public static final sun.misc.Unsafe UNSAFE = getUnsafe();
 
     /**
      * @return the unsafe instance

@@ -23,18 +23,18 @@ import java.util.List;
 import java.util.regex.Pattern;
 
 public final class StringUtils {
-    public final static String UPPER_CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    public final static String LOWER_CHARS = "abdcefghijklmnopqrstuvwxyz";
-    public final static String SPECIAL_CHARS = "!@#$%&*()_+-=[]|,./?><";
-    public final static String NUMBER_CHARS = "0123456789";
+    public static final String UPPER_CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    public static final String LOWER_CHARS = "abdcefghijklmnopqrstuvwxyz";
+    public static final String SPECIAL_CHARS = "!@#$%&*()_+-=[]|,./?><";
+    public static final String NUMBER_CHARS = "0123456789";
 
-    public final static List<String> ESCAPED_CHARACTERS = Arrays.asList("\t", "\b", "\n", "\r");
+    public static final List<String> ESCAPED_CHARACTERS = Arrays.asList("\t", "\b", "\n", "\r");
 
     /**
      * Convention: IEC 60027-2
      */
-    private final static String[] BYTES_UNIT = {"B", "KiB", "MiB", "GiB", "TiB"};
-    private final static DecimalFormat OPTIONAL_FORMAT = new DecimalFormat("#.##");
+    private static final String[] BYTES_UNIT = {"B", "KiB", "MiB", "GiB", "TiB"};
+    private static final DecimalFormat OPTIONAL_FORMAT = new DecimalFormat("#.##");
 
     /**
      * Formats a value in bytes to a human-readable format

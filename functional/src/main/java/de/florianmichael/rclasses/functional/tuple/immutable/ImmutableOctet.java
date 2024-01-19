@@ -25,7 +25,7 @@ import java.util.Objects;
  * Represents a tuple of eight elements.
  */
 public final class ImmutableOctet<A, B, C, D, E, F, G, H> extends Octet<A, B, C, D, E, F, G, H> {
-    private final static UnsupportedOperationException COULD_NOT_SET = new UnsupportedOperationException("The object is immutable!");
+    private static final UnsupportedOperationException COULD_NOT_SET = new UnsupportedOperationException("The object is immutable!");
 
     private final A first;
     private final B second;

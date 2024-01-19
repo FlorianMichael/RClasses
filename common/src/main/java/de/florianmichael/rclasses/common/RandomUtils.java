@@ -27,9 +27,9 @@ import java.util.concurrent.ThreadLocalRandom;
  */
 public class RandomUtils {
 
-    public final static Random RANDOM = new Random();
-    public final static SecureRandom SECURE_RANDOM = new SecureRandom();
-    public final static ThreadLocalRandom MAIN_THREAD_RANDOM = ThreadLocalRandom.current();
+    public static final Random RANDOM = new Random();
+    public static final SecureRandom SECURE_RANDOM = new SecureRandom();
+    public static final ThreadLocalRandom MAIN_THREAD_RANDOM = ThreadLocalRandom.current();
 
     /**
      * @param min The minimum value.
