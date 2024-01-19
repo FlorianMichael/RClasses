@@ -28,6 +28,7 @@ import java.nio.channels.Channels;
 import java.nio.channels.ReadableByteChannel;
 import java.nio.file.*;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
@@ -168,6 +169,22 @@ public class FileUtils {
             throw new IOException(String.format("Invalid zip file: %s", zipEntry.getName()));
         }
         return normalizePath;
+    }
+
+    /**
+     * Deletes a folder and all its content
+     *
+     * @param folder the folder to delete
+     * @throws IOException if an I/O error occurs
+     */
+    public static void deleteFolder(final File folder) throws IOException {
+        Files.walk(folder.toPath()).sorted(Comparator.reverseOrder()).forEach(path -> {
+            try {
+                Files.delete(path);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        });
     }
 
 }
