@@ -1,9 +1,35 @@
-subprojects {
-    apply plugin: "java-library"
-    apply plugin: "maven-publish"
-    apply plugin: "signing"
+plugins {
+    id "java-library"
+}
 
-    archivesBaseName = "RClasses-" + project.maven_name
+configurations {
+    implementation.extendsFrom exportToJar
+    api.extendsFrom exportToJar
+}
+
+dependencies {
+    exportToJar project(":RClasses-common")
+    exportToJar project(":RClasses-functional")
+    exportToJar project(":RClasses-io")
+    exportToJar project(":RClasses-math")
+    exportToJar project(":RClasses-pattern")
+    exportToJar project(":RClasses-kotlin-support")
+}
+
+jar {
+    dependsOn configurations.exportToJar
+    from {
+        duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+        configurations.exportToJar.collect {
+            zipTree(it)
+        }
+    }
+    from("LICENSE") { rename { "${it}_${project.archivesBaseName}" } }
+}
+
+allprojects {
+    apply plugin: "java-library"
+
     group = project.maven_group
     version = project.maven_version
 
@@ -11,15 +37,21 @@ subprojects {
         mavenCentral()
     }
 
-    dependencies {
+    java {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
     }
+}
+
+subprojects {
+    apply plugin: "maven-publish"
+    apply plugin: "signing"
+
+    archivesBaseName = "RClasses-" + project.maven_name
 
     java {
         withSourcesJar()
         withJavadocJar()
-
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
     }
 
     publishing {
