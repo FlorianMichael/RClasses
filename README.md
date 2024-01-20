@@ -26,12 +26,13 @@ You can also find instructions how to implement it into your build script there.
 If you just want the latest jar file you can download it from the GitHub [Actions](https://github.com/FlorianMichael/RClasses/actions) or use the [Release](https://github.com/FlorianMichael/RClasses/releases).
 
 ## Source tree
-| Sub module name | Description                                                                                               |
-|-----------------|-----------------------------------------------------------------------------------------------------------|
-| all             | Includes all sub modules, can be used to include the whole library at once.                               |
-| common          | Different utils you often need when developing average Java programs.                                     |
-| functional      | Implementation of own STD types like throwable functional interfaces                                      |
-| io              | Streams, File/Web access and Input/Output stuff that works with the Java STD                              |
-| math            | Implementation of mathematical concepts and general formulas such as percentage calculation or stochastic |
-| pattern         | Abstracted implementations of different patterns like Registry, Storage, ...                              |
-| kotlin-support  | Adds kotlin extensions for some useful methods provided by the common module                              |
+| Sub module name | Description                                                                                                 |
+|-----------------|-------------------------------------------------------------------------------------------------------------|
+| all             | Mainly for Maven and Gradle setups, includes all other sub modules at once.                                 |
+| all-jar         | Generates a bundled jar file containing all other sub modules, shouldn't be used in a Gradle/Maven project. |
+| common          | Different utils you often need when developing average Java programs.                                       |
+| functional      | Various functional interfaces and other data structs like vectors and pairs.                                |
+| io              | Debugging utilities and unsafe/native access.                                                               |
+| math            | Collection of math utils for different subareas of mathematics.                                             |
+| pattern         | Abstracted implementations of different patterns.                                                           |
+| kotlin-support  | Adds kotlin extensions for some useful methods provided by the common module                                |
