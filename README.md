@@ -29,7 +29,6 @@ If you just want the latest jar file you can download it from the GitHub [Action
 | Sub module name | Description                                                                                                 |
 |-----------------|-------------------------------------------------------------------------------------------------------------|
 | all             | Mainly for Maven and Gradle setups, includes all other sub modules at once.                                 |
-| all-jar         | Generates a bundled jar file containing all other sub modules, shouldn't be used in a Gradle/Maven project. |
 | common          | Different utils you often need when developing average Java programs.                                       |
 | functional      | Various functional interfaces and other data structs like vectors and pairs.                                |
 | io              | Debugging utilities and unsafe/native access.                                                               |
