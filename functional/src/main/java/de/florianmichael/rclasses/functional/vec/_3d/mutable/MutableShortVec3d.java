@@ -21,7 +21,7 @@ import de.florianmichael.rclasses.functional.vec._3d.ShortVec3d;
 
 import java.util.Objects;
 
-public final class MutableShortVec3d extends ShortVec3d {
+public class MutableShortVec3d extends ShortVec3d {
 
     private short x, y, z;
 

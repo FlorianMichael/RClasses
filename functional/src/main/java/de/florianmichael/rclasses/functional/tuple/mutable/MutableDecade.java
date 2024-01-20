@@ -24,7 +24,7 @@ import java.util.Objects;
 /**
  * Represents a mutable tuple of ten elements.
  */
-public final class MutableDecade<A, B, C, D, E, F, G, H, I, J> extends Decade<A, B, C, D, E, F, G, H, I, J> {
+public class MutableDecade<A, B, C, D, E, F, G, H, I, J> extends Decade<A, B, C, D, E, F, G, H, I, J> {
 
     private A first;
     private B second;

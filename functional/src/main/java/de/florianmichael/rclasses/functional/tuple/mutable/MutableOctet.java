@@ -22,7 +22,7 @@ import de.florianmichael.rclasses.functional.tuple.Octet;
 /**
  * Represents a mutable tuple of eight elements.
  */
-public final class MutableOctet<A, B, C, D, E, F, G, H> extends Octet<A, B, C, D, E, F, G, H> {
+public class MutableOctet<A, B, C, D, E, F, G, H> extends Octet<A, B, C, D, E, F, G, H> {
 
     private A first;
     private B second;

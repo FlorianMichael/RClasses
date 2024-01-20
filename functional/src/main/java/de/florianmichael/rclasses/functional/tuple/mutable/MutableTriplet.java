@@ -24,7 +24,7 @@ import java.util.Objects;
 /**
  * Represents a mutable tuple of three elements.
  */
-public final class MutableTriplet<A, B, C> extends Triplet<A, B, C> {
+public class MutableTriplet<A, B, C> extends Triplet<A, B, C> {
 
     private A first;
     private B second;

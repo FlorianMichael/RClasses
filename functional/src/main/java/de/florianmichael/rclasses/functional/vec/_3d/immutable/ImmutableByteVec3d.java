@@ -21,7 +21,7 @@ import de.florianmichael.rclasses.functional.vec._3d.ByteVec3d;
 
 import java.util.Objects;
 
-public final class ImmutableByteVec3d extends ByteVec3d {
+public class ImmutableByteVec3d extends ByteVec3d {
 
     private final byte x, y, z;
 

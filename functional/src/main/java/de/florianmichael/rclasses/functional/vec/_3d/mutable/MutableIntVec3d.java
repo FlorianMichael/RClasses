@@ -21,7 +21,7 @@ import de.florianmichael.rclasses.functional.vec._3d.IntVec3d;
 
 import java.util.Objects;
 
-public final class MutableIntVec3d extends IntVec3d {
+public class MutableIntVec3d extends IntVec3d {
 
     private int x, y, z;
 

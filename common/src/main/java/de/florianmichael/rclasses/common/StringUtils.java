@@ -22,7 +22,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.regex.Pattern;
 
-public final class StringUtils {
+public class StringUtils {
+
     public static final String UPPER_CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     public static final String LOWER_CHARS = "abdcefghijklmnopqrstuvwxyz";
     public static final String SPECIAL_CHARS = "!@#$%&*()_+-=[]|,./?><";

@@ -21,7 +21,7 @@ import de.florianmichael.rclasses.functional.vec._2d.FloatVec2d;
 
 import java.util.Objects;
 
-public final class ImmutableFloatVec2d extends FloatVec2d {
+public class ImmutableFloatVec2d extends FloatVec2d {
 
     private final float x, y;
 

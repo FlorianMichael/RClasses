@@ -25,7 +25,7 @@ import java.util.List;
  *
  * @param <V> The type of the list.
  */
-public final class EvictingList<V> {
+public class EvictingList<V> {
 
     private final List<V> list;
     private final int maxSize;

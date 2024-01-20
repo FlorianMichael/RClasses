@@ -24,7 +24,8 @@ import java.util.Objects;
 /**
  * Represents a tuple of five elements.
  */
-public final class ImmutableQuintet<A, B, C, D, E> extends Quintet<A, B, C, D, E> {
+public class ImmutableQuintet<A, B, C, D, E> extends Quintet<A, B, C, D, E> {
+
     private static final UnsupportedOperationException COULD_NOT_SET = new UnsupportedOperationException("The object is immutable!");
 
     private final A first;

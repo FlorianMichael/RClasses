@@ -24,7 +24,8 @@ import java.util.Objects;
 /**
  * Represents a tuple of seven elements.
  */
-public final class ImmutableSeptet<A, B, C, D, E, F, G> extends Septet<A, B, C, D, E, F, G> {
+public class ImmutableSeptet<A, B, C, D, E, F, G> extends Septet<A, B, C, D, E, F, G> {
+
     private static final UnsupportedOperationException COULD_NOT_SET = new UnsupportedOperationException("The object is immutable!");
 
     private final A first;

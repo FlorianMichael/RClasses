@@ -24,7 +24,7 @@ import java.util.Objects;
 /**
  * Represents a mutable tuple of seven elements.
  */
-public final class MutableSeptet<A, B, C, D, E, F, G> extends Septet<A, B, C, D, E, F, G> {
+public class MutableSeptet<A, B, C, D, E, F, G> extends Septet<A, B, C, D, E, F, G> {
 
     private A first;
     private B second;

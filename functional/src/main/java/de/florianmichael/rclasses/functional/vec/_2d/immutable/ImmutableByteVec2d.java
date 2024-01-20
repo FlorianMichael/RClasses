@@ -21,7 +21,7 @@ import de.florianmichael.rclasses.functional.vec._2d.ByteVec2d;
 
 import java.util.Objects;
 
-public final class ImmutableByteVec2d extends ByteVec2d {
+public class ImmutableByteVec2d extends ByteVec2d {
 
     private final byte x, y;
 

@@ -21,7 +21,7 @@ import de.florianmichael.rclasses.functional.vec._2d.IntVec2d;
 
 import java.util.Objects;
 
-public final class MutableIntVec2d extends IntVec2d {
+public class MutableIntVec2d extends IntVec2d {
 
     private int x, y;
 

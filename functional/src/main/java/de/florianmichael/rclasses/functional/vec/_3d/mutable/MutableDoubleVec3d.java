@@ -21,7 +21,7 @@ import de.florianmichael.rclasses.functional.vec._3d.DoubleVec3d;
 
 import java.util.Objects;
 
-public final class MutableDoubleVec3d extends DoubleVec3d {
+public class MutableDoubleVec3d extends DoubleVec3d {
 
     private double x, y, z;
 

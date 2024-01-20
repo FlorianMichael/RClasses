@@ -24,7 +24,7 @@ import java.util.Objects;
 /**
  * Represents a mutable tuple of nine elements.
  */
-public final class MutableEnnead<A, B, C, D, E, F, G, H, I> extends Ennead<A, B, C, D, E, F, G, H, I> {
+public class MutableEnnead<A, B, C, D, E, F, G, H, I> extends Ennead<A, B, C, D, E, F, G, H, I> {
 
     private A first;
     private B second;

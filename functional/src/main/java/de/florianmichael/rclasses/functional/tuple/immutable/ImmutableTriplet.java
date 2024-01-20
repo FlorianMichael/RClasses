@@ -24,7 +24,8 @@ import java.util.Objects;
 /**
  * Represents a tuple of three elements.
  */
-public final class ImmutableTriplet<A, B, C> extends Triplet<A, B, C> {
+public class ImmutableTriplet<A, B, C> extends Triplet<A, B, C> {
+
     private static final UnsupportedOperationException COULD_NOT_SET = new UnsupportedOperationException("The object is immutable!");
 
     private final A first;

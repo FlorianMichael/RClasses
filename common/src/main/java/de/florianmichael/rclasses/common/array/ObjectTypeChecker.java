@@ -26,6 +26,7 @@ import java.util.UUID;
  * This file contains methods to check the data type of string.
  */
 public class ObjectTypeChecker {
+
     private static final int DEFAULT_RADIX = 10;
 
     private static final int MAX_INTEGER_STRING_LENGTH = StringUtils.maximumStringSize(DEFAULT_RADIX, Integer.MAX_VALUE);

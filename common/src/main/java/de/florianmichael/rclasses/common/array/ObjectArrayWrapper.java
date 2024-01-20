@@ -23,6 +23,7 @@ import java.util.Arrays;
  * This files wraps an object array and provides methods to check the length and the index.
  */
 public class ObjectArrayWrapper<T> {
+
     private final T[] input;
 
     /**

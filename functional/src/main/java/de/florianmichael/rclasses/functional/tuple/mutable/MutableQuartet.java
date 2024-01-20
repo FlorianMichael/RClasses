@@ -24,7 +24,7 @@ import java.util.Objects;
 /**
  * Represents a mutable tuple of four elements.
  */
-public final class MutableQuartet<A, B, C, D> extends Quartet<A, B, C, D> {
+public class MutableQuartet<A, B, C, D> extends Quartet<A, B, C, D> {
 
     private A first;
     private B second;

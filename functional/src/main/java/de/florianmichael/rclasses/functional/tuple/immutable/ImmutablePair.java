@@ -24,7 +24,8 @@ import java.util.Objects;
 /**
  * Represents a tuple of two elements.
  */
-public final class ImmutablePair<A, B> extends Pair<A, B> {
+public class ImmutablePair<A, B> extends Pair<A, B> {
+
     private static final UnsupportedOperationException COULD_NOT_SET = new UnsupportedOperationException("The object is immutable!");
 
     private final A first;

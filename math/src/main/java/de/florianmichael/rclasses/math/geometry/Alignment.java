@@ -21,8 +21,10 @@ package de.florianmichael.rclasses.math.geometry;
  * Enum for the alignment of an object. The alignment is used to determine the position of an object relative to another object.
  */
 public enum Alignment {
+
     LEFT, RIGHT,
     TOP, BOTTOM,
 
     MIDDLE
+
 }

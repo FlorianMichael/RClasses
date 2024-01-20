@@ -25,7 +25,7 @@ import java.util.Collections;
  *
  * @param <V> The type of the collection.
  */
-public final class EvictingCollection<V> {
+public class EvictingCollection<V> {
 
     private final Collection<V> collection;
     private final int maxSize;

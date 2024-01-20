@@ -31,6 +31,7 @@ import java.awt.*;
  * angle of the vector from the origin to the point on the cone. The saturation is the distance from the origin.
  */
 public class HSBColor {
+
     public float hue;
     public float saturation;
     public float brightness;

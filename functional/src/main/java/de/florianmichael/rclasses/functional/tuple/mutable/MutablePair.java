@@ -24,7 +24,7 @@ import java.util.Objects;
 /**
  * Represents a mutable tuple of two elements.
  */
-public final class MutablePair<A, B> extends Pair<A, B> {
+public class MutablePair<A, B> extends Pair<A, B> {
 
     private A first;
     private B second;

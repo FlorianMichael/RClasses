@@ -26,7 +26,7 @@ import java.util.Map;
  * @param <K> The type of the key.
  * @param <V> The type of the value.
  */
-public final class EvictingMap<K, V> {
+public class EvictingMap<K, V> {
 
     private final Map<K, V> map;
     private final int maxSize;

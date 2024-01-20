@@ -21,7 +21,7 @@ import de.florianmichael.rclasses.functional.vec._3d.LongVec3d;
 
 import java.util.Objects;
 
-public final class MutableLongVec3d extends LongVec3d {
+public class MutableLongVec3d extends LongVec3d {
 
     private long x, y, z;
 

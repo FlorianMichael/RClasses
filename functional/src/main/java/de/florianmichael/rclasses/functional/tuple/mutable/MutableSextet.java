@@ -24,7 +24,7 @@ import java.util.Objects;
 /**
  * Represents a mutable tuple of six elements.
  */
-public final class MutableSextet<A, B, C, D, E, F> extends Sextet<A, B, C, D, E, F> {
+public class MutableSextet<A, B, C, D, E, F> extends Sextet<A, B, C, D, E, F> {
 
     private A first;
     private B second;

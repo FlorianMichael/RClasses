@@ -27,6 +27,7 @@ import java.util.stream.Collectors;
  * This enum contains all easing functions that are supported by the official easing reference implementation class.
  */
 public enum EasingFunctions {
+
     LINEAR("Linear", x -> x),
 
     IN_SINE("In sine", x -> (float) (1F - Math.cos((x * Math.PI) * 0.5F))),

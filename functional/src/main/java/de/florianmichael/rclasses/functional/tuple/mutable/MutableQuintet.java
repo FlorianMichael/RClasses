@@ -19,7 +19,7 @@ package de.florianmichael.rclasses.functional.tuple.mutable;
 
 import de.florianmichael.rclasses.functional.tuple.Quintet;
 
-public final class MutableQuintet<A, B, C, D, E> extends Quintet<A, B, C, D, E> {
+public class MutableQuintet<A, B, C, D, E> extends Quintet<A, B, C, D, E> {
     private A first;
     private B second;
     private C third;

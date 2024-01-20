@@ -21,7 +21,7 @@ import de.florianmichael.rclasses.functional.vec._2d.DoubleVec2d;
 
 import java.util.Objects;
 
-public final class ImmutableDoubleVec2d extends DoubleVec2d {
+public class ImmutableDoubleVec2d extends DoubleVec2d {
 
     private final double x, y;
 

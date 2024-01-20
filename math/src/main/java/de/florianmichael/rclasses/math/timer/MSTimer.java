@@ -21,6 +21,7 @@ package de.florianmichael.rclasses.math.timer;
  * A simple timer class.
  */
 public class MSTimer {
+
     /**
      * The time in milliseconds.
      */

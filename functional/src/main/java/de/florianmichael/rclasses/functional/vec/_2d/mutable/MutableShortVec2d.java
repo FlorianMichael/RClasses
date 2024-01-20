@@ -21,7 +21,7 @@ import de.florianmichael.rclasses.functional.vec._2d.ShortVec2d;
 
 import java.util.Objects;
 
-public final class MutableShortVec2d extends ShortVec2d {
+public class MutableShortVec2d extends ShortVec2d {
 
     private short x, y;
 

@@ -25,6 +25,7 @@ import java.util.List;
  * @param <T> The type of the list elements.
  */
 public class SliceCalculation<T> {
+
     private final List<T> elements;
     private final int sliceSize;
 

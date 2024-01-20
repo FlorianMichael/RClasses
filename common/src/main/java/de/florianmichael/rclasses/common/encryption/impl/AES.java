@@ -27,6 +27,7 @@ import java.security.NoSuchAlgorithmException;
 import java.util.Base64;
 
 public class AES implements Encryptor {
+
     private static final Cipher CIPHER;
 
     private final IvParameterSpec initialVector;

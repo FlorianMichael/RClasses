@@ -25,7 +25,7 @@ import java.util.Set;
  *
  * @param <V> The type of the set.
  */
-public final class EvictingSet<V> {
+public class EvictingSet<V> {
 
     private final Set<V> set;
     private final int maxSize;
