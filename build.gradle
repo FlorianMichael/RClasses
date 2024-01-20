@@ -17,6 +17,7 @@ dependencies {
 }
 
 jar {
+    // Add all dependencies which are included using "exportToJar" to the jar file and exclude the META-INF folder
     dependsOn configurations.exportToJar
     from {
         duplicatesStrategy = DuplicatesStrategy.EXCLUDE
@@ -24,7 +25,12 @@ jar {
             zipTree(it)
         }
     }
-    from("LICENSE") { rename { "${it}_${project.archivesBaseName}" } }
+    // Rename the project's license file to LICENSE_<project_name> to avoid conflicts
+    from("LICENSE") {
+        rename {
+            "${it}_${project.archivesBaseName}"
+        }
+    }
 }
 
 allprojects {
@@ -38,6 +44,10 @@ allprojects {
     }
 
     java {
+        toolchain {
+            languageVersion = JavaLanguageVersion.of(8)
+        }
+
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
