@@ -1,24 +1,8 @@
-configurations {
-    implementation.extendsFrom projectInclude
-    api.extendsFrom projectInclude
-}
-
 dependencies {
-    projectInclude project(":RClasses-common")
-    projectInclude project(":RClasses-functional")
-    projectInclude project(":RClasses-io")
-    projectInclude project(":RClasses-math")
-    projectInclude project(":RClasses-pattern")
-    projectInclude project(":RClasses-kotlin-support")
-}
-
-jar {
-    dependsOn configurations.projectInclude
-    from {
-        duplicatesStrategy = DuplicatesStrategy.EXCLUDE
-        configurations.projectInclude.collect {
-            zipTree(it)
-        }
-    }
-    from("LICENSE") { rename { "${it}_${project.archivesBaseName}" } }
+    api project(":RClasses-common")
+    api project(":RClasses-functional")
+    api project(":RClasses-io")
+    api project(":RClasses-math")
+    api project(":RClasses-pattern")
+    api project(":RClasses-kotlin-support")
 }
