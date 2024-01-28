@@ -29,7 +29,7 @@ import java.util.function.Consumer;
 
 /**
  * Implementation of a simple HTTP client using {@link HttpURLConnection} for Java 8. This class file can be used for
- * simple HTTP requests. For more complex requests, please use Java 11's {@link java.net.http.HttpClient}.
+ * simple HTTP requests. For more complex requests, please use Java 11's HttpClient.
  */
 public class SimpleHTTPClient {
 
