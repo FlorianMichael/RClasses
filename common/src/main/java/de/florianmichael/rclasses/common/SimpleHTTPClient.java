@@ -51,6 +51,9 @@ public class SimpleHTTPClient {
      */
     private Consumer<HttpURLConnection> postModifier;
 
+    public SimpleHTTPClient() {
+    }
+
     public SimpleHTTPClient(String userAgent, String acceptMethod, Map<String, String> headers) {
         this.userAgent = userAgent;
         this.acceptMethod = acceptMethod;
