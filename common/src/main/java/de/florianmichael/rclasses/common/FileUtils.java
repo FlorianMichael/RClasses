@@ -62,7 +62,7 @@ public class FileUtils {
      * @throws Throwable If an error occurs while downloading the file.
      */
     public static File downloadFile(final String url, final File output) throws Throwable {
-        return downloadFile(url, WebUtils.DEFAULT_AGENT, output);
+        return downloadFile(url, SimpleHTTPClient.DEFAULT_AGENT, output);
     }
 
     /**
