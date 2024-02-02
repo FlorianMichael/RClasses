@@ -18,7 +18,6 @@
 package de.florianmichael.rclasses.common;
 
 import java.text.DecimalFormat;
-import java.util.Arrays;
 import java.util.List;
 import java.util.regex.Pattern;
 
@@ -29,13 +28,10 @@ public class StringUtils {
     public static final String SPECIAL_CHARS = "!@#$%&*()_+-=[]|,./?><";
     public static final String NUMBER_CHARS = "0123456789";
 
-    public static final List<String> ESCAPED_CHARACTERS = Arrays.asList("\t", "\b", "\n", "\r");
+    public static final DecimalFormat OPTIONAL_FORMAT = new DecimalFormat("#.##");
 
-    /**
-     * Convention: IEC 60027-2
-     */
+    private static final String[] ESCAPED_CHARACTERS = new String[] {"\t", "\b", "\n", "\r"};
     private static final String[] BYTES_UNIT = {"B", "KiB", "MiB", "GiB", "TiB"};
-    private static final DecimalFormat OPTIONAL_FORMAT = new DecimalFormat("#.##");
 
     /**
      * Formats a value in bytes to a human-readable format
@@ -252,6 +248,14 @@ public class StringUtils {
      */
     public static int maximumStringSize(final int radix, final long maxValue) {
         return (int) Math.ceil(Math.log(maxValue) / Math.log(radix)) + 1;
+    }
+
+    public static String[] getEscapedCharacters() {
+        return ESCAPED_CHARACTERS.clone();
+    }
+
+    public static String[] getBytesUnit() {
+        return BYTES_UNIT.clone();
     }
 
 }
