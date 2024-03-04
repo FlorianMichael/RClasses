@@ -68,7 +68,7 @@ public abstract class NamedStorage<T extends IName> extends Storage<T> {
      */
     @SuppressWarnings("unchecked")
     public <V extends T> V getByName(final String name, final boolean ignoreCase) {
-        return (V) this.getList().stream().filter(t -> ignoreCase ? t.getName().equals(name) : t.getName().equalsIgnoreCase(name)).findFirst().orElse(null);
+        return (V) this.getList().stream().filter(t -> ignoreCase ? t.getName().equalsIgnoreCase(name) : t.getName().equals(name)).findFirst().orElse(null);
     }
 
 }
