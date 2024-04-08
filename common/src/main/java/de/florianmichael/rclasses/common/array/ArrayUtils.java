@@ -20,7 +20,7 @@ package de.florianmichael.rclasses.common.array;
 import java.util.Objects;
 import java.util.function.IntFunction;
 
-public class ArrayUtils {
+public final class ArrayUtils {
 
     /**
      * Removes the element at the specified position in the specified array.

@@ -34,7 +34,7 @@ import java.util.zip.ZipInputStream;
 
 import static java.nio.file.Files.*;
 
-public class FileUtils {
+public final class FileUtils {
 
     /**
      * Gets a file system for the given URI or create one.
@@ -43,7 +43,7 @@ public class FileUtils {
      * @return the file system
      * @throws IOException if creating the file system fails
      */
-    private FileSystem getFileSystem(final URI uri) throws IOException {
+    public static FileSystem getFileSystem(final URI uri) throws IOException {
         FileSystem fileSystem;
         try {
             fileSystem = FileSystems.getFileSystem(uri);

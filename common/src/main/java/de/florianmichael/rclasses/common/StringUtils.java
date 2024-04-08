@@ -21,7 +21,7 @@ import java.text.DecimalFormat;
 import java.util.List;
 import java.util.regex.Pattern;
 
-public class StringUtils {
+public final class StringUtils {
 
     public static final String UPPER_CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     public static final String LOWER_CHARS = "abdcefghijklmnopqrstuvwxyz";

@@ -25,7 +25,7 @@ import java.util.UUID;
 /**
  * This file contains methods to check the data type of string.
  */
-public class ObjectTypeChecker {
+public final class ObjectTypeChecker {
 
     private static final int DEFAULT_RADIX = 10;
 

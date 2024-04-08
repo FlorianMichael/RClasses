@@ -22,7 +22,7 @@ import java.util.Objects;
 /**
  * This class represents the architecture of the operating system.
  */
-public class OSArchitecture {
+public final class OSArchitecture {
 
     public final boolean amd64;
     public final boolean x86;

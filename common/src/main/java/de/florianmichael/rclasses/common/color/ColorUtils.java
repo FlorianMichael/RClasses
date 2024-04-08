@@ -19,7 +19,7 @@ package de.florianmichael.rclasses.common.color;
 
 import java.awt.*;
 
-public class ColorUtils {
+public final class ColorUtils {
 
     public static final Color MIN_INT = new Color(Integer.MIN_VALUE, true);
     public static final Color MAX_INT = new Color(Integer.MAX_VALUE, true);

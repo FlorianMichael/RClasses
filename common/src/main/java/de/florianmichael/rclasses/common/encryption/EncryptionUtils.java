@@ -35,7 +35,7 @@ import java.security.spec.InvalidKeySpecException;
 /**
  * Utility class for encryption.
  */
-public class EncryptionUtils {
+public final class EncryptionUtils {
 
     private static final Base64 BASE_64 = new Base64();
 
