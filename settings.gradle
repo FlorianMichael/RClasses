@@ -5,6 +5,7 @@ include "RClasses-functional"
 include "RClasses-common"
 include "RClasses-pattern"
 include "RClasses-kotlin-support"
+include "RClasses-main"
 
 project(":RClasses-all").projectDir = file("all")
 project(":RClasses-io").projectDir = file("io")
@@ -13,4 +14,5 @@ project(":RClasses-functional").projectDir = file("functional")
 project(":RClasses-common").projectDir = file("common")
 project(":RClasses-pattern").projectDir = file("pattern")
 project(":RClasses-kotlin-support").projectDir = file("kotlin-support")
+project(":RClasses-main").projectDir = file("main")
 

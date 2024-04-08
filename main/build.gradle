@@ -1,0 +1,5 @@
+dependencies {
+    api project(":RClasses-common")
+    api project(":RClasses-math")
+    api project(":RClasses-pattern")
+}
