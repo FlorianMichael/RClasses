@@ -265,4 +265,47 @@ public class Arithmetics {
         return value % 1 != 0;
     }
 
+    /**
+     * @param u The first value
+     * @param v The second value
+     * @return The greatest common divisor of u and v
+     */
+    public static long gcd(long u, long v) {
+        // Java re-write of the Binary GCD algorithm rust implementation on https://en.wikipedia.org/wiki/Binary_GCD_algorithm
+
+        // A rule is that if u == 0 then v is the greatest common divisor and vice versa
+        if (u == 0)
+            return v;
+        else if (v == 0)
+            return u;
+
+        // gcd(pow(2, uTrailingZeroes) u, pow(v, vTrailingZeroes v) = pow(2, zeroes)  gcd(u, v) with u, v odd and k = min(i, j)
+        // 2ᵏ is the greatest power of two that divides both 2ⁱ u and 2ʲ v
+        int uTrailingZeroes = Long.numberOfTrailingZeros(u);
+        u >>= uTrailingZeroes;
+        int vTrailingZeroes = Long.numberOfTrailingZeros(v);
+        v >>= vTrailingZeroes;
+        long zeroes = Math.min(uTrailingZeroes, vTrailingZeroes);
+
+        while (true) {
+            // Swap if necessary so u <= v
+            if (u > v) {
+                u = u + v;
+                v = u - v;
+                u = u - v;
+            }
+
+            // gcd(u, v) = gcd(u, v-u) as u <= v and u, v are both odd
+            v -= u;
+
+            // v is now even
+            if (v == 0)
+                // Shift is necessary to add back the factor that was removed before the loop
+                return u << zeroes;
+
+            // gcd(u, pow(2, zeroes) v) = gcd(u, v) as u is odd
+            v >>= Long.numberOfTrailingZeros(v);
+        }
+    }
+
 }
