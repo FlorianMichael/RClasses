@@ -273,6 +273,10 @@ public class Arithmetics {
     public static long gcd(long u, long v) {
         // Java re-write of the Binary GCD algorithm rust implementation on https://en.wikipedia.org/wiki/Binary_GCD_algorithm
 
+        if (u < 0 || v < 0) {
+            throw new UnsupportedOperationException("Both values must be positive");
+        }
+
         // A rule is that if u == 0 then v is the greatest common divisor and vice versa
         if (u == 0)
             return v;
