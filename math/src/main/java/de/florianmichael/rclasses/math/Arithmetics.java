@@ -280,7 +280,7 @@ public class Arithmetics {
             return u;
 
         // gcd(pow(2, uTrailingZeroes) u, pow(v, vTrailingZeroes v) = pow(2, zeroes)  gcd(u, v) with u, v odd and k = min(i, j)
-        // 2ᵏ is the greatest power of two that divides both 2ⁱ u and 2ʲ v
+        // pow(2. zeroes) is the greatest power of two that divides both pow(2, uTrailingZeroes) u and pow(2, vTrailingZeroes) v
         int uTrailingZeroes = Long.numberOfTrailingZeros(u);
         u >>= uTrailingZeroes;
         int vTrailingZeroes = Long.numberOfTrailingZeros(v);
