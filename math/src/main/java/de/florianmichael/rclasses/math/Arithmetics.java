@@ -265,4 +265,69 @@ public class Arithmetics {
         return value % 1 != 0;
     }
 
+    /**
+     * @param u The first value
+     * @param v The second value
+     * @return The greatest common divisor of u and v
+     */
+    public static long gcd(long u, long v) {
+        // Java re-write of the Binary GCD algorithm rust implementation on https://en.wikipedia.org/wiki/Binary_GCD_algorithm
+
+        /* A simple JUnit test for the future when testing is implemented
+            @Test
+            public void testGCD() {
+                assertEquals(5, gcd(10, 15)); // GCD of 10 and 15 is 5
+                assertEquals(6, gcd(18, 24)); // GCD of 18 and 24 is 6
+                assertEquals(1, gcd(17, 23)); // GCD of two primes is always 1
+                assertEquals(4, gcd(8, 12)); // GCD of 8 and 12 is 4
+                assertEquals(15, gcd(0, 15)); // GCD of 0 and 15 is 15
+                assertEquals(15, gcd(15, 0)); // GCD of 15 and 0 is 15
+        }
+         */
+
+        if (u < 0 || v < 0) {
+            throw new UnsupportedOperationException("Both values must be positive");
+        }
+
+        // A rule is that if u == 0 then v is the greatest common divisor and vice versa
+        if (u == 0) {
+            return v;
+        } else if (v == 0) {
+            return u;
+        }
+
+        // gcd(pow(2, uTrailingZeroes) u, pow(v, vTrailingZeroes v) = pow(2, zeroes)  gcd(u, v) with u, v odd and k = min(i, j)
+        // pow(2. zeroes) is the greatest power of two that divides both pow(2, uTrailingZeroes) u and pow(2, vTrailingZeroes) v
+        final int uTrailingZeroes = Long.numberOfTrailingZeros(u);
+        u >>= uTrailingZeroes;
+        final int vTrailingZeroes = Long.numberOfTrailingZeros(v);
+        v >>= vTrailingZeroes;
+        final long zeroes = Math.min(uTrailingZeroes, vTrailingZeroes);
+
+        while (true) {
+            // Check that both variables aren't even
+            if (u % 2 == 0 || v % 2 == 0)
+                throw new IllegalStateException("'u' and 'v' should not be even at this point");
+
+            // Swap if necessary so u <= v
+            if (u > v) {
+                u = u + v;
+                v = u - v;
+                u = u - v;
+            }
+
+            // gcd(u, v) = gcd(u, v-u) as u <= v and u, v are both odd
+            v -= u;
+
+            // v is now even
+            if (v == 0) {
+                // Shift is necessary to add back the factor that was removed before the loop
+                return u << zeroes;
+            }
+
+            // gcd(u, pow(2, zeroes) v) = gcd(u, v) as u is odd
+            v >>= Long.numberOfTrailingZeros(v);
+        }
+    }
+
 }
