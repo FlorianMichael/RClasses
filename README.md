@@ -12,14 +12,12 @@ Note: This project is mainly for my own use, there won't be any deprecated metho
 - [Google Guava](https://github.com/google/guava)
 
 ## Contact
-If you encounter any issues, please report them on the
-[issue tracker](https://github.com/FlorianMichael/RClasses/issues).  
-If you just want to talk or need help with RClasses feel free to join my
-[Discord](https://discord.gg/BwWhCHUKDf).
+If you encounter any issues, please report them on the [issue tracker](https://github.com/FlorianMichael/RClasses/issues).  
+If you just want to talk or need help with RClasses feel free to join my [Discord](https://discord.gg/BwWhCHUKDf).
 
 ## How to add this to your project
 ### Gradle/Maven
-To use RClasses with Gradle/Maven you can use [Maven Central](https://mvnrepository.com/artifact/de.florianmichael/RClasses), [Lenni0451's repository](https://maven.lenni0451.net/#/releases/de/florianmichael/rclasses) or [Jitpack](https://jitpack.io/#FlorianMichael/RClasses).  
+To use RClasses with Gradle/Maven you can use [Maven Central](https://mvnrepository.com/artifact/de.florianmichael/RClasses), [Lenni0451's Maven](https://maven.lenni0451.net/#/releases/de/florianmichael/rclasses) or [Jitpack](https://jitpack.io/#FlorianMichael/RClasses).  
 You can also find instructions how to implement it into your build script there.
 
 ### Jar File
