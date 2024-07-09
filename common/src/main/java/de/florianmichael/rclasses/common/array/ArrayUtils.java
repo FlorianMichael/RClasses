@@ -1703,4 +1703,16 @@ public final class ArrayUtils {
         return false;
     }
 
+    /**
+     * Returns the last element of the specified array.
+     *
+     * @param array the array
+     * @param <T>   the type of the array
+     * @return the last element of the specified array
+     */
+    public static <T> T last(final T[] array) {
+        if (array.length == 0) return null;
+        return array[array.length - 1];
+    }
+
 }
