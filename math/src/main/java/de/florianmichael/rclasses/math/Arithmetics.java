@@ -272,19 +272,6 @@ public class Arithmetics {
      */
     public static long gcd(long u, long v) {
         // Java re-write of the Binary GCD algorithm rust implementation on https://en.wikipedia.org/wiki/Binary_GCD_algorithm
-
-        /* A simple JUnit test for the future when testing is implemented
-            @Test
-            public void testGCD() {
-                assertEquals(5, gcd(10, 15)); // GCD of 10 and 15 is 5
-                assertEquals(6, gcd(18, 24)); // GCD of 18 and 24 is 6
-                assertEquals(1, gcd(17, 23)); // GCD of two primes is always 1
-                assertEquals(4, gcd(8, 12)); // GCD of 8 and 12 is 4
-                assertEquals(15, gcd(0, 15)); // GCD of 0 and 15 is 15
-                assertEquals(15, gcd(15, 0)); // GCD of 15 and 0 is 15
-        }
-         */
-
         if (u < 0 || v < 0) {
             throw new UnsupportedOperationException("Both values must be positive");
         }
