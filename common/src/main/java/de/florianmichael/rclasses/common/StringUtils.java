@@ -30,7 +30,7 @@ public final class StringUtils {
 
     public static final DecimalFormat OPTIONAL_FORMAT = new DecimalFormat("#.##");
 
-    private static final String[] ESCAPED_CHARACTERS = new String[] {"\t", "\b", "\n", "\r"};
+    private static final String[] ESCAPED_CHARACTERS = new String[]{"\t", "\b", "\n", "\r"};
     private static final String[] BYTES_UNIT = {"B", "KiB", "MiB", "GiB", "TiB"};
 
     /**
@@ -248,6 +248,32 @@ public final class StringUtils {
      */
     public static int maximumStringSize(final int radix, final long maxValue) {
         return (int) Math.ceil(Math.log(maxValue) / Math.log(radix)) + 1;
+    }
+
+    /**
+     * Check if the given string contains a letter.
+     *
+     * @param input The input string.
+     * @return True if the input string contains a letter, otherwise false.
+     */
+    public static boolean containsLetter(final String input) {
+        for (char c : input.toCharArray()) {
+            if (Character.isLetter(c)) return true;
+        }
+        return false;
+    }
+
+    /**
+     * Check if the given string contains a digit.
+     *
+     * @param input The input string.
+     * @return True if the input string contains a digit, otherwise false.
+     */
+    public static boolean containsDigit(final String input) {
+        for (char c : input.toCharArray()) {
+            if (Character.isDigit(c)) return true;
+        }
+        return false;
     }
 
     public static String[] getEscapedCharacters() {
