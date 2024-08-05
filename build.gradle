@@ -36,8 +36,11 @@ jar {
 allprojects {
     apply plugin: "java-library"
 
-    group = project.maven_group
-    version = project.maven_version
+    base {
+        group = project.maven_group
+        version = project.maven_version
+        description = project.maven_description
+    }
 
     repositories {
         mavenCentral()
@@ -99,7 +102,7 @@ subprojects {
 
                 pom {
                     name = artifactId
-                    description = "Random collection of Java classes and utils in different submodules which together form a commons library"
+                    description = project.description
                     url = "https://github.com/FlorianMichael/RClasses"
                     licenses {
                         license {
