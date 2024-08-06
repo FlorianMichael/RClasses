@@ -60,7 +60,7 @@ subprojects {
     apply plugin: "maven-publish"
     apply plugin: "signing"
 
-    archivesBaseName = "RClasses-" + project.maven_name
+    archivesBaseName = "RClasses-" + project.name
 
     java {
         withSourcesJar()
@@ -95,7 +95,7 @@ subprojects {
         publications {
             maven(MavenPublication) {
                 groupId = project.group
-                artifactId = project.maven_name
+                artifactId = project.name
                 version = project.version
 
                 from components.java
