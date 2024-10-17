@@ -33,72 +33,72 @@ public final class RandomUtils {
 
     /**
      * @param min The minimum value.
-     * @param max The maximum value.
-     * @return A random integer between min (inclusive) and max (exclusive).
+     * @param bound The upper bound value.
+     * @return A random integer between min (inclusive) and bound (exclusive).
      */
-    public static int randomInt(final int min, final int max) {
-        if (min >= max) return min;
-        return ThreadLocalRandom.current().nextInt(min, max);
+    public static int randomInt(final int min, final int bound) {
+        if (min >= bound) return min;
+        return ThreadLocalRandom.current().nextInt(min, bound);
     }
 
     /**
      * @param min The minimum value.
-     * @param max The maximum value.
-     * @return A random double between min (inclusive) and max (exclusive).
+     * @param bound The upper bound value.
+     * @return A random double between min (inclusive) and bound (exclusive).
      */
-    public static double randomDouble(final double min, final double max) {
-        if (min >= max) return min;
-        return ThreadLocalRandom.current().nextDouble(min, max);
+    public static double randomDouble(final double min, final double bound) {
+        if (min >= bound) return min;
+        return ThreadLocalRandom.current().nextDouble(min, bound);
     }
 
     /**
      * @param min The minimum value.
-     * @param max The maximum value.
-     * @return A random float between min (inclusive) and max (exclusive).
+     * @param bound The upper bound value.
+     * @return A random float between min (inclusive) and bound (exclusive).
      */
-    public static float randomFloat(final float min, final float max) {
-        if (min >= max) return min;
-        return min + ThreadLocalRandom.current().nextFloat() * (max - min); // Java 8 support
+    public static float randomFloat(final float min, final float bound) {
+        if (min >= bound) return min;
+        return min + ThreadLocalRandom.current().nextFloat() * (bound - min); // Java 8 support
     }
 
     /**
      * @param min The minimum value.
-     * @param max The maximum value.
-     * @return A random long between min (inclusive) and max (exclusive).
+     * @param bound The upper bound value.
+     * @return A random long between min (inclusive) and bound (exclusive).
      */
-    public static long randomLong(final long min, final long max) {
-        if (min >= max) return min;
-        return ThreadLocalRandom.current().nextLong(min, max);
+    public static long randomLong(final long min, final long bound) {
+        if (min >= bound) return min;
+        return ThreadLocalRandom.current().nextLong(min, bound);
     }
 
     /**
      * @param min The minimum value.
-     * @param max The maximum value.
-     * @return A random short between min (inclusive) and max (exclusive).
+     * @param bound The upper bound value.
+     * @return A random short between min (inclusive) and bound (exclusive).
      */
-    public static short randomShort(final short min, final short max) {
-        if (min >= max) return min;
-        return (short) ThreadLocalRandom.current().nextInt(min, max);
+    public static short randomShort(final short min, final short bound) {
+        if (min >= bound) return min;
+        return (short) ThreadLocalRandom.current().nextInt(min, bound);
     }
 
     /**
      * @param min The minimum value.
-     * @param max The maximum value.
-     * @return A random byte between min (inclusive) and max (exclusive).
+     * @param bound The upper bound value.
+     * @return A random byte between min (inclusive) and bound (exclusive).
      */
-    public static byte randomByte(final byte min, final byte max) {
-        if (min >= max) return min;
-        return (byte) ThreadLocalRandom.current().nextInt(min, max);
+    public static byte randomByte(final byte min, final byte bound) {
+        if (min >= bound) return min;
+        return (byte) ThreadLocalRandom.current().nextInt(min, bound);
     }
 
     /**
      * @param min The minimum value.
-     * @param max The maximum value.
-     * @return A random char between min (inclusive) and max (exclusive).
+     * @param bound The upper bound value.
+     * @return A random char between min (inclusive) and bound (exclusive).
      */
-    public static char randomChar(final char min, final char max) {
-        if (min >= max) return min;
-        return (char) ThreadLocalRandom.current().nextInt(min, max);
+    public static char randomChar(final char min, final char bound) {
+        if (min >= bound) return min;
+        return (char) ThreadLocalRandom.current().nextInt(min, bound);
     }
 
     /**
@@ -138,11 +138,11 @@ public final class RandomUtils {
 
     /**
      * @param minLength The minimum length of the byte array.
-     * @param maxLength The maximum length of the byte array.
-     * @return A random byte array with a random length between minLength (inclusive) and maxLength (exclusive).
+     * @param boundLength The upper bound length of the byte array.
+     * @return A random byte array with a random length between minLength (inclusive) and boundLength (exclusive).
      */
-    public static byte[] randomBytes(final int minLength, final int maxLength) {
-        final byte[] bytes = new byte[randomInt(minLength, maxLength)];
+    public static byte[] randomBytes(final int minLength, final int boundLength) {
+        final byte[] bytes = new byte[randomInt(minLength, boundLength)];
         SECURE_RANDOM.nextBytes(bytes);
         return bytes;
     }
@@ -151,15 +151,15 @@ public final class RandomUtils {
      * Generates a random string with the specified length and characters. If all the boolean parameters are false, lowercase will be set to true.
      *
      * @param minLength The minimum length of the string.
-     * @param maxLength The maximum length of the string.
+     * @param boundLength The upper bound length of the string.
      * @param lowercase Whether to include lowercase characters.
      * @param uppercase Whether to include uppercase characters.
      * @param number    Whether to include number characters.
      * @param special   Whether to include special characters.
-     * @return A random string with a random length between minLength (inclusive) and maxLength (exclusive) and characters.
+     * @return A random string with a random length between minLength (inclusive) and boundLength (exclusive) and characters.
      */
-    public static String randomString(final int minLength, final int maxLength, final boolean lowercase, final boolean uppercase, final boolean number, final boolean special) {
-        return randomString(randomInt(minLength, maxLength), lowercase, uppercase, number, special);
+    public static String randomString(final int minLength, final int boundLength, final boolean lowercase, final boolean uppercase, final boolean number, final boolean special) {
+        return randomString(randomInt(minLength, boundLength), lowercase, uppercase, number, special);
     }
 
     /**
