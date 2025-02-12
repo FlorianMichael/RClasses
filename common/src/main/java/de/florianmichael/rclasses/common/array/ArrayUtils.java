@@ -17,10 +17,23 @@
 
 package de.florianmichael.rclasses.common.array;
 
+import java.util.List;
 import java.util.Objects;
 import java.util.function.IntFunction;
 
 public final class ArrayUtils {
+
+    /**
+     * Converts the specified list to an array.
+     *
+     * @param list the list
+     * @param <T>  the type of the array
+     * @return The array.
+     */
+    public static <T> T[] toArray(final List<T> list) {
+        //noinspection unchecked
+        return (T[]) list.toArray();
+    }
 
     /**
      * Removes the element at the specified position in the specified array.
