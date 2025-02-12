@@ -17,15 +17,13 @@
 
 package de.florianmichael.rclasses.common;
 
-import java.io.BufferedOutputStream;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.*;
 import java.net.URI;
 import java.net.URL;
 import java.net.URLConnection;
 import java.nio.channels.Channels;
 import java.nio.channels.ReadableByteChannel;
+import java.nio.file.FileSystem;
 import java.nio.file.*;
 import java.util.Collections;
 import java.util.Comparator;
@@ -169,6 +167,61 @@ public final class FileUtils {
             throw new IOException(String.format("Invalid zip file: %s", zipEntry.getName()));
         }
         return normalizePath;
+    }
+
+    /**
+     * Copies a resource to the given path.
+     *
+     * @param resource The resource path to copy
+     * @param name     The name of the output file
+     * @param path     The path to copy the resource to
+     */
+    public static void copyResource(final String resource, final String name, final Path path) throws IOException {
+        try (final InputStream inputStream = FileUtils.class.getResourceAsStream(resource)) {
+            if (inputStream == null) {
+                throw new IllegalArgumentException("Resource not found: " + resource);
+            }
+
+            final File outputFile = path.resolve(name).toFile();
+            try (final OutputStream outputStream = newOutputStream(outputFile.toPath())) {
+                byte[] buffer = new byte[1024];
+                int length;
+                while ((length = inputStream.read(buffer)) != -1) {
+                    outputStream.write(buffer, 0, length);
+                }
+            }
+        }
+    }
+
+    /**
+     * Creates a folder if it does not exist.
+     *
+     * @param path the folder path
+     */
+    public static void createFolder(final Path path) {
+        if (Files.exists(path)) {
+            return;
+        }
+
+        try {
+            Files.createDirectories(path);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    /**
+     * Reads a file to a byte array.
+     *
+     * @param path the file path
+     * @return the byte array
+     */
+    public static byte[] readFile(final Path path) {
+        try {
+            return Files.readAllBytes(path);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     /**
