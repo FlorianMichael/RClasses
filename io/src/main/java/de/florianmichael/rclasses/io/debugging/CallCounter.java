@@ -39,13 +39,18 @@ public class CallCounter {
     /**
      * Counts a call. If the delay is reached, the counter is reset and the count is printed to the console {@link System#out}.
      */
-    public void hello() {
+    public void call() {
         if (System.currentTimeMillis() - lastCall > delay) {
-            System.out.println("CallCounter: " + count);
+            System.out.println("Reached " + count + " calls in " + delay + "ms");
             count = 0;
             lastCall = System.currentTimeMillis();
         }
         count++;
+    }
+
+    @Deprecated
+    public void hello() {
+        call();
     }
 
 }
