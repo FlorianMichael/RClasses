@@ -3,29 +3,29 @@ plugins {
     id("rclasses.base-conventions")
 }
 
-val exportToJar: Configuration by configurations.creating {
+val library: Configuration by configurations.creating {
     configurations.api.get().extendsFrom(this)
     configurations.implementation.get().extendsFrom(this)
 }
 
 dependencies {
     // Move all submodules into the jar file
-    exportToJar(project(":common"))
-    exportToJar(project(":functional"))
-    exportToJar(project(":io"))
-    exportToJar(project(":math"))
-    exportToJar(project(":pattern"))
-    exportToJar(project(":kotlin-support"))
+    library(project(":common"))
+    library(project(":functional"))
+    library(project(":io"))
+    library(project(":math"))
+    library(project(":pattern"))
+    library(project(":kotlin-support"))
 }
 
 tasks {
     jar {
         val projectName = project.name
 
-        // Add all dependencies which are included using "exportToJar" to the jar file and exclude the META-INF folder
-        dependsOn(exportToJar)
+        // Add all dependencies which are included using "library" to the jar file and exclude the META-INF folder
+        dependsOn(library)
         from({
-            exportToJar.map { zipTree(it) }
+            library.map { zipTree(it) }
         }) {
             exclude("META-INF/*.RSA", "META-INF/*.SF", "META-INF/*.DSA")
         }
