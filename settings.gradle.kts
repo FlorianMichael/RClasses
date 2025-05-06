@@ -1,7 +1,19 @@
 pluginManagement {
     repositories {
+        mavenLocal()
         mavenCentral()
         gradlePluginPortal()
+    }
+
+    plugins {
+        id("org.jetbrains.kotlin.jvm") version "2.0.10"
+        id("de.florianmichael.baseproject.BaseProject") version "0.0.3"
+    }
+}
+
+dependencyResolutionManagement {
+    repositories {
+        mavenCentral()
     }
 }
 
@@ -10,8 +22,6 @@ plugins {
 }
 
 rootProject.name = "RClasses"
-
-includeBuild("build-logic")
 
 setupSubproject("all")
 setupSubproject("io")
@@ -22,7 +32,7 @@ setupSubproject("pattern")
 setupSubproject("kotlin-support")
 setupSubproject("main")
 
-inline fun setupSubproject(name: String) {
+fun setupSubproject(name: String) {
     include(name)
     project(":$name").projectDir = file("rclasses-$name")
 }

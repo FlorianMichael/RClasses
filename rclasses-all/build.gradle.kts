@@ -1,7 +1,3 @@
-plugins {
-    id("rclasses.publish-conventions")
-}
-
 dependencies {
     // Add all submodules as api dependencies
     api(project(":common"))

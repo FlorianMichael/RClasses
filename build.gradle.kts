@@ -1,40 +1,35 @@
+import de.florianmichael.baseproject.*
+
 plugins {
-    `java-library`
-    id("rclasses.base-conventions")
+    base
+    id("de.florianmichael.baseproject.BaseProject")
 }
 
-val library: Configuration by configurations.creating {
-    configurations.api.get().extendsFrom(this)
-    configurations.implementation.get().extendsFrom(this)
+subprojects {
+
+    setupProject()
+    setupPublishing(listOf(DeveloperInfo("FlorianMichael", "EnZaXD", "florian.michael07@gmail.com")))
+
+    repositories {
+        mavenCentral()
+    }
+
+    apply(plugin = "base")
+    base {
+        archivesName.set("RClasses-" + project.name)
+    }
 }
+
+setupProject()
+
+val jis = configureJis()
 
 dependencies {
     // Move all submodules into the jar file
-    library(project(":common"))
-    library(project(":functional"))
-    library(project(":io"))
-    library(project(":math"))
-    library(project(":pattern"))
-    library(project(":kotlin-support"))
-}
-
-tasks {
-    jar {
-        val projectName = project.name
-
-        // Add all dependencies which are included using "library" to the jar file and exclude the META-INF folder
-        dependsOn(library)
-        from({
-            library.map { zipTree(it) }
-        }) {
-            exclude("META-INF/*.RSA", "META-INF/*.SF", "META-INF/*.DSA")
-        }
-
-        duplicatesStrategy = DuplicatesStrategy.EXCLUDE
-
-        // Rename the project's license file to LICENSE_<project_name> to avoid conflicts
-        from("LICENSE") {
-            rename { "LICENSE_${projectName}" }
-        }
-    }
+    jis(project(":common"))
+    jis(project(":functional"))
+    jis(project(":io"))
+    jis(project(":math"))
+    jis(project(":pattern"))
+    jis(project(":kotlin-support"))
 }
