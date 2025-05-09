@@ -22,14 +22,14 @@ subprojects {
 
 setupProject()
 
-val jis = configureJis()
+val shade = configureShadedDependencies()
 
 dependencies {
     // Move all submodules into the jar file
-    jis(project(":common"))
-    jis(project(":functional"))
-    jis(project(":io"))
-    jis(project(":math"))
-    jis(project(":pattern"))
-    jis(project(":kotlin-support"))
+    shade(project(":common"))
+    shade(project(":functional"))
+    shade(project(":io"))
+    shade(project(":math"))
+    shade(project(":pattern"))
+    shade(project(":kotlin-support"))
 }
