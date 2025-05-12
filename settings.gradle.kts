@@ -7,7 +7,7 @@ pluginManagement {
 
     plugins {
         id("org.jetbrains.kotlin.jvm") version "2.1.20"
-        id("de.florianmichael.baseproject.BaseProject") version "1.0.1"
+        id("de.florianmichael.baseproject.BaseProject") version "1.0.4"
     }
 }
 
